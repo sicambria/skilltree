@@ -27,22 +27,9 @@ PIXI.loader.add("a.png") // load all the images
     .load(main);
 
 var itemLayer = new PIXI.display.Layer();
-itemLayer.group.enableSort = true;
+var connectionGroup = new PIXI.display.Group(-1, false); // draw connection lines between items
 
-var connectionGroup = new PIXI.display.Group(-1, false); // draw connection lines between item
 var itemData = itemsJson;
-
-// IMPORT CLASSES ???? TO-DO
-/*
-import Item from './classes/Item'; 
-import Link from './classes/Link';
-
-
-const Item = require('./classes/item');
-const Link = require('./classes/link');
-
-*/
-
 
 function main () {
     //creates the items
@@ -52,6 +39,7 @@ function main () {
             itemData[i][j].disp = new Item(itemData[i][j], i, itemData[i].length, j);
         }
     }
+    itemLayer.group.enableSort = true;
     stage.addChild(itemLayer);
 
     //the canvas will be a bit bigger than the biggest details page in the last row
@@ -104,54 +92,6 @@ function enableChildren (i, j) {
             var child = itemData[itemData[i][j].children[k].level][itemData[i][j].children[k].i];
             child.disp.enable();
         }
-    }
-}
-
-
-//EVERYTHING BELOW THIS TO BE DELETED WHEN WE FIGURE OUT HOW TO IMPORT CLASSES PROPERLY ---------------------
-
-
-class Link /*extends PIXI.Text*/ { // .link: container, .btn: interactive rectangle, .text; no wordwrap
-    constructor (textString, url, style, underline) {
-        var link = new PIXI.Container();
-
-        //var text = super(text, style, canvas);
-        var text = new PIXI.Text(textString, style);
-        link.addChild(text);
-        this.text = text;
-
-        if (underline && style !== undefined && style.wordWrap !== true) {
-            var line = new PIXI.Graphics();
-            line.lineStyle(text.height / 10, style.fill);
-            line.moveTo(0, text.height * 11 / 12);
-            line.lineTo(text.width, text.height * 11 / 12);
-            link.addChild(line);
-        } else if (style.wordWrap === true) {
-            console.log("Can't underline multiline text");
-        }
-
-        var btnRect = new PIXI.Graphics();
-        btnRect.drawRect(0, 0, text.width, text.height);
-        var btn = new PIXI.Sprite(btnRect.generateTexture());
-        btn.interactive = true;
-        btn.buttonMode = true;
-        btn.on("pointerdown", function () {
-            window.open(url, '_self');
-        });
-        link.addChild(btn);
-        this.btn = btn;
-
-        this.link = link;
-    }
-
-    enable () {
-        this.btn.interactive = true;
-        this.btn.buttonMode = true;
-    }
-
-    disable () {
-        this.btn.interactive = false;
-        this.btn.buttonMode = false;
     }
 }
 
@@ -305,4 +245,46 @@ class Item {
     }
 }
 
+class Link /*extends PIXI.Text*/ { // .link: container, .btn: interactive rectangle, .text; no wordwrap
+    constructor (textString, url, style, underline) {
+        var link = new PIXI.Container();
 
+        //var text = super(text, style, canvas);
+        var text = new PIXI.Text(textString, style);
+        link.addChild(text);
+        this.text = text;
+
+        if (underline && style !== undefined && style.wordWrap !== true) {
+            var line = new PIXI.Graphics();
+            line.lineStyle(text.height / 10, style.fill);
+            line.moveTo(0, text.height * 11 / 12);
+            line.lineTo(text.width, text.height * 11 / 12);
+            link.addChild(line);
+        } else if (style.wordWrap === true) {
+            console.log("Can't underline multiline text");
+        }
+
+        var btnRect = new PIXI.Graphics();
+        btnRect.drawRect(0, 0, text.width, text.height);
+        var btn = new PIXI.Sprite(btnRect.generateTexture());
+        btn.interactive = true;
+        btn.buttonMode = true;
+        btn.on("pointerdown", function () {
+            window.open(url, '_self');
+        });
+        link.addChild(btn);
+        this.btn = btn;
+
+        this.link = link;
+    }
+
+    enable () {
+        this.btn.interactive = true;
+        this.btn.buttonMode = true;
+    }
+
+    disable () {
+        this.btn.interactive = false;
+        this.btn.buttonMode = false;
+    }
+}
