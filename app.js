@@ -8,7 +8,7 @@ function validate() {
 
 	if(username.value == "test" && password.value == "TEST") {
 		loginBox.style.display = "none";
-		showToast();
+		//showToast();
 		window.open("snowflake.html", "_self");
 		return false;
 	}

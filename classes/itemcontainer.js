@@ -41,7 +41,7 @@ export class ItemContainer {
 
         var btn1 = new PIXI.Sprite(btnG.generateTexture());
         btn1.interactive = true;
-        btn1.buttonMode = true;
+        //btn1.buttonMode = true;
         btn1.position.set(detailsMargin + 20, description.position.y + description.height + 10);
         detailsForeground.addChild(btn1);
 
@@ -50,11 +50,11 @@ export class ItemContainer {
         txt1.position.set(detailsMargin + 10 + 45, description.position.y + description.height + 10 + 13);
         detailsForeground.addChild(txt1);
         txt1.interactive = true;
-        txt1.buttonMode = true;
+        //txt1.buttonMode = true;
 
         var btn2 = new PIXI.Sprite(btnG.generateTexture());
         btn2.interactive = true;
-        btn2.buttonMode = true;
+        //btn2.buttonMode = true;
         btn2.anchor.set(1, 0);
         btn2.position.set(detailsWidth - detailsMargin - 20, description.position.y + description.height + 10);
         detailsForeground.addChild(btn2);
@@ -64,7 +64,7 @@ export class ItemContainer {
         txt2.position.set(detailsWidth - detailsMargin - 10 - 45, description.position.y + description.height + 10 + 13);
         detailsForeground.addChild(txt2);
         txt2.interactive = true;
-        txt2.buttonMode = true;
+        //txt2.buttonMode = true;
 
         if (level == 0 && i == 0) {
             var link = this.createLink("Nokia website", "https://nokia.com", {fontSize: 12, fill: 0x0000ff}, true);
