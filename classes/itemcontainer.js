@@ -137,6 +137,25 @@ export class ItemContainer {
                         }
                     }
                 }
+
+                if (child.children !== undefined) {
+                    for (var l = 0; l < child.children.length; ++l) {
+                        var child2 = this.parentObj.data[child.children[l].level][child.children[l].i];
+
+                        for (var m = 0; child2.zeroSLParents !== undefined && m < child2.zeroSLParents.length; ++m) {
+                            if (child2.zeroSLParents[m].level == child.level && child2.zeroSLParents[m].i == child.i) {
+                                child2.zeroSLParents.splice(m, 1);
+
+                                if (child2.zeroSLParents.length == 0) {
+                                    child2.itemcontainer.container.filters = null;
+                                    child2.itemcontainer.container.interactive = true;
+                                    child2.itemcontainer.skillborder.interactive = true;
+                                    child2.itemcontainer.skillborder.buttonMode = true;
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             // Increase skill level
@@ -184,6 +203,36 @@ export class ItemContainer {
                     if (newParent) {
                         var parent = {level: this.parentObj.level, i: this.parentObj.i};
                         child.zeroSLParents.push(parent);
+                    }
+
+                    if (child.children !== undefined) {
+                        for (var l = 0; l < child.children.length; ++l) {
+                            var child2 = this.parentObj.data[child.children[l].level][child.children[l].i];
+
+                            if (child2.zeroSLParents === undefined) {
+                                child2.zeroSLParents = new Array();
+                            }
+
+                            if (child2.zeroSLParents.length <= 1) {
+                                var colorMatrixFilter = new PIXI.filters.ColorMatrixFilter;
+                                colorMatrixFilter.brightness(0.4);
+                                child2.itemcontainer.container.filters = [colorMatrixFilter];
+                                child2.itemcontainer.container.interactive = false;
+                                child2.itemcontainer.skillborder.interactive = false;
+                                child2.itemcontainer.skillborder.buttonMode = false;
+                            }
+
+                            var newParent = true;
+                            for (var j = 0; j < child2.zeroSLParents.length; ++j) {
+                                if (child2.zeroSLParents[j].level == child.level && child2.zeroSLParents[j].i == child.i) {
+                                    newParent = false;
+                                }
+                            }
+                            if (newParent) {
+                                var parent = {level: child2.level, i: child2.i};
+                                child2.zeroSLParents.push(parent);
+                            }
+                        }
                     }
                 }
             }
