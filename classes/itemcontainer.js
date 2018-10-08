@@ -145,7 +145,7 @@ export class ItemContainer {
                 this.levelinfo.text = (this.skill_level + "/" + this.max_skill_level);
                 if (this.skill_level == this.max_skill_level) {
                     this.filters = [new PIXI.filters.GlowFilter(10, 4, 4, 0xFF4000, 1)];
-                    this.parentObj.app.stage.removeChild(this.parentObj.details);
+                    //this.parentObj.container.removeChild(this.parentObj.details);
                 }
             }
 
@@ -214,14 +214,14 @@ export class ItemContainer {
 
         if(skillborder.skill_level == skillborder.max_skill_level) return;
         skillborder.filters = [new PIXI.filters.GlowFilter(10,4,4, 0xFFBF00, 1)];
+
+        this.parentObj.app.renderer.render(this.parentObj.app.stage);
     }
 
     onButtonOut() {
         var skillborder = this.parentObj.skillborder;
         var details = this.parentObj.details;
         var container = this;
-
-        console.log("ss");
 
         container.removeChild(details);
         container.zOrder = 1;
@@ -230,6 +230,8 @@ export class ItemContainer {
 
         if(skillborder.skill_level == skillborder.max_skill_level) return;
         skillborder.filters = null;
+
+        this.parentObj.app.renderer.render(this.parentObj.app.stage);
     }
 
     enable () {
