@@ -122,41 +122,7 @@ export class ItemContainer {
             // Enable children which doesn't have other parents with 0 skill level
             var children = this.parentObj.skillData.children;
 
-            for (var k = 0; children !== undefined && k < children.length; ++k) {
-                var child = this.parentObj.data[children[k].level][children[k].i];
-
-                for (var j = 0; child.zeroSLParents !== undefined && j < child.zeroSLParents.length; ++j) {
-                    if (child.zeroSLParents[j].level == this.parentObj.level && child.zeroSLParents[j].i == this.parentObj.i) {
-                        child.zeroSLParents.splice(j, 1);
-
-                        if (child.zeroSLParents.length == 0) {
-                            child.itemcontainer.container.filters = null;
-                            child.itemcontainer.container.interactive = true;
-                            child.itemcontainer.skillborder.interactive = true;
-                            child.itemcontainer.skillborder.buttonMode = true;
-                        }
-                    }
-                }
-
-                if (child.children !== undefined) {
-                    for (var l = 0; l < child.children.length; ++l) {
-                        var child2 = this.parentObj.data[child.children[l].level][child.children[l].i];
-
-                        for (var m = 0; child2.zeroSLParents !== undefined && m < child2.zeroSLParents.length; ++m) {
-                            if (child2.zeroSLParents[m].level == child.level && child2.zeroSLParents[m].i == child.i) {
-                                child2.zeroSLParents.splice(m, 1);
-
-                                if (child2.zeroSLParents.length == 0) {
-                                    child2.itemcontainer.container.filters = null;
-                                    child2.itemcontainer.container.interactive = true;
-                                    child2.itemcontainer.skillborder.interactive = true;
-                                    child2.itemcontainer.skillborder.buttonMode = true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            this.parentObj.toggleChildren(children, true);
 
             // Increase skill level
             if (this.skill_level < this.max_skill_level) {
@@ -177,10 +143,40 @@ export class ItemContainer {
         if (this.skill_level == 1) {
             var children = this.parentObj.skillData.children;
 
-            if (children !== undefined) {
-                for (var k = 0; k < children.length; ++k) {
-                    var child = this.parentObj.data[children[k].level][children[k].i];
+            this.parentObj.toggleChildren (children, false);
+        }
 
+        // Decrease skill level
+        if(this.skill_level>0)
+        {
+            this.skill_level --;
+            this.levelinfo.text = (this.skill_level + "/" + this.max_skill_level);
+        } else return;
+
+        this.filters = [new PIXI.filters.GlowFilter(10,4,4, 0xFFBF00, 1)];
+
+        this.parentObj.app.renderer.render(this.parentObj.app.stage);
+    }
+
+    toggleChildren (children, enable) {
+        if (children !== undefined) {
+            for (var k = 0; k < children.length; ++k) {
+                var child = this.data[children[k].level][children[k].i];
+
+                if (enable) {
+                    for (var j = 0; child.zeroSLParents !== undefined && j < child.zeroSLParents.length; ++j) {
+                        if (child.zeroSLParents[j].level == this.level && child.zeroSLParents[j].i == this.i) {
+                            child.zeroSLParents.splice(j, 1);
+
+                            if (child.zeroSLParents.length == 0) {
+                                child.itemcontainer.container.filters = null;
+                                child.itemcontainer.container.interactive = true;
+                                child.itemcontainer.skillborder.interactive = true;
+                                child.itemcontainer.skillborder.buttonMode = true;
+                            }
+                        }
+                    }
+                } else {
                     if (child.zeroSLParents === undefined) {
                         child.zeroSLParents = new Array();
                     }
@@ -196,58 +192,19 @@ export class ItemContainer {
 
                     var newParent = true;
                     for (var j = 0; j < child.zeroSLParents.length; ++j) {
-                        if (child.zeroSLParents[j].level == this.parentObj.level && child.zeroSLParents[j].i == this.parentObj.i) {
+                        if (child.zeroSLParents[j].level == this.level && child.zeroSLParents[j].i == this.i) {
                             newParent = false;
                         }
                     }
                     if (newParent) {
-                        var parent = {level: this.parentObj.level, i: this.parentObj.i};
+                        var parent = {level: this.level, i: this.i};
                         child.zeroSLParents.push(parent);
                     }
-
-                    if (child.children !== undefined) {
-                        for (var l = 0; l < child.children.length; ++l) {
-                            var child2 = this.parentObj.data[child.children[l].level][child.children[l].i];
-
-                            if (child2.zeroSLParents === undefined) {
-                                child2.zeroSLParents = new Array();
-                            }
-
-                            if (child2.zeroSLParents.length <= 1) {
-                                var colorMatrixFilter = new PIXI.filters.ColorMatrixFilter;
-                                colorMatrixFilter.brightness(0.4);
-                                child2.itemcontainer.container.filters = [colorMatrixFilter];
-                                child2.itemcontainer.container.interactive = false;
-                                child2.itemcontainer.skillborder.interactive = false;
-                                child2.itemcontainer.skillborder.buttonMode = false;
-                            }
-
-                            var newParent = true;
-                            for (var j = 0; j < child2.zeroSLParents.length; ++j) {
-                                if (child2.zeroSLParents[j].level == child.level && child2.zeroSLParents[j].i == child.i) {
-                                    newParent = false;
-                                }
-                            }
-                            if (newParent) {
-                                var parent = {level: child2.level, i: child2.i};
-                                child2.zeroSLParents.push(parent);
-                            }
-                        }
-                    }
                 }
+
+                this.toggleChildren (child.children, enable)
             }
         }
-
-        // Decrease skill level
-        if(this.skill_level>0)
-        {
-            this.skill_level --;
-            this.levelinfo.text = (this.skill_level + "/" + this.max_skill_level);
-        } else return;
-
-        this.filters = [new PIXI.filters.GlowFilter(10,4,4, 0xFFBF00, 1)];
-
-        this.parentObj.app.renderer.render(this.parentObj.app.stage);
     }
 
     onButtonOver() {
