@@ -184,6 +184,9 @@ class ItemContainer {
 
                 httpRequest.onreadystatechange = function() {
                     if(httpRequest.readyState == 4 && httpRequest.status == 200) {
+                        if (!userDataRequest.response.success) {
+                            window.open("/", "_self");
+                        }
                         this.parentObj.app.renderer.render(this.parentObj.app.stage);
                     }
                 }
@@ -222,6 +225,9 @@ class ItemContainer {
 
             httpRequest.onreadystatechange = function() {
                 if(httpRequest.readyState == 4 && httpRequest.status == 200) {
+                    if (!userDataRequest.response.success) {
+                        window.open("/", "_self");
+                    }
                     this.parentObj.app.renderer.render(this.parentObj.app.stage);
                 }
             }

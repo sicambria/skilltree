@@ -9,6 +9,9 @@ userDataRequest.setRequestHeader('x-access-token', localStorage.getItem("loginTo
 userDataRequest.responseType = "json";
 userDataRequest.onreadystatechange = function() {
     if(userDataRequest.readyState == 4 && userDataRequest.status == 200) {
+        if (!userDataRequest.response.success) {
+            window.open("/", "_self");
+        }
         userData = userDataRequest.response;
         initChart();
     }
@@ -23,6 +26,9 @@ treeDataRequest.setRequestHeader('x-access-token', localStorage.getItem("loginTo
 treeDataRequest.responseType = "json";
 treeDataRequest.onreadystatechange = function() {
     if(treeDataRequest.readyState == 4 && treeDataRequest.status == 200) {
+        if (!treeDataRequest.response.success) {
+            window.open("/", "_self");
+        }
         treeData = treeDataRequest.response;
         initChart();
     }
