@@ -617,7 +617,8 @@ setRoute.post('/dropoffers', async function (req, res) {
         if(err) console.log("error");
 
         users.map(user => {
-            user.offers = [];
+			user.offers = [];
+			user.save(  function (err) {if (err) throw err;} );
         })
     })
 });
