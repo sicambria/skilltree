@@ -613,14 +613,17 @@ setRoute.post('/submitall', async function (req, res) {
 
 
 setRoute.post('/dropoffers', async function (req, res) {
-	User.find({} , (err, users) => {
+	Skill.find({} , (err, skills) => {
         if(err) console.log("error");
 
-        users.map(user => {
-			user.offers = [];
-			user.save(  function (err) {if (err) throw err;} );
+        skills.map(skill => {
+			skill.offers = [];
+			
+			skill.save(  function (err) {if (err) throw err;} );
         })
-    })
+	})
+	
+	console.log()
 });
 
 const httpServer = http.createServer(app);
