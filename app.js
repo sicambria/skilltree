@@ -623,7 +623,7 @@ setRoute.post('/dropoffers', async function (req, res) {
         })
 	})
 	
-	console.log()
+	
 });
 
 const httpServer = http.createServer(app);

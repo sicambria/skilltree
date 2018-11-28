@@ -155,7 +155,7 @@ function addTreeToUser(){
   adt.onreadystatechange = function() {
       if (adt.readyState == 4 && adt.status == 200) {
         if (adt.response.success){
-          var forest = document.getElementById("forest");
+          var forest = document.getElementById("treeList");
           var nt = document.createElement('div');
           nt.innerText = adt.response.name;
           nt.className = "listedTree";
