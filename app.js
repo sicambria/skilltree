@@ -29,7 +29,7 @@ app.use(morgan('dev'));
 // serving static files and opening login.html
 app.use(express.static('./public'));
 app.get('/', (req, res) => res.sendFile('login.html', { root: path.join(__dirname, './public') }));
-app.get('/user', (req, res) => res.sendFile('chartandtree.html', { root: path.join(__dirname, './public/user') }));
+app.get('/user', (req, res) => res.sendFile('userpage.html', { root: path.join(__dirname, './public/user') }));
 
 app.post('/registration', async function(req, res) {
 	// search for username in db
@@ -283,10 +283,28 @@ setRoute.post('/newskill', async function(req, res) { // global skill
 	}
 });
 
-setRoute.post('/search', async function (req, res) {
+
+// Search for users to view by name
+setRoute.post('/searchUsersByName', async function (req, res) {
+		var data = req.body;
+		var foundUsers = await User.find({
+					"username": {$regex : ".*" + data.value + ".*", '$options' : 'i'}
+			}, function (err, user) {
+					if (err) throw err;
+			return user;
+		});
+		var resUsers = [];
+		for (var i = 0; i < foundUsers.length; i++) {
+			resUsers[i] = {name: foundUsers[i].username};
+		}
+		res.json(resUsers);
+});
+
+// Search for trees to add while typing
+setRoute.post('/searchTreesByName', async function (req, res) {
 		var data = req.body;
 		var foundTrees = await Tree.find({
-					"name": {$regex : ".*" + data.value + ".*"}
+					"name": {$regex : ".*" + data.value + ".*", '$options' : 'i'}
 			}, function (err, tree) {
 					if (err) throw err;
 			return tree;
@@ -295,11 +313,41 @@ setRoute.post('/search', async function (req, res) {
 		for (var i = 0; i < foundTrees.length; i++) {
 			resTrees[i] = {name: foundTrees[i].name};
 		}
-		console.log(resTrees);
 		res.json(resTrees);
 });
 
-setRoute.post('/addtree', async function (req, res){
+// Search for skills to add while typing
+setRoute.post('/searchSkillsByName', async function (req, res) {
+		var data = req.body;
+		var foundSkills = await Skill.find({
+					"name": {$regex : ".*" + data.value + ".*", '$options' : 'i'}
+			}, function (err, skills) {
+					if (err) throw err;
+					return skills;
+		});
+		var resSkills = [];
+		for (var i = 0; i < foundSkills.length; i++) {
+			resSkills[i] = {name: foundSkills[i].name};
+		}
+		res.json(resSkills);
+});
+
+setRoute.post('/getPublicUserData', async function (req, res) {
+		var data = req.body;
+		var foundUser = await User.findOne({
+				"username": data.value
+		}, function(err, user) {
+				if (err) throw err;
+		return user;
+		});
+		res.json({
+			skills : foundUser.skills,
+			trees : foundUser.trees,
+			mainTree : foundUser.mainTree
+		});
+});
+
+setRoute.post('/addTreeToUser', async function (req, res){
 	var data = req.body;
 	var user = await User.findOne({
 			username: req.decoded.username
@@ -348,6 +396,65 @@ setRoute.post('/addtree', async function (req, res){
 	}
 });
 
+setRoute.post('/getskill', async function (req, res) {
+	var data = req.body;
+
+	var skill = await Skill.findOne({name: data.value} , function (err, skill) {
+				if (err) throw err;
+				return skill;
+	});
+
+	if (!skill) {
+		res.json({
+			success: false
+		});
+	} else {
+		var dependency = [];
+		await getDependency(skill, dependency);
+
+		res.json({
+			success: true,
+			skill: skill,
+			dependency: dependency
+		});
+	}
+});
+
+async function getDependency (skill, dependency) {
+	var parents = [];
+	for (var i = 0; skill.parents != undefined && i < skill.parents.length; ++i) {
+		var parent = await Skill.findOne({name: skill.parents[i]} , function (err, skill) {
+						if (err) throw err;
+						return skill;
+		});
+
+		parents.push(parent);
+		dependency.push(parent);
+	}
+
+	for (var i = 0; i < parents.length; ++i) {
+		await getDependency(parents[i], dependency);
+	}
+}
+
+/*async function getParents (skill, skillFamily) {
+	var parents = [];
+	console.log(skill);
+	for (var i = 0; skill.parents != undefined && i < skill.parents.length; ++i) {
+		var parent = await Skill.findOne({name: skill.parents[i]} , function (err, skill) {
+						if (err) throw err;
+						return skill;
+		});
+
+		parents.push(parent);
+		skillFamily.push(parent);
+	}
+
+	for (var i = 0; i < parents.length; ++i) {
+		getParents(parents[i], skillFamily);
+	}
+}*/
+
 setRoute.post('/newtree', async function (req, res) { // create user tree
 	var data = req.body;
 
@@ -364,10 +471,22 @@ setRoute.post('/newtree', async function (req, res) { // create user tree
 			message: 'User not found.'
 		});
 	} else {
-		user.trees.push({name: data.name, focusArea: data.focusArea, skillNames: []});
-		user.save(function (err) {if (err) throw err;});
+		if (user.trees.find(obj => obj.name == data.name) == undefined) {
+			user.trees.push({name: data.name, focusArea: data.focusArea, skillNames: data.skillNames});
+			user.save(function (err) {if (err) throw err;});
+
+			res.json({
+				success: true
+			});
+		} else {
+			res.json({
+				success: false,
+				message: 'treeexists'
+			});
+		}
 	}
 });
+
 setRoute.post('/addskilltotree', async function(req, res) { // to user tree
     var data = req.body;
 
@@ -408,76 +527,8 @@ setRoute.post('/skilldata', function(req, res) {
 	});
 });
 
-//TO BE DELETED
-setRoute.post('/approvetree', async function (req, res) {
-	var data = req.body;
-
-    var user = await User.findOne({
-        username: req.decoded.username
-    }, function(err, user) {
-        if (err) throw err;
-		return user;
-    });
-
-	if (!user) {
-		res.json({
-			success: false,
-			message: 'User not found.'
-		});
-	} else {
-		var tree = new Tree();
-		tree = user.trees.find(obj => obj.name == data.name);
-		tree.save(function (err) {if (err) throw err;});
-	}
-});
-
-/*setRoute.post('/maintree', async function (req, res) {
-	var data = req.body;
-
-    var user = await User.findOne({
-        username: req.decoded.username
-    }, function(err, user) {
-        if (err) throw err;
-		return user;
-    });
-
-	if (!user) {
-		res.json({
-			success: false,
-			message: 'User not found.'
-		});
-	} else {
-		user.mainTree = data.name;
-
-		var mainTree = await Tree.findOne({
-	        name: data.name,
-	    }, function (err, tree) {
-	        if (err) throw err;
-			return tree;
-		});
 
 
-		user.trees.push(mainTree);
-
-		var skills = await Skill.find({
-	        name: mainTree.skillNames,
-	    }, function (err, skills) {
-	        if (err) throw err;
-			return skills;
-	    });
-
-		await skills.forEach(function (skill) {
-			skill.achievedPoint = 0;
-			user.skills.push(skill);
-		});
-
-		user.save(function (err) {if (err) throw err;});
-
-		res.json({
-			success: true,
-		});
-	}
-});*/
 
 setRoute.post('/firstlogindata', async function (req, res) {
 	var data = req.body;
@@ -497,7 +548,8 @@ setRoute.post('/firstlogindata', async function (req, res) {
 	} else {
 		user.mainTree = data.mainTree;
 		if (user.willingToTeach) {
-			user.contact = data.contact;
+			user.teachingDay = data.teachingDay;
+			user.teachingTime = data.teachingTime;
 			user.location = data.location;
 		}
 
@@ -559,8 +611,8 @@ setRoute.post('/submitall', async function (req, res) {
 					if (globalSkill.offers.find(obj => obj.username == user.username) == undefined) {
 						globalSkills.find(obj => obj.name == userSkill.name).offers.push({
 							username: user.username,
-							contact: user.contact,
-							location: user.location,
+							teachingDay: user.teachingDay,
+							teachingTime: user.teachingTime,
 							achievedPoint: userSkill.achievedPoint,
 						});
 					} else globalSkill.offers.find(obj => obj.username == user.username).achievedPoint = userSkill.achievedPoint;
@@ -583,6 +635,7 @@ setRoute.post('/submitall', async function (req, res) {
 		});
 	}
 });
+
 
 const httpServer = http.createServer(app);
 httpServer.listen(80);
