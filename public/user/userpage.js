@@ -62,17 +62,6 @@ function checkFirstLogin() {
             saveMain.send(JSON.stringify(firstLoginData));
         }
 
-        /*var span = document.getElementsByClassName("modalClose")[0];
-
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }*/
 
         for (var i = 0; i < data.focusArea.treeNames.length; ++i) {
             var option = document.createElement('option');
@@ -131,20 +120,6 @@ function searchUsersByName(){
   sch.send(JSON.stringify(userToSearch));
 }
 
-function getPublicUserData(){
-  var userToSearch = {value: document.getElementById('searchedUser').value};
-  var sch = new XMLHttpRequest();
-  sch.open('POST', '/set/getPublicUserData', true);
-  sch.setRequestHeader('Content-type', 'application/json');
-  sch.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
-  sch.responseType = "json";
-  sch.onreadystatechange = function() {
-      if(sch.readyState == 4 && sch.status == 200) {
-        alert("User found, data loaded.");
-      }
-  }
-  sch.send(JSON.stringify(userToSearch));
-}
 
 function searchTreesByName(){
   var treeToSearch = {value: document.getElementById('searchedTree').value};
@@ -300,24 +275,6 @@ function showChart() {
         tempContainer.addChild(innerSlice);
 
 
-        //Clickabke slices ----------------------------
-        /*sliceContainer[i].buttonMode = true;
-        sliceContainer[i].interactive = true;
-
-        sliceContainer[i]
-                    .on('pointerover', function() {
-                        this.alpha = 0.75;
-                        app.renderer.render(app.stage);
-                    })
-                    .on('pointerout', function() {
-                        this.alpha = 1;
-                        app.renderer.render(app.stage);
-                    })
-                    .on('pointerdown', function() {
-                        hideChart();
-                        showTree(this.id);
-                    });*/
-
         // creates tree name at the chart
         //var text = new PIXI.Text(treeData.find(obj => obj.treeID == userData[i].treeID).treeName, {fill: '#ffffff', wordWrap: true, wordWrapWidth: 200, align: 'center'});
 
@@ -434,153 +391,9 @@ function showTree (treeName) {
     app.renderer.render(app.stage);
     document.getElementById("pixiCanvas").style.visibility = "visible";
     app.start();
-    /*var fadein = function (delta) {
-        tree.treeContainer.alpha += .05;
-        if (tree.treeContainer.alpha == 1) {
-            app.ticker.remove(fadein);
-            app.stop();
-        }
-    };
-    app.ticker.add(fadein);*/
 }
 
 
-
-/*function openEditor () {
-    app.stage.removeChild(tree.treeContainer);
-    app.localLoader.destroy();
-    tree = undefined;
-
-    // load the tree's pictures
-    app.localLoader = new PIXI.loaders.Loader();
-    var treeID2 = 0;
-    var editedTree = data.trees.find(obj => obj.id == treeID2);
-    for(var i = 0; i < editedTree.skillIDs.length; i++){
-      var skill = data.skills.find(obj => obj.id == editedTree.skillIDs[i]);
-      app.localLoader.add(skill.skillIcon.toString());
-    }
-
-    app.localLoader.load(function () {
-        app.renderer.resize(.75 * window.innerWidth - 150, window.innerHeight - 30);
-
-        // passes the details of the skills used by the tree.
-        for(var i = 0; i < editedTree.skillIDs.length; i++){
-          editedTree.skills[i] = data.skills.find(obj => obj.id == editedTree.skillIDs[i]);
-        }
-        //tree = new EditorTree(app, treeID2, treeData.find(obj => obj.treeID == treeID2), 150, 30);
-        // needs a new constructor, where we pass the expanded editedTree, the app, and xy.
-        tree = new EditorTree(app, editedTree, 150, 30);
-
-        app.stage.addChild(tree.treeContainer);
-
-        app.renderer.render(app.stage);
-    });
-}*/
-
-/*
-*   TREE CREATOR
-*/
-
-function create() {
-    var canvas = document.getElementById("pixiCanvas");
-    canvas.style.display = "none";
-
-    var creator = document.getElementById("creator");
-    creator.style.display = "block";
-
-    document.getElementById("openCreator").value = "Close Creator";
-    document.getElementById("openCreator").onclick = function() {
-        creator.style.display = "none";
-        canvas.style.display = "block";
-        document.getElementById("openCreator").value = "Create Tree";
-        document.getElementById("openCreator").onclick = create;
-    };
-
-    creator.style.width = canvas.style.width;
-    creator.style.height = canvas.style.height;
-
-    var addBtn = document.getElementById("addToTree");
-    var skillList = document.getElementById("skillList");
-    var skillsToAdd = [];
-    addBtn.onclick = function () {
-        var skill = {value: document.getElementById('skillSearch').value};
-        var skillReq = new XMLHttpRequest();
-        skillReq.open('POST', '/set/getskill', true);
-        skillReq.setRequestHeader('Content-type', 'application/json');
-        skillReq.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
-        skillReq.responseType = "json";
-        skillReq.onreadystatechange = function() {
-            if(skillReq.readyState == 4 && skillReq.status == 200) {
-                if (this.response.success) {
-                    if (skillsToAdd.find(obj => obj.name == this.response.skill.name) == undefined) {
-                        if (this.response.dependency.length > 0) {
-                            var text = "The selected skill depends on the following skills. Do you want to add these?\n";
-                            for (var i = 0; i < this.response.dependency.length; ++i) {
-                                text += this.response.dependency[i].name + "\n";
-                            }
-                            if (confirm(text)) {
-                                skillsToAdd.push(this.response.skill);
-                                var option = document.createElement("option");
-                                option.text = this.response.skill.name;
-                                skillList.add(option);
-                                for (var i = 0; i < this.response.dependency.length; ++i) {
-                                    if (skillsToAdd.find(obj => obj.name == this.response.dependency[i].name) == undefined) {
-                                        skillsToAdd.push(this.response.dependency[i]);
-                                        var option = document.createElement("option");
-                                        option.text = this.response.dependency[i].name;
-                                        skillList.add(option);
-                                    }
-                                }
-                            }
-                        } else {
-                            skillsToAdd.push(this.response.skill);
-                            var option = document.createElement("option");
-                            option.text = this.response.skill.name;
-                            skillList.add(option);
-                        }
-                    } else alert("You have already added this skill");
-                } else alert("Skill is not found");
-                /*skillSearchResult.innerText = "";
-                for (var i = 0; i < sch.response.length; i++) {
-                    var mya = document.createElement('option');
-                    mya.value = sch.response[i].name;
-                    skillSearchResult.appendChild(mya);
-                }*/
-            }
-        }
-        
-        skillReq.send(JSON.stringify(skill));
-    };
-
-    var createBtn = document.getElementById("createTree");
-    createBtn.onclick = function () {
-        if (document.getElementById('treeName').value.length > 0) {
-            if (skillsToAdd.length > 0) {
-                var skillNames = [];
-                for (var i = 0; i < skillsToAdd.length; ++i) skillNames.push(skillsToAdd[i].name);
-
-                var treeData = {
-                    name: document.getElementById('treeName').value,
-                    focusArea: document.getElementById('focusarea').value,
-                    skillNames: skillNames
-                };
-
-                var saveTree = new XMLHttpRequest();
-                saveTree.open('POST', '/set/newtree', true);
-                saveTree.setRequestHeader('Content-type', 'application/json');
-                saveTree.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
-                saveTree.responseType = "json";
-                saveTree.onreadystatechange = function() {
-                    if(saveTree.readyState == 4 && saveTree.status == 200) {
-                        if (this.response.success) window.open("/user/", "_self");
-                        else if (this.response.message == "treeexists") alert("There is already a tree with this name");
-                    }
-                }
-                saveTree.send(JSON.stringify(treeData));
-            } else alert("Please add at least one skill to the tree");
-        } else alert("Please provide a name to the tree");
-    };
-}
 
 function searchSkillsByName(){
     var skillToSearch = {value: document.getElementById('skillSearch').value};
