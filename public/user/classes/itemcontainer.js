@@ -292,6 +292,9 @@ class ItemContainer {
 		    		if(offerHttpRequest.readyState == 4 && offerHttpRequest.status == 200) {
 						if (offerHttpRequest.response !== undefined) {
                             //Got the offer data, fill the offers table
+                            
+                            //Empty the table
+                            offerTable.innerHTML = "";
 
                             //Initialize table variables
                             var globalskill = offerHttpRequest.response;
@@ -302,8 +305,7 @@ class ItemContainer {
                                                                     "Skill Level",
                                                                     "divTableHead") );
 
-                            //Empty the table
-                            offerTable.innerHTML = "";
+                            
                             //Filling the table
                             for(var i=0; i<globalskill.offers.length; i++ )
                                 {
