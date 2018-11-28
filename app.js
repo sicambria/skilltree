@@ -614,7 +614,7 @@ setRoute.post('/submitall', async function (req, res) {
 
 setRoute.post('/dropoffers', async function (req, res) {
 	User.find({} , (err, users) => {
-        if(err) //do something...
+        if(err) console.log("error");
 
         users.map(user => {
             user.offers = [];
