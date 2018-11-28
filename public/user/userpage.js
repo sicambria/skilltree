@@ -38,12 +38,15 @@ function checkFirstLogin() {
         var mainTree = document.getElementById('maintree');
 
         btn.onclick = function() {
-            var contact = document.getElementById('contact').value;
+            var location = document.getElementById('location').value;
+            var teachingDay = document.getElementById('day').value;
+            var teachingTime = document.getElementById('timeStart').value + ' - ' + document.getElementById('timeEnd').value;
             var location = document.getElementById('location').value;
 
             var firstLoginData = {
                     mainTree: mainTree.value,
-                    contact: contact,
+                    teachingDay: teachingDay,
+                    teachingTime: teachingTime,
                     location: location
             };
 
@@ -92,32 +95,83 @@ function checkFirstLogin() {
 
 // ???
 
-function search(){
-  var treeToSearch = {value: document.getElementById('searchedTree').value};
-  var sideBarSearchResult = document.getElementById('sideBarSearchResult');
+function loadAddedTrees(){
+  var treeList = document.getElementById('treeList');
+  treeList.innerHTML = "";
+  for (var i = 0; i < data.trees.length; i++) {
+    var tn = data.trees[i].name;
+    var ithtree = document.createElement('div');
+    ithtree.innerHTML = tn;
+    ithtree.className = "listedTree";
+    ithtree.onclick = function() {
+      showTree(this.innerHTML);
+    }
+    treeList.appendChild(ithtree);
+  }
+}
+
+function searchUsersByName(){
+  var userToSearch = {value: document.getElementById('searchedUser').value};
+  var sideBarUserSearchResult = document.getElementById('sideBarUserSearchResult');
   var sch = new XMLHttpRequest();
-  sch.open('POST', '/set/search', true);
+  sch.open('POST', '/set/searchUsersByName', true);
   sch.setRequestHeader('Content-type', 'application/json');
   sch.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
   sch.responseType = "json";
   sch.onreadystatechange = function() {
       if(sch.readyState == 4 && sch.status == 200) {
-        var mya = document.createElement('option');
-        sideBarSearchResult.innerHTML = "";
+        sideBarUserSearchResult.innerHTML = "";
         for (var i = 0; i < sch.response.length; i++) {
+          var mya = document.createElement('option');
           mya.value = sch.response[i].name;
-          sideBarSearchResult.appendChild(mya);
+          sideBarUserSearchResult.appendChild(mya);
+        }
+      }
+  }
+  sch.send(JSON.stringify(userToSearch));
+}
+
+function getPublicUserData(){
+  var userToSearch = {value: document.getElementById('searchedUser').value};
+  var sch = new XMLHttpRequest();
+  sch.open('POST', '/set/getPublicUserData', true);
+  sch.setRequestHeader('Content-type', 'application/json');
+  sch.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
+  sch.responseType = "json";
+  sch.onreadystatechange = function() {
+      if(sch.readyState == 4 && sch.status == 200) {
+        alert("User found, data loaded.");
+      }
+  }
+  sch.send(JSON.stringify(userToSearch));
+}
+
+function searchTreesByName(){
+  var treeToSearch = {value: document.getElementById('searchedTree').value};
+  var sideBarTreeSearchResult = document.getElementById('sideBarTreeSearchResult');
+  var sch = new XMLHttpRequest();
+  sch.open('POST', '/set/searchTreesByName', true);
+  sch.setRequestHeader('Content-type', 'application/json');
+  sch.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
+  sch.responseType = "json";
+  sch.onreadystatechange = function() {
+      if(sch.readyState == 4 && sch.status == 200) {
+        sideBarTreeSearchResult.innerHTML = "";
+        for (var i = 0; i < sch.response.length; i++) {
+          var mya = document.createElement('option');
+          mya.value = sch.response[i].name;
+          sideBarTreeSearchResult.appendChild(mya);
         }
       }
   }
   sch.send(JSON.stringify(treeToSearch));
 }
 
-function addTree(){
+function addTreeToUser(){
   var treeToAdd = {value: document.getElementById('searchedTree').value};
 
   var adt = new XMLHttpRequest();
-  adt.open('POST', '/set/addtree');
+  adt.open('POST', '/set/addTreeToUser');
   adt.setRequestHeader('Content-type', 'application/json');
   adt.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
   adt.responseType = "json";
@@ -129,11 +183,14 @@ function addTree(){
           nt.innerText = adt.response.name;
           nt.className = "listedTree";
           forest.appendChild(nt);
+          alert("Selected tree successfully added.");
+          loadAddedTrees();
         } else if (adt.response.message == "existing") alert("Selected tree is already added.");
         else if (adt.response.message == "notfound") alert("The tree is not found.");
       }
   }
   adt.send(JSON.stringify(treeToAdd));
+
 }
 
 function submit(){
@@ -171,6 +228,7 @@ function startLoader () {
     PIXI.loader.load(function () {
         showTree(data.mainTree);
     });
+    loadAddedTrees();
 }
 
 app.stage = new PIXI.display.Stage();
@@ -345,6 +403,10 @@ var tree = undefined;
 
 function showTree (treeName) {
     // load the tree's pictures
+    if (tree != undefined) {
+        app.stage.removeChild(tree.treeContainer);
+        tree = undefined;
+    }
     selectedTreeName = treeName;
 
     var skills = new Array();
@@ -414,6 +476,132 @@ function showTree (treeName) {
         app.renderer.render(app.stage);
     });
 }*/
+
+/*
+*   TREE CREATOR
+*/
+
+function create() {
+    var canvas = document.getElementById("pixiCanvas");
+    canvas.style.display = "none";
+
+    var creator = document.getElementById("creator");
+    creator.style.display = "block";
+
+    document.getElementById("openCreator").value = "Close Creator";
+    document.getElementById("openCreator").onclick = function() {
+        creator.style.display = "none";
+        canvas.style.display = "block";
+        document.getElementById("openCreator").value = "Create Tree";
+        document.getElementById("openCreator").onclick = create;
+    };
+
+    creator.style.width = canvas.style.width;
+    creator.style.height = canvas.style.height;
+
+    var addBtn = document.getElementById("addToTree");
+    var skillList = document.getElementById("skillList");
+    var skillsToAdd = [];
+    addBtn.onclick = function () {
+        var skill = {value: document.getElementById('skillSearch').value};
+        var skillReq = new XMLHttpRequest();
+        skillReq.open('POST', '/set/getskill', true);
+        skillReq.setRequestHeader('Content-type', 'application/json');
+        skillReq.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
+        skillReq.responseType = "json";
+        skillReq.onreadystatechange = function() {
+            if(skillReq.readyState == 4 && skillReq.status == 200) {
+                if (this.response.success) {
+                    if (skillsToAdd.find(obj => obj.name == this.response.skill.name) == undefined) {
+                        if (this.response.dependency.length > 0) {
+                            var text = "The selected skill depends on the following skills. Do you want to add these?\n";
+                            for (var i = 0; i < this.response.dependency.length; ++i) {
+                                text += this.response.dependency[i].name + "\n";
+                            }
+                            if (confirm(text)) {
+                                skillsToAdd.push(this.response.skill);
+                                var option = document.createElement("option");
+                                option.text = this.response.skill.name;
+                                skillList.add(option);
+                                for (var i = 0; i < this.response.dependency.length; ++i) {
+                                    if (skillsToAdd.find(obj => obj.name == this.response.dependency[i].name) == undefined) {
+                                        skillsToAdd.push(this.response.dependency[i]);
+                                        var option = document.createElement("option");
+                                        option.text = this.response.dependency[i].name;
+                                        skillList.add(option);
+                                    }
+                                }
+                            }
+                        } else {
+                            skillsToAdd.push(this.response.skill);
+                            var option = document.createElement("option");
+                            option.text = this.response.skill.name;
+                            skillList.add(option);
+                        }
+                    } else alert("You have already added this skill");
+                } else alert("Skill is not found");
+                /*skillSearchResult.innerText = "";
+                for (var i = 0; i < sch.response.length; i++) {
+                    var mya = document.createElement('option');
+                    mya.value = sch.response[i].name;
+                    skillSearchResult.appendChild(mya);
+                }*/
+            }
+        }
+        
+        skillReq.send(JSON.stringify(skill));
+    };
+
+    var createBtn = document.getElementById("createTree");
+    createBtn.onclick = function () {
+        if (document.getElementById('treeName').value.length > 0) {
+            if (skillsToAdd.length > 0) {
+                var skillNames = [];
+                for (var i = 0; i < skillsToAdd.length; ++i) skillNames.push(skillsToAdd[i].name);
+
+                var treeData = {
+                    name: document.getElementById('treeName').value,
+                    focusArea: document.getElementById('focusarea').value,
+                    skillNames: skillNames
+                };
+
+                var saveTree = new XMLHttpRequest();
+                saveTree.open('POST', '/set/newtree', true);
+                saveTree.setRequestHeader('Content-type', 'application/json');
+                saveTree.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
+                saveTree.responseType = "json";
+                saveTree.onreadystatechange = function() {
+                    if(saveTree.readyState == 4 && saveTree.status == 200) {
+                        if (this.response.success) window.open("/user/", "_self");
+                        else if (this.response.message == "treeexists") alert("There is already a tree with this name");
+                    }
+                }
+                saveTree.send(JSON.stringify(treeData));
+            } else alert("Please add at least one skill to the tree");
+        } else alert("Please provide a name to the tree");
+    };
+}
+
+function searchSkillsByName(){
+    var skillToSearch = {value: document.getElementById('skillSearch').value};
+    var skillSearchResult = document.getElementById('skillSearchResult');
+    var sch = new XMLHttpRequest();
+    sch.open('POST', '/set/searchSkillsByName', true);
+    sch.setRequestHeader('Content-type', 'application/json');
+    sch.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
+    sch.responseType = "json";
+    sch.onreadystatechange = function() {
+        if(sch.readyState == 4 && sch.status == 200) {
+            skillSearchResult.innerText = "";
+            for (var i = 0; i < sch.response.length; i++) {
+                var mya = document.createElement('option');
+                mya.value = sch.response[i].name;
+                skillSearchResult.appendChild(mya);
+            }
+        }
+    }
+    sch.send(JSON.stringify(skillToSearch));
+}
 
 // helper functions
 
