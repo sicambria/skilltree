@@ -296,6 +296,11 @@ class ItemContainer {
                             //Initialize table variables
                             var globalskill = offerHttpRequest.response;
                             var offerTable = document.getElementById('offerTableBody');
+                            offerTable.appendChild( createTableRow( "Name", 
+                                                                    "Contact", 
+                                                                    "Location", 
+                                                                    "Skill Level",
+                                                                    "divTableHead") );
 
                             //Empty the table
                             offerTable.innerHTML = "";
@@ -307,7 +312,8 @@ class ItemContainer {
                                     offerTable.appendChild( createTableRow( globalskill.offers[i].username, 
                                                                             globalskill.offers[i].contact, 
                                                                             globalskill.offers[i].location, 
-                                                                            globalskill.offers[i].achievedPoint) );
+                                                                            globalskill.offers[i].achievedPoint,
+                                                                            "divTableCell") );
                                     }
                                 }
                             //Checking that the table is done (1 table out of 3)
@@ -334,26 +340,28 @@ class ItemContainer {
         var requestTable = document.getElementById('requestTableBody');
 
 
-        function createTableRow( data1, data2, data3, data4 )
+        
+
+        function createTableRow( data1, data2, data3, data4, styleClass )
         {
             //Creating an offer tablerow
             var Row = document.createElement('div');
             Row.className = "divTableRow";
 
             var Column1 = document.createElement('div');
-            Column1.className = "divTableCell";
+            Column1.className = styleClass;
             Column1.innerHTML = data1;
 
             var Column2 = document.createElement('div');
-            Column2.className = "divTableCell";
+            Column2.className = styleClass;
             Column2.innerHTML = data2;
 
             var Column3 = document.createElement('div');
-            Column3.className = "divTableCell";
+            Column3.className = styleClass;
             Column3.innerHTML = data3;
 
             var Column4 = document.createElement('div');
-            Column4.className = "divTableCell";
+            Column4.className = styleClass;
             Column4.innerHTML = data4;
 
             Row.appendChild(Column1);
