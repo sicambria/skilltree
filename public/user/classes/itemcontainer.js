@@ -292,13 +292,15 @@ class ItemContainer {
 		    		if(offerHttpRequest.readyState == 4 && offerHttpRequest.status == 200) {
 						if (offerHttpRequest.response !== undefined) {
                             //Got the offer data, fill the offers table
-                            
-                            //Empty the table
-                            offerTable.innerHTML = "";
 
                             //Initialize table variables
                             var globalskill = offerHttpRequest.response;
                             var offerTable = document.getElementById('offerTableBody');
+
+                            //Empty the table
+                            offerTable.innerHTML = "";
+
+                            
                             offerTable.appendChild( createTableRow( "Name", 
                                                                     "Contact", 
                                                                     "Location", 
