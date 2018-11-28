@@ -37,13 +37,6 @@
           <div class = "sideBarButton" onclick = "addTreeToUser()">Add</div>
         </div>
       </div>
-      <a class = "sideBarTitle">Search Users!</a>
-      <div class = "sideBarContent">
-        <div class = "sideBarSearch">
-          <input type ="text" value = "" id="searchedUser" list = "sideBarUserSearchResult" onkeypress="searchUsersByName()"><br>
-          <div class = "sideBarButton" onclick = "getPublicUserData()">Find</div>
-        </div>
-      </div>
       <a class = "sideBarTitle">Your Trees</a>
       <div class = "sideBarContent">
         <div id = "treeList">
@@ -51,29 +44,7 @@
       </div>
     </div>
 
-    <div class = "canvas">
-      <canvas id = "pixiCanvas" style = "visibility: hidden;"></canvas>
-      <div id = "creator" style = "display: none;">
-          <center>
-          <p>The name of the new tree</p>
-          <p><input type = "text" id = "treeName"></p>
-          <p>Focus area of the new tree</p>
-          <p><select id = "focusarea">
-              <option value = "People">People</option>
-              <option value = "Engineering">Engineering</option>
-              <option value = "Business">Business</option>
-              <option value = "Communication">Communication</option>
-              <option value = "Support functions">Support functions</option>
-          </select></p>
-          <p>Serch for a skill</p>
-          <p><input type = "text" id = "skillSearch" list = "skillSearchResult" onkeypress="searchSkillsByName()"></p>
-          <p><input type = "button" id = "addToTree" value = "Add skill to tree"></p>
-          <p><select id = "skillList" size = "10">
-          </select></p>
-          <p><input type = "button" id = "createTree" value = "Create tree"></p>
-          </center>
-      </div>
-    </div>
+   
   </div>
 
   <div id = "firstLogin" class = "modal">
