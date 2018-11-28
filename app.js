@@ -1,4 +1,3 @@
-const fs = require('fs');
 const http = require('http');
 const path = require('path');
 const express = require('express');
@@ -136,7 +135,6 @@ app.post('/auth', function(req, res) {
     });
 });
 
-
 //Creating a getRoute thats protected with token, API calls are under /get/...
 var getRoute = express.Router();
 app.use('/get', getRoute);
@@ -198,8 +196,6 @@ getRoute.get('/userdata', function (req, res) {
 });
 
 
-
-
 getRoute.get('/offers', function(req, res) {
 	Skill.findOne({
 		name: req.body.name
@@ -221,7 +217,6 @@ getRoute.get('/offers', function(req, res) {
 	});
 
 });
-
 
 //Creating a setRoute, thats protected with Token. API calls are under /set/...
 var setRoute = express.Router();
@@ -282,7 +277,6 @@ setRoute.post('/newskill', async function(req, res) { // global skill
 		Skill.update({name: data.children[i]}, {$push: {parents: {name: data.name}}}, function (err) {if (err) throw err;});
 	}
 });
-
 
 // Search for users to view by name
 setRoute.post('/searchUsersByName', async function (req, res) {
@@ -437,23 +431,6 @@ async function getDependency (skill, dependency) {
 	}
 }
 
-/*async function getParents (skill, skillFamily) {
-	var parents = [];
-	console.log(skill);
-	for (var i = 0; skill.parents != undefined && i < skill.parents.length; ++i) {
-		var parent = await Skill.findOne({name: skill.parents[i]} , function (err, skill) {
-						if (err) throw err;
-						return skill;
-		});
-
-		parents.push(parent);
-		skillFamily.push(parent);
-	}
-
-	for (var i = 0; i < parents.length; ++i) {
-		getParents(parents[i], skillFamily);
-	}
-}*/
 
 setRoute.post('/newtree', async function (req, res) { // create user tree
 	var data = req.body;
@@ -526,8 +503,6 @@ setRoute.post('/skilldata', function(req, res) {
 		}
 	});
 });
-
-
 
 
 setRoute.post('/firstlogindata', async function (req, res) {

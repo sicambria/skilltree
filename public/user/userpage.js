@@ -86,14 +86,6 @@ function checkFirstLogin() {
     }
 }
 
-/*function toggleSkillDetailsPage() {
-    var modal = document.getElementById('skillpage');
-
-    modal.style.display = "block";
-
-}*/
-
-// ???
 
 function loadAddedTrees(){
   var treeList = document.getElementById('treeList');
@@ -130,7 +122,6 @@ function searchUsersByName(){
   }
   sch.send(JSON.stringify(userToSearch));
 }
-
 
 
 function searchTreesByName(){
