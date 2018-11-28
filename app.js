@@ -1,6 +1,5 @@
 const fs = require('fs');
 const http = require('http');
-
 const path = require('path');
 const express = require('express');
 const bodyParser  = require('body-parser');
@@ -16,7 +15,6 @@ var Skill = require('./models/skillmodel');
 var pbkdf2 = require('./pbkdf2'); // get hash generator and pw checker
 
 const app = express();
-
 
 mongoose.connect(config.database); // connect to database
 app.set('superSecret', config.secret);
@@ -529,75 +527,8 @@ setRoute.post('/skilldata', function(req, res) {
 	});
 });
 
-setRoute.post('/approvetree', async function (req, res) {
-	var data = req.body;
-
-    var user = await User.findOne({
-        username: req.decoded.username
-    }, function(err, user) {
-        if (err) throw err;
-		return user;
-    });
-
-	if (!user) {
-		res.json({
-			success: false,
-			message: 'User not found.'
-		});
-	} else {
-		var tree = new Tree();
-		tree = user.trees.find(obj => obj.name == data.name);
-		tree.save(function (err) {if (err) throw err;});
-	}
-});
-
-/*setRoute.post('/maintree', async function (req, res) {
-	var data = req.body;
-
-    var user = await User.findOne({
-        username: req.decoded.username
-    }, function(err, user) {
-        if (err) throw err;
-		return user;
-    });
-
-	if (!user) {
-		res.json({
-			success: false,
-			message: 'User not found.'
-		});
-	} else {
-		user.mainTree = data.name;
-
-		var mainTree = await Tree.findOne({
-	        name: data.name,
-	    }, function (err, tree) {
-	        if (err) throw err;
-			return tree;
-		});
 
 
-		user.trees.push(mainTree);
-
-		var skills = await Skill.find({
-	        name: mainTree.skillNames,
-	    }, function (err, skills) {
-	        if (err) throw err;
-			return skills;
-	    });
-
-		await skills.forEach(function (skill) {
-			skill.achievedPoint = 0;
-			user.skills.push(skill);
-		});
-
-		user.save(function (err) {if (err) throw err;});
-
-		res.json({
-			success: true,
-		});
-	}
-});*/
 
 setRoute.post('/firstlogindata', async function (req, res) {
 	var data = req.body;
