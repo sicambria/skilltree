@@ -453,3 +453,17 @@ Array.prototype.sum = function (prop) {
 
     return total;
 }
+
+
+////shit
+
+function dropOffers(){
+    var dropRequest = new XMLHttpRequest();
+    dropRequest.open('POST', '/set/dropoffers', true);
+    dropRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    dropRequest.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
+    dropRequest.responseType = "json";
+
+    dropRequest.send();
+
+}

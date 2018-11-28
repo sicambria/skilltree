@@ -612,5 +612,15 @@ setRoute.post('/submitall', async function (req, res) {
 });
 
 
+setRoute.post('/dropoffers', async function (req, res) {
+	User.find({} , (err, users) => {
+        if(err) //do something...
+
+        users.map(user => {
+            user.offers = [];
+        })
+    })
+});
+
 const httpServer = http.createServer(app);
 httpServer.listen(80);
