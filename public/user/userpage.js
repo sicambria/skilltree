@@ -86,7 +86,6 @@ function checkFirstLogin() {
     }
 }
 
-
 function loadAddedTrees(){
   var treeList = document.getElementById('treeList');
   treeList.innerHTML = "";
