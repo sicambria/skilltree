@@ -15,7 +15,7 @@ var pbkdf2 = require('./pbkdf2'); // get hash generator and pw checker
 
 const app = express();
 
-mongoose.connect(config.database); // connect to database
+mongoose.connect(config.database); // connect to database	
 app.set('superSecret', config.secret);
 
 // use body parser so we can get info from POST and/or URL parameters
@@ -613,4 +613,4 @@ setRoute.post('/submitall', async function (req, res) {
 
 
 const httpServer = http.createServer(app);
-httpServer.listen(80);
+httpServer.listen(8080);
