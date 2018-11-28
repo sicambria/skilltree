@@ -3,8 +3,8 @@ function validate() {
 	var username = document.getElementById("username");
 	var password = document.getElementById("password");
 
+	//HTTP request to get the data from the API
 	var httpRequest = new XMLHttpRequest();
-
 	httpRequest.open('POST', '/auth', true);
 	httpRequest.setRequestHeader('Content-type', 'application/json');
 	httpRequest.responseType = "json";
@@ -29,6 +29,7 @@ function validate() {
 	 );
 	}
 
+	//Activate toast
 function showToast() {
 	var toast = document.getElementById("toast");
 
