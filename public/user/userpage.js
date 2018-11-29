@@ -1,5 +1,9 @@
 var data = undefined;
 
+
+function initialize()
+{
+
 // get data from server
 var dataRequest = new XMLHttpRequest();
 dataRequest.open('GET', '/get/userdata', true);
@@ -13,6 +17,10 @@ dataRequest.onreadystatechange = function() {
     }
 }
 dataRequest.send();
+
+}
+
+initialize();
 
 var app = new PIXI.Application({
         view: pixiCanvas,
