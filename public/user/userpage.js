@@ -12,6 +12,9 @@ app = new PIXI.Application({
     autoResize: true
 });
 
+app.stage = new PIXI.display.Stage();
+app.stage.group.enableSort = true;
+
 function initialize()
 {
     
@@ -195,7 +198,7 @@ function logout(){
 
 function startLoader () {
     //empty loader before loading
-    PIXI.loader.destroy();
+    PIXI.loader.reset();
 
     PIXI.loader.add("pictures/skillborder.png")
                 //.add("tree.png")
@@ -211,8 +214,7 @@ function startLoader () {
     
 }
 
-app.stage = new PIXI.display.Stage();
-app.stage.group.enableSort = true;
+
 
 // CHART
 
