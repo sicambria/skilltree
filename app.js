@@ -523,9 +523,8 @@ setRoute.post('/firstlogindata', async function (req, res) {
 	} else {
 		user.mainTree = data.mainTree;
 		if (user.willingToTeach) {
-			user.teachingDay = data.teachingDay;
-			user.teachingTime = data.teachingTime;
 			user.location = data.location;
+			user.contact = data.contact;
 		}
 
 		var mainTree = await Tree.findOne({
@@ -586,9 +585,9 @@ setRoute.post('/submitall', async function (req, res) {
 					if (globalSkill.offers.find(obj => obj.username == user.username) == undefined) {
 						globalSkills.find(obj => obj.name == userSkill.name).offers.push({
 							username: user.username,
-							teachingDay: user.teachingDay,
-							teachingTime: user.teachingTime,
-							achievedPoint: userSkill.achievedPoint,
+							location: user.location,
+							contact: user.contact,
+							achievedPoint: userSkill.achievedPoint
 						});
 					} else globalSkill.offers.find(obj => obj.username == user.username).achievedPoint = userSkill.achievedPoint;
 				} else {

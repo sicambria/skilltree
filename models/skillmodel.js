@@ -19,14 +19,6 @@ module.exports = mongoose.model('Skill', new Schema({
             recommended: Boolean
         }
     ],
-    trainings: [
-        {
-            date: String,
-            level: String,
-            place: String,
-            teacher: String
-        }
-    ],
     offers: [
         {
             username: String,

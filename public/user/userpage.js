@@ -39,14 +39,12 @@ function checkFirstLogin() {
 
         btn.onclick = function() {
             var location = document.getElementById('location').value;
-            var teachingDay = document.getElementById('day').value;
-            var teachingTime = document.getElementById('timeStart').value + ' - ' + document.getElementById('timeEnd').value;
-            var location = document.getElementById('location').value;
+            var contact = document.getElementById('contact').value;
+            
 
             var firstLoginData = {
                     mainTree: mainTree.value,
-                    teachingDay: teachingDay,
-                    teachingTime: teachingTime,
+                    contact: contact,
                     location: location
             };
 
@@ -62,17 +60,6 @@ function checkFirstLogin() {
             saveMain.send(JSON.stringify(firstLoginData));
         }
 
-        /*var span = document.getElementsByClassName("modalClose")[0];
-
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }*/
 
         for (var i = 0; i < data.focusArea.treeNames.length; ++i) {
             var option = document.createElement('option');
