@@ -15,7 +15,7 @@ app = new PIXI.Application({
 function initialize()
 {
     //Making sure we empty the loaded files.
-    PIXI.loader.destroy();
+    app.localLoader.destroy();
     
         // get data from server
         var dataRequest = new XMLHttpRequest();
