@@ -172,7 +172,7 @@ function submit(){
   sub.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
   sub.onreadystatechange = function() {
       if(sub.readyState == 4 && sub.status == 200) {
-        window.open("/user/", "_self");
+        initialize();
       }
   }
 
