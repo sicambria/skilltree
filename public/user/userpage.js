@@ -33,7 +33,7 @@ function initialize()
     dataRequest.send();
 }
 
-//remove loaded files, cuz 
+//Initialize and start the page basically.
 initialize();
 
 
@@ -198,6 +198,7 @@ function logout(){
 }
 
 
+//Loads the image resources for all the users skills.
 function startLoader () {
     //empty loader before loading
     PIXI.loader.reset();
