@@ -14,8 +14,6 @@ app = new PIXI.Application({
 
 function initialize()
 {
-    //Making sure we empty the loaded files.
-    app.localLoader.destroy();
     
         // get data from server
         var dataRequest = new XMLHttpRequest();
@@ -196,6 +194,8 @@ function logout(){
 
 
 function startLoader () {
+    //empty loader before loading
+    PIXI.loader.destroy();
 
     PIXI.loader.add("pictures/skillborder.png")
                 //.add("tree.png")
