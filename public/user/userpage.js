@@ -2,19 +2,21 @@
 var app = undefined;
 var data = undefined;
 
-function initialize()
-{
-    app = new PIXI.Application({
-        view: pixiCanvas,
-        width: window.innerWidth - 160,
-        height: window.innerHeight - 30,
-        backgroundColor: 0x183693,
-        antialias: true,
-        autoStart: false,
-        autoResize: true
+app = new PIXI.Application({
+    view: pixiCanvas,
+    width: window.innerWidth - 160,
+    height: window.innerHeight - 30,
+    backgroundColor: 0x183693,
+    antialias: true,
+    autoStart: false,
+    autoResize: true
 });
 
-
+function initialize()
+{
+    //Making sure we empty the loaded files.
+    PIXI.Loader.destroy();
+    
         // get data from server
         var dataRequest = new XMLHttpRequest();
         dataRequest.open('GET', '/get/userdata', true);
@@ -30,6 +32,7 @@ function initialize()
     dataRequest.send();
 }
 
+//remove loaded files, cuz 
 initialize();
 
 
@@ -191,7 +194,9 @@ function logout(){
     window.open("/", "_self");
 }
 
+
 function startLoader () {
+
     PIXI.loader.add("pictures/skillborder.png")
                 //.add("tree.png")
                 .add("pictures/back.png")
@@ -203,6 +208,7 @@ function startLoader () {
         showTree(data.mainTree);
     });
     loadAddedTrees();
+    
 }
 
 app.stage = new PIXI.display.Stage();
