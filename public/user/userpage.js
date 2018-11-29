@@ -169,6 +169,8 @@ function addTreeToUser(){
   }
   adt.send(JSON.stringify(treeToAdd));
 
+  loadAddedTrees();
+
 }
 
 function submit(){
