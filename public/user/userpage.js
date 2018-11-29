@@ -1,28 +1,10 @@
-var data = undefined;
 
+var app = undefined;
+var data = undefined;
 
 function initialize()
 {
-
-// get data from server
-var dataRequest = new XMLHttpRequest();
-dataRequest.open('GET', '/get/userdata', true);
-dataRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-dataRequest.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
-dataRequest.responseType = "json";
-dataRequest.onreadystatechange = function() {
-    if(dataRequest.readyState == 4 && dataRequest.status == 200) {
-        data = dataRequest.response;
-        checkFirstLogin();
-    }
-}
-dataRequest.send();
-
-}
-
-initialize();
-
-var app = new PIXI.Application({
+    app = new PIXI.Application({
         view: pixiCanvas,
         width: window.innerWidth - 160,
         height: window.innerHeight - 30,
@@ -31,6 +13,26 @@ var app = new PIXI.Application({
         autoStart: false,
         autoResize: true
 });
+
+
+        // get data from server
+        var dataRequest = new XMLHttpRequest();
+        dataRequest.open('GET', '/get/userdata', true);
+        dataRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        dataRequest.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
+        dataRequest.responseType = "json";
+        dataRequest.onreadystatechange = function() {
+            if(dataRequest.readyState == 4 && dataRequest.status == 200) {
+                data = dataRequest.response;
+                checkFirstLogin();
+            }
+        }
+    dataRequest.send();
+}
+
+initialize();
+
+
 
 // TOP BAR
 
@@ -62,7 +64,7 @@ function checkFirstLogin() {
             saveMain.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
             saveMain.onreadystatechange = function() {
                 if(saveMain.readyState == 4 && saveMain.status == 200) {
-                  window.open("/user/", "_self");
+                  initialize();
                 }
             }
             saveMain.send(JSON.stringify(firstLoginData));
