@@ -139,6 +139,7 @@ app.post('/auth', function(req, res) {
 var getRoute = express.Router();
 app.use('/get', getRoute);
 
+//rule that getRoute uses, it requires a valid token stored in the browsers local storage
 getRoute.use(function(req, res, next) {
     var token = req.get('x-access-token');
 
@@ -168,6 +169,8 @@ getRoute.use(function(req, res, next) {
     }
 });
 
+
+//
 getRoute.get('/userdata', function (req, res) {
     User.findOne({
         username: req.decoded.username
@@ -180,17 +183,7 @@ getRoute.get('/userdata', function (req, res) {
                 message: 'User not found.'
             });
         } else if (userdata) {
-			user = userdata.toObject();
-			delete userdata.__v;
-			delete userdata._id;
-			delete userdata.email;
-			delete userdata.hashData;
-
-			if (userdata.mainTree != undefined) { // first login
-				delete userdata.focusArea;
-			}
-
-      		return res.json(userdata);
+			return res.json(userdata);
       	}
     });
 });
