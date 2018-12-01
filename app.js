@@ -243,7 +243,8 @@ setRoute.use(function(req, res, next) {
 
     }
 });
-setRoute.use(express.json());
+
+
 setRoute.post('/newskill', async function(req, res) { // global skill
 	var data = req.body;
 
