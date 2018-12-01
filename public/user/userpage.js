@@ -89,6 +89,7 @@ function checkFirstLogin() {
             saveMain.onreadystatechange = function() {
                 if(saveMain.readyState == 4 && saveMain.status == 200) {
                   initialize();
+                  modal.style.display = "none";
                 }
             }
             saveMain.send(JSON.stringify(firstLoginData));
@@ -145,7 +146,7 @@ sideBarTreeSearchResult.innerHTML = "";
 }
 
 function addTreeToUser(){
-  var treeToAdd = {value: document.getElementById('searchedTree').value};
+  var treeToAdd = document.getElementById('searchedTree').value;
 
   var adt = new XMLHttpRequest();
   adt.open('POST', '/set/addTreeToUser');
