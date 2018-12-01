@@ -124,7 +124,7 @@ function loadAddedTrees(){
 
 
 function searchTreesByName(){
-  var treeToSearch = {value: document.getElementById('searchedTree').value};
+  var treeToSearch = document.getElementById('searchedTree').value;
   var sideBarTreeSearchResult = document.getElementById('sideBarTreeSearchResult');
   
 
