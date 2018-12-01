@@ -137,7 +137,6 @@ function searchTreesByName(){
         }
   });
 
-
 sideBarTreeSearchResult.innerHTML = "";
     for (var i = 0; i < foundTrees.length; i++) {
         var mya = document.createElement('option');

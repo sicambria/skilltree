@@ -223,24 +223,6 @@ setRoute.use(function(req, res, next) {
 });
 
 
-// Search for trees to add while typing
-setRoute.post('/searchTreesByName', async function (req, res) {
-		var data = req.body;
-		var foundTrees = await Tree.find({
-					"name": {$regex : ".*" + data.value + ".*", '$options' : 'i'}
-			}, function (err, tree) {
-					if (err) throw err;
-			return tree;
-		});
-
-		//only giving back the names
-		var resTrees = [];
-		for (var i = 0; i < foundTrees.length; i++) {
-			resTrees[i] = {name: foundTrees[i].name};
-		}
-		res.json(resTrees);
-});
-
 //Add the searched tree to user
 setRoute.post('/addTreeToUser', async function (req, res){
 	var data = req.body;
