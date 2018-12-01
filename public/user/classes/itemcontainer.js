@@ -1,19 +1,16 @@
 class ItemContainer {
-    constructor(app, treeData, userData, treeID, skillID) {
+    constructor(app, skills, skillName) {
         this.app = app;
-        this.treeData = treeData; // only this tree's data
-        this.userData = userData;
-        this.skillData = treeData.skills[skillID];
-        this.skillData.treeID = treeID;
-        this.skillData.skillLevel = this.getSkillLevel(userData, skillID);
+        this.skills = skills;
+        this.skill = skills.find(obj => obj.name == skillName);
 
         //Creating images
-        this.skillicon = new PIXI.Sprite(app.localLoader.resources[this.skillData.skillIcon].texture); //100x100
+        this.skillicon = new PIXI.Sprite(PIXI.loader.resources[this.skill.skillIcon].texture); //100x100
         this.skillborder = new PIXI.Sprite(PIXI.loader.resources["pictures/skillborder.png"].texture); //116x116
         this.tick = new PIXI.Sprite(PIXI.loader.resources["pictures/tick.png"].texture);
 
         //Setting border variables
-        this.skillborder.levelinfo = new PIXI.Text(this.skillData.skillLevel + "/" + this.skillData.maxSkillLevel);
+        this.skillborder.levelinfo = new PIXI.Text(this.skill.achievedPoint + "/" + this.skill.maxPoint);
 
         //Creating details page
         var detailsWidth = 240;
@@ -24,11 +21,11 @@ class ItemContainer {
         this.details = new PIXI.Container();
 
         var detailsForeground = new PIXI.Container();
-        var name = new PIXI.Text(this.skillData.name, {fontSize: nameFontSize, fill: 0x000000});
+        var name = new PIXI.Text(this.skill.name, {fontSize: nameFontSize, fill: 0x000000});
         name.position.set(10, 10);
         detailsForeground.addChild(name);
 
-        var description = new PIXI.Text(this.skillData.description, {fontSize: descriptionFontSize, fill: 0x000000, wordWrap: true, wordWrapWidth: detailsWidth - detailsMargin * 2 });
+        var description = new PIXI.Text(this.skill.description, {fontSize: descriptionFontSize, fill: 0x000000, wordWrap: true, wordWrapWidth: detailsWidth - detailsMargin * 2 });
         description.position.set(detailsMargin, detailsMargin * 2 + nameFontSize);
         detailsForeground.addChild(description);
 
@@ -46,25 +43,31 @@ class ItemContainer {
 
         var btn1 = new PIXI.Sprite(btnG.generateTexture());
 
-        var txt1 = new PIXI.Text("OFFER", {fontSize: 14, fill: 0x000000});
+        var txt1 = new PIXI.Text("TRAINING", {fontSize: 14, fill: 0x000000});
         txt1.anchor.set(0.5, 0.5);
         txt1.position.set(35,13);
 
         var btn1Container = new PIXI.Container();
         btn1Container.addChild(btn1, txt1);
-        btn1Container.position.set(detailsMargin + 20, description.position.y + description.height + 10);
+        btn1Container.position.set(  (detailsWidth - btn1Container.width)/2  , description.position.y + description.height + 10);
         btn1Container.interactive = true;
         btn1Container.buttonMode = true;
-        btn1Container.on('pointerover', function () {
-            btn1.texture = btnGHover.generateTexture();
-            app.renderer.render(app.stage);
-        });
-        btn1Container.on('pointerout', function () {
-            btn1.texture = btnG.generateTexture();
-            app.renderer.render(app.stage);
-        });
+        btn1Container.parentObj = this;
+        btn1Container
+                .on('pointerover', function () {
+                        btn1.texture = btnGHover.generateTexture();
+                        app.renderer.render(app.stage);
+                        })
+                .on('pointerout', function () {
+                        btn1.texture = btnG.generateTexture();
+                        app.renderer.render(app.stage);
+                        })
+                .on('click', function () {
+                        this.parentObj.toggleSkillDetailsPage();
+                        });
         detailsForeground.addChild(btn1Container);
 
+        /*
         var btn2 = new PIXI.Sprite(btnG.generateTexture());
 
         var txt2 = new PIXI.Text("REQUEST", {fontSize: 14, fill: 0x000000});
@@ -85,14 +88,14 @@ class ItemContainer {
             app.renderer.render(app.stage);
         });
         detailsForeground.addChild(btn2Container);
-
-        // Temporary link
-        if (skillID == 0) {
+        */
+        /*// Temporary link
+        if (skillName == 0) {
             var link = new Link("Nokia website", "https://nokia.com", {fontSize: 12, fill: 0x0000ff}, true);
             link.position.set(detailsMargin, btn1Container.position.y + btn1Container.height + 7);
             detailsForeground.addChild(link);
         }
-        //
+        //*/
 
         var detailsBackground = new PIXI.Graphics();
         detailsBackground.beginFill(0xffffff);
@@ -105,6 +108,7 @@ class ItemContainer {
         //Initilaizing container
         this.container = new PIXI.Container();
         this.container.addChild(this.skillicon);
+
         this.container.addChild(this.tick);
         this.container.addChild(this.skillborder);
         this.container.addChild(this.skillborder.levelinfo);
@@ -125,7 +129,7 @@ class ItemContainer {
         this.details.position.set(116, 0);
 
         // if it's already maxed out add the tick
-        if (this.skillData.skillLevel == this.skillData.maxSkillLevel) {
+        if (this.skill.achievedPoint == this.skill.maxPoint) {
             //this.skillborder.filters = [new PIXI.filters.GlowFilter(10, 4, 4, 0xFF4000, 1)];
             this.tick.alpha = 1;
         } else this.tick.alpha = 0;
@@ -149,138 +153,70 @@ class ItemContainer {
             .on('pointerout', this.onButtonOut);
     }
 
+
+
     onClick(event) {
         if (!event.drag) {
-            // Enable children which doesn't have other parents with 0 skill level
-            var children = this.parentObj.skillData.children;
-
-            this.parentObj.toggleChildren(children, true);
+            var children = this.parentObj.skill.children;
 
             // Increase skill level
-            if (this.parentObj.skillData.skillLevel < this.parentObj.skillData.maxSkillLevel) {
-                this.parentObj.skillData.skillLevel++;
-                this.levelinfo.text = (this.parentObj.skillData.skillLevel + "/" + this.parentObj.skillData.maxSkillLevel);
-                if (this.parentObj.skillData.skillLevel == this.parentObj.skillData.maxSkillLevel) {
-                    //this.filters = [new PIXI.filters.GlowFilter(10, 4, 4, 0xFF4000, 1)];
-                    //this.parentObj.container.removeChild(this.parentObj.details);
+            if (this.parentObj.skill.achievedPoint < this.parentObj.skill.maxPoint) {
+                this.parentObj.skill.achievedPoint++;
+                this.levelinfo.text = (this.parentObj.skill.achievedPoint + "/" + this.parentObj.skill.maxPoint);
+                if (this.parentObj.skill.achievedPoint == this.parentObj.skill.maxPoint) {
                     this.parentObj.tick.alpha = 1;
                     this.parentObj.skillborder.filters = null;
                 }
-           
 
-                //save level change
-                if (this.parentObj.userData.skills.find(obj => obj.skillID == this.parentObj.skillData.skillID) == undefined) {
-                    this.parentObj.userData.skills.push({skillID: this.parentObj.skillData.skillID, skillLevel: 0});
-                }
-                this.parentObj.userData.skills.find(obj => obj.skillID == this.parentObj.skillData.skillID).skillLevel++;
-
-                // sending new skillLevel to server
-                /*var httpRequest = new XMLHttpRequest();
-                var data = new Array();
-                data.push({treeID: this.parentObj.skillData.treeID, skillID: this.parentObj.skillData.skillID, skillLevel: this.parentObj.skillData.skillLevel});
-
-                httpRequest.open('POST', '/set/skilllevel', true);
-                httpRequest.setRequestHeader('Content-type', 'application/json');
-                httpRequest.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
-
-                httpRequest.onreadystatechange = function() {
-                    if(httpRequest.readyState == 4 && httpRequest.status == 200) {
-                        this.parentObj.app.renderer.render(this.parentObj.app.stage);
-                    }
-                }
-                httpRequest.send(JSON.stringify(data));*/
+                //save level change (kell?)
+                //this.parentObj.skills.find(obj => obj.name == this.parentObj.skill.name).achievedPoint++;
             }
 
             this.parentObj.app.renderer.render(this.parentObj.app.stage);
+            this.parentObj.refreshAvaliability();
         }
     }
 
     onRightClick() {
-        // Disable children which doesn't have other parents with 0 skill level
-        if (this.parentObj.skillData.skillLevel == 1) {
-            var children = this.parentObj.skillData.children;
+        var children = this.parentObj.skill.children;
 
-            this.parentObj.toggleChildren(children, false);
-        }
 
         // Decrease skill level
-        if(this.parentObj.skillData.skillLevel > 0)
+        if(this.parentObj.skill.achievedPoint > 0)
         {
-            this.parentObj.skillData.skillLevel--;
-            this.levelinfo.text = (this.parentObj.skillData.skillLevel + "/" + this.parentObj.skillData.maxSkillLevel);
+            this.parentObj.skill.achievedPoint--;
+            this.levelinfo.text = (this.parentObj.skill.achievedPoint + "/" + this.parentObj.skill.maxPoint);
 
-            //save level change
-            this.parentObj.userData.skills.find(obj => obj.skillID == this.parentObj.skillData.skillID).skillLevel--;
-
-            // sending new skillLevel to server
-            var httpRequest = new XMLHttpRequest();
-            var data = new Array();
-            data.push({treeID: this.parentObj.skillData.treeID, skillID: this.parentObj.skillData.skillID, skillLevel: this.parentObj.skillData.skillLevel});
-
-            httpRequest.open('POST', '/set/skilllevel', true);
-            httpRequest.setRequestHeader('Content-type', 'application/json');
-            httpRequest.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
-
-            httpRequest.onreadystatechange = function() {
-                if(httpRequest.readyState == 4 && httpRequest.status == 200) {
-                    this.parentObj.app.renderer.render(this.parentObj.app.stage);
-                }
-            }
-            httpRequest.send(JSON.stringify(data));
         } else return;
         this.parentObj.tick.alpha = 0;
         this.filters = [new PIXI.filters.GlowFilter(10,4,4, 0xFFBF00, 1)];
 
         this.parentObj.app.renderer.render(this.parentObj.app.stage);
+        this.parentObj.refreshAvaliability();
     }
 
-    toggleChildren (children, enable) {
-        if (children !== undefined) {
-            for (var k = 0; k < children.length; ++k) {
-                var child = this.treeData.skills[children[k].skillID];
-
-                if (enable) {
-                    for (var j = 0; child.zeroSLParents !== undefined && j < child.zeroSLParents.length; ++j) {
-                        if (child.zeroSLParents[j].skillID == this.skillData.skillID) {
-                            child.zeroSLParents.splice(j, 1);
-
-                            if (child.zeroSLParents.length == 0) {
-                                child.itemcontainer.container.filters = null;
-                                child.itemcontainer.container.interactive = true;
-                                child.itemcontainer.skillborder.interactive = true;
-                                child.itemcontainer.skillborder.buttonMode = true;
-                            }
-                        }
-                    }
-                } else {
-                    if (child.zeroSLParents === undefined) {
-                        child.zeroSLParents = new Array();
-                    }
-
-                    if (child.zeroSLParents.length <= 1) {
-                        var colorMatrixFilter = new PIXI.filters.ColorMatrixFilter;
-                        colorMatrixFilter.brightness(0.4);
-                        child.itemcontainer.container.filters = [colorMatrixFilter];
-                        child.itemcontainer.container.interactive = false;
-                        child.itemcontainer.skillborder.interactive = false;
-                        child.itemcontainer.skillborder.buttonMode = false;
-                    }
-
-                    var newParent = true;
-                    for (var j = 0; j < child.zeroSLParents.length; ++j) {
-                        if (child.zeroSLParents[j].skillID == this.skillData.skillID) {
-                            newParent = false;
-                        }
-                    }
-                    if (newParent) {
-                        var parent = {skillID: this.skillData.skillID};
-                        child.zeroSLParents.push(parent);
-                    }
-                }
-
-                this.toggleChildren (child.children, enable)
+    refreshAvaliability(){
+      for (var i = 0; i < this.skills.length; i++) {
+        for (var j = 0; j < this.skills[i].parents.length; j++) {
+          var par = this.skills.find(obj => obj.name == this.skills[i].parents[j]);
+          if(par !== undefined){
+            if(par.children.find(obj => obj.name == this.skills[i].name).minPoint > par.achievedPoint || par.itemcontainer.container.interactive == false){
+              var colorMatrixFilter = new PIXI.filters.ColorMatrixFilter;
+              colorMatrixFilter.brightness(0.4);
+              this.skills[i].itemcontainer.container.filters = [colorMatrixFilter];
+              this.skills[i].itemcontainer.container.interactive = false;
+              this.skills[i].itemcontainer.skillborder.interactive = false;
+              this.skills[i].itemcontainer.skillborder.buttonMode = false;
             }
+            else{
+              this.skills[i].itemcontainer.container.filters = null;
+              this.skills[i].itemcontainer.container.interactive = true;
+              this.skills[i].itemcontainer.skillborder.interactive = true;
+              this.skills[i].itemcontainer.skillborder.buttonMode = true;
+            }
+          }
         }
+      }
     }
 
     onButtonOver() {
@@ -294,7 +230,7 @@ class ItemContainer {
 
         this.parentObj.app.renderer.render(this.parentObj.app.stage);
 
-        if(this.parentObj.skillData.skillLevel == this.parentObj.skillData.maxSkillLevel) return;
+        if (this.parentObj.skill.achievedPoint == this.parentObj.skill.maxPoint) return;
         skillborder.filters = [new PIXI.filters.GlowFilter(10,4,4, 0xFFBF00, 1)];
 
         this.parentObj.app.renderer.render(this.parentObj.app.stage);
@@ -310,11 +246,12 @@ class ItemContainer {
 
         this.parentObj.app.renderer.render(this.parentObj.app.stage);
 
-        if(this.parentObj.skillData.skillLevel == this.parentObj.skillData.maxSkillLevel) return;
+        if (this.parentObj.skill.achievedPoint == this.parentObj.skill.maxPoint) return;
         skillborder.filters = null;
 
         this.parentObj.app.renderer.render(this.parentObj.app.stage);
     }
+
 
     enable () {
         this.container.filters = null;
@@ -336,10 +273,130 @@ class ItemContainer {
         this.app.renderer.render(this.app.stage);
     }
 
-    getSkillLevel (userData, skillID) {
-        if (userData != undefined) {
-            if (userData.skills.find(obj => obj.skillID == skillID) != undefined) return userData.skills.find(obj => obj.skillID == skillID).skillLevel;
-            else return 0;
-        } else return 0;
+    toggleSkillDetailsPage(){
+        var modal = document.getElementById('skillpage');
+        var header = document.getElementById('skillnameHeader');
+        var span = document.getElementsByClassName("modalClose")[0];
+
+
+        var allLoaded = 0;
+        //HTTP Request for offer data
+        var offerHttpRequest = new XMLHttpRequest();
+            offerHttpRequest.open('POST', '/set/skilldata', true);
+            offerHttpRequest.setRequestHeader('Content-type', 'application/json');
+            offerHttpRequest.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
+            offerHttpRequest.responseType = "json";
+
+				//Listener, if response comes, it runs.
+				offerHttpRequest.onreadystatechange = function() {
+		    		if(offerHttpRequest.readyState == 4 && offerHttpRequest.status == 200) {
+						if (offerHttpRequest.response !== undefined) {
+                            //Got the offer data, fill the offers table
+
+                            //Initialize table variables
+                            var globalskill = offerHttpRequest.response;
+                            var offerTable = document.getElementById('offerTableBody');
+
+                            //Empty the table
+                            offerTable.innerHTML = "";
+
+                            
+                            offerTable.appendChild( createTableRow( "Name", 
+                                                                    "Contact", 
+                                                                    "Location", 
+                                                                    "Skill Level",
+                                                                    "divTableHead") );
+
+                            
+                            //Filling the table
+                            for(var i=0; i<globalskill.offers.length; i++ )
+                                {
+                                if(true) //TODO, only higher level offers should appear
+                                    {
+                                    offerTable.appendChild( createTableRow( globalskill.offers[i].username, 
+                                                                            globalskill.offers[i].contact, 
+                                                                            globalskill.offers[i].location, 
+                                                                            globalskill.offers[i].achievedPoint,
+                                                                            "divTableCell") );
+                                    }
+                                }
+                            //Checking that the table is done (1 table out of 3)
+                            allLoaded ++;
+
+                            //Display the tables Window if all table has been loaded
+                            displayWindow();
+
+						} else console.log("apád");
+					}
+				}
+
+				offerHttpRequest.send(
+					JSON.stringify({
+						name: this.skill.name
+					})
+				);
+
+
+
+        //Adding
+        var trainingTable = document.getElementById('trainingTableBody');
+        
+        var requestTable = document.getElementById('requestTableBody');
+
+
+        
+
+        function createTableRow( data1, data2, data3, data4, styleClass )
+        {
+            //Creating an offer tablerow
+            var Row = document.createElement('div');
+            Row.className = "divTableRow";
+
+            var Column1 = document.createElement('div');
+            Column1.className = styleClass;
+            Column1.innerHTML = data1;
+
+            var Column2 = document.createElement('div');
+            Column2.className = styleClass;
+            Column2.innerHTML = data2;
+
+            var Column3 = document.createElement('div');
+            Column3.className = styleClass;
+            Column3.innerHTML = data3;
+
+            var Column4 = document.createElement('div');
+            Column4.className = styleClass;
+            Column4.innerHTML = data4;
+
+            Row.appendChild(Column1);
+            Row.appendChild(Column2);
+            Row.appendChild(Column3);
+            Row.appendChild(Column4);
+
+            return Row;
+        }
+        
+        header.innerText = this.skill.name;
+
+        
+        
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        //  When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        function displayWindow(){
+            if(allLoaded == 1)
+                modal.style.display = "block";
+        }
+    
+        
     }
 }
