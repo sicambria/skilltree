@@ -141,7 +141,7 @@ function searchTreesByName(){
 sideBarTreeSearchResult.innerHTML = "";
     for (var i = 0; i < foundTrees.length; i++) {
         var mya = document.createElement('option');
-        mya.value = foundTrees[i].name;
+        mya.value = foundTrees[i];
         sideBarTreeSearchResult.appendChild(mya);
     }
 
