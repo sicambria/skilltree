@@ -127,30 +127,25 @@ function searchTreesByName(){
   var treeToSearch = document.getElementById('searchedTree').value;
   var sideBarTreeSearchResult = document.getElementById('sideBarTreeSearchResult');
   
-
   var foundTrees = [];
   trees.forEach(function(tree) {
     if( tree.name.toLowerCase().includes( treeToSearch.toLowerCase() ) )
         {
+            console.log(tree.name.toLowerCase() + " " + treeToSearch.toLowerCase() );
             foundTrees.push(tree.name);
+            console.log(tree.name)
         }
   });
 
-  console.log(foundTrees.length);
 
+sideBarTreeSearchResult.innerHTML = "";
+    for (var i = 0; i < foundTrees.length; i++) {
+        var mya = document.createElement('option');
+        mya.value = foundTrees[i].name;
+        sideBarTreeSearchResult.appendChild(mya);
+    }
 
-    sideBarTreeSearchResult.innerHTML = "";
-        for (var i = 0; i < foundTrees.length; i++) {
-            console.log("asd");
-          var mya = document.createElement('option');
-          mya.value = foundTrees[i].name;
-          sideBarTreeSearchResult.appendChild(mya);
-        }
-
-
-
- 
-  }
+}
 
 function addTreeToUser(){
   var treeToAdd = {value: document.getElementById('searchedTree').value};
