@@ -102,27 +102,6 @@ function loadAddedTrees(){
   }
 }
 
-function searchUsersByName(){
-  var userToSearch = {value: document.getElementById('searchedUser').value};
-  var sideBarUserSearchResult = document.getElementById('sideBarUserSearchResult');
-  var sch = new XMLHttpRequest();
-  sch.open('POST', '/set/searchUsersByName', true);
-  sch.setRequestHeader('Content-type', 'application/json');
-  sch.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
-  sch.responseType = "json";
-  sch.onreadystatechange = function() {
-      if(sch.readyState == 4 && sch.status == 200) {
-        sideBarUserSearchResult.innerHTML = "";
-        for (var i = 0; i < sch.response.length; i++) {
-          var mya = document.createElement('option');
-          mya.value = sch.response[i].name;
-          sideBarUserSearchResult.appendChild(mya);
-        }
-      }
-  }
-  sch.send(JSON.stringify(userToSearch));
-}
-
 
 function searchTreesByName(){
   var treeToSearch = {value: document.getElementById('searchedTree').value};
@@ -422,30 +401,7 @@ function showTree (treeName) {
 }
 
 
-
-function searchSkillsByName(){
-    var skillToSearch = {value: document.getElementById('skillSearch').value};
-    var skillSearchResult = document.getElementById('skillSearchResult');
-    var sch = new XMLHttpRequest();
-    sch.open('POST', '/set/searchSkillsByName', true);
-    sch.setRequestHeader('Content-type', 'application/json');
-    sch.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
-    sch.responseType = "json";
-    sch.onreadystatechange = function() {
-        if(sch.readyState == 4 && sch.status == 200) {
-            skillSearchResult.innerText = "";
-            for (var i = 0; i < sch.response.length; i++) {
-                var mya = document.createElement('option');
-                mya.value = sch.response[i].name;
-                skillSearchResult.appendChild(mya);
-            }
-        }
-    }
-    sch.send(JSON.stringify(skillToSearch));
-}
-
 // helper functions
-
 function parseJwt (token) {
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace('-', '+').replace('_', '/');
