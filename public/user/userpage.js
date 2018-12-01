@@ -146,7 +146,7 @@ sideBarTreeSearchResult.innerHTML = "";
 }
 
 function addTreeToUser(){
-  var treeToAdd = document.getElementById('searchedTree').value;
+  var treeToAdd = { name : document.getElementById('searchedTree').value };
 
   var adt = new XMLHttpRequest();
   adt.open('POST', '/set/addTreeToUser');
