@@ -43,9 +43,9 @@ function initialize()
         treeRequest.onreadystatechange = function() {
             if(treeRequest.readyState == 4 && treeRequest.status == 200) {
                 trees = treeRequest.response;
-                for(var j=0;j<trees.name.length;j++)
+                for(var j=0;j<trees.length;j++)
                 {
-                    console.log(trees.name[i]);
+                    console.log(trees[i].name);
                 }
                 i++;
                 if(i==2) checkFirstLogin();
