@@ -127,12 +127,16 @@ function searchTreesByName(){
   var treeToSearch = {value: document.getElementById('searchedTree').value};
   var sideBarTreeSearchResult = document.getElementById('sideBarTreeSearchResult');
   
-  var foundTrees = trees.find({
-        "name": {$regex : ".*" + data.value + ".*", '$options' : 'i'}
-    }, function (err, tree) {
-        if (err) throw err;
-        return tree;
-    });
+
+  var foundTrees = [];
+  trees.forEach(function(tree) {
+    if(tree.name == {$regex : ".*" + treeToSearch + ".*", '$options' : 'i'} )
+        {
+            foundTrees.push(tree.name);
+        }
+  });
+
+
 
     sideBarTreeSearchResult.innerHTML = "";
         for (var i = 0; i < foundTrees.length; i++) {
