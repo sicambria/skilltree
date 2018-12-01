@@ -225,14 +225,14 @@ setRoute.use(function(req, res, next) {
 
 //Add the searched tree to user
 setRoute.post('/addTreeToUser', async function (req, res){
-	var data = req.body;
+	
 	var user = await User.findOne({
 			username: req.decoded.username
 	}, function(err, user) {
 			if (err) throw err;
 	return user;
 	});
-	var tree = await Tree.findOne({"name": data.value},  function (err, tree) {
+	var tree = await Tree.findOne({"name": req.body.name},  function (err, tree) {
 		if (err) throw err;
 		return tree;
 	});
