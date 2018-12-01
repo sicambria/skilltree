@@ -136,14 +136,18 @@ function searchTreesByName(){
         }
   });
 
+  console.log(foundTrees.length);
 
 
     sideBarTreeSearchResult.innerHTML = "";
         for (var i = 0; i < foundTrees.length; i++) {
+            console.log("asd");
           var mya = document.createElement('option');
           mya.value = foundTrees[i].name;
           sideBarTreeSearchResult.appendChild(mya);
         }
+
+
 
  
   }
