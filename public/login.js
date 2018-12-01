@@ -30,7 +30,7 @@ function validate() {
 	}
 
 	//Activate toast
-function showToast() {
+	function showToast() {
 	var toast = document.getElementById("toast");
 
 	toast.className = "show";
