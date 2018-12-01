@@ -169,7 +169,6 @@ getRoute.use(function(req, res, next) {
     }
 });
 
-
 //get the logged in users data, using the token
 getRoute.get('/userdata', function (req, res) {
     User.findOne({
@@ -188,13 +187,12 @@ getRoute.get('/userdata', function (req, res) {
     });
 });
 
-
 //Creating a setRoute, thats protected with Token. API calls are under /set/...
 var setRoute = express.Router();
 setRoute.use(express.json());
 app.use('/set', setRoute);
 
-//the token validation, runs each time a setRoute post,get is used
+//the token validation, runs each time a setRoute post is used
 setRoute.use(function(req, res, next) {
     var token = req.get('x-access-token');
 
@@ -308,6 +306,16 @@ setRoute.post('/skilldata', function(req, res) {
 			});
 		} else if (skilldata) {
 			return res.json(skilldata);
+		}
+	});
+});
+
+//Getting tree datas for search
+setRoute.post('/treedata', function(req, res) {
+	Tree.find( {}, async function(err, trees) {
+		if(err) throw err;
+		else {
+			return res.json(trees);
 		}
 	});
 });

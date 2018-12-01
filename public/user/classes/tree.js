@@ -50,12 +50,7 @@ class Tree {
         this.drawConnectionLines();
     }
 
-    // not ready yet
-    // this needs to be in an array, that parses through
-    // the parents of the addedSkill, and we have to cover
-    // the cases of the added skill being a root skill or
-    // being in a new line.
-
+    
     insertSkill(addedSkill)
     {
       this.skills.splice(
@@ -108,53 +103,4 @@ class Tree {
 
         app.stage.addChild(new PIXI.display.Layer(connectionGroup));
     }
-
-    /*onDragStart(event) {
-        event.drag = false;
-        var obj = event.currentTarget;
-        obj.dragData = event.data;
-        obj.dragging = 1;
-        obj.dragPointerStart = event.data.getLocalPosition(obj.parent);
-        obj.dragObjStart = new PIXI.Point();
-        obj.dragObjStart.copy(obj.position);
-        obj.dragGlobalStart = new PIXI.Point();
-        obj.dragGlobalStart.copy(event.data.global);
-
-        app.start();
-    }
-
-    // not sure if we need dragging
-    onDragEnd(event) {
-        var obj = event.currentTarget;
-        if (!obj.dragging) return;
-
-        obj.dragging = 0;
-        obj.dragData = null;
-
-        app.stop();
-    }
-
-    onDragMove(event) {
-        var obj = event.currentTarget;
-        if (!obj.dragging) return;
-        var data = obj.dragData;
-        if (obj.dragging == 1) {
-
-            // click or drag?
-            if (Math.abs(data.global.x - obj.dragGlobalStart.x) +
-                Math.abs(data.global.y - obj.dragGlobalStart.y) >= 5) {
-                // DRAG
-                obj.dragging = 2;
-            }
-        }
-        if (obj.dragging == 2) {
-            event.drag = true;
-            var dragPointerEnd = data.getLocalPosition(obj.parent);
-            // DRAG
-            obj.position.set(
-                obj.dragObjStart.x + (dragPointerEnd.x - obj.dragPointerStart.x),
-                obj.dragObjStart.y + (dragPointerEnd.y - obj.dragPointerStart.y)
-            );
-        }
-    }*/
 }

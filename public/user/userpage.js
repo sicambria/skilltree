@@ -1,6 +1,7 @@
 
 var app = undefined;
 var data = undefined;
+var trees = undefined;
 
 app = new PIXI.Application({
     view: pixiCanvas,
@@ -17,20 +18,42 @@ app.stage.group.enableSort = true;
 
 function initialize()
 {
-    
+        var i = 0;
         // get data from server
         var dataRequest = new XMLHttpRequest();
         dataRequest.open('GET', '/get/userdata', true);
-        dataRequest.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        dataRequest.setRequestHeader('Content-type', 'application/json');
         dataRequest.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
         dataRequest.responseType = "json";
         dataRequest.onreadystatechange = function() {
             if(dataRequest.readyState == 4 && dataRequest.status == 200) {
                 data = dataRequest.response;
-                checkFirstLogin();
+
+                i++;
+                if(i==2) checkFirstLogin();
             }
         }
-    dataRequest.send();
+        dataRequest.send();
+
+        var treeRequest = new XMLHttpRequest();
+        treeRequest.open('POST', '/set/treedata', true);
+        treeRequest.setRequestHeader('Content-type', 'application/json');
+        treeRequest.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
+        treeRequest.responseType = "json";
+        treeRequest.onreadystatechange = function() {
+            if(treeRequest.readyState == 4 && treeRequest.status == 200) {
+                trees = treeRequest.response;
+                for(var j=0;j<trees.name.length;j++)
+                {
+                    console.log(trees.name[i]);
+                }
+                i++;
+                if(i==2) checkFirstLogin();
+            }
+        }
+        treeRequest.send();
+
+        
 }
 
 //Initialize and start the page basically.
@@ -44,9 +67,10 @@ initialize();
 var tokenPayload = parseJwt(localStorage.getItem("loginToken"));
 document.getElementById("welcome").innerText = "Hello " + tokenPayload.username + "!";
 
+
 function checkFirstLogin() {
-    if (data.mainTree != undefined) startLoader();
-    else {
+    if (data.mainTree != undefined) startLoader(); 
+    else {      //if its first login window pops up for iformation
         var modal = document.getElementById('firstLogin');
         var btn = document.getElementById('savebtn');
         var mainTree = document.getElementById('maintree');

@@ -43,7 +43,7 @@ class ItemContainer {
 
         var btn1 = new PIXI.Sprite(btnG.generateTexture());
 
-        var txt1 = new PIXI.Text("TRAINING", {fontSize: 14, fill: 0x000000});
+        var txt1 = new PIXI.Text("OFFERS", {fontSize: 14, fill: 0x000000});
         txt1.anchor.set(0.5, 0.5);
         txt1.position.set(35,13);
 
@@ -67,35 +67,6 @@ class ItemContainer {
                         });
         detailsForeground.addChild(btn1Container);
 
-        /*
-        var btn2 = new PIXI.Sprite(btnG.generateTexture());
-
-        var txt2 = new PIXI.Text("REQUEST", {fontSize: 14, fill: 0x000000});
-        txt2.anchor.set(0.5, 0.5);
-        txt2.position.set(35, 13);
-
-        var btn2Container = new PIXI.Container();
-        btn2Container.addChild(btn2, txt2);
-        btn2Container.position.set(detailsWidth - detailsMargin - 20 - btn2Container.width, description.position.y + description.height + 10);
-        btn2Container.interactive = true;
-        btn2Container.buttonMode = true;
-        btn2Container.on('pointerover', function () {
-            btn2.texture = btnGHover.generateTexture();
-            app.renderer.render(app.stage);
-        });
-        btn2Container.on('pointerout', function () {
-            btn2.texture = btnG.generateTexture();
-            app.renderer.render(app.stage);
-        });
-        detailsForeground.addChild(btn2Container);
-        */
-        /*// Temporary link
-        if (skillName == 0) {
-            var link = new Link("Nokia website", "https://nokia.com", {fontSize: 12, fill: 0x0000ff}, true);
-            link.position.set(detailsMargin, btn1Container.position.y + btn1Container.height + 7);
-            detailsForeground.addChild(link);
-        }
-        //*/
 
         var detailsBackground = new PIXI.Graphics();
         detailsBackground.beginFill(0xffffff);
