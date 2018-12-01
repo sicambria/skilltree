@@ -311,6 +311,25 @@ setRoute.post('/addTreeToUser', async function (req, res){
 	}
 });
 
+
+//Gettig skill data from the given username on request body, used in itemcotainer
+setRoute.post('/skilldata', function(req, res) {
+	Skill.findOne({
+		name: req.body.name
+	}, async function(err, skilldata) {
+		if(err) throw err;
+
+		if(!skilldata){
+			escape.json({
+				succes: false,
+				message: 'Skill not found.'
+			});
+		} else if (skilldata) {
+			return res.json(skilldata);
+		}
+	});
+});
+
 //Initializing user at first login
 setRoute.post('/firstlogindata', async function (req, res) {
 	var data = req.body;
