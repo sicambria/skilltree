@@ -180,6 +180,7 @@ function submit(){
   sub.onreadystatechange = function() {
       if(sub.readyState == 4 && sub.status == 200) {
         initialize();
+        alert("Saved succesfully!");
       }
   }
 
