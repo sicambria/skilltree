@@ -127,7 +127,7 @@ function searchTreesByName(){
   var treeToSearch = {value: document.getElementById('searchedTree').value};
   var sideBarTreeSearchResult = document.getElementById('sideBarTreeSearchResult');
   
-  var foundTrees = await Tree.find({
+  var foundTrees = trees.find({
         "name": {$regex : ".*" + data.value + ".*", '$options' : 'i'}
     }, function (err, tree) {
         if (err) throw err;
