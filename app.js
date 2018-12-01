@@ -201,8 +201,6 @@ getRoute.get('/offers', function(req, res) {
 				message: 'User not found.'
 			});
 		} else if (skilldata) {
-			skill = skilldata.toObject();
-
 			return res.json(skilldata);
 		}
 
