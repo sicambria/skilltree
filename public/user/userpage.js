@@ -133,7 +133,7 @@ function searchTreesByName(){
         {
             console.log(tree.name.toLowerCase() + " " + treeToSearch.toLowerCase() );
             foundTrees.push(tree.name);
-            console.log(tree.name)
+            console.log(tree.name);
         }
   });
 
