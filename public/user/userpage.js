@@ -45,7 +45,7 @@ function initialize()
                 trees = treeRequest.response;
                 for(var j=0;j<trees.length;j++)
                 {
-                    console.log(trees[i].name);
+                    console.log(trees[j].name);
                 }
                 i++;
                 if(i==2) checkFirstLogin();
