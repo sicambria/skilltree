@@ -243,48 +243,6 @@ setRoute.use(function(req, res, next) {
 });
 
 
-setRoute.post('/newskill', async function(req, res) { // global skill
-	var data = req.body;
-
-	var newSkill = new Skill({
-		name: data.name,
-		description: data.description,
-		categoryName: data.categoryName,
-		skillIcon: data.skillIcon,
-		maxPoint: data.maxPoint,
-		parents: data.parents,
-		children: data.children
-	});
-
-	var id;
-	await newSkill.save(function(err, skill) {
-		if (err) throw err;
-	});
-
-	for (var i = 0; i < data.parents.length; ++i) {
-		Skill.update({name: data.parents[i].name}, {$push: {children: {name: data.name, minPoint: data.parents[i].minPoint}}}, function (err) {if (err) throw err;});
-	}
-
-	for (var i = 0; i < data.children.length; ++i) {
-		Skill.update({name: data.children[i]}, {$push: {parents: {name: data.name}}}, function (err) {if (err) throw err;});
-	}
-});
-
-// Search for users to view by name
-setRoute.post('/searchUsersByName', async function (req, res) {
-		var data = req.body;
-		var foundUsers = await User.find({
-					"username": {$regex : ".*" + data.value + ".*", '$options' : 'i'}
-			}, function (err, user) {
-					if (err) throw err;
-			return user;
-		});
-		var resUsers = [];
-		for (var i = 0; i < foundUsers.length; i++) {
-			resUsers[i] = {name: foundUsers[i].username};
-		}
-		res.json(resUsers);
-});
 
 // Search for trees to add while typing
 setRoute.post('/searchTreesByName', async function (req, res) {
