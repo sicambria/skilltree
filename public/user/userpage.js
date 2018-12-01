@@ -224,7 +224,6 @@ function startLoader () {
 // CHART
 
 document.getElementById("openchart").onclick = showChart;
-
 var chartContainer = new PIXI.Container();
 
 function showChart() {
@@ -286,27 +285,6 @@ function showChart() {
 
         tempContainer.addChild(innerSlice);
 
-
-        //Clickabke slices ----------------------------
-        /*sliceContainer[i].buttonMode = true;
-        sliceContainer[i].interactive = true;
-
-        sliceContainer[i]
-                    .on('pointerover', function() {
-                        this.alpha = 0.75;
-                        app.renderer.render(app.stage);
-                    })
-                    .on('pointerout', function() {
-                        this.alpha = 1;
-                        app.renderer.render(app.stage);
-                    })
-                    .on('pointerdown', function() {
-                        hideChart();
-                        showTree(this.id);
-                    });*/
-
-        // creates tree name at the chart
-        //var text = new PIXI.Text(treeData.find(obj => obj.treeID == userData[i].treeID).treeName, {fill: '#ffffff', wordWrap: true, wordWrapWidth: 200, align: 'center'});
 
         //Write category names
         var text = new PIXI.Text(data.categories[i].name, {fill: '#ffffff', wordWrap: true, wordWrapWidth: 200, align: 'center'});
