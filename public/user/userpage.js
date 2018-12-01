@@ -43,10 +43,6 @@ function initialize()
         treeRequest.onreadystatechange = function() {
             if(treeRequest.readyState == 4 && treeRequest.status == 200) {
                 trees = treeRequest.response;
-                for(var j=0;j<trees.length;j++)
-                {
-                    console.log(trees[j].name);
-                }
                 i++;
                 if(i==2) checkFirstLogin();
             }
@@ -130,23 +126,23 @@ function loadAddedTrees(){
 function searchTreesByName(){
   var treeToSearch = {value: document.getElementById('searchedTree').value};
   var sideBarTreeSearchResult = document.getElementById('sideBarTreeSearchResult');
-  var sch = new XMLHttpRequest();
-  sch.open('POST', '/set/searchTreesByName', true);
-  sch.setRequestHeader('Content-type', 'application/json');
-  sch.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
-  sch.responseType = "json";
-  sch.onreadystatechange = function() {
-      if(sch.readyState == 4 && sch.status == 200) {
-        sideBarTreeSearchResult.innerHTML = "";
-        for (var i = 0; i < sch.response.length; i++) {
+  
+  var foundTrees = await Tree.find({
+        "name": {$regex : ".*" + data.value + ".*", '$options' : 'i'}
+    }, function (err, tree) {
+        if (err) throw err;
+        return tree;
+    });
+
+    sideBarTreeSearchResult.innerHTML = "";
+        for (var i = 0; i < foundTrees.length; i++) {
           var mya = document.createElement('option');
-          mya.value = sch.response[i].name;
+          mya.value = foundTrees[i].name;
           sideBarTreeSearchResult.appendChild(mya);
         }
-      }
+
+ 
   }
-  sch.send(JSON.stringify(treeToSearch));
-}
 
 function addTreeToUser(){
   var treeToAdd = {value: document.getElementById('searchedTree').value};
