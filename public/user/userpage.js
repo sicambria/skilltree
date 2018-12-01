@@ -131,9 +131,7 @@ function searchTreesByName(){
   trees.forEach(function(tree) {
     if( tree.name.toLowerCase().includes( treeToSearch.toLowerCase() ) )
         {
-            console.log(tree.name.toLowerCase() + " " + treeToSearch.toLowerCase() );
             foundTrees.push(tree.name);
-            console.log(tree.name);
         }
   });
 
