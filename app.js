@@ -189,24 +189,6 @@ getRoute.get('/userdata', function (req, res) {
 });
 
 
-//get the placed offers from a skill, needed for offers page
-getRoute.get('/offers', function(req, res) {
-	Skill.findOne({
-		name: req.body.name
-	}, async function(err, skilldata) {
-		if(err) throw err;
-
-		if(!skilldata){
-			escape.json({
-				succes: false,
-				message: 'User not found.'
-			});
-		} else if (skilldata) {
-			return res.json(skilldata);
-		}
-	});
-});
-
 //Creating a setRoute, thats protected with Token. API calls are under /set/...
 var setRoute = express.Router();
 setRoute.use(express.json());
@@ -312,7 +294,7 @@ setRoute.post('/addTreeToUser', async function (req, res){
 });
 
 
-//Gettig skill data from the given username on request body, used in itemcotainer
+//get the placed offers from a skill, needed for offers page, used in itemcontainer
 setRoute.post('/skilldata', function(req, res) {
 	Skill.findOne({
 		name: req.body.name
