@@ -130,7 +130,7 @@ function searchTreesByName(){
 
   var foundTrees = [];
   trees.forEach(function(tree) {
-    if( tree.name.toLowerCase().contains( treeToSearch.toLowerCase() ) )
+    if( tree.name.toLowerCase().includes( treeToSearch.toLowerCase() ) )
         {
             foundTrees.push(tree.name);
         }
