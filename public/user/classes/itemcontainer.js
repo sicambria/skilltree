@@ -297,7 +297,7 @@ class ItemContainer {
                             //Display the tables Window if all table has been loaded
                             displayWindow();
 
-						} else console.log("apád");
+						} 
 					}
 				}
 
