@@ -23,13 +23,6 @@ app.stage.group.enableSort = true;
 document.getElementById("openchart").onclick = showChart;
 var chartContainer = new PIXI.Container();
 
-/*function toggleSkillDetailsPage() {
-    var modal = document.getElementById('skillpage');
-
-    modal.style.display = "block";
-
-}*/
-
 // searches skills by provided name
 function searchUserSkillsByName(element){
     var skillToSearch = {value: element.value};
@@ -56,11 +49,11 @@ function addTreeToUser(treeToAdd){
           nt.innerText = this.response.name;
           nt.className = "listedTree";
           forest.appendChild(nt);
-          alert("Selected tree successfully added.");
+          showBottomAlert('success', "Selected tree successfully added");
           initData();
           loadAddedTrees();
-        } else if (this.response.message == "existing") alert("Selected tree is already added.");
-        else if (this.response.message == "notfound") alert("The tree is not found.");
+      } else if (this.response.message == "existing") showBottomAlert('warning', "Selected tree is already added");
+        else if (this.response.message == "notfound") showBottomAlert('danger', "The tree is not found");
       }
   });
 }
@@ -676,8 +669,8 @@ function createTree () {
                         else if (this.response.message == "treeexists") alert("There is already a tree with this name");
                     }
                 });
-            } else showBottomAlert("Please add at least one skill to the tree");
-        } else showBottomAlert("Please provide a name to the tree");
+            } else showBottomAlert("danger", "Please add at least one skill to the tree");
+        } else showBottomAlert("danger", "Please provide a name to the tree");
     };
 }
 
@@ -954,6 +947,15 @@ function getChildren (skills, skill, children) {
 	}
 }
 
+function delTree(element) {
+    request('POST', '/protected/deletemytree', {name: element.parentElement.text}, function () {
+        if (this.readyState == 4 && this.status == 200) {
+            element.parentElement.outerHTML = '';
+            showBottomAlert('success', element.parentElement.text + ' successfully removed');
+        }
+    })
+}
+
 // make trees globally available
 function approveTrees() {
     hideMenus();
@@ -1099,6 +1101,41 @@ function dropoffers() {
     });
 }
 
+function setAdmin () {
+    hideMenus();
+
+    var approveTrees = document.getElementById("setAdmin");
+    approveTrees.style.display = "block";
+
+    var giveBtn = document.getElementById('setAdminBtn');
+    giveBtn.onclick = function () {
+        var username = document.getElementById('newAdminUser').value;
+
+        request('POST', '/admin/setadmin', {
+            username: username,
+            give: true
+        }, function () {
+            if (this.readyState == 4 && this.status == 200) {
+                window.open("/user/", "_self");
+            }
+        });
+    };
+
+    var revokeBtn = document.getElementById('delAdminBtn');
+    revokeBtn.onclick = function () {
+        var username = document.getElementById('newAdminUser').value;
+
+        request('POST', '/admin/setadmin', {
+            username: username,
+            give: false
+        }, function () {
+            if (this.readyState == 4 && this.status == 200) {
+                window.open("/user/", "_self");
+            }
+        });
+    };
+}
+
 // hides skill, tree creator, editor menu
 function hideMenus () {
     document.getElementById('submitBtn').style.display = "none";
@@ -1112,45 +1149,71 @@ function hideMenus () {
 
 function hideCardsAndAlerts (event) {
     if (!event.target.matches("#userCard, .float-right *")) $(".hide-on-click").collapse("hide");
-
     if (!event.target.matches("#createTree")) $(".alert").hide();
 }
 
 document.body.addEventListener('click', hideCardsAndAlerts);
 
-// helper functions
+function validateNewPwd() {
+	var oldPassword = document.getElementById("curPassword");
+	var password1 = document.getElementById("newPassword1");
+	var password2 = document.getElementById("newPassword2");
 
-function parseJwt (token) {
-    var base64Url = token.split('.')[1];
-    var base64 = base64Url.replace('-', '+').replace('_', '/');
-    return JSON.parse(window.atob(base64));
+    if (oldPassword.value != "" && password1.value != "" && password2.value != "") {
+        if (password1.value == password2.value) {
+            if (checkPassword(password1.value)) {
+                request('POST', '/protected/newpassword', {
+                    oldPassword: oldPassword.value,
+                    newPassword: password1.value
+                }, function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        if (this.response.success) showBottomAlert('success', "Password changed successfully!");
+                        else showBottomAlert("danger", "Wrong password!");
+                    }
+                });
+            } else showBottomAlert('danger', "The new password is not valid! It has to contain at least one digit, one lowercase and one uppercase character. The minimum password length is 8 characters.");
+        } else showBottomAlert('danger', "Incorrect credentials! Passwords don't match!");
+    } else showBottomAlert('danger', "Incorrect credentials!");
 }
 
-Array.prototype.sum = function (prop) {
-    var total = 0;
+function savePlace () {
+    var place = document.getElementById("place");
 
-    for (var i = 0; i < this.length; ++i) {
-        total += this[i][prop];
-    }
-
-    return total;
+    if (place.value != '') {
+        request('POST', '/protected/newplace', {
+            location: place.value,
+        }, function () {
+            if (this.readyState == 4 && this.status == 200) {
+                if (this.response.success) showBottomAlert('success', "Place changed successfully!");
+            }
+        });
+    } else showBottomAlert('danger', "Incorrect data!");
 }
 
-function showBottomAlert(msg) {
-	document.getElementById('bottomAlertMsg').innerText = msg;
-	$('#bottomAlert').show();
+function saveEmail () {
+    var email = document.getElementById("email");
+
+    if (email.value != '') {
+        request('POST', '/protected/newemail', {
+            email: email.value,
+        }, function () {
+            if (this.readyState == 4 && this.status == 200) {
+                if (this.response.success) showBottomAlert('success', "Email changed successfully!");
+            }
+        });
+    } else showBottomAlert('danger', "Incorrect data!");
 }
 
-function request (type, url, sendData, callback) {
-    var req = new XMLHttpRequest();
-    req.open(type, url, true);
-    req.setRequestHeader('Content-type', 'application/json');
-    req.setRequestHeader('x-access-token', localStorage.getItem("loginToken"));
-    req.responseType = "json";
-    req.onreadystatechange = callback;
+function saveHelp () {
+    var help = document.getElementById("help");
 
-    if (sendData !== undefined)
-        req.send(JSON.stringify(sendData));
-    else
-        req.send();
+    if (help) {
+        request('POST', '/protected/newhelp', {
+            help: help.checked,
+        }, function () {
+            if (this.readyState == 4 && this.status == 200) {
+                if (this.response.success) showBottomAlert('success', "Email changed successfully!");
+            }
+        });
+    } else showBottomAlert('danger', "Incorrect data!");
 }

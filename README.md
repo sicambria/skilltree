@@ -9,18 +9,11 @@ Skill tree is a web app to visualize skills, motivating people for self-developm
   - Find people fast with a specific skill & willingness to share their knowledge (enhance collaboration)
   - Making it easy to offer/request training for a specific skill and a specific skill level (build p2p training culture)
 
-##### Planned features [[See on Waffle.io]](https://waffle.io/sicambria/skilltree)
+##### Planned features
 
-  [![Waffle.io - Columns and their card count](https://badge.waffle.io/sicambria/skilltree.svg?columns=inbox,backlog,in%20progress)](https://waffle.io/sicambria/skilltree)
+See the [Projects](https://github.com/nokia/skilltree/projects) tab.
 
-## Tech
-
-##### Code quality
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/0315c0b0650106013493/maintainability)](https://codeclimate.com/github/sicambria/skilltree/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/0315c0b0650106013493/test_coverage)](https://codeclimate.com/github/sicambria/skilltree/test_coverage)
-
-
+## Development
 
 Skill Tree needs the following components to operate:
 
@@ -29,6 +22,20 @@ Skill Tree needs the following components to operate:
 * [MongoDB] - A free and open-source cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with schemata.
 * [Nginx] - A web server which can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache.
 * A GNU/Linux distribution, e.g. [Debian] or [Ubuntu].
+
+**Do you want to contribute? Awesome!**
+
+  * You can help us extending the [list of skills](https://github.com/nokia/skilltree/blob/master/assets/json/skills.json) and [trees](https://github.com/nokia/skilltree/blob/master/assets/json/trees.json)
+  * You can help improving code quality, test coverage and creating new features
+  * You can let more people know what SkillTree is & attract more contributors  
+
+**Please read [the contribution guidelines](docs/contribute/CONTRIBUTING.md)**.
+
+
+##### Code quality
+
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/nokia/skilltree.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/nokia/skilltree/alerts/)
+
 
 ## Installation
 
@@ -101,57 +108,11 @@ If you are not familiar with server setup, we recommend to read through the foll
   docker run -d -e BACKEND=<IPADDRESS> -p 0.0.0.0:80:80 localhost/skilltree-nginx
   ```
 
+## Production use
 
-## Development
-
-Want to contribute? Great!
-You need an IDE of your choice, we recommend [Atom] or [Visual Studio Code].
-
-For Atom, installing some plugins are helpful:
-
-```sh
-apm install emmet todo minimap pigments minimap-pigments linter file-icons git-diff atom-beautify ask-stack highlight-selected
-```
-
-On the server, give it a try:
-
-```sh
-cd skilltree
-node app.js
-```
-
-Alternatively, to keep up with changes automatically, install & use PM2 (recommended):
-```sh
-cd skilltree
-pm2 create skilltree
-```
-To run:
-```sh
-pm2 start skilltree --watch
-```
-To query the status:
-```sh
-pm2 list
-```
-
-### Testing
-
-Youtube tutorial for testing using Mocha and Chai:
-https://www.youtube.com/watch?v=NhlpFD5EL_Q
-
-Install mocha and chai (already installed in this project):
-```sh
-npm install mocha
-npm install chai --save-dev
-```
-
-To run tests:
-```sh
-cd assets
-mocha
-```
-
-Edit tests in assets/test folder. Create new JavaScript file or use the existing unit-test.js and add functions.
+  * Domain name required, you can register a [free domain with Freenom](https://www.freenom.com)
+  * Modify config.js "secret" to be a long and random key
+  * Update mongoDB connection. If you want, you can use a [cloud-hosted MongoDB](https://cloud.mongodb.com/) with a GUI editor
 
 
 ### License

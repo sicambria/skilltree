@@ -50,6 +50,14 @@ function initCard(){
   pointCount.innerHTML = data.skills.sum("achievedPoint") + "<br>points";
   cardUserName.innerHTML = data.username;
   cardMainTree.innerHTML = data.mainTree;
+
+  var username = document.getElementById('username');
+  var place = document.getElementById('place');
+  var email = document.getElementById('email');
+
+  username.innerText = data.username;
+  place.value = data.location;
+  email.value = data.email;
 }
 
 // checks if the login is 1st time and shows first login modal if yes
@@ -58,20 +66,13 @@ function checkFirstLogin() {
     else {
         var modal = document.getElementById('firstLogin');
         var btn = document.getElementById('savebtn');
+        var focusArea = document.getElementById('focusareasel');
         var mainTree = document.getElementById('maintree');
 
-        console.log("b");
         btn.onclick = function() {
-            var location = document.getElementById('location').value;
-            var teachingDay = document.getElementById('day').value;
-            var teachingTime = document.getElementById('timeStart').value + ' - ' + document.getElementById('timeEnd').value;
-
-
             var firstLoginData = {
-                    mainTree: mainTree.value,
-                    teachingDay: teachingDay,
-                    teachingTime: teachingTime,
-                    location: location
+                    focusArea: focusArea.value,
+                    mainTree: mainTree.value
             };
 
             request('POST', '/protected/firstlogindata', firstLoginData, function() {
@@ -81,16 +82,24 @@ function checkFirstLogin() {
             });
         }
 
-        for (var i = 0; i < data.focusArea.treeNames.length; ++i) {
-            var option = document.createElement('option');
-            option.value = option.text = data.focusArea.treeNames[i];
-            mainTree.add(option);
-        }
-
-        if (!data.willingToTeach) document.getElementById('teachingSettings').style.display = 'none';
-
         modal.style.display = "block";
     }
+}
+
+function selectMainTree () {
+    var mainTree = document.getElementById('maintree');
+    var focusArea = document.getElementById('focusareasel');
+
+    var focusAreaTrees = data.allTreeNames.filter(obj => obj.focusArea == focusArea.value);
+
+    mainTree.innerHTML = '';
+    for (var i = 0; i < focusAreaTrees.length; ++i) {
+        var option = document.createElement('option');
+        option.value = option.text = focusAreaTrees[i].name;
+        mainTree.add(option);
+    }
+
+    document.getElementById('maintreediv').style.display = 'block';
 }
 
 // loads the needed pics for the tree, then loads the tree.
@@ -117,11 +126,14 @@ function loadAddedTrees(){
   for (var i = 0; i < data.trees.length; i++) {
     var tn = data.trees[i].name;
     var ithtree = document.createElement('a');
-    ithtree.innerHTML = tn;
+    if (tn == data.mainTree) ithtree.innerHTML = tn;
+    else ithtree.innerHTML = '<i class = "fa fa-trash" id = "delTreeBtn" onclick = "delTree(this)"></i>' + tn;
     ithtree.className = "dropdown-item";
-    ithtree.onclick = function() {
-        document.getElementById('submitBtn').style.display = "block";
-        showTree(this.innerHTML, data, true); // bator?
+    ithtree.onclick = function (event) {
+        if (event.target.id != 'delTreeBtn') {
+            document.getElementById('submitBtn').style.display = "block";
+            showTree(this.text, data, true);
+        }
     }
     treeList.appendChild(ithtree);
   }

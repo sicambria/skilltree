@@ -132,7 +132,7 @@ function getPublicTreeData(){
             addTreeToUser({value: this.treeName});
           }
           searchModalBody.appendChild(row);
-        } 
+        }
         modal.style.display = "block";
       }
   });
@@ -165,7 +165,8 @@ function getPublicSkillData(){
             categoryName: this.response[i].categoryName,
             description: this.response[i].description,
             pointDescription: this.response[i].pointDescription,
-            descriptionWikipediaURL: this.response[i].descriptionWikipediaURL
+            descriptionWikipediaURL: this.response[i].descriptionWikipediaURL,
+            users: this.response[i].users
           }
           row.onclick = function(){
             var foundmodal = document.getElementById('searchedSkillModal');
@@ -175,15 +176,28 @@ function getPublicSkillData(){
             var desc = document.getElementById('searchedSkillModalDesc');
             var wiki = document.getElementById('searchedSkillModalWiki');
             var closer = document.getElementById('closeSearchedSkillModal');
+            var tableheader = document.getElementById('searchedSkillModalTableHeader');
+            var tablebody = document.getElementById('searchedSkillModalTableBody');
+
             header.innerHTML = this.data.name;
             category.innerHTML = "<b>Category</b>: " + this.data.categoryName;
-            pdesc.innerHTML = "<b>Description by points</b>: <br> 1: " + this.data.pointDescription[0] + "<br>" +
+            pdesc.innerHTML = "<b>Description by levels</b>: <br> 1: " + this.data.pointDescription[0] + "<br>" +
                                                           "2: " + this.data.pointDescription[1] + "<br>" +
                                                           "3: " + this.data.pointDescription[2] + "<br>" +
                                                           "4: " + this.data.pointDescription[3] + "<br>" +
                                                           "5: " + this.data.pointDescription[4];
             desc.innerHTML = "<b>Description</b>: " + this.data.description;
             wiki.innerHTML = "<b>Wiki link</b>: <a href=" + this.data.descriptionWikipediaURL + ">" + this.data.descriptionWikipediaURL + "</a>";
+            tableheader.innerHTML = '<th scope="col">#</th><th scope="col">Name</th><th scope="col">Level</th>';
+            tablebody.innerHTML = "";
+            for (var j = 0; j < this.data.users.length; j++) {
+              var row2 = document.createElement('tr');
+              row2.className = "foundElementRow";
+              row2.innerHTML += "<th>" + (j+1) + "</th>";
+              row2.innerHTML += "<td>" + this.data.users[j].username + "</td>";
+              row2.innerHTML += "<td>" + this.data.users[j].skill.achievedPoint + "</td>";
+              tablebody.appendChild(row2);
+            }
             foundmodal.style.display = "block";
             closer.onclick = function(){
               foundmodal.style.display = "none";
