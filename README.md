@@ -11,7 +11,7 @@ Skill tree is a web app to visualize skills, motivating people for self-developm
 
 ##### Planned features
 
-See the [Projects](https://github.com/nokia/skilltree/projects) tab.
+See the [Projects](https://github.com/sicambria/skilltree/projects) tab.
 
 ## Development
 
@@ -25,7 +25,7 @@ Skill Tree needs the following components to operate:
 
 **Do you want to contribute? Awesome!**
 
-  * You can help us extending the [list of skills](https://github.com/nokia/skilltree/blob/master/assets/json/skills.json) and [trees](https://github.com/nokia/skilltree/blob/master/assets/json/trees.json)
+  * You can help us extending the [list of skills](https://github.com/sicambria/skilltree/blob/master/assets/json/skills.json) and [trees](https://github.com/sicambria/skilltree/blob/master/assets/json/trees.json)
   * You can help improving code quality, test coverage and creating new features
   * You can let more people know what SkillTree is & attract more contributors  
 
@@ -34,7 +34,10 @@ Skill Tree needs the following components to operate:
 
 ##### Code quality
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/nokia/skilltree.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/nokia/skilltree/alerts/)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/sicambria/skilltree.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sicambria/skilltree/alerts/)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/0315c0b0650106013493/maintainability)](https://codeclimate.com/github/sicambria/skilltree/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/0315c0b0650106013493/test_coverage)](https://codeclimate.com/github/sicambria/skilltree/test_coverage)
 
 
 ## Installation
