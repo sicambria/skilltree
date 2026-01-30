@@ -2,9 +2,9 @@
     "name": "skilltree",
     "version": "1.0.0",
     "description": "Skill tree web app",
-    "main": "app.js",
+    "main": "src/server.js",
     "scripts": {
-        "start": "node app.js"
+        "start": "node src/server.js"
     },
     "dependencies": {
         "body-parser": "^1.20.0",
