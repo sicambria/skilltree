@@ -1,4 +1,5 @@
 # Regenerative Developmental Goals (RDG) Integration
+> Content licensed under [CC-BY-SA 4.0](file:///c:/AntiGr/skilltree-master/LICENSE-TEXT).
 
 This project has undergone an ontological shift from traditional technical skills to a framework of **Regenerative Development**. This shift aligns the skill tree with the "Transformative Changemaking" curriculum, moving beyond mitigation toward active restoration and systemic healing.
 

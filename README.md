@@ -130,4 +130,7 @@ Please read our [Contributing Guidelines](docs/contribute/CONTRIBUTING.md) befor
 
 ## 📜 License
 
-[BSD 2-Clause License](LICENSE)
+This project is dual-licensed to ensure both systemic openness and software freedom:
+
+- **Source Code**: Licensed under the [GNU Affero General Public License v3.0](LICENSE) (AGPLv3).
+- **Textual Content & Data**: All curriculum, documentation, and systemic data are licensed under [Creative Commons Attribution-ShareAlike 4.0 International](LICENSE-TEXT) (CC-BY-SA 4.0).

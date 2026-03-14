@@ -15,5 +15,5 @@
         "mongoose": "^8.0.0",
         "morgan": "^1.10.0"
     },
-    "license": "BSD-2-Clause"
+    "license": "AGPL-3.0-only"
 }

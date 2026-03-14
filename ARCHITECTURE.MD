@@ -1,4 +1,5 @@
 # Skill Tree Architecture
+> Content licensed under [CC-BY-SA 4.0](file:///c:/AntiGr/skilltree-master/LICENSE-TEXT).
 
 This document describes the high-level architecture of the Skill Tree application.
 
