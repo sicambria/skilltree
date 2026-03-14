@@ -1,0 +1,476 @@
+[
+  {
+    "name": "CSS",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/CSS.png",
+    "description": "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/CSS",
+    "pointDescription": [
+      "Understand that the purpose of CSS is keeping design and content separate, to the highest extent that is possible. Have made extensive modifications to a CSS template. Have used a WYSIWYG editor to create CSS web page. Have a basic understanding of CSS layout techniques.",
+      "I have designed a reasonably complex website from scratch using only CSS for layout.I have a solid understanding of the structure of CSS, the CSS box model, and CSS positioning.I understand how to use float and deal with it's quirks.I have a basic understanding that different browsers render some CSS differently and that needs to be accounted for and tested.I have a growing collection of CSS resources to draw from.I do not use tables for layout whatsoever anymore. I understand that tables are for tabular data, not page layout.",
+      "I have designed and coded a large number of CSS web sites.  I can convert a design from any format into a CSS layout: Photoshop, Illustrator, napkin drawings, etc.I am completely comfortable writing and editing CSS by hand.I have a strong understanding of the cascading part of CSS. Particularly how some some CSS properties do, some don't, and some depend on how the value is declared.I have a solid understanding of cross-browser CSS. I know how to use browser specific CSS statements and delclare browser specific stylesheets.I know and have tried some CSS hacks and understand the advantages and disadvantages of using them.I have a strong understanding of the different sizing values available in CSS (e.g. em, px, %, pt, small, etc.) and in what situations each make the most sense.I can quickly troubleshoot and solve CSS problems.I have a great collection of tools and resources at my disposal for inspiration, debugging, or reference.",
+      "I feel like I could tackle any design idea with CSS.I can do pixel-perfect cross-browser conversions of designs into CSS websites.I can visualize markup structure easily, just by looking at a design.I have utilized additional web technologies to expand the possibilities and break through the limitations of CSS.I have my own CSS framework I use, complete with my own customized CSS reset.I have a strong understanding of advanced CSS like pseudo classes, pseudo elements, and attribute selectors.I keep up to date on browser support and development progress.",
+      "I am involved with the future of CSS specifications or support.I am a CSS Celebrity.I've written books, given seminars, taught classes, knew CSS since she was a little girl, etc.I don't need to do testing, I just know."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "HTML"
+    ],
+    "children": [
+      {
+        "name": "CSS tools",
+        "minPoint": 2,
+        "recommended": false
+      },
+      {
+        "name": "Photoshop",
+        "minPoint": 0,
+        "recommended": false
+      }
+    ],
+    "trainings": [
+      {
+        "name": "CSS Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "CSS tools",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/CSS_tools.png",
+    "description": "CSS tools and frameworks are meant to allow for easier, more standards-compliant web design using the Cascading Style Sheets language.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/CSS_framework",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "CSS"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Top10 CSS Tools",
+        "level": 1,
+        "shortDescription": "10 Best CSS Tools & Web-Based Apps For Developers",
+        "URL": "https://1stwebdesigner.com/best-css-tools/",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "Describing the top 10 CSS libraries, tools, webapps and automated scripts that make it so much easier to build websites.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Go",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Go.png",
+    "description": "Go (often referred to as Golang) is a fully open-source programming language. It is statically typed, compiled, and syntactically similar to C, with the added benefits of memory safety, garbage collection, structural typing, and CSP-style concurrency.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Go_(programming_language)",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "HTML Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Coaching",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/Coaching.png",
+    "description": "ICF defines coaching as partnering with clients in a thought-provoking and creative process that inspires them to maximize their personal and professional potential, which is particularly important in today's uncertain and complex environment.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Coaching",
+    "pointDescription": [
+      "Understanding concepts, values and beliefs; the use of facilitative behaviours such as active listening, paraphrasing, questioning, summarising, managing time; encouraging participation; keeping clear and accurate notes; using basic tools like problem solving and action planning.",
+      "Mastering process tools; designing meetings; skilled at using the right decision making method, achieving consensus, and getting true closure; handling feedback activities and conducting process checks; using exit surveys; good at managing meetings in an effective manner; able to help a group set goals and objectives that are measurable; skilled at checking assumptions and challenging ideas.",
+      "Skilled at managing conflict and making immediate interventions; able to deal with resistance and personal attacks; making design changes on the spot; sizing up a group and using the right strategies for its development stage; managing survey feedback exercises; able to design and conduct interviews and focus groups, design and implement surveys; consolidating ideas from a mass of information into coherent summaries.",
+      "Design and implement process interventions in response to complex organisational issues; use tools to promote process improvement, customer intimacy, and overall organisational effectiveness; able to support teams in the various stages of team development.",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction to Coaching",
+        "level": 1,
+        "shortDescription": "Introducing the basic aspects of coaching.",
+        "URL": "https://www.youtube.com/watch?v=vKwIi34C9zk",
+        "URLlastAccessed": "",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Commercial Awareness",
+    "categoryName": "Entrepreneurship (Business)",
+    "skillIcon": "pictures/icons/Commercial_Awareness.png",
+    "description": "Knowledge of how businesses make money, what customers want, and what problems there are in particular areas of business:",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "What is Commercial Awareness?",
+        "level": 1,
+        "shortDescription": "Bright Network's resident commercial awareness guru, Ben explains what it is, why it's an important skill to demonstrate when applying for graduate opportunities and how you can build up up your commercial awareness.",
+        "URL": "https://youtu.be/cPefkxTvG04",
+        "URLlastAccessed": "2018-12-11",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Conflict resolution",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Conflict_Resolution.png",
+    "description": "Conflict resolution is conceptualized as the methods and processes involved in facilitating the peaceful ending of conflict and retribution. Committed group members attempt to resolve group conflicts by actively communicating information about their conflicting motives or ideologies to the rest of the group (e.g., intentions; reasons for holding certain beliefs) and by engaging in collective negotiation.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Conflict_resolution",
+    "pointDescription": [
+      "Identify the source of the conflict. The more information you have about the cause of the conflict, the more easily you can help to resolve it. To get the information you need, use a series of questions to identify the cause, like, “When did you feel upset?” “Do you see a relationship between that and this incident?” “How did this incident begin?” ",
+      " Active listeningSeveral strategies help with distinguishing who has a problem with a behavior and who takes ownership. One of those strategies is active listening. Active listening is attending carefully to all aspects of what a student says and attempting to understand or empathize as much as one can (Seifert & Sutton). Active listening consists of continually asking questions in order to test your understanding. It also requires giving encouragement to the student by letting them tell their story, and paraphrasing what the student says so you can form an unbiased conclusion. It is key not to move too quickly at solving the problem by just giving advice, instructions, or scolding. Responding too soon with solutions can shut down the student’s communication and leave you with inaccurate impressions of the source or nature of the problem (Seifert & Sutton)",
+      " After getting each party’s viewpoint on the conflict, the next step is to get each to identify how the situation could be changed. Again, question the parties to solicit their ideas: “How can you make things better between you?” ",
+      " Identify solutions both disputants can support. You are listening for the most acceptable course of action. Point out the merits of various ideas, not only from each other’s perspective, but in terms of the benefits to the organization.",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Conflict – Use It, Don’t Defuse It",
+        "level": 1,
+        "shortDescription": "The #1 source of pain on a team, or in any relationship, is conflict. What if conflict wasn’t good or bad? What if conflict was an energy source your team could harness to produce innovative, creative, and transformational results? Invest 18 minutes learning the two magic ingredients and how you can put them to work with any team you care about.",
+        "URL": "https://youtu.be/o97fVGTjE4w",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Git",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Git.png",
+    "description": "Git is a version-control system for tracking changes in computer files and coordinating work on those files among multiple people. It is primarily used for source-code management in software development, but it can be used to keep track of changes in any set of files. As a distributed revision-control system, it is aimed at speed, data integrity, and support for distributed, non-linear workflows.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Git",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Learn Git in 20 Minutes",
+        "level": 1,
+        "shortDescription": "In this video you learn how to initialize repositories, track files, stage changes, branch and merge, handle merge conflicts, stash changes, pull from and commit to remote repositories like GitHub.",
+        "URL": "https://youtu.be/Y9XZQO1n_7c",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      },
+      {
+        "name": "Handling git commits",
+        "level": 2,
+        "shortDescription": "On undoing, fixing, or removing commits in git",
+        "URL": "http://sethrobertson.github.io/GitFixUm/fixup.html",
+        "URLlastAccessed": "2019-01-03",
+        "goal": "This document is an attempt to be a fairly comprehensive guide to recovering from what you did not mean to do when using git.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Docker",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Docker.png",
+    "description": "Docker is a computer program that performs operating-system-level virtualization, also known as 'containerization'.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Docker_(software)",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Docker Tutorial - What is Docker & Docker Containers, Images, etc?",
+        "level": 1,
+        "shortDescription": "In these tutorials, I'll be breaking down exactly what a Docker container is and how to use it.",
+        "URL": "https://youtu.be/pGYAg7TMmp0",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      },
+      {
+        "name": "Docker Tutorial - What is Docker & Docker Containers, Images, etc?",
+        "level": 1,
+        "shortDescription": "In these tutorials, I'll be breaking down exactly what a Docker container is and how to use it.",
+        "URL": "http://training.docker.com/category/self-paced-online",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Facilitation",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/Facilitation.png",
+    "description": "A process where an individual who is agreed upon and acceptable to all of a group's members intervenes to assist the group in solving problems and making decisions to improve productivity and efficiency but who has no authority to make decisions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Facilitation_(business)",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Building Trust",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "http://plumseattle.com/wp-content/uploads/2013/11/badge-hr-consulting.png",
+    "description": "Trust is one of the keyfactors to be considered. Trust forms the basis of all relationships and interactions. It is just as important in professional relationships as it is in personal ones. Without each party trusting one another the ability to come to an agreement or consensus on an issue is always going to be compromised. Some benefits of trust: Increased productivity amonst staff Improved morale amongst employees and staff The ability to work more effectively as a team, rather than individuals Reduce the time to make and discuss key issues as each individual trusts in the judgement and expertise of their colleagues.",
+    "descriptionWikipediaURL": "https://www.forbes.com/sites/forbescoachescouncil/2018/01/04/five-simple-tips-for-building-trust-as-a-leader/#6e209e3459bb",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Creating Company Culture",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Creating a strong organisational culture is vital for an HR Consultant. The company culture will narrate the direction of your organisation, as it will heavily influence how the people behave and perform. Aspects of creating a great company culture include:– Understanding and meeting the needs of employees – Implementing professional development plans that increase skillsets while helping your people feel valued – Helping to the people to really feel connected with your company’s values and goals",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Organizational_culture",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Effective Listening",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Listening is an essential part of spoken communication. Speaking and listening go together and oral communication cannot be effective without proper listening. Poor listening defeats the very purpose of spoken words. Listening is a deliberate effort and is much more than hearing. It requires getting the full meaning of what is being said. Listening effectively takes skill, self-motivation, and practice. Effective listening means concentrating on what the speaker says rather than on how it is said. Lack of attention and respectful listening can be costly - leading to mistakes, poor service, misaligned goals, wasted time and lack of teamwork.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Active_listening",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Being Approachable & Accessible",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Keeping yourself actively involved in your company’s day-to-day affairs. Making yourself accessible and approachable to the people you’re representing will give you a level of company knowledge that cannot be found on monthly performance reports or attendance sheets.",
+    "descriptionWikipediaURL": "https://www.lollydaskal.com/leadership/leadership-be-approachable/",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Change Management",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Manages change in a systematic approach both from an organizational and an individual level. Ability to create the structure to execute and sustain change through clear design, aligned roles  relationships and governance. Applies structured approaches to shift individuals, teams, and organizations from a current state to a desired state.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Change_management",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Consulting",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Using knowledge of the Nokia business model and processes, the external operating environment and domain expertise to improve human capital and business outcomes. Asking the  right developmental questions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Consultant",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  }
+]

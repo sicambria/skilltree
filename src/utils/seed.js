@@ -30,11 +30,14 @@ const seed = async () => {
         console.log('📂 Reading seed data from JSON files...');
         const categories = JSON.parse(fs.readFileSync(path.join(__dirname, '../../assets/json/categories.json'), 'utf8'));
         
-        // Split skills files
-        const skillFiles = ['skills_part1.json', 'skills_part2.json', 'skills_part3.json'];
+        // Future-proof skills loading (all skills_*.json)
+        const assetDir = path.join(__dirname, '../../assets/json');
+        const skillFiles = fs.readdirSync(assetDir).filter(f => f.startsWith('skills_') && f.endsWith('.json'));
+        console.log(`   - Found ${skillFiles.length} skill files: ${skillFiles.join(', ')}`);
+        
         let skills = [];
         skillFiles.forEach(file => {
-            const data = JSON.parse(fs.readFileSync(path.join(__dirname, `../../assets/json/${file}`), 'utf8'));
+            const data = JSON.parse(fs.readFileSync(path.join(assetDir, file), 'utf8'));
             skills = skills.concat(data);
         });
         

@@ -1,0 +1,353 @@
+[
+  {
+    "name": "Scrum",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/Scrum.png",
+    "description": "Scrum is an agile framework for managing knowledge work, with an emphasis on software development. It is designed for teams of three to nine members, who break their work into actions that can be completed within timeboxed iterations, called 'sprints', no longer than one month and most commonly two weeks, then track progress and re-plan in 15-minute stand-up meetings, called daily scrums.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Scrum",
+    "pointDescription": [
+      "You have to be able to organize an appointment. This means that you must perform administrative tasks. For example, creating tables and uploading data. This is an important step to complete your sprint.",
+      "Soft skills are important: decision making, ability to facilitate. Respect: team members accept what you say.",
+      "It is increasingly handling the problems better and better. Effectively relieves the team. Take care to the quality of code and documentation. Moderate during team meetings.",
+      "Continuously improve processes . Maintain a proper balance between project owner, scrum team, and management. Start work together the project owner.",
+      "Knowing the most of things what the project owner. Undertans the big picture. Dealing with difficult situations. Walk project owner through user stories."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [
+      {
+        "name": "Scaled Agile Framework",
+        "minPoint": 2,
+        "recommended": false
+      }
+    ],
+    "trainings": [
+      {
+        "name": "Scrum Basics",
+        "level": 1,
+        "shortDescription": "Scrum Crash Course",
+        "URL": "https://www.youtube.com/watch?v=2Vt7Ik8Ublw",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      },
+      {
+        "name": " The Scrum Guide",
+        "level": 1,
+        "shortDescription": "Scrum is defined completely in the Scrum Guide by Ken Schwaber and Jeff Sutherland, the originators of Scrum.",
+        "URL": "https://www.scrumguides.org/",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "This Guide contains the definition of Scrum. This definition consists of Scrum’s roles, events, artifacts, and the rules that bind them together.",
+        "length": 0,
+        "language": "many"
+      }
+    ]
+  },
+  {
+    "name": "UI/UX Design",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/UI_UX_Design.png",
+    "description": "User experience design (UX, UXD, UED or XD) is the process of enhancing user satisfaction with a product by improving the usability, accessibility, and pleasure provided in the interaction with the product. User experience design encompasses traditional human–computer interaction (HCI) design, and extends it by addressing all aspects of a product or service as perceived by users.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/User_experience_design",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "UX Design Tutorial for Beginners (#1)",
+        "level": 1,
+        "shortDescription": "UX design tutorial for beginners. Easy to understand UX design tutorial, no jargon.",
+        "URL": "https://youtu.be/I0-vBdh4sZ8",
+        "URLlastAccessed": "2018-12-11",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "React",
+    "categoryName": "Maths,science and engineering",
+    "skillIcon": "pictures/icons/React.png",
+    "description": "In computing, React (also known as React.js or ReactJS) is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. Complex React applications usually require the use of additional libraries for state management, routing, and interaction with an API.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/React_(JavaScript_library)",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "JavaScript"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "React JS Crash Course",
+        "level": 1,
+        "shortDescription": "In this video we will cover the fundamentals for React.js.",
+        "URL": "https://youtu.be/A71aqufiNtQ",
+        "URLlastAccessed": "2018-12-11",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Search Engine Optimization",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/SEO.png",
+    "description": "Search engine optimization (SEO) is the process of affecting the online visibility of a website or a web page in a web search engine's unpaid results—often referred to as 'natural', 'organic', or 'earned' results. In general, the earlier (or higher ranked on the search results page), and more frequently a website appears in the search results list, the more visitors it will receive from the search engine's users; these visitors can then be converted into customers. SEO may target different kinds of search, including image search, video search, academic search, news search, and industry-specific vertical search engines. SEO differs from local search engine optimization in that the latter is focused on optimizing a business' online presence so that its web pages will be displayed by search engines when a user enters a local search for its products or services. The former instead is more focused on national or international searches.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "SEO For Beginners - How to Rank High In Google?",
+        "level": 1,
+        "shortDescription": "Search Engine Optimization (SEO) step-by-step tutorial for beginners.",
+        "URL": "https://youtu.be/y_AAO7QfsiI",
+        "URLlastAccessed": "2018-12-11",
+        "goal": "In this video, you will learn all the necessary SEO techniques to rank your websites high in Google search engine.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Stakeholder Engagement",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/Stakeholder_Engagement.png",
+    "description": "Stakeholder engagement is the process by which an organization involves people who may be affected by the decisions it makes or can influence the implementation of its decisions. They may support or oppose the decisions, be influential in the organization or within the community in which it operates, hold relevant official positions or be affected in the long term.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Stakeholder_engagement",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction to Stakeholder Engagement",
+        "level": 1,
+        "shortDescription": "Learn about involving stakeholders in SLDS work through “Stakeholder Land,” a fictional board game about navigating the process of stakeholder engagement.",
+        "URL": "https://youtu.be/l3_Hhe24W3g",
+        "URLlastAccessed": "2018-12-11",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Robot Framework",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Robot_Framework.png",
+    "description": "The Robot Framework is a generic test automation framework for acceptance testing and acceptance test-driven development (ATDD). It is a keyword-driven testing framework that uses tabular test data syntax.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Robot_Framework",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Robot Framework Beginner Tutorial 1",
+        "level": 1,
+        "shortDescription": "Getting started with Robot Framework Step by Step",
+        "URL": "https://youtu.be/8h5knh2jLCA",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Scaled Agile Framework",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/SAFe.png",
+    "description": "SAFe promotes alignment, collaboration, and delivery across large numbers of agile teams. It was developed by and for practitioners, by leveraging three primary bodies of knowledge: agile software development, lean product development, and systems thinking.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Scaled_agile_framework",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Scrum"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "SAFe in 7 minutes",
+        "level": 1,
+        "shortDescription": "An overview to the Scaled Agile Framework - SAFe in 7 minutes.",
+        "URL": "https://youtu.be/RXzurBazN-I",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      },
+      {
+        "name": "SAFe homepage",
+        "level": 1,
+        "shortDescription": "An overview to the Scaled Agile Framework - SAFe in 7 minutes.",
+        "URL": "http://scaledagileframework.com/",
+        "URLlastAccessed": "2019-01-23",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Test-driven development",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/TDD.png",
+    "description": "Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle: requirements are turned into very specific test cases, then the software is improved to pass the new tests, only. This is opposed to software development that allows software to be added that is not proven to meet requirements.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Test-driven_development",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Agile in Practice: Test Driven Development",
+        "level": 1,
+        "shortDescription": "Agile in Practice: Test Driven Development",
+        "URL": "https://youtu.be/uGaNkTahrIw",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Spring framework",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Spring_Framework.png",
+    "description": "The Spring Framework is an application framework and inversion of control container for the Java platform. The framework's core features can be used by any Java application, but there are extensions for building web applications on top of the Java EE (Enterprise Edition) platform. Although the framework does not impose any specific programming model, it has become popular in the Java community as an addition to, or even replacement for the Enterprise JavaBeans (EJB) model. The Spring Framework is open source.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Spring_Framework",
+    "pointDescription": [
+      "Understand the fundamentals of the Java Spring framework. Understand What the Spring framework is for",
+      "Develop Java Applications, the Spring way.",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Spring Tutorial For Beginners With Examples",
+        "level": 1,
+        "shortDescription": "This Edureka Spring Framework Tutorial will help you in understanding the fundamentals of Spring Framework and help you in building a strong foundation in Spring with examples.",
+        "URL": "https://youtu.be/rMLP-NEPgnM",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Redis",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Redis.png",
+    "description": "Redis is an open-source in-memory data structure project implementing a distributed, in-memory key-value database with optional durability. Redis supports different kinds of abstract data structures, such as strings, lists, maps, sets, sorted sets, hyperloglogs, bitmaps, streams and spatial indexes.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Redis",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Redis Crash Course Tutorial",
+        "level": 1,
+        "shortDescription": "In this crash course we will discuss and demonstrate the fundamentals of Redis.",
+        "URL": "https://youtu.be/Hbt56gFj998",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Training",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Knowledge and skills in training techniques for both the occasional (L1, L2) and professional trainer (L3, L4, L5). Use of instructional styles adequate to the target group and training objectives, apply presentation and communication skills using various delivery methods and tools. Based on the level, including learning technologies needed in a modern (virtual) learning environment.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Training",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  }
+]

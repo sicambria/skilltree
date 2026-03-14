@@ -1,0 +1,339 @@
+[
+  {
+    "name": "Photoshop",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Photoshop.png",
+    "description": "...",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Photoshop",
+    "pointDescription": [
+      "You understand what you see. Navigate through the menu items. Can use basic tools: rubber, brush, select tool",
+      "Understands layer management. You know what the tools are. What effect do you have on their use.",
+      "I use the colors, layers and basic tools confidently. I understand 3d design and vectors.",
+      "Knows the shortcuts. Understand the most of things. You made brochure, flyer, website.",
+      "Manages the functions on a professional level. Understands customer needsm ideas and make them better. "
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "CSS"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Photoshop Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "NodeJS",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/NodeJS.png",
+    "description": "Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser. ",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Node.js",
+    "pointDescription": [
+      "Solid knowledge about JavaScript, HTML CSS.",
+      "Understans API communication and OOPs concepts",
+      "Good knowledge of HTML, CSS, JQuery, MySQL, SQL Server, Git, JQuery UI, AJAX, JSO. Have a knowledge on NodeJS framework: Express.js, Koa.js, Hapi, and Total.js",
+      "Have experience in implementing Data Protection. Can able to develop Single Page Application with MVC architecture",
+      "Great knowledge of User Authentication and Authorization. Knowledge of integrating multiple data sources and databases into one system."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "JavaScript"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "NodeJS Basics",
+        "level": 1,
+        "shortDescription": "Learn Node.js - Full Tutorial for Beginners",
+        "URL": "https://www.youtube.com/watch?v=RLtyhwFtXQA",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Python",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Python.png",
+    "description": "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python has a design philosophy that emphasizes code readability, notably using significant whitespace.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+    "pointDescription": [
+      "Start understanding nested loops and how logic works in nested loops.",
+      "Basic knowledge of how statements work and conceptually how they work",
+      "Some basic JavaSript knowledge. Understanding of server-side templating languages such as Jinja 2, Mako.",
+      "Knowledge of at least one Python web frameworksuch as Django, Flask. Familiarity with some ORM (Object Relational Mapper) libraries. Able to integrate multiple data sources and databases into one system.",
+      "Can to complete all parts of the work, including documentation and testing. Able to create database schemas that represent and support business processes. Strong unit test and debugging skills."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [
+      {
+        "name": "NumPy",
+        "minPoint": 3,
+        "recommended": false
+      }
+    ],
+    "trainings": [
+      {
+        "name": "Python Basics #1 of 8 - Integers, Floats and Maths",
+        "level": 1,
+        "shortDescription": "If you're a beginner and/or mildly interested in learning Python scripting/programming, this is a place to start!",
+        "URL": "https://www.youtube.com/watch?v=D48iCw3WWpI",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "Will walking you through a bit of programming theory, some of the basics for variable creation and math functions used in Python.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "NumPy",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Python.png",
+    "description": "NumPy is the fundamental package for scientific computing with Python.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/NumPy",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 3,
+    "parents": [
+      "Python"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "NumPy Tutorial",
+        "level": 2,
+        "shortDescription": "Before reading this tutorial you should know a bit of Python. If you would like to refresh your memory, take a look at the Python tutorial.",
+        "URL": "https://www.numpy.org/",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "Quickstart with NumPy from basics to Shape Manipulation, Copies and Views, Indexing and other tips and tricks.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Project Coordination",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/Project_Coordination.png",
+    "description": "Administration that oversees the day-to-day operations of a particular project within an organization. ",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Beginner's Guide to Project Coordination",
+        "level": 1,
+        "shortDescription": "We will talk about how to run, staff, and organize a project. Topics include creating a project proposal, timeline, budget, how to implement your project plan, and strategies for overcoming challenges that may arise.",
+        "URL": "https://youtu.be/B9FG3VyTJGI",
+        "URLlastAccessed": "2018-12-11",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Negotiation",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/Negotiation.png",
+    "description": "Conflict resolution is conceptualized as the methods and processes involved in facilitating the peaceful ending of conflict and retribution. Committed group members attempt to resolve group conflicts by actively communicating information about their conflicting motives or ideologies to the rest of the group (e.g., intentions; reasons for holding certain beliefs) and by engaging in collective negotiation.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Negotiation",
+    "pointDescription": [
+      "At the basic level, the negotiator has learned and developed an organized or systematic framework for preparing for and conducting negotiations.  Generally, basic level negotiators have limited experience and skill in applying a limited set of tools.  ",
+      "At the intermediate level, the negotiator has mastered basic negotiating tools and has begun adding additional tools to his or her negotiation tool kit.  More importantly, the negotiator uses the tools to prepare for, conduct and review each negotiation.  The negotiator explicitly uses the tools across a range of experiences so that he or she develops a great deal of experience and confidence in applying these tools. ",
+      "The advanced negotiation skill level is reached when the negotiator has not only accumulated a wide range of negotiation tools, frameworks and processes, through study, practice and experience but has also developed awareness of his or her own negotiation strengths and weaknesses and consciously uses that knowledge to manage him or herself so that negotiation strengths are maximized and negotiation weaknesses don’t impede the negotiations.  A negotiator who has reached the advanced stage also has strong skills in negotiation process design(designing how the parties will negotiate, not just that about which they will negotiate) and has developed the discretion as to when to use which tools and processes and can execute the selected tools with skill.   ",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "The Art of Negotiation | Maria Ploumaki",
+        "level": 1,
+        "shortDescription": "Maria describes the most important skills behind successful negotiation, and she explains how to develop and master such qualities.",
+        "URL": "https://youtu.be/pjlPgJ1wBdM",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "PostgreSQL",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/PostgreSQL.png",
+    "description": "PostgreSQL, often simply Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. It can handle workloads ranging from small single-machine applications to large Internet-facing applications (or for data warehousing) with many concurrent users; on macOS Server, PostgreSQL is the default database; and it is also available for Microsoft Windows and Linux (supplied in most distributions).",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/PostgreSQL",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Professional Networking",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Creating external partnerships (not only internal) that benefit the company. Human resources is often seen as an ‘internal’ part of business but doesn’t mean outside world is not important. Strike up new relationships that benefit to the workforce and to the company’s goals. It’s a great way of gaining external credibility.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Business_networking",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Persuasion",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Uses persuasion and negotiation to gain agreement and buy-in. Promotes idea, agenda or direction on behalf of self or others. Seeks support from communities to ensure that persuasion is effective. Stands up and speaks the mind up, escalates when  needed.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Persuasion",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Negotiating",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Can negotiate skillfully in tough situations with both internal and external groups; can settle differences with minimum noise; can win concessions without damaging relationships; can be both direct and forceful as well as diplomatic; gains trust quickly of other parties to the negotiations; has a good sense of timing. Understands that all interaction can be considered as negotiation, e.g. finding positions and motives. Prepares for the commercial and/or technical sales negotiations with the appropriate team involved. Makes negotiation strategy that enhances the long term relationship and executes it with confidence and persuasion following company policies. Influences on negotiation process and negotiators to gain the deal that does not compromise the pre set targets. Never agrees terms which are detrimental to profitability in the long run across the solution/product lifecycle.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Negotiation",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Problem-Solving",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Uses rigorous logic and methods to solve difficult problems with effective solutions; probes all fruitful sources for answers; can see hidden problems; looks beyond the obvious and doesn't stop at the first answers.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Problem_solving",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  }
+]

@@ -1,0 +1,382 @@
+[
+  {
+    "name": "HTML",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/HTML.png",
+    "description": "Hypertext Markup Language is the standard markup language for creating web pages and web applications. With Cascading Style Sheets and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/HTML",
+    "pointDescription": [
+      "Understanding basic HTML terms, tags, structure of a website and interlinkage of basic web technologies (Cascading Style Sheets and JavaScript).",
+      "Understanding of basic HTML elements and the basic flow of creating HTML documents.",
+      "An understanding of how opening tags and closing tags work, how to create an HTML document with the proper DOCTYPE, how to nest HTML tags within another, how to use attributes, and use them to inline style or add required data. How to use <style> and <script> to put CSS and JavaScript onto a HTML document",
+      "Knowing most of HTML tags in the language, understand when to use tags. The client-server relationship in the abstract, how to use attributes to style and identification for tags, how to link external resources like CSS, and JavaScript into your HTML.  An understanding of the Document Object Model or DOM works and how your HTML will be read by accessible hardware such as screen readers",
+      "Knowing all the HTML tags, the ability to manipulate the DOM, understanding how to create your own attributes using data-*, Build HTML documents semantically, How your HTML will be read by blogs, social networks, etc. for content"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [
+      {
+        "name": "CSS",
+        "minPoint": 1,
+        "recommended": true
+      },
+      {
+        "name": "JavaScript",
+        "minPoint": 1,
+        "recommended": true
+      }
+    ],
+    "trainings": [
+      {
+        "name": "HTML Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "The goal of this training is to introduce the terms and basic concepts of creating a website with HTML.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "JavaScript",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/JavaScript.png",
+    "description": "JavaScript, often abbreviated as JS, is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Javascript",
+    "pointDescription": [
+      "Basic knowledge CSS and HTML. Saw a code once.",
+      "Intermediate knowledge of both HTML and CSS. Variables and how to declare them. Know operators, like +, -, etc.",
+      "Know the functions. What an API is. How to access and query the DOM.Understand loops. Create and render new elements on to the DOM.How and when JS renders on a web page. Know the events. How to listen for events and create your own.",
+      "Function and variable scopes, you should know what this is. Anonymous functions and Immediately Invoked Function Expression (IIFE). Browser support for new JS features and how to use polyfills to fill in support when needed",
+      "How to make an AJAX request. How to use promises and know when you get data. The differences in var, let, and const to declare variables. What closures are and how to utilize them. What Object-Oriented Programming, or OOP, is and how it can happen in Javascript. Optimization of logic for speed."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "HTML"
+    ],
+    "children": [
+      {
+        "name": "NodeJS",
+        "minPoint": 1,
+        "recommended": false
+      },
+      {
+        "name": "React",
+        "minPoint": 1,
+        "recommended": false
+      }
+    ],
+    "trainings": [
+      {
+        "name": "HTML Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Java",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Java.png",
+    "description": "Java is a general-purpose computer-programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Java",
+    "pointDescription": [
+      "Maybe you now what is Java Developer's Kit",
+      "Need to know object oriented programming concepts. Know some sort of source control like Git. Know how to complete basic coding tasks like the Fibonacci. ",
+      "Start to unnderstanding how every piece of code fits together in the big picture. This takes theoretical thinking.",
+      "Knowledge of the intricacies of SQL queries is another thing that great Java developers tend to have. Basic CRUD operations and things like joins, aggregations, and indexing are all big parts of it.",
+      "Java developer is skilled in the use of the technologies in the Java ecosystem: Struts, Spring, Maven, Gradle, Ant, JUnit, Spock, and Hibernate, among many others."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [
+      {
+        "name": "JavaFX",
+        "minPoint": 1,
+        "recommended": false
+      }
+    ],
+    "trainings": [
+      {
+        "name": "Java Basics",
+        "level": 1,
+        "shortDescription": "Learn Java 8 - Full Tutorial for Beginners",
+        "URL": "https://www.youtube.com/watch?v=grEKMHGYyns",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "Learn Java 8 and object oriented programming with this complete Java course for beginners.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "JavaFX",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/JavaFX.png",
+    "description": "JavaFX is a software platform for creating and delivering desktop applications, as well as rich Internet applications (RIAs) that can run across a wide variety of devices. ",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/JavaFX",
+    "pointDescription": [
+      "First have to know is some basic about core Java like loops, method, interface, variables and Event handling.",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Java"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "HTML Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Machine Learning",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/MachineLearning.png",
+    "description": "Machine learning (ML) is a field of artificial intelligence that uses statistical techniques to give computer systems the ability to 'learn' (e.g., progressively improve performance on a specific task) from data, without being explicitly programmed.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Machine_learning",
+    "pointDescription": [
+      "Understanding the entire ecosystem that you’re designing for. You know how to program like Python.",
+      "Understanding statistics, especially Bayesian probability, is essential for many machine learning algorithms",
+      "Machine learning is an exceptionally wide and interdisciplinary field that consolidates linear algebra, statistics, hacking skills, database skills, and distributed computing skills.",
+      "Knows distributed systems for large data: MPI, Grid Engine. ",
+      "Ununderstand how the different pieces work together, communicate with them (using library calls, REST APIs, database queries, etc.) and build appropriate interfaces."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "ML Basics",
+        "level": 1,
+        "shortDescription": "A Friendly Introduction to Machine Learning",
+        "URL": "https://www.youtube.com/watch?v=IpGxLWOIZy4",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Microsoft Excel",
+    "categoryName": "Digital competence",
+    "skillIcon": "pictures/icons/Microsoft_Excel.png",
+    "description": "Microsoft Excel is a spreadsheet developed by Microsoft for Windows, macOS, Android and iOS. It features calculation, graphing tools, pivot tables, and a macro programming language called Visual Basic for Applications.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Microsoft_Excel",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "The Beginner's Guide to Excel - Excel Basics Tutorial",
+        "level": 1,
+        "shortDescription": "Learn the basics of using Microsoft Excel, including the anatomy of a spreadsheet, how to enter data, how to make your data look good so it's easier to read and use, and more. This tutorial was made using Excel 2016, but is applicable to older versions of Excel and newer versions too.",
+        "URL": "https://youtu.be/rwbho0CgEAE",
+        "URLlastAccessed": "2018-12-11",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Microsoft Outlook",
+    "categoryName": "Digital competence",
+    "skillIcon": "pictures/icons/Microsoft_Outlook.png",
+    "description": "Microsoft Outlook is a personal information manager from Microsoft, available as a part of the Microsoft Office suite. Although often used mainly as an email application, it also includes a calendar, task manager, contact manager, note taking, journal, and web browsing.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Microsoft_Outlook",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Microsoft Outlook 2016 Tutorial | Basics ,Tricks And Tips",
+        "level": 1,
+        "shortDescription": "We show you best practices for managing your email and calendar efficiently, including switching views in calendar and email, scheduling meetings and conference rooms, and categorizing your appointments with colors. Learn how to assign permissions to a delegate and share your calendar with others.",
+        "URL": "https://youtu.be/ZeXHWdgtH6k",
+        "URLlastAccessed": "2018-12-11",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Microsoft Word",
+    "categoryName": "Digital competence",
+    "skillIcon": "pictures/icons/Microsoft_Word.png",
+    "description": "Microsoft Word (or simply Word) is a word processor developed by Microsoft.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Microsoft_Word",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Beginner's Guide to Microsoft Word",
+        "level": 1,
+        "shortDescription": "Learn the basics of effectively using Microsoft Word, including how to format images so that they can be moved freely around your document and positioned where you want them to be.",
+        "URL": "https://youtu.be/S-nHYzK-BVg",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "HR Policies",
+    "categoryName": "Entrepreneurship (Business)",
+    "skillIcon": "pictures/icons/HR_Policies.png",
+    "description": "Series of policies country-, business- and company-dependant which shape contractual relationships.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "HR Policies and Procedures",
+        "level": 1,
+        "shortDescription": "PHR SPHR Human Resources Study Guide",
+        "URL": "https://youtu.be/XKYGO3oN_ck",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Jira",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Jira.png",
+    "description": "Jira is a proprietary issue tracking product developed by Atlassian which allows bug tracking and agile project management.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Jira_(software)",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "JIRA in a Nutshell demo video",
+        "level": 1,
+        "shortDescription": "An overview of JIRA: issue and project tracking for software teams.",
+        "URL": "https://youtu.be/xrCJv0fTyR8",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Identifying External Influences",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "How you identify and handle external threats and opportunities that might affect the companie’s human capital. Examples of external threats and opportunities that an HR business partner should know to look out for might include:– Changes to employment legislation – New job openings from close competitors – Mass redundancies within your industry",
+    "descriptionWikipediaURL": "https://sites.google.com/a/my.shu.ac.uk/hr-group-8/external-influences",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Managing Talent",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "A keen eye for the kind of talent a company really needs; the ability to find and attract that talent; and a great talent retention strategy to ensure business continuity.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Talent_management",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  }
+]
