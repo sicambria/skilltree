@@ -349,5 +349,701 @@
         "language": "en"
       }
     ]
+  },
+  {
+    "name": "Retrieval-Augmented Generation (RAG)",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/retrieval-augmented_generation_(rag).png",
+    "description": "Connecting LLMs to external data sources.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Retrieval-Augmented%20Generation%20(RAG)",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Retrieval-Augmented Generation (RAG) Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Retrieval-Augmented Generation (RAG)",
+        "URL": "https://example.com/training/retrieval-augmented-generation-(rag)",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Vector Database Management",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/vector_database_management.png",
+    "description": "Managing semantic search indices for AI.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Vector%20Database%20Management",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Vector Database Management Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Vector Database Management",
+        "URL": "https://example.com/training/vector-database-management",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Synthetic Data Generation",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/synthetic_data_generation.png",
+    "description": "Creating training data using AI models.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Synthetic%20Data%20Generation",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Synthetic Data Generation Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Synthetic Data Generation",
+        "URL": "https://example.com/training/synthetic-data-generation",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Semantic Search Design",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/semantic_search_design.png",
+    "description": "Building search systems based on meaning, not just keywords.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Semantic%20Search%20Design",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Semantic Search Design Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Semantic Search Design",
+        "URL": "https://example.com/training/semantic-search-design",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Reinforcement Learning from Human Feedback (RLHF)",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/reinforcement_learning_from_human_feedback_(rlhf).png",
+    "description": "Guiding AI behavior through human oversight.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Reinforcement%20Learning%20from%20Human%20Feedback%20(RLHF)",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Reinforcement Learning from Human Feedback (RLHF) Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Reinforcement Learning from Human Feedback (RLHF)",
+        "URL": "https://example.com/training/reinforcement-learning-from-human-feedback-(rlhf)",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Transformer Architecture Fundamentals",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/transformer_architecture_fundamentals.png",
+    "description": "Understanding the core of modern AI models.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Transformer%20Architecture%20Fundamentals",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Transformer Architecture Fundamentals Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Transformer Architecture Fundamentals",
+        "URL": "https://example.com/training/transformer-architecture-fundamentals",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Transparency Reporting",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/transparency_reporting.png",
+    "description": "Documenting how AI systems make decisions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Transparency%20Reporting",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Transparency Reporting Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Transparency Reporting",
+        "URL": "https://example.com/training/transparency-reporting",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "User Consent Design",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/user_consent_design.png",
+    "description": "Designing clear ways for users to allow data usage.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/User%20Consent%20Design",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "User Consent Design Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for User Consent Design",
+        "URL": "https://example.com/training/user-consent-design",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Robot Ethics",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/robot_ethics.png",
+    "description": "Rules for physical AI interaction with humans.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Robot%20Ethics",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Robot Ethics Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Robot Ethics",
+        "URL": "https://example.com/training/robot-ethics",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Technological Humility",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/technological_humility.png",
+    "description": "Recognizing the limits of automated solutions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Technological%20Humility",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Technological Humility Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Technological Humility",
+        "URL": "https://example.com/training/technological-humility",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Systems Thinking",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/systems_thinking.png",
+    "description": "Understanding how parts of a system interact as a whole.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Systems%20Thinking",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Systems Thinking Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Systems Thinking",
+        "URL": "https://example.com/training/systems-thinking",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Regenerative Design",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/regenerative_design.png",
+    "description": "Creating systems that restore their own resources.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Regenerative%20Design",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Regenerative Design Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Regenerative Design",
+        "URL": "https://example.com/training/regenerative-design",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Resilience Engineering",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/resilience_engineering.png",
+    "description": "Building systems that can handle unexpected shocks.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Resilience%20Engineering",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Resilience Engineering Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Resilience Engineering",
+        "URL": "https://example.com/training/resilience-engineering",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Supply Chain Resilience",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/supply_chain_resilience.png",
+    "description": "Designing logistics that cannot easily break.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Supply%20Chain%20Resilience",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Supply Chain Resilience Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Supply Chain Resilience",
+        "URL": "https://example.com/training/supply-chain-resilience",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Sustainable Software Development",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/sustainable_software_development.png",
+    "description": "Minimizing the carbon footprint of code.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Sustainable%20Software%20Development",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Sustainable Software Development Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Sustainable Software Development",
+        "URL": "https://example.com/training/sustainable-software-development",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Visual Storytelling for Data",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/visual_storytelling_for_data.png",
+    "description": "Making numbers feel alive through narration.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Visual%20Storytelling%20for%20Data",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Visual Storytelling for Data Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Visual Storytelling for Data",
+        "URL": "https://example.com/training/visual-storytelling-for-data",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "User Empowerment Psychology",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/user_empowerment_psychology.png",
+    "description": "Designing tools that make users feel capable.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/User%20Empowerment%20Psychology",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "User Empowerment Psychology Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for User Empowerment Psychology",
+        "URL": "https://example.com/training/user-empowerment-psychology",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Quantum Computing Foundations",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/quantum_computing_foundations.png",
+    "description": "Understanding qubits and quantum logic.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Quantum%20Computing%20Foundations",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Quantum Computing Foundations Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Quantum Computing Foundations",
+        "URL": "https://example.com/training/quantum-computing-foundations",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "5G/6G Network Integration",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/5g/6g_network_integration.png",
+    "description": "Leveraging ultra-high-speed connectivity.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/5G%2F6G%20Network%20Integration",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "5G/6G Network Integration Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for 5G/6G Network Integration",
+        "URL": "https://example.com/training/5g/6g-network-integration",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Zero-Knowledge Proofs",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/zero-knowledge_proofs.png",
+    "description": "Proving something is true without revealing it.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Zero-Knowledge%20Proofs",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Zero-Knowledge Proofs Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Zero-Knowledge Proofs",
+        "URL": "https://example.com/training/zero-knowledge-proofs",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Scenario Planning",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/scenario_planning.png",
+    "description": "Building strategies for multiple possible futures.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Scenario%20Planning",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Scenario Planning Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Scenario Planning",
+        "URL": "https://example.com/training/scenario-planning",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Strategic Foresight",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/strategic_foresight.png",
+    "description": "Planning long-term goals in volatile markets.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Strategic%20Foresight",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Strategic Foresight Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Strategic Foresight",
+        "URL": "https://example.com/training/strategic-foresight",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Value-Based Pricing for AI",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/value-based_pricing_for_ai.png",
+    "description": "Pricing outcomes instead of hours.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Value-Based%20Pricing%20for%20AI",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Value-Based Pricing for AI Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Value-Based Pricing for AI",
+        "URL": "https://example.com/training/value-based-pricing-for-ai",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Technological Sovereignty",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/technological_sovereignty.png",
+    "description": "Reducing dependence on third-party cloud firms.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Technological%20Sovereignty",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Technological Sovereignty Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Technological Sovereignty",
+        "URL": "https://example.com/training/technological-sovereignty",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
   }
 ]

@@ -378,5 +378,324 @@
         "language": "en"
       }
     ]
+  },
+  {
+    "name": "LLM Benchmarking",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/llm_benchmarking.png",
+    "description": "Evaluating AI models for specific performance metrics.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/LLM%20Benchmarking",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "LLM Benchmarking Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for LLM Benchmarking",
+        "URL": "https://example.com/training/llm-benchmarking",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Multimodal Interaction",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/multimodal_interaction.png",
+    "description": "Managing AI workflows across text, image, and voice.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Multimodal%20Interaction",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Multimodal Interaction Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Multimodal Interaction",
+        "URL": "https://example.com/training/multimodal-interaction",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Human-Centric Design for Automation",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/human-centric_design_for_automation.png",
+    "description": "Designing bots that feel helpful, not annoying.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Human-Centric%20Design%20for%20Automation",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Human-Centric Design for Automation Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Human-Centric Design for Automation",
+        "URL": "https://example.com/training/human-centric-design-for-automation",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Instructional Design for AI",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/instructional_design_for_ai.png",
+    "description": "Teaching AI models how to teach humans.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Instructional%20Design%20for%20AI",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Instructional Design for AI Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Instructional Design for AI",
+        "URL": "https://example.com/training/instructional-design-for-ai",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Mindfulness for Technical Precision",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/mindfulness_for_technical_precision.png",
+    "description": "Reducing errors through focused attention.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Mindfulness%20for%20Technical%20Precision",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Mindfulness for Technical Precision Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Mindfulness for Technical Precision",
+        "URL": "https://example.com/training/mindfulness-for-technical-precision",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Interdisciplinary Synthesis",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/interdisciplinary_synthesis.png",
+    "description": "Combining insights from art and science.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Interdisciplinary%20Synthesis",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Interdisciplinary Synthesis Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Interdisciplinary Synthesis",
+        "URL": "https://example.com/training/interdisciplinary-synthesis",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Homomorphic Encryption",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/homomorphic_encryption.png",
+    "description": "Computing on encrypted data.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Homomorphic%20Encryption",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Homomorphic Encryption Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Homomorphic Encryption",
+        "URL": "https://example.com/training/homomorphic-encryption",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Low-Code/No-Code Platform Engineering",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/low-code/no-code_platform_engineering.png",
+    "description": "Building internal tools for non-devs.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Low-Code%2FNo-Code%20Platform%20Engineering",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Low-Code/No-Code Platform Engineering Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Low-Code/No-Code Platform Engineering",
+        "URL": "https://example.com/training/low-code/no-code-platform-engineering",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Horizon Scanning",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/horizon_scanning.png",
+    "description": "Identifying emerging trends before they matter.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Horizon%20Scanning",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Horizon Scanning Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Horizon Scanning",
+        "URL": "https://example.com/training/horizon-scanning",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Impact-Driven Strategy",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/impact-driven_strategy.png",
+    "description": "Leading with social and environmental goals.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Impact-Driven%20Strategy",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Impact-Driven Strategy Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Impact-Driven Strategy",
+        "URL": "https://example.com/training/impact-driven-strategy",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Intergenerational Strategy",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/intergenerational_strategy.png",
+    "description": "Planning for decades, not just quarters.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Intergenerational%20Strategy",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Intergenerational Strategy Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Intergenerational Strategy",
+        "URL": "https://example.com/training/intergenerational-strategy",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
   }
 ]

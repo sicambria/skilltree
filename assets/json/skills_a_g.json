@@ -472,5 +472,1571 @@
         "language": "en"
       }
     ]
+  },
+  {
+    "name": "Agentic Workflow Design",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/agentic_workflow_design.png",
+    "description": "Designing systems where AI agents perform autonomous tasks.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Agentic%20Workflow%20Design",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Agentic Workflow Design Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Agentic Workflow Design",
+        "URL": "https://example.com/training/agentic-workflow-design",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "AI Model Fine-tuning",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/ai_model_fine-tuning.png",
+    "description": "Adapting pre-trained models for specific domains.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/AI%20Model%20Fine-tuning",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "AI Model Fine-tuning Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for AI Model Fine-tuning",
+        "URL": "https://example.com/training/ai-model-fine-tuning",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Context Window Management",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/context_window_management.png",
+    "description": "Optimizing input size for long-form AI interactions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Context%20Window%20Management",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Context Window Management Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Context Window Management",
+        "URL": "https://example.com/training/context-window-management",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Auto-GPT Execution",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/auto-gpt_execution.png",
+    "description": "Running recursive AI loops for complex goals.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Auto-GPT%20Execution",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Auto-GPT Execution Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Auto-GPT Execution",
+        "URL": "https://example.com/training/auto-gpt-execution",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "AI Tool Integration",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/ai_tool_integration.png",
+    "description": "Connecting AI to APIs and local tools.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/AI%20Tool%20Integration",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "AI Tool Integration Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for AI Tool Integration",
+        "URL": "https://example.com/training/ai-tool-integration",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "AI Latency Optimization",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/ai_latency_optimization.png",
+    "description": "Reducing response times in AI-driven apps.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/AI%20Latency%20Optimization",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "AI Latency Optimization Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for AI Latency Optimization",
+        "URL": "https://example.com/training/ai-latency-optimization",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "AI Hallucination Detection",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/ai_hallucination_detection.png",
+    "description": "Techniques to identify and correct AI errors.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/AI%20Hallucination%20Detection",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "AI Hallucination Detection Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for AI Hallucination Detection",
+        "URL": "https://example.com/training/ai-hallucination-detection",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Copilot Orchestration",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/copilot_orchestration.png",
+    "description": "Managing multiple AI assistants in a team.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Copilot%20Orchestration",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Copilot Orchestration Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Copilot Orchestration",
+        "URL": "https://example.com/training/copilot-orchestration",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "AI-Augmented Coding",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/ai-augmented_coding.png",
+    "description": "Using AI to accelerate software development.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/AI-Augmented%20Coding",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "AI-Augmented Coding Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for AI-Augmented Coding",
+        "URL": "https://example.com/training/ai-augmented-coding",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Distributed AI Training",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/distributed_ai_training.png",
+    "description": "Scaling AI training across multiple nodes.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Distributed%20AI%20Training",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Distributed AI Training Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Distributed AI Training",
+        "URL": "https://example.com/training/distributed-ai-training",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Algorithmic Bias Mitigation",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/algorithmic_bias_mitigation.png",
+    "description": "Identifying and fixing unfairness in AI models.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Algorithmic%20Bias%20Mitigation",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Algorithmic Bias Mitigation Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Algorithmic Bias Mitigation",
+        "URL": "https://example.com/training/algorithmic-bias-mitigation",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Digital Rights Advocacy",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/digital_rights_advocacy.png",
+    "description": "Promoting user privacy and autonomy in a digital world.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Digital%20Rights%20Advocacy",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Digital Rights Advocacy Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Digital Rights Advocacy",
+        "URL": "https://example.com/training/digital-rights-advocacy",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "AI Safety Protocols",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/ai_safety_protocols.png",
+    "description": "Implementing guardrails for AI behavior.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/AI%20Safety%20Protocols",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "AI Safety Protocols Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for AI Safety Protocols",
+        "URL": "https://example.com/training/ai-safety-protocols",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Explainable AI (XAI)",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/explainable_ai_(xai).png",
+    "description": "Techniques to make AI logic understandable to humans.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Explainable%20AI%20(XAI)",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Explainable AI (XAI) Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Explainable AI (XAI)",
+        "URL": "https://example.com/training/explainable-ai-(xai)",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Data Sovereignty",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/data_sovereignty.png",
+    "description": "Ensuring users control their own data across borders.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Data%20Sovereignty",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Data Sovereignty Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Data Sovereignty",
+        "URL": "https://example.com/training/data-sovereignty",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "AI Impact Assessment",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/ai_impact_assessment.png",
+    "description": "Evaluating the social and ethical consequences of AI.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/AI%20Impact%20Assessment",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "AI Impact Assessment Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for AI Impact Assessment",
+        "URL": "https://example.com/training/ai-impact-assessment",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Ethical Data Sourcing",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/ethical_data_sourcing.png",
+    "description": "Acquiring training data without exploitation.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Ethical%20Data%20Sourcing",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Ethical Data Sourcing Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Ethical Data Sourcing",
+        "URL": "https://example.com/training/ethical-data-sourcing",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Differential Privacy",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/differential_privacy.png",
+    "description": "Adding noise to data to protect individual identities.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Differential%20Privacy",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Differential Privacy Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Differential Privacy",
+        "URL": "https://example.com/training/differential-privacy",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "AI Governance Frameworks",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/ai_governance_frameworks.png",
+    "description": "Developing rules for internal AI usage.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/AI%20Governance%20Frameworks",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "AI Governance Frameworks Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for AI Governance Frameworks",
+        "URL": "https://example.com/training/ai-governance-frameworks",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Deepfake Verification",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/deepfake_verification.png",
+    "description": "Tools and techniques to identify AI-generated media.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Deepfake%20Verification",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Deepfake Verification Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Deepfake Verification",
+        "URL": "https://example.com/training/deepfake-verification",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Complexity Theory for Business",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/complexity_theory_for_business.png",
+    "description": "Managing teams as complex adaptive systems.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Complexity%20Theory%20for%20Business",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Complexity Theory for Business Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Complexity Theory for Business",
+        "URL": "https://example.com/training/complexity-theory-for-business",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Circular Economy Modeling",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/circular_economy_modeling.png",
+    "description": "Designing out waste in business processes.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Circular%20Economy%20Modeling",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Circular Economy Modeling Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Circular Economy Modeling",
+        "URL": "https://example.com/training/circular-economy-modeling",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Biomimicry in Tech",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/biomimicry_in_tech.png",
+    "description": "Applying biological patterns to software design.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Biomimicry%20in%20Tech",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Biomimicry in Tech Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Biomimicry in Tech",
+        "URL": "https://example.com/training/biomimicry-in-tech",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Dynamic Resource Allocation",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/dynamic_resource_allocation.png",
+    "description": "Automating the flow of assets in volatile markets.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Dynamic%20Resource%20Allocation",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Dynamic Resource Allocation Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Dynamic Resource Allocation",
+        "URL": "https://example.com/training/dynamic-resource-allocation",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Decentralized Governance",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/decentralized_governance.png",
+    "description": "Managing projects without a central authority (DAOs).",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Decentralized%20Governance",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Decentralized Governance Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Decentralized Governance",
+        "URL": "https://example.com/training/decentralized-governance",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Ecosystem Mapping",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/ecosystem_mapping.png",
+    "description": "Visualizing relationships between organizations.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Ecosystem%20Mapping",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Ecosystem Mapping Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Ecosystem Mapping",
+        "URL": "https://example.com/training/ecosystem-mapping",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Bio-Digital Architecture",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/bio-digital_architecture.png",
+    "description": "Merging biological data with digital systems.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Bio-Digital%20Architecture",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Bio-Digital Architecture Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Bio-Digital Architecture",
+        "URL": "https://example.com/training/bio-digital-architecture",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Adaptive Leadership",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/adaptive_leadership.png",
+    "description": "Leading through ambiguity and rapid change.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Adaptive%20Leadership",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Adaptive Leadership Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Adaptive Leadership",
+        "URL": "https://example.com/training/adaptive-leadership",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Feedback Loop Optimization",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/feedback_loop_optimization.png",
+    "description": "Reducing delay in system corrections.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Feedback%20Loop%20Optimization",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Feedback Loop Optimization Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Feedback Loop Optimization",
+        "URL": "https://example.com/training/feedback-loop-optimization",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Active Listening for Virtual Environments",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/active_listening_for_virtual_environments.png",
+    "description": "Deep listening through screen-based communication.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Active%20Listening%20for%20Virtual%20Environments",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Active Listening for Virtual Environments Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Active Listening for Virtual Environments",
+        "URL": "https://example.com/training/active-listening-for-virtual-environments",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Emotional Intelligence in AI Teams",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/emotional_intelligence_in_ai_teams.png",
+    "description": "Managing morale when roles change due to AI.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Emotional%20Intelligence%20in%20AI%20Teams",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Emotional Intelligence in AI Teams Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Emotional Intelligence in AI Teams",
+        "URL": "https://example.com/training/emotional-intelligence-in-ai-teams",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Critical Thinking in the Post-Truth Era",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/critical_thinking_in_the_post-truth_era.png",
+    "description": "Identifying misinformation and AI hallucination.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Critical%20Thinking%20in%20the%20Post-Truth%20Era",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Critical Thinking in the Post-Truth Era Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Critical Thinking in the Post-Truth Era",
+        "URL": "https://example.com/training/critical-thinking-in-the-post-truth-era",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Cross-Cultural Digital Collaboration",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/cross-cultural_digital_collaboration.png",
+    "description": "Leading diverse teams across timezones and tools.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Cross-Cultural%20Digital%20Collaboration",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Cross-Cultural Digital Collaboration Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Cross-Cultural Digital Collaboration",
+        "URL": "https://example.com/training/cross-cultural-digital-collaboration",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Digital Wellbeing Management",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/digital_wellbeing_management.png",
+    "description": "Preventing burnout in 24/7 connected roles.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Digital%20Wellbeing%20Management",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Digital Wellbeing Management Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Digital Wellbeing Management",
+        "URL": "https://example.com/training/digital-wellbeing-management",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Conflict Resolution in Async Teams",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/conflict_resolution_in_async_teams.png",
+    "description": "Healing relationships via text and recording.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Conflict%20Resolution%20in%20Async%20Teams",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Conflict Resolution in Async Teams Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Conflict Resolution in Async Teams",
+        "URL": "https://example.com/training/conflict-resolution-in-async-teams",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Empathy-Driven Engineering",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/empathy-driven_engineering.png",
+    "description": "Putting user feelings at the center of the build.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Empathy-Driven%20Engineering",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Empathy-Driven Engineering Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Empathy-Driven Engineering",
+        "URL": "https://example.com/training/empathy-driven-engineering",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Creative Problem Solving",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/creative_problem_solving.png",
+    "description": "Generating unique solutions beyond AI training data.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Creative%20Problem%20Solving",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Creative Problem Solving Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Creative Problem Solving",
+        "URL": "https://example.com/training/creative-problem-solving",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Ethics of Care",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/ethics_of_care.png",
+    "description": "Prioritizing human needs in technical decisions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Ethics%20of%20Care",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Ethics of Care Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Ethics of Care",
+        "URL": "https://example.com/training/ethics-of-care",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Digital Storytelling",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/digital_storytelling.png",
+    "description": "Crafting narratives for the digital medium.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Digital%20Storytelling",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Digital Storytelling Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Digital Storytelling",
+        "URL": "https://example.com/training/digital-storytelling",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Collective Intelligence Facilitation",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/collective_intelligence_facilitation.png",
+    "description": "Getting groups to think better together.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Collective%20Intelligence%20Facilitation",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Collective Intelligence Facilitation Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Collective Intelligence Facilitation",
+        "URL": "https://example.com/training/collective-intelligence-facilitation",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Cognitive Load Management",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/cognitive_load_management.png",
+    "description": "Designing UI to not overwhelm the brain.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Cognitive%20Load%20Management",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Cognitive Load Management Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Cognitive Load Management",
+        "URL": "https://example.com/training/cognitive-load-management",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Blockchain for Supply Chain",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/blockchain_for_supply_chain.png",
+    "description": "Verifying physical goods on a ledger.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Blockchain%20for%20Supply%20Chain",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Blockchain for Supply Chain Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Blockchain for Supply Chain",
+        "URL": "https://example.com/training/blockchain-for-supply-chain",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Edge Computing Architecture",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/edge_computing_architecture.png",
+    "description": "Processing data close to the source.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Edge%20Computing%20Architecture",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Edge Computing Architecture Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Edge Computing Architecture",
+        "URL": "https://example.com/training/edge-computing-architecture",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Brain-Computer Interface Basics",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/brain-computer_interface_basics.png",
+    "description": "Understanding direct neural data exchange.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Brain-Computer%20Interface%20Basics",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Brain-Computer Interface Basics Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Brain-Computer Interface Basics",
+        "URL": "https://example.com/training/brain-computer-interface-basics",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Augmented Reality UI Design",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/augmented_reality_ui_design.png",
+    "description": "Designing interfaces for the physical world view.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Augmented%20Reality%20UI%20Design",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Augmented Reality UI Design Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Augmented Reality UI Design",
+        "URL": "https://example.com/training/augmented-reality-ui-design",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Digital Twin Orchestration",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/digital_twin_orchestration.png",
+    "description": "Synching physical objects with digital replicas.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Digital%20Twin%20Orchestration",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Digital Twin Orchestration Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Digital Twin Orchestration",
+        "URL": "https://example.com/training/digital-twin-orchestration",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Decentralized Identity (DID)",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/decentralized_identity_(did).png",
+    "description": "Giving users portable, secure IDs.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Decentralized%20Identity%20(DID)",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Decentralized Identity (DID) Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Decentralized Identity (DID)",
+        "URL": "https://example.com/training/decentralized-identity-(did)",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Bio-Informatics Data Analysis",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/bio-informatics_data_analysis.png",
+    "description": "Processing genomic and biological data.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Bio-Informatics%20Data%20Analysis",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Bio-Informatics Data Analysis Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Bio-Informatics Data Analysis",
+        "URL": "https://example.com/training/bio-informatics-data-analysis",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Future of Work Analysis",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/future_of_work_analysis.png",
+    "description": "Predicting how roles will change.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Future%20of%20Work%20Analysis",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Future of Work Analysis Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Future of Work Analysis",
+        "URL": "https://example.com/training/future-of-work-analysis",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Antifragile Business Modeling",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/antifragile_business_modeling.png",
+    "description": "Designing companies that thrive on chaos.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Antifragile%20Business%20Modeling",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Antifragile Business Modeling Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Antifragile Business Modeling",
+        "URL": "https://example.com/training/antifragile-business-modeling",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Digital Transformation Leadership",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/digital_transformation_leadership.png",
+    "description": "Guiding traditional firms into the future.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Digital%20Transformation%20Leadership",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Digital Transformation Leadership Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Digital Transformation Leadership",
+        "URL": "https://example.com/training/digital-transformation-leadership",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Global Risk Assessment",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/global_risk_assessment.png",
+    "description": "Evaluating geo-political threats to tech.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Global%20Risk%20Assessment",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Global Risk Assessment Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Global Risk Assessment",
+        "URL": "https://example.com/training/global-risk-assessment",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Community-Led Innovation",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/community-led_innovation.png",
+    "description": "Building products with the users, not just for them.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Community-Led%20Innovation",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Community-Led Innovation Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Community-Led Innovation",
+        "URL": "https://example.com/training/community-led-innovation",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Continuous Learning Cultures",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/continuous_learning_cultures.png",
+    "description": "Designing teams that learn faster than market change.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Continuous%20Learning%20Cultures",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Continuous Learning Cultures Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Continuous Learning Cultures",
+        "URL": "https://example.com/training/continuous-learning-cultures",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
   }
 ]

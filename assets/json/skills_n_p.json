@@ -335,5 +335,324 @@
         "language": "en"
       }
     ]
+  },
+  {
+    "name": "Prompt Engineering",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/prompt_engineering.png",
+    "description": "Crafting precise instructions for LLMs.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Prompt%20Engineering",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Prompt Engineering Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Prompt Engineering",
+        "URL": "https://example.com/training/prompt-engineering",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Prompt Versioning",
+    "categoryName": "AI & Human-AI Collaboration",
+    "skillIcon": "pictures/icons/future/prompt_versioning.png",
+    "description": "Managing iterations of instructions for stability.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Prompt%20Versioning",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Prompt Versioning Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Prompt Versioning",
+        "URL": "https://example.com/training/prompt-versioning",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Privacy-Preserving Computation",
+    "categoryName": "Ethics, Governance & Rights",
+    "skillIcon": "pictures/icons/future/privacy-preserving_computation.png",
+    "description": "Analyzing data without seeing the raw values.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Privacy-Preserving%20Computation",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Privacy-Preserving Computation Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Privacy-Preserving Computation",
+        "URL": "https://example.com/training/privacy-preserving-computation",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Network Theory",
+    "categoryName": "Complex Systems & Resilience",
+    "skillIcon": "pictures/icons/future/network_theory.png",
+    "description": "Optimizing communication flows in large networks.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Network%20Theory",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Network Theory Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Network Theory",
+        "URL": "https://example.com/training/network-theory",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Public Speaking for Avatars",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/public_speaking_for_avatars.png",
+    "description": "Presenting in VR and digital spaces.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Public%20Speaking%20for%20Avatars",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Public Speaking for Avatars Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Public Speaking for Avatars",
+        "URL": "https://example.com/training/public-speaking-for-avatars",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Non-Violent Communication for Devs",
+    "categoryName": "Human-Centric Future Skills",
+    "skillIcon": "pictures/icons/future/non-violent_communication_for_devs.png",
+    "description": "Improving code review culture through language.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Non-Violent%20Communication%20for%20Devs",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Non-Violent Communication for Devs Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Non-Violent Communication for Devs",
+        "URL": "https://example.com/training/non-violent-communication-for-devs",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Post-Quantum Cryptography",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/post-quantum_cryptography.png",
+    "description": "Securing data against quantum attacks.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Post-Quantum%20Cryptography",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Post-Quantum Cryptography Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Post-Quantum Cryptography",
+        "URL": "https://example.com/training/post-quantum-cryptography",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Privacy-First Analytics",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/privacy-first_analytics.png",
+    "description": "Tracking usage without identifying users.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Privacy-First%20Analytics",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Privacy-First Analytics Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Privacy-First Analytics",
+        "URL": "https://example.com/training/privacy-first-analytics",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Neuromorphic Computing",
+    "categoryName": "Advanced Technologies",
+    "skillIcon": "pictures/icons/future/neuromorphic_computing.png",
+    "description": "Designing hardware inspired by brain structure.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Neuromorphic%20Computing",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Neuromorphic Computing Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Neuromorphic Computing",
+        "URL": "https://example.com/training/neuromorphic-computing",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Platform Ecosystem Strategy",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/platform_ecosystem_strategy.png",
+    "description": "Building network effects into products.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Platform%20Ecosystem%20Strategy",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Platform Ecosystem Strategy Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Platform Ecosystem Strategy",
+        "URL": "https://example.com/training/platform-ecosystem-strategy",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Policy-as-Code",
+    "categoryName": "Strategy & Foresight",
+    "skillIcon": "pictures/icons/future/policy-as-code.png",
+    "description": "Automating compliance through software.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Policy-as-Code",
+    "pointDescription": [
+      "Familiar with basic concepts and terminology.",
+      "Can apply the skill to simple, well-defined problems.",
+      "Intermediate proficiency, handles common real-world scenarios.",
+      "Advanced proficiency, can optimize and lead others in this skill.",
+      "Mastery level, creating new methodologies and pushing the field forward."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Policy-as-Code Tutorial",
+        "level": 1,
+        "shortDescription": "Introductory training for Policy-as-Code",
+        "URL": "https://example.com/training/policy-as-code",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
   }
 ]

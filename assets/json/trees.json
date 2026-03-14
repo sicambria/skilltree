@@ -99,5 +99,305 @@
       "Scrum",
       "PostgreSQL"
     ]
+  },
+  {
+    "name": "AI Orchestrator",
+    "description": "A future-focused tree concentrating on Prompt Engineering, Agentic Workflow Design, AI Tool Integration.",
+    "focusArea": "Engineering",
+    "skillNames": [
+      "Prompt Engineering",
+      "Agentic Workflow Design",
+      "AI Tool Integration"
+    ]
+  },
+  {
+    "name": "Digital Ethicist",
+    "description": "A future-focused tree concentrating on Algorithmic Bias Mitigation, Explainable AI (XAI), AI Safety Protocols.",
+    "focusArea": "Ethics",
+    "skillNames": [
+      "Algorithmic Bias Mitigation",
+      "Explainable AI (XAI)",
+      "AI Safety Protocols"
+    ]
+  },
+  {
+    "name": "Future Strategist",
+    "description": "A future-focused tree concentrating on Horizon Scanning, Scenario Planning, Strategic Foresight.",
+    "focusArea": "Strategy",
+    "skillNames": [
+      "Horizon Scanning",
+      "Scenario Planning",
+      "Strategic Foresight"
+    ]
+  },
+  {
+    "name": "Human-AI Interaction Designer",
+    "description": "A future-focused tree concentrating on Human-Centric Design for Automation, Multimodal Interaction, Cognitive Load Management.",
+    "focusArea": "Design",
+    "skillNames": [
+      "Human-Centric Design for Automation",
+      "Multimodal Interaction",
+      "Cognitive Load Management"
+    ]
+  },
+  {
+    "name": "Regenerative Systems Architect",
+    "description": "A future-focused tree concentrating on Regenerative Design, Circular Economy Modeling, Sustainable Software Development.",
+    "focusArea": "Engineering",
+    "skillNames": [
+      "Regenerative Design",
+      "Circular Economy Modeling",
+      "Sustainable Software Development"
+    ]
+  },
+  {
+    "name": "AI Governance Officer",
+    "description": "A future-focused tree concentrating on AI Governance Frameworks, Transparency Reporting, AI Impact Assessment.",
+    "focusArea": "Management",
+    "skillNames": [
+      "AI Governance Frameworks",
+      "Transparency Reporting",
+      "AI Impact Assessment"
+    ]
+  },
+  {
+    "name": "Digital Resilience Specialist",
+    "description": "A future-focused tree concentrating on Resilience Engineering, Supply Chain Resilience, Complexity Theory for Business.",
+    "focusArea": "Engineering",
+    "skillNames": [
+      "Resilience Engineering",
+      "Supply Chain Resilience",
+      "Complexity Theory for Business"
+    ]
+  },
+  {
+    "name": "Algorithmic Auditor",
+    "description": "A future-focused tree concentrating on Algorithmic Bias Mitigation, Explainable AI (XAI), Data Sovereignty.",
+    "focusArea": "Ethics",
+    "skillNames": [
+      "Algorithmic Bias Mitigation",
+      "Explainable AI (XAI)",
+      "Data Sovereignty"
+    ]
+  },
+  {
+    "name": "Quantum Computing Specialist",
+    "description": "A future-focused tree concentrating on Quantum Computing Foundations, Post-Quantum Cryptography, Neuromorphic Computing.",
+    "focusArea": "Engineering",
+    "skillNames": [
+      "Quantum Computing Foundations",
+      "Post-Quantum Cryptography",
+      "Neuromorphic Computing"
+    ]
+  },
+  {
+    "name": "Human-Centric Automation Designer",
+    "description": "A future-focused tree concentrating on Human-Centric Design for Automation, User Empowerment Psychology, Cognitive Load Management.",
+    "focusArea": "Design",
+    "skillNames": [
+      "Human-Centric Design for Automation",
+      "User Empowerment Psychology",
+      "Cognitive Load Management"
+    ]
+  },
+  {
+    "name": "AI Safety Engineer",
+    "description": "A future-focused tree concentrating on AI Safety Protocols, Hallucination Detection, RLHF.",
+    "focusArea": "Engineering",
+    "skillNames": [
+      "AI Safety Protocols",
+      "Hallucination Detection",
+      "RLHF"
+    ]
+  },
+  {
+    "name": "Data Privacy Architect",
+    "description": "A future-focused tree concentrating on Differential Privacy, Homomorphic Encryption, Zero-Knowledge Proofs.",
+    "focusArea": "Engineering",
+    "skillNames": [
+      "Differential Privacy",
+      "Homomorphic Encryption",
+      "Zero-Knowledge Proofs"
+    ]
+  },
+  {
+    "name": "Metaverse Architect",
+    "description": "A future-focused tree concentrating on Augmented Reality UI Design, Public Speaking for Avatars, Digital Twin Orchestration.",
+    "focusArea": "Design",
+    "skillNames": [
+      "Augmented Reality UI Design",
+      "Public Speaking for Avatars",
+      "Digital Twin Orchestration"
+    ]
+  },
+  {
+    "name": "Blockchain Solutions Architect",
+    "description": "A future-focused tree concentrating on Blockchain for Supply Chain, Decentralized Identity (DID), Zero-Knowledge Proofs.",
+    "focusArea": "Engineering",
+    "skillNames": [
+      "Blockchain for Supply Chain",
+      "Decentralized Identity (DID)",
+      "Zero-Knowledge Proofs"
+    ]
+  },
+  {
+    "name": "Sustainable Tech Specialist",
+    "description": "A future-focused tree concentrating on Sustainable Software Development, Impact-Driven Strategy, Circular Economy Modeling.",
+    "focusArea": "Strategy",
+    "skillNames": [
+      "Sustainable Software Development",
+      "Impact-Driven Strategy",
+      "Circular Economy Modeling"
+    ]
+  },
+  {
+    "name": "Digital Wellbeing Consultant",
+    "description": "A future-focused tree concentrating on Digital Wellbeing Management, Mindfulness for Technical Precision, Ethics of Care.",
+    "focusArea": "People",
+    "skillNames": [
+      "Digital Wellbeing Management",
+      "Mindfulness for Technical Precision",
+      "Ethics of Care"
+    ]
+  },
+  {
+    "name": "AI Policy Advisor",
+    "description": "A future-focused tree concentrating on AI Governance Frameworks, Technological Sovereignty, Policy-as-Code.",
+    "focusArea": "Policy",
+    "skillNames": [
+      "AI Governance Frameworks",
+      "Technological Sovereignty",
+      "Policy-as-Code"
+    ]
+  },
+  {
+    "name": "Scenario Planner",
+    "description": "A future-focused tree concentrating on Scenario Planning, Global Risk Assessment, Horizon Scanning.",
+    "focusArea": "Strategy",
+    "skillNames": [
+      "Scenario Planning",
+      "Global Risk Assessment",
+      "Horizon Scanning"
+    ]
+  },
+  {
+    "name": "Ecosystem Orchestrator",
+    "description": "A future-focused tree concentrating on Platform Ecosystem Strategy, Network Theory, Ecosystem Mapping.",
+    "focusArea": "Strategy",
+    "skillNames": [
+      "Platform Ecosystem Strategy",
+      "Network Theory",
+      "Ecosystem Mapping"
+    ]
+  },
+  {
+    "name": "Ethical AI Lead",
+    "description": "A future-focused tree concentrating on AI Safety Protocols, Algorithmic Bias Mitigation, Explainable AI (XAI).",
+    "focusArea": "Ethics",
+    "skillNames": [
+      "AI Safety Protocols",
+      "Algorithmic Bias Mitigation",
+      "Explainable AI (XAI)"
+    ]
+  },
+  {
+    "name": "Complexity Analyst",
+    "description": "A future-focused tree concentrating on Complexity Theory for Business, Feedback Loop Optimization, Systems Thinking.",
+    "focusArea": "Science",
+    "skillNames": [
+      "Complexity Theory for Business",
+      "Feedback Loop Optimization",
+      "Systems Thinking"
+    ]
+  },
+  {
+    "name": "Remote Team Facilitator",
+    "description": "A future-focused tree concentrating on Active Listening for Virtual Environments, Conflict Resolution in Async Teams, Collective Intelligence Facilitation.",
+    "focusArea": "People",
+    "skillNames": [
+      "Active Listening for Virtual Environments",
+      "Conflict Resolution in Async Teams",
+      "Collective Intelligence Facilitation"
+    ]
+  },
+  {
+    "name": "Digital Storyteller",
+    "description": "A future-focused tree concentrating on Visual Storytelling for Data, Digital Storytelling, Instructional Design for AI.",
+    "focusArea": "Communication",
+    "skillNames": [
+      "Visual Storytelling for Data",
+      "Digital Storytelling",
+      "Instructional Design for AI"
+    ]
+  },
+  {
+    "name": "Adaptive Leader",
+    "description": "A future-focused tree concentrating on Adaptive Leadership, Future of Work Analysis, Continuous Learning Cultures.",
+    "focusArea": "Management",
+    "skillNames": [
+      "Adaptive Leadership",
+      "Future of Work Analysis",
+      "Continuous Learning Cultures"
+    ]
+  },
+  {
+    "name": "Decentralized Systems Developer",
+    "description": "A future-focused tree concentrating on Decentralized Governance, Network Theory, Zero-Knowledge Proofs.",
+    "focusArea": "Engineering",
+    "skillNames": [
+      "Decentralized Governance",
+      "Network Theory",
+      "Zero-Knowledge Proofs"
+    ]
+  },
+  {
+    "name": "Precision Bio-Analyst",
+    "description": "A future-focused tree concentrating on Bio-Informatics Data Analysis, Bio-Digital Architecture, Mindfulness for Technical Precision.",
+    "focusArea": "Science",
+    "skillNames": [
+      "Bio-Informatics Data Analysis",
+      "Bio-Digital Architecture",
+      "Mindfulness for Technical Precision"
+    ]
+  },
+  {
+    "name": "AI-Enhanced Developer",
+    "description": "A future-focused tree concentrating on AI-Augmented Coding, Transformer Architecture Fundamentals, Prompt Versioning.",
+    "focusArea": "Engineering",
+    "skillNames": [
+      "AI-Augmented Coding",
+      "Transformer Architecture Fundamentals",
+      "Prompt Versioning"
+    ]
+  },
+  {
+    "name": "User Empowerment Lead",
+    "description": "A future-focused tree concentrating on User Empowerment Psychology, User Consent Design, Empathy-Driven Engineering.",
+    "focusArea": "Design",
+    "skillNames": [
+      "User Empowerment Psychology",
+      "User Consent Design",
+      "Empathy-Driven Engineering"
+    ]
+  },
+  {
+    "name": "Technological Foresight Lead",
+    "description": "A future-focused tree concentrating on Strategic Foresight, Horizon Scanning, Technological Sovereignty.",
+    "focusArea": "Strategy",
+    "skillNames": [
+      "Strategic Foresight",
+      "Horizon Scanning",
+      "Technological Sovereignty"
+    ]
+  },
+  {
+    "name": "Cognitive Performance Coach",
+    "description": "A future-focused tree concentrating on Cognitive Load Management, Digital Wellbeing Management, Mindfulness for Technical Precision.",
+    "focusArea": "People",
+    "skillNames": [
+      "Cognitive Load Management",
+      "Digital Wellbeing Management",
+      "Mindfulness for Technical Precision"
+    ]
   }
 ]
