@@ -1,107 +1,5 @@
 [
   {
-    "name": "CSS",
-    "categoryName": "Maths, science and engineering",
-    "skillIcon": "pictures/icons/CSS.png",
-    "description": "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/CSS",
-    "pointDescription": [
-      "Understand that the purpose of CSS is keeping design and content separate, to the highest extent that is possible. Have made extensive modifications to a CSS template. Have used a WYSIWYG editor to create CSS web page. Have a basic understanding of CSS layout techniques.",
-      "I have designed a reasonably complex website from scratch using only CSS for layout.I have a solid understanding of the structure of CSS, the CSS box model, and CSS positioning.I understand how to use float and deal with it's quirks.I have a basic understanding that different browsers render some CSS differently and that needs to be accounted for and tested.I have a growing collection of CSS resources to draw from.I do not use tables for layout whatsoever anymore. I understand that tables are for tabular data, not page layout.",
-      "I have designed and coded a large number of CSS web sites.  I can convert a design from any format into a CSS layout: Photoshop, Illustrator, napkin drawings, etc.I am completely comfortable writing and editing CSS by hand.I have a strong understanding of the cascading part of CSS. Particularly how some some CSS properties do, some don't, and some depend on how the value is declared.I have a solid understanding of cross-browser CSS. I know how to use browser specific CSS statements and delclare browser specific stylesheets.I know and have tried some CSS hacks and understand the advantages and disadvantages of using them.I have a strong understanding of the different sizing values available in CSS (e.g. em, px, %, pt, small, etc.) and in what situations each make the most sense.I can quickly troubleshoot and solve CSS problems.I have a great collection of tools and resources at my disposal for inspiration, debugging, or reference.",
-      "I feel like I could tackle any design idea with CSS.I can do pixel-perfect cross-browser conversions of designs into CSS websites.I can visualize markup structure easily, just by looking at a design.I have utilized additional web technologies to expand the possibilities and break through the limitations of CSS.I have my own CSS framework I use, complete with my own customized CSS reset.I have a strong understanding of advanced CSS like pseudo classes, pseudo elements, and attribute selectors.I keep up to date on browser support and development progress.",
-      "I am involved with the future of CSS specifications or support.I am a CSS Celebrity.I've written books, given seminars, taught classes, knew CSS since she was a little girl, etc.I don't need to do testing, I just know."
-    ],
-    "maxPoint": 5,
-    "parents": [
-      "HTML"
-    ],
-    "children": [
-      {
-        "name": "CSS tools",
-        "minPoint": 2,
-        "recommended": false
-      },
-      {
-        "name": "Photoshop",
-        "minPoint": 0,
-        "recommended": false
-      }
-    ],
-    "trainings": [
-      {
-        "name": "CSS Basics",
-        "level": 1,
-        "shortDescription": "HTML Crash Course For Absolute Beginners",
-        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
-        "URLlastAccessed": "2018-11-19",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
-    "name": "CSS tools",
-    "categoryName": "Maths, science and engineering",
-    "skillIcon": "pictures/icons/CSS_tools.png",
-    "description": "CSS tools and frameworks are meant to allow for easier, more standards-compliant web design using the Cascading Style Sheets language.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/CSS_framework",
-    "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
-    ],
-    "maxPoint": 5,
-    "parents": [
-      "CSS"
-    ],
-    "children": [],
-    "trainings": [
-      {
-        "name": "Top10 CSS Tools",
-        "level": 1,
-        "shortDescription": "10 Best CSS Tools & Web-Based Apps For Developers",
-        "URL": "https://1stwebdesigner.com/best-css-tools/",
-        "URLlastAccessed": "2018-11-19",
-        "goal": "Describing the top 10 CSS libraries, tools, webapps and automated scripts that make it so much easier to build websites.",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
-    "name": "Go",
-    "categoryName": "Maths, science and engineering",
-    "skillIcon": "pictures/icons/Go.png",
-    "description": "Go (often referred to as Golang) is a fully open-source programming language. It is statically typed, compiled, and syntactically similar to C, with the added benefits of memory safety, garbage collection, structural typing, and CSP-style concurrency.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Go_(programming_language)",
-    "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
-    ],
-    "maxPoint": 5,
-    "parents": [],
-    "children": [],
-    "trainings": [
-      {
-        "name": "HTML Basics",
-        "level": 1,
-        "shortDescription": "HTML Crash Course For Absolute Beginners",
-        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
-        "URLlastAccessed": "2018-11-19",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
     "name": "Coaching",
     "categoryName": "Soft skills (& civic competence)",
     "skillIcon": "pictures/icons/Coaching.png",
@@ -181,84 +79,6 @@
         "level": 1,
         "shortDescription": "The #1 source of pain on a team, or in any relationship, is conflict. What if conflict wasn’t good or bad? What if conflict was an energy source your team could harness to produce innovative, creative, and transformational results? Invest 18 minutes learning the two magic ingredients and how you can put them to work with any team you care about.",
         "URL": "https://youtu.be/o97fVGTjE4w",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
-    "name": "Git",
-    "categoryName": "Maths, science and engineering",
-    "skillIcon": "pictures/icons/Git.png",
-    "description": "Git is a version-control system for tracking changes in computer files and coordinating work on those files among multiple people. It is primarily used for source-code management in software development, but it can be used to keep track of changes in any set of files. As a distributed revision-control system, it is aimed at speed, data integrity, and support for distributed, non-linear workflows.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Git",
-    "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
-    ],
-    "maxPoint": 5,
-    "parents": [],
-    "children": [],
-    "trainings": [
-      {
-        "name": "Learn Git in 20 Minutes",
-        "level": 1,
-        "shortDescription": "In this video you learn how to initialize repositories, track files, stage changes, branch and merge, handle merge conflicts, stash changes, pull from and commit to remote repositories like GitHub.",
-        "URL": "https://youtu.be/Y9XZQO1n_7c",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      },
-      {
-        "name": "Handling git commits",
-        "level": 2,
-        "shortDescription": "On undoing, fixing, or removing commits in git",
-        "URL": "http://sethrobertson.github.io/GitFixUm/fixup.html",
-        "URLlastAccessed": "2019-01-03",
-        "goal": "This document is an attempt to be a fairly comprehensive guide to recovering from what you did not mean to do when using git.",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
-    "name": "Docker",
-    "categoryName": "Maths, science and engineering",
-    "skillIcon": "pictures/icons/Docker.png",
-    "description": "Docker is a computer program that performs operating-system-level virtualization, also known as 'containerization'.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Docker_(software)",
-    "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
-    ],
-    "maxPoint": 5,
-    "parents": [],
-    "children": [],
-    "trainings": [
-      {
-        "name": "Docker Tutorial - What is Docker & Docker Containers, Images, etc?",
-        "level": 1,
-        "shortDescription": "In these tutorials, I'll be breaking down exactly what a Docker container is and how to use it.",
-        "URL": "https://youtu.be/pGYAg7TMmp0",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      },
-      {
-        "name": "Docker Tutorial - What is Docker & Docker Containers, Images, etc?",
-        "level": 1,
-        "shortDescription": "In these tutorials, I'll be breaking down exactly what a Docker container is and how to use it.",
-        "URL": "http://training.docker.com/category/self-paced-online",
         "URLlastAccessed": "2018-12-15",
         "goal": "",
         "length": 0,
@@ -727,35 +547,6 @@
         "level": 1,
         "shortDescription": "Introductory training for AI-Augmented Coding",
         "URL": "https://example.com/training/ai-augmented-coding",
-        "URLlastAccessed": "2026-03-14",
-        "goal": "Foundation",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
-    "name": "Distributed AI Training",
-    "categoryName": "AI & Human-AI Collaboration",
-    "skillIcon": "pictures/icons/future/distributed_ai_training.png",
-    "description": "Scaling AI training across multiple nodes.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Distributed%20AI%20Training",
-    "pointDescription": [
-      "Familiar with basic concepts and terminology.",
-      "Can apply the skill to simple, well-defined problems.",
-      "Intermediate proficiency, handles common real-world scenarios.",
-      "Advanced proficiency, can optimize and lead others in this skill.",
-      "Mastery level, creating new methodologies and pushing the field forward."
-    ],
-    "maxPoint": 5,
-    "parents": [],
-    "children": [],
-    "trainings": [
-      {
-        "name": "Distributed AI Training Tutorial",
-        "level": 1,
-        "shortDescription": "Introductory training for Distributed AI Training",
-        "URL": "https://example.com/training/distributed-ai-training",
         "URLlastAccessed": "2026-03-14",
         "goal": "Foundation",
         "length": 0,
@@ -2034,6 +1825,354 @@
         "URL": "https://example.com/training/continuous-learning-cultures",
         "URLlastAccessed": "2026-03-14",
         "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Ecological Grief Processing",
+    "categoryName": "Inner Development & Consciousness",
+    "skillIcon": "pictures/icons/rdg/ecological_grief_processing.png",
+    "description": "Digesting climate anxiety into grounded agency.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Ecological%20Grief%20Processing",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Ecological Grief Processing Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Ecological Grief Processing",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Anishinaabe Relational Epistemology",
+    "categoryName": "Ecological Restoration & Kinship",
+    "skillIcon": "pictures/icons/rdg/anishinaabe_relational_epistemology.png",
+    "description": "Treating relationship to landscape as the core of knowledge.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Anishinaabe%20Relational%20Epistemology",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Anishinaabe Relational Epistemology Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Anishinaabe Relational Epistemology",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Bioregional Animism",
+    "categoryName": "Ecological Restoration & Kinship",
+    "skillIcon": "pictures/icons/rdg/bioregional_animism.png",
+    "description": "Place-based identity and belonging to a living landscape.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Bioregional%20Animism",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Bioregional Animism Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Bioregional Animism",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Avian & Pollinator Corridor Design",
+    "categoryName": "Ecological Restoration & Kinship",
+    "skillIcon": "pictures/icons/rdg/avian_&_pollinator_corridor_design.png",
+    "description": "Creating safe passage and resource nodes for migratory life.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Avian%20%26%20Pollinator%20Corridor%20Design",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Avian & Pollinator Corridor Design Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Avian & Pollinator Corridor Design",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Biomimicry in Social Systems",
+    "categoryName": "Ecological Restoration & Kinship",
+    "skillIcon": "pictures/icons/rdg/biomimicry_in_social_systems.png",
+    "description": "Applying biological patterns to organizational design.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Biomimicry%20in%20Social%20Systems",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Biomimicry in Social Systems Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Biomimicry in Social Systems",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Bioregional Supply Chain Mapping",
+    "categoryName": "Economic Democracy & Post-Growth",
+    "skillIcon": "pictures/icons/rdg/bioregional_supply_chain_mapping.png",
+    "description": "Localizing resource flows for resilience and transparency.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Bioregional%20Supply%20Chain%20Mapping",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Bioregional Supply Chain Mapping Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Bioregional Supply Chain Mapping",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Gift Economy Facilitation",
+    "categoryName": "Economic Democracy & Post-Growth",
+    "skillIcon": "pictures/icons/rdg/gift_economy_facilitation.png",
+    "description": "Managing non-monetary value exchange within communities.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Gift%20Economy%20Facilitation",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Gift Economy Facilitation Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Gift Economy Facilitation",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Circular Economy Modeling",
+    "categoryName": "Economic Democracy & Post-Growth",
+    "skillIcon": "pictures/icons/rdg/circular_economy_modeling.png",
+    "description": "Designing out waste and decoupling from extraction.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Circular%20Economy%20Modeling",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Circular Economy Modeling Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Circular Economy Modeling",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Autopoiesis & Emergence Diagnosis",
+    "categoryName": "Systems, Governance & Pedagogy",
+    "skillIcon": "pictures/icons/rdg/autopoiesis_&_emergence_diagnosis.png",
+    "description": "Identifying self-organizing patterns in living networks.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Autopoiesis%20%26%20Emergence%20Diagnosis",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Autopoiesis & Emergence Diagnosis Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Autopoiesis & Emergence Diagnosis",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Epistemic Pluralism",
+    "categoryName": "Systems, Governance & Pedagogy",
+    "skillIcon": "pictures/icons/rdg/epistemic_pluralism.png",
+    "description": "Integrating Indigenous wisdom and Western science as equals.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Epistemic%20Pluralism",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Epistemic Pluralism Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Epistemic Pluralism",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Collective Intelligence Facilitation",
+    "categoryName": "Systems, Governance & Pedagogy",
+    "skillIcon": "pictures/icons/rdg/collective_intelligence_facilitation.png",
+    "description": "Orchestrating group decision-making within complex webs.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Collective%20Intelligence%20Facilitation",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Collective Intelligence Facilitation Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Collective Intelligence Facilitation",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Design Thinking for Wicked Problems",
+    "categoryName": "Systems, Governance & Pedagogy",
+    "skillIcon": "pictures/icons/rdg/design_thinking_for_wicked_problems.png",
+    "description": "Iterative prototyping across multiple social and ecological disciplines.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Design%20Thinking%20for%20Wicked%20Problems",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Design Thinking for Wicked Problems Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Design Thinking for Wicked Problems",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
         "length": 0,
         "language": "en"
       }

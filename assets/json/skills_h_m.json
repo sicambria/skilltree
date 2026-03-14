@@ -1,45 +1,5 @@
 [
   {
-    "name": "HTML",
-    "categoryName": "Maths, science and engineering",
-    "skillIcon": "pictures/icons/HTML.png",
-    "description": "Hypertext Markup Language is the standard markup language for creating web pages and web applications. With Cascading Style Sheets and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/HTML",
-    "pointDescription": [
-      "Understanding basic HTML terms, tags, structure of a website and interlinkage of basic web technologies (Cascading Style Sheets and JavaScript).",
-      "Understanding of basic HTML elements and the basic flow of creating HTML documents.",
-      "An understanding of how opening tags and closing tags work, how to create an HTML document with the proper DOCTYPE, how to nest HTML tags within another, how to use attributes, and use them to inline style or add required data. How to use <style> and <script> to put CSS and JavaScript onto a HTML document",
-      "Knowing most of HTML tags in the language, understand when to use tags. The client-server relationship in the abstract, how to use attributes to style and identification for tags, how to link external resources like CSS, and JavaScript into your HTML.  An understanding of the Document Object Model or DOM works and how your HTML will be read by accessible hardware such as screen readers",
-      "Knowing all the HTML tags, the ability to manipulate the DOM, understanding how to create your own attributes using data-*, Build HTML documents semantically, How your HTML will be read by blogs, social networks, etc. for content"
-    ],
-    "maxPoint": 5,
-    "parents": [],
-    "children": [
-      {
-        "name": "CSS",
-        "minPoint": 1,
-        "recommended": true
-      },
-      {
-        "name": "JavaScript",
-        "minPoint": 1,
-        "recommended": true
-      }
-    ],
-    "trainings": [
-      {
-        "name": "HTML Basics",
-        "level": 1,
-        "shortDescription": "HTML Crash Course For Absolute Beginners",
-        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
-        "URLlastAccessed": "2018-11-19",
-        "goal": "The goal of this training is to introduce the terms and basic concepts of creating a website with HTML.",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
     "name": "JavaScript",
     "categoryName": "Maths, science and engineering",
     "skillIcon": "pictures/icons/JavaScript.png",
@@ -68,72 +28,6 @@
         "recommended": false
       }
     ],
-    "trainings": [
-      {
-        "name": "HTML Basics",
-        "level": 1,
-        "shortDescription": "HTML Crash Course For Absolute Beginners",
-        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
-        "URLlastAccessed": "2018-11-19",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
-    "name": "Java",
-    "categoryName": "Maths, science and engineering",
-    "skillIcon": "pictures/icons/Java.png",
-    "description": "Java is a general-purpose computer-programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Java",
-    "pointDescription": [
-      "Maybe you now what is Java Developer's Kit",
-      "Need to know object oriented programming concepts. Know some sort of source control like Git. Know how to complete basic coding tasks like the Fibonacci. ",
-      "Start to unnderstanding how every piece of code fits together in the big picture. This takes theoretical thinking.",
-      "Knowledge of the intricacies of SQL queries is another thing that great Java developers tend to have. Basic CRUD operations and things like joins, aggregations, and indexing are all big parts of it.",
-      "Java developer is skilled in the use of the technologies in the Java ecosystem: Struts, Spring, Maven, Gradle, Ant, JUnit, Spock, and Hibernate, among many others."
-    ],
-    "maxPoint": 5,
-    "parents": [],
-    "children": [
-      {
-        "name": "JavaFX",
-        "minPoint": 1,
-        "recommended": false
-      }
-    ],
-    "trainings": [
-      {
-        "name": "Java Basics",
-        "level": 1,
-        "shortDescription": "Learn Java 8 - Full Tutorial for Beginners",
-        "URL": "https://www.youtube.com/watch?v=grEKMHGYyns",
-        "URLlastAccessed": "2018-11-19",
-        "goal": "Learn Java 8 and object oriented programming with this complete Java course for beginners.",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
-    "name": "JavaFX",
-    "categoryName": "Maths, science and engineering",
-    "skillIcon": "pictures/icons/JavaFX.png",
-    "description": "JavaFX is a software platform for creating and delivering desktop applications, as well as rich Internet applications (RIAs) that can run across a wide variety of devices. ",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/JavaFX",
-    "pointDescription": [
-      "First have to know is some basic about core Java like loops, method, interface, variables and Event handling.",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
-    ],
-    "maxPoint": 5,
-    "parents": [
-      "Java"
-    ],
-    "children": [],
     "trainings": [
       {
         "name": "HTML Basics",
@@ -177,93 +71,6 @@
     ]
   },
   {
-    "name": "Microsoft Excel",
-    "categoryName": "Digital competence",
-    "skillIcon": "pictures/icons/Microsoft_Excel.png",
-    "description": "Microsoft Excel is a spreadsheet developed by Microsoft for Windows, macOS, Android and iOS. It features calculation, graphing tools, pivot tables, and a macro programming language called Visual Basic for Applications.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Microsoft_Excel",
-    "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
-    ],
-    "maxPoint": 5,
-    "parents": [],
-    "children": [],
-    "trainings": [
-      {
-        "name": "The Beginner's Guide to Excel - Excel Basics Tutorial",
-        "level": 1,
-        "shortDescription": "Learn the basics of using Microsoft Excel, including the anatomy of a spreadsheet, how to enter data, how to make your data look good so it's easier to read and use, and more. This tutorial was made using Excel 2016, but is applicable to older versions of Excel and newer versions too.",
-        "URL": "https://youtu.be/rwbho0CgEAE",
-        "URLlastAccessed": "2018-12-11",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
-    "name": "Microsoft Outlook",
-    "categoryName": "Digital competence",
-    "skillIcon": "pictures/icons/Microsoft_Outlook.png",
-    "description": "Microsoft Outlook is a personal information manager from Microsoft, available as a part of the Microsoft Office suite. Although often used mainly as an email application, it also includes a calendar, task manager, contact manager, note taking, journal, and web browsing.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Microsoft_Outlook",
-    "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
-    ],
-    "maxPoint": 5,
-    "parents": [],
-    "children": [],
-    "trainings": [
-      {
-        "name": "Microsoft Outlook 2016 Tutorial | Basics ,Tricks And Tips",
-        "level": 1,
-        "shortDescription": "We show you best practices for managing your email and calendar efficiently, including switching views in calendar and email, scheduling meetings and conference rooms, and categorizing your appointments with colors. Learn how to assign permissions to a delegate and share your calendar with others.",
-        "URL": "https://youtu.be/ZeXHWdgtH6k",
-        "URLlastAccessed": "2018-12-11",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
-    "name": "Microsoft Word",
-    "categoryName": "Digital competence",
-    "skillIcon": "pictures/icons/Microsoft_Word.png",
-    "description": "Microsoft Word (or simply Word) is a word processor developed by Microsoft.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Microsoft_Word",
-    "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
-    ],
-    "maxPoint": 5,
-    "parents": [],
-    "children": [],
-    "trainings": [
-      {
-        "name": "Beginner's Guide to Microsoft Word",
-        "level": 1,
-        "shortDescription": "Learn the basics of effectively using Microsoft Word, including how to format images so that they can be moved freely around your document and positioned where you want them to be.",
-        "URL": "https://youtu.be/S-nHYzK-BVg",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
     "name": "HR Policies",
     "categoryName": "Entrepreneurship (Business)",
     "skillIcon": "pictures/icons/HR_Policies.png",
@@ -285,35 +92,6 @@
         "level": 1,
         "shortDescription": "PHR SPHR Human Resources Study Guide",
         "URL": "https://youtu.be/XKYGO3oN_ck",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
-    "name": "Jira",
-    "categoryName": "Maths, science and engineering",
-    "skillIcon": "pictures/icons/Jira.png",
-    "description": "Jira is a proprietary issue tracking product developed by Atlassian which allows bug tracking and agile project management.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Jira_(software)",
-    "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
-    ],
-    "maxPoint": 5,
-    "parents": [],
-    "children": [],
-    "trainings": [
-      {
-        "name": "JIRA in a Nutshell demo video",
-        "level": 1,
-        "shortDescription": "An overview of JIRA: issue and project tracking for software teams.",
-        "URL": "https://youtu.be/xrCJv0fTyR8",
         "URLlastAccessed": "2018-12-15",
         "goal": "",
         "length": 0,
@@ -583,35 +361,6 @@
     ]
   },
   {
-    "name": "Low-Code/No-Code Platform Engineering",
-    "categoryName": "Advanced Technologies",
-    "skillIcon": "pictures/icons/future/low-code/no-code_platform_engineering.png",
-    "description": "Building internal tools for non-devs.",
-    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Low-Code%2FNo-Code%20Platform%20Engineering",
-    "pointDescription": [
-      "Familiar with basic concepts and terminology.",
-      "Can apply the skill to simple, well-defined problems.",
-      "Intermediate proficiency, handles common real-world scenarios.",
-      "Advanced proficiency, can optimize and lead others in this skill.",
-      "Mastery level, creating new methodologies and pushing the field forward."
-    ],
-    "maxPoint": 5,
-    "parents": [],
-    "children": [],
-    "trainings": [
-      {
-        "name": "Low-Code/No-Code Platform Engineering Tutorial",
-        "level": 1,
-        "shortDescription": "Introductory training for Low-Code/No-Code Platform Engineering",
-        "URL": "https://example.com/training/low-code/no-code-platform-engineering",
-        "URLlastAccessed": "2026-03-14",
-        "goal": "Foundation",
-        "length": 0,
-        "language": "en"
-      }
-    ]
-  },
-  {
     "name": "Horizon Scanning",
     "categoryName": "Strategy & Foresight",
     "skillIcon": "pictures/icons/future/horizon_scanning.png",
@@ -693,6 +442,122 @@
         "URL": "https://example.com/training/intergenerational-strategy",
         "URLlastAccessed": "2026-03-14",
         "goal": "Foundation",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Living Systems Intelligence",
+    "categoryName": "Ecological Restoration & Kinship",
+    "skillIcon": "pictures/icons/rdg/living_systems_intelligence.png",
+    "description": "Moving beyond mitigation to active biosystem collaboration.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Living%20Systems%20Intelligence",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Living Systems Intelligence Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Living Systems Intelligence",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Hózhó Principle (Harmony & Beauty)",
+    "categoryName": "Ecological Restoration & Kinship",
+    "skillIcon": "pictures/icons/rdg/hózhó_principle_(harmony_&_beauty).png",
+    "description": "Applying Navajo frameworks for balance within a kinship network.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/H%C3%B3zh%C3%B3%20Principle%20(Harmony%20%26%20Beauty)",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Hózhó Principle (Harmony & Beauty) Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Hózhó Principle (Harmony & Beauty)",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Institutional Acupuncture",
+    "categoryName": "Systems, Governance & Pedagogy",
+    "skillIcon": "pictures/icons/rdg/institutional_acupuncture.png",
+    "description": "Targeted interventions in legacy systems to shift whole behavior.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Institutional%20Acupuncture",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Institutional Acupuncture Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Institutional Acupuncture",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Leverage Point Identification",
+    "categoryName": "Systems, Governance & Pedagogy",
+    "skillIcon": "pictures/icons/rdg/leverage_point_identification.png",
+    "description": "Finding where minimal effort produces maximal systemic shift.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Leverage%20Point%20Identification",
+    "pointDescription": [
+      "Awareness of concepts and personal participation.",
+      "Application to simple, localized systemic problems.",
+      "Intermediate synthesis across multiple RDG domains.",
+      "Advanced facilitation of bioregional interventions.",
+      "Mastery in designing regenerative legacies for future generations."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Leverage Point Identification Mastery Path",
+        "level": 1,
+        "shortDescription": "Foundational training for Leverage Point Identification",
+        "URL": "https://transformativechangemaking.org/curriculum",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Regeneration",
         "length": 0,
         "language": "en"
       }
