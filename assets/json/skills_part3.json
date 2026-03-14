@@ -1,0 +1,585 @@
+[
+  {
+    "name": "Git",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Git.png",
+    "description": "Git is a version-control system for tracking changes in computer files and coordinating work on those files among multiple people. It is primarily used for source-code management in software development, but it can be used to keep track of changes in any set of files. As a distributed revision-control system, it is aimed at speed, data integrity, and support for distributed, non-linear workflows.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Git",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Learn Git in 20 Minutes",
+        "level": 1,
+        "shortDescription": "In this video you learn how to initialize repositories, track files, stage changes, branch and merge, handle merge conflicts, stash changes, pull from and commit to remote repositories like GitHub.",
+        "URL": "https://youtu.be/Y9XZQO1n_7c",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      },
+      {
+        "name": "Handling git commits",
+        "level": 2,
+        "shortDescription": "On undoing, fixing, or removing commits in git",
+        "URL": "http://sethrobertson.github.io/GitFixUm/fixup.html",
+        "URLlastAccessed": "2019-01-03",
+        "goal": "This document is an attempt to be a fairly comprehensive guide to recovering from what you did not mean to do when using git.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Docker",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Docker.png",
+    "description": "Docker is a computer program that performs operating-system-level virtualization, also known as 'containerization'.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Docker_(software)",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Docker Tutorial - What is Docker & Docker Containers, Images, etc?",
+        "level": 1,
+        "shortDescription": "In these tutorials, I'll be breaking down exactly what a Docker container is and how to use it.",
+        "URL": "https://youtu.be/pGYAg7TMmp0",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      },
+      {
+        "name": "Docker Tutorial - What is Docker & Docker Containers, Images, etc?",
+        "level": 1,
+        "shortDescription": "In these tutorials, I'll be breaking down exactly what a Docker container is and how to use it.",
+        "URL": "http://training.docker.com/category/self-paced-online",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Redis",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Redis.png",
+    "description": "Redis is an open-source in-memory data structure project implementing a distributed, in-memory key-value database with optional durability. Redis supports different kinds of abstract data structures, such as strings, lists, maps, sets, sorted sets, hyperloglogs, bitmaps, streams and spatial indexes.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Redis",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Redis Crash Course Tutorial",
+        "level": 1,
+        "shortDescription": "In this crash course we will discuss and demonstrate the fundamentals of Redis.",
+        "URL": "https://youtu.be/Hbt56gFj998",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Jira",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Jira.png",
+    "description": "Jira is a proprietary issue tracking product developed by Atlassian which allows bug tracking and agile project management.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Jira_(software)",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "JIRA in a Nutshell demo video",
+        "level": 1,
+        "shortDescription": "An overview of JIRA: issue and project tracking for software teams.",
+        "URL": "https://youtu.be/xrCJv0fTyR8",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "PostgreSQL",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/PostgreSQL.png",
+    "description": "PostgreSQL, often simply Postgres, is an object-relational database management system (ORDBMS) with an emphasis on extensibility and standards compliance. It can handle workloads ranging from small single-machine applications to large Internet-facing applications (or for data warehousing) with many concurrent users; on macOS Server, PostgreSQL is the default database; and it is also available for Microsoft Windows and Linux (supplied in most distributions).",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/PostgreSQL",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Facilitation",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/Facilitation.png",
+    "description": "A process where an individual who is agreed upon and acceptable to all of a group's members intervenes to assist the group in solving problems and making decisions to improve productivity and efficiency but who has no authority to make decisions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Facilitation_(business)",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Building Trust",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "http://plumseattle.com/wp-content/uploads/2013/11/badge-hr-consulting.png",
+    "description": "Trust is one of the keyfactors to be considered. Trust forms the basis of all relationships and interactions. It is just as important in professional relationships as it is in personal ones. Without each party trusting one another the ability to come to an agreement or consensus on an issue is always going to be compromised. Some benefits of trust: Increased productivity amonst staff Improved morale amongst employees and staff The ability to work more effectively as a team, rather than individuals Reduce the time to make and discuss key issues as each individual trusts in the judgement and expertise of their colleagues.",
+    "descriptionWikipediaURL": "https://www.forbes.com/sites/forbescoachescouncil/2018/01/04/five-simple-tips-for-building-trust-as-a-leader/#6e209e3459bb",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Professional Networking",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Creating external partnerships (not only internal) that benefit the company. Human resources is often seen as an ‘internal’ part of business but doesn’t mean outside world is not important. Strike up new relationships that benefit to the workforce and to the company’s goals. It’s a great way of gaining external credibility.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Business_networking",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Identifying External Influences",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "How you identify and handle external threats and opportunities that might affect the companie’s human capital. Examples of external threats and opportunities that an HR business partner should know to look out for might include:– Changes to employment legislation – New job openings from close competitors – Mass redundancies within your industry",
+    "descriptionWikipediaURL": "https://sites.google.com/a/my.shu.ac.uk/hr-group-8/external-influences",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Managing Talent",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "A keen eye for the kind of talent a company really needs; the ability to find and attract that talent; and a great talent retention strategy to ensure business continuity.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Talent_management",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Creating Company Culture",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Creating a strong organisational culture is vital for an HR Consultant. The company culture will narrate the direction of your organisation, as it will heavily influence how the people behave and perform. Aspects of creating a great company culture include:– Understanding and meeting the needs of employees – Implementing professional development plans that increase skillsets while helping your people feel valued – Helping to the people to really feel connected with your company’s values and goals",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Organizational_culture",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Effective Listening",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Listening is an essential part of spoken communication. Speaking and listening go together and oral communication cannot be effective without proper listening. Poor listening defeats the very purpose of spoken words. Listening is a deliberate effort and is much more than hearing. It requires getting the full meaning of what is being said. Listening effectively takes skill, self-motivation, and practice. Effective listening means concentrating on what the speaker says rather than on how it is said. Lack of attention and respectful listening can be costly - leading to mistakes, poor service, misaligned goals, wasted time and lack of teamwork.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Active_listening",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Being Approachable & Accessible",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Keeping yourself actively involved in your company’s day-to-day affairs. Making yourself accessible and approachable to the people you’re representing will give you a level of company knowledge that cannot be found on monthly performance reports or attendance sheets.",
+    "descriptionWikipediaURL": "https://www.lollydaskal.com/leadership/leadership-be-approachable/",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Change Management",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Manages change in a systematic approach both from an organizational and an individual level. Ability to create the structure to execute and sustain change through clear design, aligned roles  relationships and governance. Applies structured approaches to shift individuals, teams, and organizations from a current state to a desired state.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Change_management",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Persuasion",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Uses persuasion and negotiation to gain agreement and buy-in. Promotes idea, agenda or direction on behalf of self or others. Seeks support from communities to ensure that persuasion is effective. Stands up and speaks the mind up, escalates when  needed.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Persuasion",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Negotiating",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Can negotiate skillfully in tough situations with both internal and external groups; can settle differences with minimum noise; can win concessions without damaging relationships; can be both direct and forceful as well as diplomatic; gains trust quickly of other parties to the negotiations; has a good sense of timing. Understands that all interaction can be considered as negotiation, e.g. finding positions and motives. Prepares for the commercial and/or technical sales negotiations with the appropriate team involved. Makes negotiation strategy that enhances the long term relationship and executes it with confidence and persuasion following company policies. Influences on negotiation process and negotiators to gain the deal that does not compromise the pre set targets. Never agrees terms which are detrimental to profitability in the long run across the solution/product lifecycle.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Negotiation",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Problem-Solving",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Uses rigorous logic and methods to solve difficult problems with effective solutions; probes all fruitful sources for answers; can see hidden problems; looks beyond the obvious and doesn't stop at the first answers.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Problem_solving",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Training",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Knowledge and skills in training techniques for both the occasional (L1, L2) and professional trainer (L3, L4, L5). Use of instructional styles adequate to the target group and training objectives, apply presentation and communication skills using various delivery methods and tools. Based on the level, including learning technologies needed in a modern (virtual) learning environment.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Training",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Consulting",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/qwe.png",
+    "description": "Using knowledge of the Nokia business model and processes, the external operating environment and domain expertise to improve human capital and business outcomes. Asking the  right developmental questions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Consultant",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soft Skills"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction To PostgreSQL",
+        "level": 1,
+        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
+        "URL": "https://youtu.be/jNq5EAb2biY",
+        "URLlastAccessed": "2018-12-15",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  }
+]

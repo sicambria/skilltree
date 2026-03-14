@@ -1,0 +1,512 @@
+[
+  {
+    "name": "HTML",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/HTML.png",
+    "description": "Hypertext Markup Language is the standard markup language for creating web pages and web applications. With Cascading Style Sheets and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/HTML",
+    "pointDescription": [
+      "Understanding basic HTML terms, tags, structure of a website and interlinkage of basic web technologies (Cascading Style Sheets and JavaScript).",
+      "Understanding of basic HTML elements and the basic flow of creating HTML documents.",
+      "An understanding of how opening tags and closing tags work, how to create an HTML document with the proper DOCTYPE, how to nest HTML tags within another, how to use attributes, and use them to inline style or add required data. How to use <style> and <script> to put CSS and JavaScript onto a HTML document",
+      "Knowing most of HTML tags in the language, understand when to use tags. The client-server relationship in the abstract, how to use attributes to style and identification for tags, how to link external resources like CSS, and JavaScript into your HTML.  An understanding of the Document Object Model or DOM works and how your HTML will be read by accessible hardware such as screen readers",
+      "Knowing all the HTML tags, the ability to manipulate the DOM, understanding how to create your own attributes using data-*, Build HTML documents semantically, How your HTML will be read by blogs, social networks, etc. for content"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [
+      {
+        "name": "CSS",
+        "minPoint": 1,
+        "recommended": true
+      },
+      {
+        "name": "JavaScript",
+        "minPoint": 1,
+        "recommended": true
+      }
+    ],
+    "trainings": [
+      {
+        "name": "HTML Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "The goal of this training is to introduce the terms and basic concepts of creating a website with HTML.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "CSS",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/CSS.png",
+    "description": "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/CSS",
+    "pointDescription": [
+      "Understand that the purpose of CSS is keeping design and content separate, to the highest extent that is possible. Have made extensive modifications to a CSS template. Have used a WYSIWYG editor to create CSS web page. Have a basic understanding of CSS layout techniques.",
+      "I have designed a reasonably complex website from scratch using only CSS for layout.I have a solid understanding of the structure of CSS, the CSS box model, and CSS positioning.I understand how to use float and deal with it's quirks.I have a basic understanding that different browsers render some CSS differently and that needs to be accounted for and tested.I have a growing collection of CSS resources to draw from.I do not use tables for layout whatsoever anymore. I understand that tables are for tabular data, not page layout.",
+      "I have designed and coded a large number of CSS web sites.  I can convert a design from any format into a CSS layout: Photoshop, Illustrator, napkin drawings, etc.I am completely comfortable writing and editing CSS by hand.I have a strong understanding of the cascading part of CSS. Particularly how some some CSS properties do, some don't, and some depend on how the value is declared.I have a solid understanding of cross-browser CSS. I know how to use browser specific CSS statements and delclare browser specific stylesheets.I know and have tried some CSS hacks and understand the advantages and disadvantages of using them.I have a strong understanding of the different sizing values available in CSS (e.g. em, px, %, pt, small, etc.) and in what situations each make the most sense.I can quickly troubleshoot and solve CSS problems.I have a great collection of tools and resources at my disposal for inspiration, debugging, or reference.",
+      "I feel like I could tackle any design idea with CSS.I can do pixel-perfect cross-browser conversions of designs into CSS websites.I can visualize markup structure easily, just by looking at a design.I have utilized additional web technologies to expand the possibilities and break through the limitations of CSS.I have my own CSS framework I use, complete with my own customized CSS reset.I have a strong understanding of advanced CSS like pseudo classes, pseudo elements, and attribute selectors.I keep up to date on browser support and development progress.",
+      "I am involved with the future of CSS specifications or support.I am a CSS Celebrity.I've written books, given seminars, taught classes, knew CSS since she was a little girl, etc.I don't need to do testing, I just know."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "HTML"
+    ],
+    "children": [
+      {
+        "name": "CSS tools",
+        "minPoint": 2,
+        "recommended": false
+      },
+      {
+        "name": "Photoshop",
+        "minPoint": 0,
+        "recommended": false
+      }
+    ],
+    "trainings": [
+      {
+        "name": "CSS Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "CSS tools",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/CSS_tools.png",
+    "description": "CSS tools and frameworks are meant to allow for easier, more standards-compliant web design using the Cascading Style Sheets language.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/CSS_framework",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "CSS"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Top10 CSS Tools",
+        "level": 1,
+        "shortDescription": "10 Best CSS Tools & Web-Based Apps For Developers",
+        "URL": "https://1stwebdesigner.com/best-css-tools/",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "Describing the top 10 CSS libraries, tools, webapps and automated scripts that make it so much easier to build websites.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Photoshop",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Photoshop.png",
+    "description": "...",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Photoshop",
+    "pointDescription": [
+      "You understand what you see. Navigate through the menu items. Can use basic tools: rubber, brush, select tool",
+      "Understands layer management. You know what the tools are. What effect do you have on their use.",
+      "I use the colors, layers and basic tools confidently. I understand 3d design and vectors.",
+      "Knows the shortcuts. Understand the most of things. You made brochure, flyer, website.",
+      "Manages the functions on a professional level. Understands customer needsm ideas and make them better. "
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "CSS"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Photoshop Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "JavaScript",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/JavaScript.png",
+    "description": "JavaScript, often abbreviated as JS, is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is a language which is also characterized as dynamic, weakly typed, prototype-based and multi-paradigm.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Javascript",
+    "pointDescription": [
+      "Basic knowledge CSS and HTML. Saw a code once.",
+      "Intermediate knowledge of both HTML and CSS. Variables and how to declare them. Know operators, like +, -, etc.",
+      "Know the functions. What an API is. How to access and query the DOM.Understand loops. Create and render new elements on to the DOM.How and when JS renders on a web page. Know the events. How to listen for events and create your own.",
+      "Function and variable scopes, you should know what this is. Anonymous functions and Immediately Invoked Function Expression (IIFE). Browser support for new JS features and how to use polyfills to fill in support when needed",
+      "How to make an AJAX request. How to use promises and know when you get data. The differences in var, let, and const to declare variables. What closures are and how to utilize them. What Object-Oriented Programming, or OOP, is and how it can happen in Javascript. Optimization of logic for speed."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "HTML"
+    ],
+    "children": [
+      {
+        "name": "NodeJS",
+        "minPoint": 1,
+        "recommended": false
+      },
+      {
+        "name": "React",
+        "minPoint": 1,
+        "recommended": false
+      }
+    ],
+    "trainings": [
+      {
+        "name": "HTML Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Java",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Java.png",
+    "description": "Java is a general-purpose computer-programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Java",
+    "pointDescription": [
+      "Maybe you now what is Java Developer's Kit",
+      "Need to know object oriented programming concepts. Know some sort of source control like Git. Know how to complete basic coding tasks like the Fibonacci. ",
+      "Start to unnderstanding how every piece of code fits together in the big picture. This takes theoretical thinking.",
+      "Knowledge of the intricacies of SQL queries is another thing that great Java developers tend to have. Basic CRUD operations and things like joins, aggregations, and indexing are all big parts of it.",
+      "Java developer is skilled in the use of the technologies in the Java ecosystem: Struts, Spring, Maven, Gradle, Ant, JUnit, Spock, and Hibernate, among many others."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [
+      {
+        "name": "JavaFX",
+        "minPoint": 1,
+        "recommended": false
+      }
+    ],
+    "trainings": [
+      {
+        "name": "Java Basics",
+        "level": 1,
+        "shortDescription": "Learn Java 8 - Full Tutorial for Beginners",
+        "URL": "https://www.youtube.com/watch?v=grEKMHGYyns",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "Learn Java 8 and object oriented programming with this complete Java course for beginners.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "JavaFX",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/JavaFX.png",
+    "description": "JavaFX is a software platform for creating and delivering desktop applications, as well as rich Internet applications (RIAs) that can run across a wide variety of devices. ",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/JavaFX",
+    "pointDescription": [
+      "First have to know is some basic about core Java like loops, method, interface, variables and Event handling.",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Java"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "HTML Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "NodeJS",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/NodeJS.png",
+    "description": "Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser. ",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Node.js",
+    "pointDescription": [
+      "Solid knowledge about JavaScript, HTML CSS.",
+      "Understans API communication and OOPs concepts",
+      "Good knowledge of HTML, CSS, JQuery, MySQL, SQL Server, Git, JQuery UI, AJAX, JSO. Have a knowledge on NodeJS framework: Express.js, Koa.js, Hapi, and Total.js",
+      "Have experience in implementing Data Protection. Can able to develop Single Page Application with MVC architecture",
+      "Great knowledge of User Authentication and Authorization. Knowledge of integrating multiple data sources and databases into one system."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "JavaScript"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "NodeJS Basics",
+        "level": 1,
+        "shortDescription": "Learn Node.js - Full Tutorial for Beginners",
+        "URL": "https://www.youtube.com/watch?v=RLtyhwFtXQA",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Go",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Go.png",
+    "description": "Go (often referred to as Golang) is a fully open-source programming language. It is statically typed, compiled, and syntactically similar to C, with the added benefits of memory safety, garbage collection, structural typing, and CSP-style concurrency.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Go_(programming_language)",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "HTML Basics",
+        "level": 1,
+        "shortDescription": "HTML Crash Course For Absolute Beginners",
+        "URL": "https://www.youtube.com/watch?v=UB1O30fR-EE",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Python",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Python.png",
+    "description": "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python has a design philosophy that emphasizes code readability, notably using significant whitespace.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Python_(programming_language)",
+    "pointDescription": [
+      "Start understanding nested loops and how logic works in nested loops.",
+      "Basic knowledge of how statements work and conceptually how they work",
+      "Some basic JavaSript knowledge. Understanding of server-side templating languages such as Jinja 2, Mako.",
+      "Knowledge of at least one Python web frameworksuch as Django, Flask. Familiarity with some ORM (Object Relational Mapper) libraries. Able to integrate multiple data sources and databases into one system.",
+      "Can to complete all parts of the work, including documentation and testing. Able to create database schemas that represent and support business processes. Strong unit test and debugging skills."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [
+      {
+        "name": "NumPy",
+        "minPoint": 3,
+        "recommended": false
+      }
+    ],
+    "trainings": [
+      {
+        "name": "Python Basics #1 of 8 - Integers, Floats and Maths",
+        "level": 1,
+        "shortDescription": "If you're a beginner and/or mildly interested in learning Python scripting/programming, this is a place to start!",
+        "URL": "https://www.youtube.com/watch?v=D48iCw3WWpI",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "Will walking you through a bit of programming theory, some of the basics for variable creation and math functions used in Python.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "NumPy",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/Python.png",
+    "description": "NumPy is the fundamental package for scientific computing with Python.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/NumPy",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 3,
+    "parents": [
+      "Python"
+    ],
+    "children": [],
+    "trainings": [
+      {
+        "name": "NumPy Tutorial",
+        "level": 2,
+        "shortDescription": "Before reading this tutorial you should know a bit of Python. If you would like to refresh your memory, take a look at the Python tutorial.",
+        "URL": "https://www.numpy.org/",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "Quickstart with NumPy from basics to Shape Manipulation, Copies and Views, Indexing and other tips and tricks.",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Scrum",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/Scrum.png",
+    "description": "Scrum is an agile framework for managing knowledge work, with an emphasis on software development. It is designed for teams of three to nine members, who break their work into actions that can be completed within timeboxed iterations, called 'sprints', no longer than one month and most commonly two weeks, then track progress and re-plan in 15-minute stand-up meetings, called daily scrums.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Scrum",
+    "pointDescription": [
+      "You have to be able to organize an appointment. This means that you must perform administrative tasks. For example, creating tables and uploading data. This is an important step to complete your sprint.",
+      "Soft skills are important: decision making, ability to facilitate. Respect: team members accept what you say.",
+      "It is increasingly handling the problems better and better. Effectively relieves the team. Take care to the quality of code and documentation. Moderate during team meetings.",
+      "Continuously improve processes . Maintain a proper balance between project owner, scrum team, and management. Start work together the project owner.",
+      "Knowing the most of things what the project owner. Undertans the big picture. Dealing with difficult situations. Walk project owner through user stories."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [
+      {
+        "name": "Scaled Agile Framework",
+        "minPoint": 2,
+        "recommended": false
+      }
+    ],
+    "trainings": [
+      {
+        "name": "Scrum Basics",
+        "level": 1,
+        "shortDescription": "Scrum Crash Course",
+        "URL": "https://www.youtube.com/watch?v=2Vt7Ik8Ublw",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      },
+      {
+        "name": " The Scrum Guide",
+        "level": 1,
+        "shortDescription": "Scrum is defined completely in the Scrum Guide by Ken Schwaber and Jeff Sutherland, the originators of Scrum.",
+        "URL": "https://www.scrumguides.org/",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "This Guide contains the definition of Scrum. This definition consists of Scrum’s roles, events, artifacts, and the rules that bind them together.",
+        "length": 0,
+        "language": "many"
+      }
+    ]
+  },
+  {
+    "name": "Coaching",
+    "categoryName": "Soft skills (& civic competence)",
+    "skillIcon": "pictures/icons/Coaching.png",
+    "description": "ICF defines coaching as partnering with clients in a thought-provoking and creative process that inspires them to maximize their personal and professional potential, which is particularly important in today's uncertain and complex environment.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Coaching",
+    "pointDescription": [
+      "Understanding concepts, values and beliefs; the use of facilitative behaviours such as active listening, paraphrasing, questioning, summarising, managing time; encouraging participation; keeping clear and accurate notes; using basic tools like problem solving and action planning.",
+      "Mastering process tools; designing meetings; skilled at using the right decision making method, achieving consensus, and getting true closure; handling feedback activities and conducting process checks; using exit surveys; good at managing meetings in an effective manner; able to help a group set goals and objectives that are measurable; skilled at checking assumptions and challenging ideas.",
+      "Skilled at managing conflict and making immediate interventions; able to deal with resistance and personal attacks; making design changes on the spot; sizing up a group and using the right strategies for its development stage; managing survey feedback exercises; able to design and conduct interviews and focus groups, design and implement surveys; consolidating ideas from a mass of information into coherent summaries.",
+      "Design and implement process interventions in response to complex organisational issues; use tools to promote process improvement, customer intimacy, and overall organisational effectiveness; able to support teams in the various stages of team development.",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Introduction to Coaching",
+        "level": 1,
+        "shortDescription": "Introducing the basic aspects of coaching.",
+        "URL": "https://www.youtube.com/watch?v=vKwIi34C9zk",
+        "URLlastAccessed": "",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Machine Learning",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/MachineLearning.png",
+    "description": "Machine learning (ML) is a field of artificial intelligence that uses statistical techniques to give computer systems the ability to 'learn' (e.g., progressively improve performance on a specific task) from data, without being explicitly programmed.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Machine_learning",
+    "pointDescription": [
+      "Understanding the entire ecosystem that you’re designing for. You know how to program like Python.",
+      "Understanding statistics, especially Bayesian probability, is essential for many machine learning algorithms",
+      "Machine learning is an exceptionally wide and interdisciplinary field that consolidates linear algebra, statistics, hacking skills, database skills, and distributed computing skills.",
+      "Knows distributed systems for large data: MPI, Grid Engine. ",
+      "Ununderstand how the different pieces work together, communicate with them (using library calls, REST APIs, database queries, etc.) and build appropriate interfaces."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "ML Basics",
+        "level": 1,
+        "shortDescription": "A Friendly Introduction to Machine Learning",
+        "URL": "https://www.youtube.com/watch?v=IpGxLWOIZy4",
+        "URLlastAccessed": "2018-11-19",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "UI/UX Design",
+    "categoryName": "Maths, science and engineering",
+    "skillIcon": "pictures/icons/UI_UX_Design.png",
+    "description": "User experience design (UX, UXD, UED or XD) is the process of enhancing user satisfaction with a product by improving the usability, accessibility, and pleasure provided in the interaction with the product. User experience design encompasses traditional human–computer interaction (HCI) design, and extends it by addressing all aspects of a product or service as perceived by users.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/User_experience_design",
+    "pointDescription": [
+      "Insert Level 1 (Initial) Skill Description Here",
+      "Insert Level 2 (Basic) Skill Description Here",
+      "Insert Level 3 (Intermediate) Skill Description Here",
+      "Insert Level 4 (Advanced) Skill Description Here",
+      "Insert Level 5 (World Class) Skill Description Here"
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "UX Design Tutorial for Beginners (#1)",
+        "level": 1,
+        "shortDescription": "UX design tutorial for beginners. Easy to understand UX design tutorial, no jargon.",
+        "URL": "https://youtu.be/I0-vBdh4sZ8",
+        "URLlastAccessed": "2018-12-11",
+        "goal": "",
+        "length": 0,
+        "language": "en"
+      }
+    ]
+  }
+]
