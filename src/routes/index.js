@@ -4,6 +4,7 @@ const authRoutes = require('./auth');
 const userRoutes = require('./user');
 const skillRoutes = require('./skill');
 const treeRoutes = require('./tree');
+const graphRoutes = require('./graph');
 const adminRoutes = require('./admin');
 const { verifyToken, verifyAdmin } = require('../middleware/auth');
 
@@ -14,6 +15,7 @@ router.use('/', authRoutes);
 router.use('/protected', verifyToken, userRoutes);
 router.use('/protected', verifyToken, skillRoutes);
 router.use('/protected', verifyToken, treeRoutes);
+router.use('/graph', graphRoutes);
 
 // Admin routes (require admin token)
 router.use('/admin', verifyAdmin, adminRoutes);

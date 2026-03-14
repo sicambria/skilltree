@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Skill Graph | Matrix View</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { background: #0b0f19; color: #e2e8f0; overflow: hidden; }
+        #graph-container { width: 100vw; height: 100vh; cursor: grab; }
+        .node { stroke: #fff; stroke-width: 1.5px; }
+        .link { stroke: #4a5568; stroke-opacity: 0.4; }
+        .tree-node { fill: #ed64a6; r: 10; }
+        .skill-node { fill: #4299e1; r: 5; }
+        .node-label { fill: #cbd5e0; font-size: 10px; pointer-events: none; text-shadow: 0 1px 2px rgba(0,0,0,0.8); }
+        
+        #controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(26, 32, 44, 0.9);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #4a5568;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            width: 300px;
+        }
+
+        .filter-group { margin-bottom: 15px; }
+        .filter-title { font-size: 0.8rem; font-weight: bold; color: #a0aec0; margin-bottom: 8px; text-transform: uppercase; }
+        
+        .search-box {
+            background: #2d3748;
+            border: 1px solid #4a5568;
+            color: white;
+            padding: 8px;
+            border-radius: 6px;
+            width: 100%;
+        }
+
+        .legend { margin-top: 20px; font-size: 0.8rem; }
+        .legend-item { display: flex; align-items: center; margin-bottom: 5px; }
+        .legend-color { width: 12px; height: 12px; border-radius: 50%; margin-right: 8px; }
+
+        .tooltip {
+            position: absolute;
+            background: #2d3748;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #4a5568;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            max-width: 250px;
+            z-index: 1000;
+        }
+
+        .sidebar-back {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <h4 class="mb-3">Skill Matrix Graph</h4>
+        
+        <div class="filter-group">
+            <div class="filter-title">Search Node</div>
+            <input type="text" id="node-search" class="search-box" placeholder="Filter by name...">
+        </div>
+
+        <div class="filter-group">
+            <div class="filter-title">Filter by Type</div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="toggle-trees" checked>
+                <label class="custom-control-label" for="toggle-trees">Show Trees</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="toggle-skills" checked>
+                <label class="custom-control-label" for="toggle-skills">Show Skills</label>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="filter-title">Legend</div>
+            <div class="legend-item"><div class="legend-color" style="background: #ed64a6;"></div> Tree (Navigation Hub)</div>
+            <div class="legend-item"><div class="legend-color" style="background: #4299e1;"></div> Atomic Skill</div>
+        </div>
+    </div>
+
+    <div class="sidebar-back">
+        <a href="/user" class="btn btn-outline-light btn-sm">← Back to Profile</a>
+    </div>
+
+    <div id="graph-container"></div>
+    <div id="tooltip" class="tooltip"></div>
+
+    <script src="graph.js"></script>
+</body>
+</html>
