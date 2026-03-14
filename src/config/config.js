@@ -1,4 +1,4 @@
 module.exports = {
     'secret': 'verysecret',
-    'database': 'mongodb://localhost:27017/skilltreenew'
+    'database': 'mongodb://127.0.0.1:27017/skilltreenew'
 };

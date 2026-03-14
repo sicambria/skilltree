@@ -4,7 +4,9 @@
     "description": "Skill tree web app",
     "main": "src/server.js",
     "scripts": {
-        "start": "node src/server.js"
+        "start": "node src/server.js",
+        "dev": "node --watch src/server.js",
+        "db:seed": "node src/utils/seed.js"
     },
     "dependencies": {
         "body-parser": "^1.20.0",

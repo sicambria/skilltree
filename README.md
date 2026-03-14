@@ -28,15 +28,29 @@
 
 ### Prerequisites
 
-- Node.js (v14+)
-- MongoDB
-- Nginx (for production)
+- [Node.js](https://nodejs.org) (v14+)
+- [MongoDB](https://www.mongodb.com/) (running locally or via Atlas)
 
-### Installation
+### Local Development
 
-**Option 1: Install Script (Debian 9)**
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-```bash
+2. **Initialize Database**:
+   Ensure MongoDB is running, then seed the database with initial data:
+   ```bash
+   npm run db:seed
+   ```
+
+3. **Run the Application**:
+   - **Development mode** (with auto-reload):
+     ```bash
+     npm run dev
+     ```
+   - **Production mode**:
+     ```bash
 cd ~
 mkdir skilltree && cd skilltree
 wget https://raw.githubusercontent.com/sicambria/skilltree/master/install/skilltree_install_debian9.sh
@@ -59,7 +73,7 @@ docker run -d -p <IP>:3000:3000 -e DBADDRESS=<IP> localhost/skilltree-nodejs
 docker run -d -e BACKEND=<IP> -p 0.0.0.0:80:80 localhost/skilltree-nginx
 ```
 
-### Nginx Configuration
+### Production Nginx Setup
 
 After installation, configure `/etc/nginx/sites-available/default`:
 
@@ -83,7 +97,15 @@ server {
 }
 ```
 
-## ⚙️ Production Configuration
+## ⚙️ Configuration
+
+### Environment Variables (.env)
+
+For local development, a `.env` file is used to store environment-specific settings. This file is ignored by Git.
+
+Default credentials for local testing:
+- **Username**: `admin`
+    - **Password**: `admin`
 
 1. **Domain**: Register a domain (e.g., via [Freenom](https://www.freenom.com))
 2. **Security**: Update `config.js` with a long, random secret key
