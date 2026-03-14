@@ -36,11 +36,37 @@ app.use((req, res, next) => {
 
 // Global Error Handler
 app.use((err, req, res, next) => {
-    console.error(`❌ Error stack: ${err.stack}`);
+    // Log error for developers
+    console.error(`--------------------------------------------------`);
+    console.error(`❌ Global Error Handler:`);
+    console.error(`- Message: ${err.message}`);
+    console.error(`- Status:  ${err.status || 500}`);
+    if (process.env.NODE_ENV === 'development') {
+        console.error(`- Stack:   ${err.stack}`);
+    }
+    console.error(`--------------------------------------------------`);
+
+    // Handle specific error types
+    if (err.name === 'ValidationError') {
+        return res.status(400).json({
+            success: false,
+            message: 'Validation Error',
+            issues: Object.values(err.errors).map(e => e.message)
+        });
+    }
+
+    if (err.name === 'CastError') {
+        return res.status(400).json({
+            success: false,
+            message: `Invalid ${err.path}: ${err.value}`
+        });
+    }
+
+    // Default response
     res.status(err.status || 500).json({
         success: false,
         message: err.message || 'Internal Server Error',
-        error: process.env.NODE_ENV === 'development' ? err : {}
+        ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
     });
 });
 
