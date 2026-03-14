@@ -1101,5 +1101,208 @@
         "language": "en"
       }
     ]
+  },
+  {
+    "name": "Relational Solidarity Forging",
+    "categoryName": "Civilizational & Societal Metamodels",
+    "skillIcon": "pictures/icons/metamodels/relational_solidarity_forging.png",
+    "description": "Building deep, cooperative group cohesion (Asabiyyah).",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Relational%20Solidarity%20Forging",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Relational Solidarity Forging Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Relational Solidarity Forging",
+        "URL": "https://example.com/metamodels/relational-solidarity-forging",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Requisite Variety Management",
+    "categoryName": "Organizational & Group Metamodels",
+    "skillIcon": "pictures/icons/metamodels/requisite_variety_management.png",
+    "description": "Ensuring organizational complexity matches environmental complexity (Ashby/VSM).",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Requisite%20Variety%20Management",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Requisite Variety Management Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Requisite Variety Management",
+        "URL": "https://example.com/metamodels/requisite-variety-management",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Transformative Apology Facilitation",
+    "categoryName": "Organizational & Group Metamodels",
+    "skillIcon": "pictures/icons/metamodels/transformative_apology_facilitation.png",
+    "description": "Restoring relational equilibrium through accountability (Ubuntu).",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Transformative%20Apology%20Facilitation",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Transformative Apology Facilitation Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Transformative Apology Facilitation",
+        "URL": "https://example.com/metamodels/transformative-apology-facilitation",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Vision-Locked Tactical Flexibility",
+    "categoryName": "Organizational & Group Metamodels",
+    "skillIcon": "pictures/icons/metamodels/vision-locked_tactical_flexibility.png",
+    "description": "Maintaining core direction while fluidly adapting path tactics.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Vision-Locked%20Tactical%20Flexibility",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Vision-Locked Tactical Flexibility Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Vision-Locked Tactical Flexibility",
+        "URL": "https://example.com/metamodels/vision-locked-tactical-flexibility",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "vMEME Value Set Translation",
+    "categoryName": "Cross-Scale & Trans-Systemic Metamodels",
+    "skillIcon": "pictures/icons/metamodels/vmeme_value_set_translation.png",
+    "description": "Communicating across differing evolutionary value systems (Spiral Dynamics).",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/vMEME%20Value%20Set%20Translation",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "vMEME Value Set Translation Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of vMEME Value Set Translation",
+        "URL": "https://example.com/metamodels/vmeme-value-set-translation",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Second-Tier Integral Thinking",
+    "categoryName": "Cross-Scale & Trans-Systemic Metamodels",
+    "skillIcon": "pictures/icons/metamodels/second-tier_integral_thinking.png",
+    "description": "Recognizing the necessity and utility of all developmental stages.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Second-Tier%20Integral%20Thinking",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Second-Tier Integral Thinking Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Second-Tier Integral Thinking",
+        "URL": "https://example.com/metamodels/second-tier-integral-thinking",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Systematic Correspondence Mapping",
+    "categoryName": "Cross-Scale & Trans-Systemic Metamodels",
+    "skillIcon": "pictures/icons/metamodels/systematic_correspondence_mapping.png",
+    "description": "Understanding how changes in one domain cascade based on relational patterns.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Systematic%20Correspondence%20Mapping",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Systematic Correspondence Mapping Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Systematic Correspondence Mapping",
+        "URL": "https://example.com/metamodels/systematic-correspondence-mapping",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
   }
 ]

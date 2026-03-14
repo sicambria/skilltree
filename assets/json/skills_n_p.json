@@ -613,5 +613,63 @@
         "language": "en"
       }
     ]
+  },
+  {
+    "name": "Planetary Intelligence Synchrony",
+    "categoryName": "Cosmic & Planetary Metamodels",
+    "skillIcon": "pictures/icons/metamodels/planetary_intelligence_synchrony.png",
+    "description": "Coupling human technosphere with biosphere feedback loops.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Planetary%20Intelligence%20Synchrony",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Planetary Intelligence Synchrony Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Planetary Intelligence Synchrony",
+        "URL": "https://example.com/metamodels/planetary-intelligence-synchrony",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Paradigm Transcendence",
+    "categoryName": "Cross-Scale & Trans-Systemic Metamodels",
+    "skillIcon": "pictures/icons/metamodels/paradigm_transcendence.png",
+    "description": "The power to shift the underlying rules and goals of a system.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Paradigm%20Transcendence",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Paradigm Transcendence Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Paradigm Transcendence",
+        "URL": "https://example.com/metamodels/paradigm-transcendence",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
   }
 ]

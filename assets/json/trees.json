@@ -364,5 +364,38 @@
       "Hózhó Principle (Harmony & Beauty)",
       "Soil Microbiome Stewardship"
     ]
+  },
+  {
+    "name": "Metamodel Navigator",
+    "description": "Mastery across multiple scales of systemic abstraction for navigating complex planetary futures.",
+    "focusArea": "Metacognition",
+    "skillNames": [
+      "Planetary Intelligence Synchrony",
+      "Adaptive Cycle Navigation",
+      "Leverage Point Identification (Deep Systems)",
+      "Second-Tier Integral Thinking"
+    ]
+  },
+  {
+    "name": "Cybernetic Architect",
+    "description": "Designing viable, decentralized organizations through requisite variety and recursive scaling.",
+    "focusArea": "Governance",
+    "skillNames": [
+      "Requisite Variety Management",
+      "Cybernetic Recursive Scaling",
+      "Commons Governance Design",
+      "Leverage Point Identification (Deep Systems)"
+    ]
+  },
+  {
+    "name": "Planetary Steward",
+    "description": "Aligning civilizational energy and technology with the long-term habitability of the Earth.",
+    "focusArea": "Science",
+    "skillNames": [
+      "Kardashev Energy Mastery",
+      "Planetary Intelligence Synchrony",
+      "Efficiency-First Paradigm Design",
+      "Ecological Permeation (Sila)"
+    ]
   }
 ]

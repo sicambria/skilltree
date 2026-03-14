@@ -2177,5 +2177,353 @@
         "language": "en"
       }
     ]
+  },
+  {
+    "name": "Efficiency-First Paradigm Design",
+    "categoryName": "Cosmic & Planetary Metamodels",
+    "skillIcon": "pictures/icons/metamodels/efficiency-first_paradigm_design.png",
+    "description": "Decoupling progress from raw energy expenditure.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Efficiency-First%20Paradigm%20Design",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Efficiency-First Paradigm Design Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Efficiency-First Paradigm Design",
+        "URL": "https://example.com/metamodels/efficiency-first-paradigm-design",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Graceful Degradation Design",
+    "categoryName": "Civilizational & Societal Metamodels",
+    "skillIcon": "pictures/icons/metamodels/graceful_degradation_design.png",
+    "description": "Planned simplification of systems to prevent catastrophic collapse.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Graceful%20Degradation%20Design",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Graceful Degradation Design Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Graceful Degradation Design",
+        "URL": "https://example.com/metamodels/graceful-degradation-design",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Gram Swaraj (Decentralized Governance)",
+    "categoryName": "Civilizational & Societal Metamodels",
+    "skillIcon": "pictures/icons/metamodels/gram_swaraj_(decentralized_governance).png",
+    "description": "Designing self-reliant, autonomous local governance units.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Gram%20Swaraj",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Gram Swaraj (Decentralized Governance) Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Gram Swaraj (Decentralized Governance)",
+        "URL": "https://example.com/metamodels/gram-swaraj-(decentralized-governance)",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Bija Swaraj (Seed Democracy)",
+    "categoryName": "Civilizational & Societal Metamodels",
+    "skillIcon": "pictures/icons/metamodels/bija_swaraj_(seed_democracy).png",
+    "description": "Defending the biological commons through open-source genetics.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Bija%20Swaraj",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Bija Swaraj (Seed Democracy) Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Bija Swaraj (Seed Democracy)",
+        "URL": "https://example.com/metamodels/bija-swaraj-(seed-democracy)",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Critical Ancestral Retrieval",
+    "categoryName": "Civilizational & Societal Metamodels",
+    "skillIcon": "pictures/icons/metamodels/critical_ancestral_retrieval.png",
+    "description": "Returning to seek and take wisdom for future design (Sankofa).",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Critical%20Ancestral%20Retrieval",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Critical Ancestral Retrieval Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Critical Ancestral Retrieval",
+        "URL": "https://example.com/metamodels/critical-ancestral-retrieval",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Environmental Personhood Advocacy",
+    "categoryName": "Ecological & Socio-Ecological Metamodels",
+    "skillIcon": "pictures/icons/metamodels/environmental_personhood_advocacy.png",
+    "description": "Legal and moral recognition of nature as a subject with rights.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Environmental%20Personhood%20Advocacy",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Environmental Personhood Advocacy Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Environmental Personhood Advocacy",
+        "URL": "https://example.com/metamodels/environmental-personhood-advocacy",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Adaptive Cycle Navigation",
+    "categoryName": "Ecological & Socio-Ecological Metamodels",
+    "skillIcon": "pictures/icons/metamodels/adaptive_cycle_navigation.png",
+    "description": "Guiding systems through growth, conservation, release, and renewal.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Adaptive%20Cycle%20Navigation",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Adaptive Cycle Navigation Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Adaptive Cycle Navigation",
+        "URL": "https://example.com/metamodels/adaptive-cycle-navigation",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Cross-Scale 'Revolt & Remember' Dynamics",
+    "categoryName": "Ecological & Socio-Ecological Metamodels",
+    "skillIcon": "pictures/icons/metamodels/cross-scale_'revolt_&_remember'_dynamics.png",
+    "description": "Managing cascades of change across spatial and temporal scales.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Cross-Scale%20'Revolt%20%26%20Remember'%20Dynamics",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Cross-Scale 'Revolt & Remember' Dynamics Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Cross-Scale 'Revolt & Remember' Dynamics",
+        "URL": "https://example.com/metamodels/cross-scale-'revolt-&-remember'-dynamics",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Commons Governance Design",
+    "categoryName": "Ecological & Socio-Ecological Metamodels",
+    "skillIcon": "pictures/icons/metamodels/commons_governance_design.png",
+    "description": "Applying Ostrom's 8 principles to shared resource management.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Commons%20Governance%20Design",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Commons Governance Design Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Commons Governance Design",
+        "URL": "https://example.com/metamodels/commons-governance-design",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Ecological Permeation (Sila)",
+    "categoryName": "Ecological & Socio-Ecological Metamodels",
+    "skillIcon": "pictures/icons/metamodels/ecological_permeation_(sila).png",
+    "description": "Aligning consciousness with environmental fluctuations and rhythms.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Ecological%20Permeation",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Ecological Permeation (Sila) Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Ecological Permeation (Sila)",
+        "URL": "https://example.com/metamodels/ecological-permeation-(sila)",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Cybernetic Recursive Scaling",
+    "categoryName": "Organizational & Group Metamodels",
+    "skillIcon": "pictures/icons/metamodels/cybernetic_recursive_scaling.png",
+    "description": "Designing organizations that echo their logic from team to global level.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Cybernetic%20Recursive%20Scaling",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Cybernetic Recursive Scaling Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Cybernetic Recursive Scaling",
+        "URL": "https://example.com/metamodels/cybernetic-recursive-scaling",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Cyclical Inhibition Management (Wuxing)",
+    "categoryName": "Cross-Scale & Trans-Systemic Metamodels",
+    "skillIcon": "pictures/icons/metamodels/cyclical_inhibition_management_(wuxing).png",
+    "description": "Balancing system phases through promoting and controlling cycles.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Cyclical%20Inhibition%20Management",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Cyclical Inhibition Management (Wuxing) Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Cyclical Inhibition Management (Wuxing)",
+        "URL": "https://example.com/metamodels/cyclical-inhibition-management-(wuxing)",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
   }
 ]

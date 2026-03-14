@@ -562,5 +562,121 @@
         "language": "en"
       }
     ]
+  },
+  {
+    "name": "Kardashev Energy Mastery",
+    "categoryName": "Cosmic & Planetary Metamodels",
+    "skillIcon": "pictures/icons/metamodels/kardashev_energy_mastery.png",
+    "description": "Harnessing planetary-scale energy within biosphere limits.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Kardashev%20Energy%20Mastery",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Kardashev Energy Mastery Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Kardashev Energy Mastery",
+        "URL": "https://example.com/metamodels/kardashev-energy-mastery",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Marginal Return Analysis",
+    "categoryName": "Civilizational & Societal Metamodels",
+    "skillIcon": "pictures/icons/metamodels/marginal_return_analysis.png",
+    "description": "Identifying when added complexity yields negative benefits (Tainter).",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Marginal%20Return%20Analysis",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Marginal Return Analysis Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Marginal Return Analysis",
+        "URL": "https://example.com/metamodels/marginal-return-analysis",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Multi-Sensory Wayfinding",
+    "categoryName": "Organizational & Group Metamodels",
+    "skillIcon": "pictures/icons/metamodels/multi-sensory_wayfinding.png",
+    "description": "Reading dynamic signals to navigate extreme uncertainty.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Multi-Sensory%20Wayfinding",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Multi-Sensory Wayfinding Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Multi-Sensory Wayfinding",
+        "URL": "https://example.com/metamodels/multi-sensory-wayfinding",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
+  },
+  {
+    "name": "Leverage Point Identification (Deep Systems)",
+    "categoryName": "Cross-Scale & Trans-Systemic Metamodels",
+    "skillIcon": "pictures/icons/metamodels/leverage_point_identification_(deep_systems).png",
+    "description": "Finding where small structural shifts produce massive cascades.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Leverage%20Point%20Identification",
+    "pointDescription": [
+      "Theoretical awareness of the metamodel's rules.",
+      "Application to simple diagnostic tasks.",
+      "Competency in mapping cross-scale dynamics.",
+      "Advanced facilitation of systemic interventions using the model.",
+      "Mastery in paradigm-shifting and future-proof navigation."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [
+      {
+        "name": "Leverage Point Identification (Deep Systems) Seminar",
+        "level": 1,
+        "shortDescription": "Deep dive into the architecture of Leverage Point Identification (Deep Systems)",
+        "URL": "https://example.com/metamodels/leverage-point-identification-(deep-systems)",
+        "URLlastAccessed": "2026-03-14",
+        "goal": "Metacognition",
+        "length": 8,
+        "language": "en"
+      }
+    ]
   }
 ]
