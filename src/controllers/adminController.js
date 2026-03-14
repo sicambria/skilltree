@@ -6,6 +6,7 @@ const ApprovableSkill = require('../models/skillsforapprovemodel');
 const ApprovableTraining = require('../models/trainingsforapprovemodel');
 const treeUtils = require('../utils/treeUtils');
 const skillUtils = require('../utils/skillUtils');
+const wikidataService = require('../services/wikidataService');
 
 exports.approveSkill = async (req, res) => {
     try {
@@ -334,4 +335,172 @@ exports.deleteUser = async (req, res) => {
 
 exports.testAdmin = (req, res) => {
     res.json({ success: true });
+};
+
+exports.wikidataSearch = async (req, res) => {
+    try {
+        const query = req.query.search;
+        if (!query) return res.json({ success: true, results: [] });
+        
+        const results = await wikidataService.search(query);
+        res.json({ success: true, results: results });
+    } catch (err) {
+        console.error('Wikidata search error:', err);
+        res.status(500).json({ success: false, message: 'Wikidata search failed' });
+    }
+};
+
+exports.wikidataImport = async (req, res) => {
+    try {
+        const { qids, categoryName } = req.body;
+        if (!qids || !Array.isArray(qids) || qids.length === 0) {
+            return res.status(400).json({ success: false, message: 'No QIDs provided' });
+        }
+
+        const stats = { imported: 0, skipped: 0, errors: 0 };
+        const importedSkills = [];
+
+        for (const qid of qids) {
+            try {
+                const details = await wikidataService.getEntityDetails(qid);
+                if (!details) {
+                    stats.skipped++;
+                    continue;
+                }
+
+                const existingSkill = await skillUtils.findSkillByName(details.name);
+                if (existingSkill) {
+                    stats.skipped++;
+                    continue;
+                }
+
+                const newSkill = new Skill({
+                    name: details.name,
+                    categoryName: categoryName || 'Uncategorized',
+                    description: details.description,
+                    descriptionWikipediaURL: details.wikipediaURL,
+                    skillIcon: 'pictures/icons/default.png', // Placeholder
+                    maxPoint: 5,
+                    pointDescription: ['Novice', 'Beginner', 'Intermediate', 'Advanced', 'Expert'],
+                    parents: [],
+                    children: [],
+                    trainings: []
+                });
+
+                await newSkill.save();
+                stats.imported++;
+                importedSkills.push(details.name);
+            } catch (err) {
+                console.error(`Error importing QID ${qid}:`, err);
+                stats.errors++;
+            }
+        }
+
+        res.json({ 
+            success: true, 
+            message: `Import completed: ${stats.imported} imported, ${stats.skipped} skipped, ${stats.errors} errors.`,
+            stats: stats,
+            importedSkills: importedSkills
+        });
+    } catch (err) {
+        console.error('Wikidata import error:', err);
+        res.status(500).json({ success: false, message: 'Wikidata import failed' });
+    }
+};
+
+exports.exportData = async (req, res) => {
+    try {
+        const { type, category } = req.query;
+        const result = {};
+
+        if (!type || type === 'all' || type === 'skills') {
+            const skillFilter = category ? { categoryName: category } : {};
+            result.skills = await Skill.find(skillFilter);
+        }
+
+        if (!type || type === 'all' || type === 'trees') {
+            result.trees = await Tree.find({});
+        }
+
+        res.json({ success: true, data: result });
+    } catch (err) {
+        console.error('Export error:', err);
+        res.status(500).json({ success: false, message: 'Export failed' });
+    }
+};
+
+exports.importData = async (req, res) => {
+    try {
+        const { skills, trees } = req.body;
+        const stats = {
+            skills: { imported: 0, updated: 0, skipped: 0, errors: 0 },
+            trees: { imported: 0, updated: 0, skipped: 0, errors: 0 }
+        };
+
+        if (skills && Array.isArray(skills)) {
+            for (const skillData of skills) {
+                try {
+                    if (!skillData.name) {
+                        stats.skills.errors++;
+                        continue;
+                    }
+
+                    const existing = await skillUtils.findSkillByName(skillData.name);
+                    if (existing) {
+                        // Merge/Update logic or skip
+                        // For simplicity and safety, let's skip but we could implement update
+                        stats.skills.skipped++;
+                        continue;
+                    }
+
+                    // Remove _id and __v if present to avoid conflicts
+                    delete skillData._id;
+                    delete skillData.__v;
+
+                    const newSkill = new Skill(skillData);
+                    await newSkill.save();
+                    stats.skills.imported++;
+                } catch (e) {
+                    console.error(`Error importing skill ${skillData.name}:`, e);
+                    stats.skills.errors++;
+                }
+            }
+        }
+
+        if (trees && Array.isArray(trees)) {
+            for (const treeData of trees) {
+                try {
+                    if (!treeData.name) {
+                        stats.trees.errors++;
+                        continue;
+                    }
+
+                    const existing = await Tree.findOne({ name: treeData.name });
+                    if (existing) {
+                        stats.trees.skipped++;
+                        continue;
+                    }
+
+                    delete treeData._id;
+                    delete treeData.__v;
+
+                    const newTree = new Tree(treeData);
+                    await newTree.save();
+                    stats.trees.imported++;
+                } catch (e) {
+                    console.error(`Error importing tree ${treeData.name}:`, e);
+                    stats.trees.errors++;
+                }
+            }
+        }
+
+        res.json({ 
+            success: true, 
+            message: 'Import process completed',
+            stats: stats 
+        });
+    } catch (err) {
+        console.error('Import error:', err);
+        res.status(500).json({ success: false, message: 'Import failed' });
+    }
 };

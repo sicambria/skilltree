@@ -12,4 +12,12 @@ router.post('/setadmin', adminController.setAdmin);
 router.post('/deleteUser', adminController.deleteUser);
 router.get('/testAdmin', adminController.testAdmin);
 
+// Wikidata Import
+router.get('/wikidata/search', adminController.wikidataSearch);
+router.post('/wikidata/import', adminController.wikidataImport);
+
+// JSON Import/Export
+router.get('/export', adminController.exportData);
+router.post('/import', adminController.importData);
+
 module.exports = router;

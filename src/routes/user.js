@@ -10,5 +10,6 @@ router.post('/newpassword', userController.updatePassword);
 router.post('/newplace', userController.updateLocation);
 router.post('/newemail', userController.updateEmail);
 router.post('/newhelp', userController.updateHelp);
+router.post('/firstlogindata', userController.handleFirstLogin);
 
 module.exports = router;

@@ -149,3 +149,32 @@ exports.updateHelp = async (req, res) => {
         res.status(500).json({ success: false, message: 'Server error' });
     }
 };
+
+exports.handleFirstLogin = async (req, res) => {
+    try {
+        const data = req.body;
+        const user = await User.findOne({ username: req.decoded.username });
+        if (!user) return res.json({ success: false, message: 'User not found.' });
+
+        const selectedTree = await Tree.findOne({ name: data.mainTree });
+        if (!selectedTree) return res.json({ success: false, message: 'Tree not found.' });
+
+        user.mainTree = data.mainTree;
+
+        const focusAreaTrees = await Tree.find({ focusArea: data.focusArea }, { _id: 0, name: 1 });
+        const treeNames = focusAreaTrees.map(t => t.name);
+
+        user.focusArea = {
+            name: data.focusArea,
+            treeNames: treeNames
+        };
+
+        const { sortAndAddTreeToUser } = require('../utils/treeUtils');
+        await sortAndAddTreeToUser(selectedTree, user);
+
+        res.json({ success: true });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};

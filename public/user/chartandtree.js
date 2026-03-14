@@ -1217,3 +1217,275 @@ function saveHelp () {
         });
     } else showBottomAlert('danger', "Incorrect data!");
 }
+
+/**
+ * Wikidata Import Feature
+ */
+var wikidataBatchNames = [];
+var wikidataBatchQIDs = [];
+
+function wikidataImport() {
+    hideMenus();
+    var modal = document.getElementById("wikidataImportModal");
+    modal.style.display = "block";
+
+    // Reset UI
+    wikidataBatchNames = [];
+    wikidataBatchQIDs = [];
+    document.getElementById('wikidataBatchList').innerHTML = '<div class="list-group-item disabled text-center">No skills added to batch</div>';
+    document.getElementById('wikidataSearchResults').innerHTML = "";
+    document.getElementById('wikidataSearchInput').value = "";
+
+    // Close button
+    document.getElementById('closeWikidataModal').onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Populate categories
+    var categorySelect = document.getElementById('wikidataCategory');
+    categorySelect.innerHTML = "";
+    // Using global data.categories which should be available
+    if (data && data.categories) {
+        data.categories.forEach(function(cat) {
+            var opt = document.createElement('option');
+            opt.value = opt.text = cat.name;
+            categorySelect.add(opt);
+        });
+    }
+
+    // Search logic
+    var searchInput = document.getElementById('wikidataSearchInput');
+    var searchBtn = document.getElementById('wikidataSearchBtn');
+    
+    var performSearch = function() {
+        var query = searchInput.value;
+        if (query.length < 2) return;
+        
+        searchBtn.disabled = true;
+        searchBtn.innerText = "Searching...";
+        
+        request('GET', `/admin/wikidata/search?search=${encodeURIComponent(query)}`, undefined, function() {
+            searchBtn.disabled = false;
+            searchBtn.innerText = "Search";
+            
+            if (this.readyState == 4 && this.status == 200) {
+                var results = this.response.results || [];
+                var resultsDiv = document.getElementById('wikidataSearchResults');
+                resultsDiv.innerHTML = "";
+                
+                if (results.length === 0) {
+                    resultsDiv.innerHTML = '<div class="list-group-item">No results found</div>';
+                }
+
+                results.forEach(function(res) {
+                    var btn = document.createElement('button');
+                    btn.className = "list-group-item list-group-item-action d-flex justify-content-between align-items-center";
+                    btn.type = "button";
+                    btn.innerHTML = `
+                        <div>
+                            <strong>${res.label || 'No label'}</strong>
+                            <small class="d-block text-muted">${res.description || 'No description'}</small>
+                        </div>
+                        <i class="fas fa-plus text-success"></i>
+                    `;
+                    btn.onclick = function() {
+                        addToWikidataBatch(res.id, res.label);
+                    };
+                    resultsDiv.appendChild(btn);
+                });
+            }
+        });
+    };
+
+    searchBtn.onclick = performSearch;
+    searchInput.onkeypress = function(e) {
+        if (e.which == 13) performSearch();
+    };
+
+    // Import logic
+    document.getElementById('wikidataImportBtn').onclick = function() {
+        if (wikidataBatchQIDs.length === 0) {
+            alert("Please add at least one skill to the batch.");
+            return;
+        }
+
+        var btn = document.getElementById('wikidataImportBtn');
+        btn.disabled = true;
+        btn.innerText = "Importing...";
+
+        var payload = {
+            qids: wikidataBatchQIDs,
+            categoryName: categorySelect.value
+        };
+
+        request('POST', '/admin/wikidata/import', payload, function() {
+            btn.disabled = false;
+            btn.innerText = "Import Selected Skills";
+            
+            if (this.readyState == 4 && this.status == 200) {
+                if (this.response.success) {
+                    alert(this.response.message);
+                    modal.style.display = "none";
+                    window.location.reload(); // Reload to see new skills
+                } else {
+                    alert("Import failed: " + this.response.message);
+                }
+            }
+        });
+    };
+}
+
+function addToWikidataBatch(qid, name) {
+    if (wikidataBatchQIDs.includes(qid)) {
+        alert("Skill already in batch.");
+        return;
+    }
+
+    wikidataBatchQIDs.push(qid);
+    wikidataBatchNames.push(name);
+    updateWikidataBatchList();
+}
+
+function removeFromWikidataBatch(index) {
+    wikidataBatchQIDs.splice(index, 1);
+    wikidataBatchNames.splice(index, 1);
+    updateWikidataBatchList();
+}
+
+function updateWikidataBatchList() {
+    var listDiv = document.getElementById('wikidataBatchList');
+    listDiv.innerHTML = "";
+    
+    if (wikidataBatchQIDs.length === 0) {
+        listDiv.innerHTML = '<div class="list-group-item disabled text-center">No skills added to batch</div>';
+        return;
+    }
+
+    wikidataBatchNames.forEach(function(name, index) {
+        var item = document.createElement('div');
+        item.className = "list-group-item d-flex justify-content-between align-items-center";
+        item.innerHTML = `
+            ${name} (${wikidataBatchQIDs[index]})
+            <button class="btn btn-sm btn-outline-danger" onclick="removeFromWikidataBatch(${index})">
+                <i class="fas fa-trash"></i>
+            </button>
+        `;
+        listDiv.appendChild(item);
+    });
+}
+
+/**
+ * JSON Export/Import Feature
+ */
+function exportImportData() {
+    hideMenus();
+    var modal = document.getElementById("exportImportModal");
+    modal.style.display = "block";
+
+    // Close button
+    document.getElementById('closeExportImportModal').onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Populate categories
+    var categorySelect = document.getElementById('exportCategory');
+    categorySelect.innerHTML = '<option value="">All Categories</option>';
+    if (data && data.categories) {
+        data.categories.forEach(function(cat) {
+            var opt = document.createElement('option');
+            opt.value = opt.text = cat.name;
+            categorySelect.add(opt);
+        });
+    }
+
+    // Toggle category select based on type
+    var typeSelect = document.getElementById('exportType');
+    var categoryDiv = document.getElementById('exportCategoryDiv');
+    typeSelect.onchange = function() {
+        if (this.value === 'skills' || this.value === 'all') {
+            categoryDiv.style.display = 'block';
+        } else {
+            categoryDiv.style.display = 'none';
+        }
+    };
+
+    // Export Logic
+    document.getElementById('exportBtn').onclick = function() {
+        var type = typeSelect.value;
+        var category = categorySelect.value;
+        var url = `/admin/export?type=${type}`;
+        if (category) url += `&category=${encodeURIComponent(category)}`;
+
+        request('GET', url, undefined, function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if (this.response.success) {
+                    var dataStr = JSON.stringify(this.response.data, null, 2);
+                    var blob = new Blob([dataStr], { type: 'application/json' });
+                    var url = window.URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    a.href = url;
+                    a.download = `skilltree_export_${type}_${new Date().toISOString().split('T')[0]}.json`;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                } else {
+                    alert("Export failed: " + this.response.message);
+                }
+            }
+        });
+    };
+
+    // Import Logic
+    var importFile = document.getElementById('importFile');
+    var importText = document.getElementById('importText');
+    var importBtn = document.getElementById('importBtn');
+    var importResults = document.getElementById('importResults');
+    var importStats = document.getElementById('importStats');
+
+    importBtn.onclick = function() {
+        var jsonContent = "";
+        
+        if (importFile.files.length > 0) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                processImport(e.target.result);
+            };
+            reader.readAsText(importFile.files[0]);
+        } else if (importText.value.trim().length > 0) {
+            processImport(importText.value.trim());
+        } else {
+            alert("Please select a file or paste JSON content.");
+        }
+    };
+
+    function processImport(content) {
+        try {
+            var payload = JSON.parse(content);
+            importBtn.disabled = true;
+            importBtn.innerText = "Importing...";
+
+            request('POST', '/admin/import', payload, function() {
+                importBtn.disabled = false;
+                importBtn.innerText = "Import Data";
+                
+                if (this.readyState == 4 && this.status == 200) {
+                    if (this.response.success) {
+                        importResults.style.display = 'block';
+                        var stats = this.response.stats;
+                        var html = `
+                            <p><strong>Skills:</strong> ${stats.skills.imported} imported, ${stats.skills.skipped} skipped, ${stats.skills.errors} errors</p>
+                            <p><strong>Trees:</strong> ${stats.trees.imported} imported, ${stats.trees.skipped} skipped, ${stats.trees.errors} errors</p>
+                        `;
+                        importStats.innerHTML = html;
+                        showBottomAlert('success', "Import completed successfully!");
+                    } else {
+                        alert("Import failed: " + this.response.message);
+                    }
+                }
+            });
+        } catch (e) {
+            alert("Invalid JSON format: " + e.message);
+        }
+    }
+}
