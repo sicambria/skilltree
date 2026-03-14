@@ -54,14 +54,13 @@
 
     <div class="collapse navbar-collapse hide-on-click" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" id="openchart">Overview <span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            My SkillTrees
+          <a class="nav-link dropdown-toggle" id="intelligenceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Intelligence
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="treeList">
+          <div class="dropdown-menu" aria-labelledby="intelligenceDropdown">
+            <a class="dropdown-item" href="/user/graph.html">Global Graph View</a>
+            <a class="dropdown-item" onclick="wikidataImport()">Wikidata Skill Importer</a>
           </div>
         </li>
         <li class="nav-item dropdown">
