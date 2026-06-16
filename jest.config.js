@@ -19,7 +19,6 @@ module.exports = {
             lines: 80,
         },
     },
-    setupFilesAfterSetup: [],
     testTimeout: 30000,
     verbose: true,
 };

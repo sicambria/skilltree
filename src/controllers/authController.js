@@ -10,28 +10,45 @@ const findUser = async (username) => {
     return await User.findOne({ username });
 };
 
+const validateUsername = (username) => typeof username === 'string' && username.length >= 2 && username.length <= 50;
+const validatePassword = (password) => typeof password === 'string' && password.length >= 4;
+const validateEmail = (email) => typeof email === 'string' && email.length <= 254;
+
 exports.registration = async (req, res) => {
     try {
-        const user = await findUser(req.body.username);
+        const username = (req.body.username || '').toString().trim();
+        const password = req.body.password || '';
+        const email = (req.body.email || '').toString().trim();
+
+        if (!validateUsername(username)) {
+            return res.status(400).json({ success: false, message: 'Username must be 2-50 characters.' });
+        }
+        if (!validatePassword(password)) {
+            return res.status(400).json({ success: false, message: 'Password must be at least 4 characters.' });
+        }
+        if (email && !validateEmail(email)) {
+            return res.status(400).json({ success: false, message: 'Invalid email.' });
+        }
+
+        const user = await findUser(username);
 
         if (!user) {
-            const hashData = security.hashPassword(req.body.password);
+            const hashData = security.hashPassword(password);
             const focusAreaTrees = await Tree.find({ focusArea: req.body.focusArea }, { _id: 0, name: 1 });
 
             const treeNames = focusAreaTrees.map(t => t.name);
             const categories = await Category.find({});
 
             const newUser = new User({
-                username: req.body.username,
-                email: req.body.email,
+                username: username,
+                email: email,
                 hashData: hashData,
                 categories: categories
-                // focusArea and willingToTeach omitted in legacy registration logic
             });
 
             await newUser.save();
 
-            const payload = { username: req.body.username };
+            const payload = { username: username };
             const token = jwt.sign(payload, config.secret, { expiresIn: '1d' });
 
             res.json({
@@ -49,24 +66,31 @@ exports.registration = async (req, res) => {
 
 exports.login = async (req, res) => {
     try {
-        const user = await User.findOne({ username: req.body.username });
+        const username = (req.body.username || '').toString().trim();
+        const password = req.body.password || '';
+
+        if (!username || !password) {
+            return res.status(400).json({ success: false, message: 'Username and password required.' });
+        }
+
+        const user = await User.findOne({ username: username });
 
         if (!user) {
-            return res.json({
+            return res.status(401).json({
                 success: false,
                 message: 'Authentication failed. User not found.'
             });
         }
 
-        if (!security.verifyPassword(req.body.password, user.hashData)) {
-            return res.json({
+        if (!security.verifyPassword(password, user.hashData)) {
+            return res.status(401).json({
                 success: false,
                 message: 'Authentication failed. Wrong password.'
             });
         }
 
         const payload = {
-            username: req.body.username,
+            username: username,
             admin: user.admin
         };
         const token = jwt.sign(payload, config.secret, { expiresIn: '1d' });

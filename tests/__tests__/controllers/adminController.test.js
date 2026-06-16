@@ -97,6 +97,37 @@ describe('adminController', () => {
 
             expect(res.json).toHaveBeenCalledWith({ message: 'Succes', success: true });
         });
+
+        it('should process dependency chain where lastdependency has parents', async () => {
+            await Skill.create({ name: 'ExistingParent', parents: [], children: [] });
+            await ApprovableSkill.create({
+                username: 'u1',
+                name: 'DepSkill',
+                categoryName: 'General',
+                maxPoint: 3,
+                parents: ['ExistingParent']
+            });
+
+            req.body = {
+                name: 'NewSkill',
+                categoryName: 'General',
+                skillIcon: '',
+                description: '',
+                descriptionWikipediaURL: '',
+                pointDescription: [],
+                maxPoint: 5,
+                parent: ['DepSkill'],
+                parents: ['DepSkill'],
+                minPoint: 0,
+                recommended: false,
+                training: { name: '', level: 1, shortDescription: '', URL: '', goal: '', language: 'en' },
+                traininglength: 0
+            };
+
+            await adminController.approveSkill(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ message: 'Succes', success: true });
+        });
     });
 
     describe('editTree', () => {
@@ -141,6 +172,16 @@ describe('adminController', () => {
                 message: 'Tree not found'
             });
         });
+
+        it('should handle server error', async () => {
+            jest.spyOn(Tree, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.body = { name: 'MyTree', focusArea: 'A', description: 'D', skills: [] };
+
+            await adminController.editTree(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            jest.restoreAllMocks();
+        });
     });
 
     describe('editSkill', () => {
@@ -182,6 +223,46 @@ describe('adminController', () => {
                 success: false,
                 message: 'Skill not found'
             });
+        });
+
+        it('should add child skill to user when editing skill with new child', async () => {
+            await Skill.create({ name: 'ParentExisting' });
+            await Skill.create({ name: 'ChildFromDB', parents: ['ParentExisting'] });
+            await Skill.create({
+                name: 'EditMe',
+                categoryName: 'General',
+                parents: ['ParentExisting'],
+                children: [],
+                trainings: [],
+                achievedPoint: 1,
+                maxPoint: 5
+            });
+            const user = await User.create({
+                username: 'testuser',
+                skills: [{ name: 'EditMe', parents: ['ParentExisting'], children: [], trainings: [], achievedPoint: 1 }]
+            });
+
+            req.body = {
+                name: 'EditMe',
+                description: 'Updated',
+                descriptionWikipediaURL: '',
+                skillIcon: '',
+                categoryName: 'General',
+                maxPoint: 5,
+                pointDescription: [],
+                parents: [{ name: 'ParentExisting', minPoint: 1, recommended: false }],
+                children: [{ name: 'ChildFromDB', minPoint: 2, recommended: false }],
+                trainings: []
+            };
+
+            await adminController.editSkill(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+
+            const updatedUser = await User.findOne({ username: 'testuser' });
+            const childInUser = updatedUser.skills.find(s => s.name === 'ChildFromDB');
+            expect(childInUser).toBeDefined();
+            expect(childInUser.parents).toContain('EditMe');
         });
 
         it('should update user skills when editing skill', async () => {
@@ -256,6 +337,16 @@ describe('adminController', () => {
             expect(us.description).toBe('Edited');
             expect(us.achievedPoint).toBe(3);
         });
+
+        it('should handle server error', async () => {
+            jest.spyOn(require('../../../src/utils/skillUtils'), 'findSkillByName').mockRejectedValue(new Error('DB error'));
+            req.body = { name: 'AnySkill' };
+
+            await adminController.editSkill(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            jest.restoreAllMocks();
+        });
     });
 
     describe('approveTree', () => {
@@ -288,6 +379,16 @@ describe('adminController', () => {
             await adminController.approveTree(req, res);
 
             expect(res.json).toHaveBeenCalledWith({ success: true });
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(Tree, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.body = { name: 'AnyTree', username: 'u1' };
+
+            await adminController.approveTree(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            jest.restoreAllMocks();
         });
     });
 
@@ -325,6 +426,46 @@ describe('adminController', () => {
 
             expect(res.json).toHaveBeenCalledWith({ success: true });
         });
+
+        it('should update users who have the skill when training approved', async () => {
+            const skill = await Skill.create({ name: 'SharedSkill', trainings: [] });
+            const user = await User.create({
+                username: 'hasskill',
+                skills: [{ name: 'SharedSkill', parents: [], children: [], trainings: [] }]
+            });
+            await ApprovableTraining.create({
+                username: 'u1',
+                skillName: 'SharedSkill',
+                name: 'NewCourse',
+                level: 2,
+                shortDescription: 'Advanced',
+                URL: 'http://example.com',
+                goal: 'Master',
+                length: 20,
+                language: 'en'
+            });
+
+            req.body = { skillName: 'SharedSkill', username: 'u1', name: 'NewCourse' };
+
+            await adminController.approveTraining(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+
+            const updatedUser = await User.findOne({ username: 'hasskill' });
+            const userSkill = updatedUser.skills.find(s => s.name === 'SharedSkill');
+            expect(userSkill.trainings.length).toBe(1);
+            expect(userSkill.trainings[0].name).toBe('NewCourse');
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(require('../../../src/utils/skillUtils'), 'findSkillByName').mockRejectedValue(new Error('DB error'));
+            req.body = { skillName: 'AnySkill', username: 'u1', name: 'Course' };
+
+            await adminController.approveTraining(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            jest.restoreAllMocks();
+        });
     });
 
     describe('dropOffers', () => {
@@ -338,6 +479,15 @@ describe('adminController', () => {
 
             const skills = await Skill.find({});
             skills.forEach(s => expect(s.offers.length).toBe(0));
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(Skill, 'find').mockRejectedValue(new Error('DB error'));
+
+            await adminController.dropOffers(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            jest.restoreAllMocks();
         });
     });
 
@@ -374,6 +524,16 @@ describe('adminController', () => {
                 message: 'User not found.'
             });
         });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.body = { username: 'anyuser', give: true };
+
+            await adminController.setAdmin(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            jest.restoreAllMocks();
+        });
     });
 
     describe('deleteUser', () => {
@@ -390,6 +550,16 @@ describe('adminController', () => {
 
             const user = await User.findOne({ username: 'todelete' });
             expect(user).toBeNull();
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'deleteOne').mockRejectedValue(new Error('DB error'));
+            req.body = { username: 'anyuser' };
+
+            await adminController.deleteUser(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            jest.restoreAllMocks();
         });
     });
 
@@ -487,6 +657,20 @@ describe('adminController', () => {
             expect(data.data.skills.length).toBe(1);
             expect(data.data.skills[0].name).toBe('FrontendSkill');
         });
+
+        it('should handle server error', async () => {
+            jest.spyOn(Skill, 'find').mockRejectedValue(new Error('DB error'));
+            req.query = {};
+
+            await adminController.exportData(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Export failed'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('importData', () => {
@@ -559,6 +743,20 @@ describe('adminController', () => {
             expect(data.stats.trees.errors).toBe(1);
             mockSave.mockRestore();
         });
+
+        it('should handle server error on outer try-catch', async () => {
+            Object.defineProperty(req, 'body', {
+                get: () => { throw new Error('Body access error'); }
+            });
+
+            await adminController.importData(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Import failed'
+            });
+        });
     });
 
     describe('wikidataSearch (additional)', () => {
@@ -590,6 +788,20 @@ describe('adminController', () => {
             expect(skill).not.toBeNull();
             expect(skill.categoryName).toBe('Science');
             jest.restoreAllMocks();
+        });
+
+        it('should handle outer server error', async () => {
+            Object.defineProperty(req, 'body', {
+                get: () => { throw new Error('Body access error'); }
+            });
+
+            await adminController.wikidataImport(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Wikidata import failed'
+            });
         });
 
         it('should skip already existing wikidata entities', async () => {

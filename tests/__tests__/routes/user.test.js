@@ -47,8 +47,8 @@ describe('Protected User Routes', () => {
             const res = await request(app)
                 .get('/protected/userdata');
 
-            expect(res.status).toBe(200);
-            expect(res.text).toContain('login');
+            expect(res.status).toBe(401);
+            expect(res.body).toEqual({ success: false, message: 'No token provided.' });
         });
     });
 

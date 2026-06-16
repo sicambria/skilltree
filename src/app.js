@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const helmet = require('helmet');
 const config = require('./config/config');
 const routes = require('./routes');
 
@@ -8,6 +9,9 @@ const app = express();
 
 // Configuration
 app.set('superSecret', config.secret);
+
+// Security headers
+app.use(helmet());
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -35,7 +39,7 @@ app.use((req, res, next) => {
 });
 
 // Global Error Handler
-app.use((err, req, res, next) => {
+const errorHandler = (err, req, res, next) => {
     // Log error for developers
     console.error(`--------------------------------------------------`);
     console.error(`❌ Global Error Handler:`);
@@ -68,6 +72,9 @@ app.use((err, req, res, next) => {
         message: err.message || 'Internal Server Error',
         ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
     });
-});
+};
+
+app.use(errorHandler);
+app.errorHandler = errorHandler;
 
 module.exports = app;

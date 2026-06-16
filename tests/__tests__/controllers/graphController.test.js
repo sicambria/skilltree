@@ -66,6 +66,48 @@ describe('graphController', () => {
             expect(uniqueNodes.length).toBe(1);
         });
 
+        it('should not duplicate tree nodes', async () => {
+            await Tree.create({ name: 'Duplicate', focusArea: 'First', skillNames: [] });
+            await Tree.create({ name: 'Duplicate', focusArea: 'Second', skillNames: [] });
+
+            await graphController.getGraphData(req, res);
+
+            const data = res.json.mock.calls[0][0];
+            const treeNodes = data.nodes.filter(n => n.id === 'tree-Duplicate');
+            expect(treeNodes.length).toBe(1);
+        });
+
+        it('should not duplicate skill nodes when duplicate names exist', async () => {
+            await Skill.create({ name: 'DupSkill', parents: [], children: [] });
+            await Skill.create({ name: 'DupSkill', parents: [], children: [] });
+
+            await graphController.getGraphData(req, res);
+
+            const data = res.json.mock.calls[0][0];
+            const skillNodes = data.nodes.filter(n => n.id === 'skill-DupSkill');
+            expect(skillNodes.length).toBe(1);
+        });
+
+        it('should default category to General for trees without focusArea', async () => {
+            await Tree.create({ name: 'NoFocus', skillNames: [] });
+
+            await graphController.getGraphData(req, res);
+
+            const data = res.json.mock.calls[0][0];
+            const treeNode = data.nodes.find(n => n.id === 'tree-NoFocus');
+            expect(treeNode.category).toBe('General');
+        });
+
+        it('should default category to General for skills without categoryName', async () => {
+            await Skill.create({ name: 'NoCat', parents: [], children: [] });
+
+            await graphController.getGraphData(req, res);
+
+            const data = res.json.mock.calls[0][0];
+            const skillNode = data.nodes.find(n => n.id === 'skill-NoCat');
+            expect(skillNode.category).toBe('General');
+        });
+
         it('should return empty arrays when no data exists', async () => {
             await graphController.getGraphData(req, res);
 

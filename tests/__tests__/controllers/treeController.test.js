@@ -52,6 +52,20 @@ describe('treeController', () => {
 
             expect(res.json).toHaveBeenCalledWith([]);
         });
+
+        it('should handle server error', async () => {
+            jest.spyOn(Tree, 'find').mockRejectedValue(new Error('DB error'));
+            req.body = { value: 'test' };
+
+            await treeController.searchTreesByName(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('getPublicTreeData', () => {
@@ -64,6 +78,20 @@ describe('treeController', () => {
             const data = res.json.mock.calls[0][0];
             expect(data.length).toBe(1);
             expect(data[0].focusArea).toBe('Dev');
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(Tree, 'find').mockRejectedValue(new Error('DB error'));
+            req.body = { value: 'test' };
+
+            await treeController.getPublicTreeData(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
         });
     });
 
@@ -128,6 +156,21 @@ describe('treeController', () => {
                 message: 'notfound'
             });
         });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { value: 'test' };
+
+            await treeController.addTreeToUser(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('newTree', () => {
@@ -178,6 +221,55 @@ describe('treeController', () => {
                 message: 'treeexists'
             });
         });
+
+        it('should return user not found when user does not exist', async () => {
+            jest.spyOn(User, 'findOne').mockResolvedValue(null);
+            req.decoded = { username: 'nonexistent' };
+            req.body = { name: 'Test', skills: [] };
+
+            await treeController.newTree(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'User not found.'
+            });
+            jest.restoreAllMocks();
+        });
+
+        it('should add skill to user skills when skill is not already present', async () => {
+            const skillData = { name: 'NewSkill', categoryName: 'General', parents: [], children: [], trainings: [] };
+            req.decoded = { username: 'testuser' };
+            req.body = {
+                name: 'AnotherTree',
+                focusArea: 'Dev',
+                description: 'Test tree',
+                skills: [skillData]
+            };
+
+            await treeController.newTree(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+
+            const user = await User.findOne({ username: 'testuser' });
+            expect(user.skills.length).toBe(1);
+            expect(user.skills[0].name).toBe('NewSkill');
+            expect(user.skills[0].achievedPoint).toBe(0);
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { name: 'test', skills: [] };
+
+            await treeController.newTree(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('editMyTree', () => {
@@ -220,6 +312,57 @@ describe('treeController', () => {
                 message: 'tree not exists'
             });
         });
+
+        it('should set achievedPoint to 0 when skill.achievedPoint is undefined', async () => {
+            req.decoded = { username: 'testuser' };
+            req.body = {
+                name: 'MyTree',
+                focusArea: 'Dev',
+                description: 'Updated',
+                skills: [{ name: 'SkillB', categoryName: 'General', parents: [], children: [], trainings: [] }]
+            };
+
+            await treeController.editMyTree(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+
+            const user = await User.findOne({ username: 'testuser' });
+            const addedSkill = user.skills.find(s => s.name === 'SkillB');
+            expect(addedSkill).toBeDefined();
+            expect(addedSkill.achievedPoint).toBe(0);
+        });
+
+        it('should add new skill to user skills when not already present', async () => {
+            req.decoded = { username: 'testuser' };
+            req.body = {
+                name: 'MyTree',
+                focusArea: 'Dev',
+                description: 'Updated',
+                skills: [{ name: 'SkillC', categoryName: 'General', parents: [], children: [], trainings: [] }]
+            };
+
+            await treeController.editMyTree(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+
+            const user = await User.findOne({ username: 'testuser' });
+            expect(user.skills.find(s => s.name === 'SkillC')).toBeDefined();
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { name: 'test', skills: [] };
+
+            await treeController.editMyTree(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('deleteMyTree', () => {
@@ -256,6 +399,21 @@ describe('treeController', () => {
                 message: 'tree not exists'
             });
         });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { name: 'test' };
+
+            await treeController.deleteMyTree(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('getTreeDetails', () => {
@@ -276,6 +434,20 @@ describe('treeController', () => {
             await treeController.getTreeDetails(req, res);
 
             expect(res.json).toHaveBeenCalledWith(null);
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(Tree, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.body = { name: 'test' };
+
+            await treeController.getTreeDetails(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
         });
     });
 });

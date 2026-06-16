@@ -7,7 +7,7 @@ module.exports = mongoose.model('ApprovableTraining', new Schema({
     username: String,
     skillName: String,
     name: String,
-    level: String,
+    level: Number,
     shortDescription: String,
     URL: String,
     URLLastAccessed: String,

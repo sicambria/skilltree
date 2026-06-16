@@ -90,6 +90,20 @@ describe('userController', () => {
                 message: 'User not found.'
             });
         });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+
+            await userController.getUserData(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('searchUsersByName', () => {
@@ -103,6 +117,20 @@ describe('userController', () => {
             const data = res.json.mock.calls[0][0];
             expect(data.length).toBe(1);
             expect(data[0].name).toBe('john_doe');
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'find').mockRejectedValue(new Error('DB error'));
+            req.body = { value: 'test' };
+
+            await userController.searchUsersByName(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
         });
     });
 
@@ -123,6 +151,20 @@ describe('userController', () => {
             expect(data.length).toBe(1);
             expect(data[0].username).toBe('publicuser');
             expect(data[0].mainTree).toBe('Tree1');
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'find').mockRejectedValue(new Error('DB error'));
+            req.body = { value: 'test' };
+
+            await userController.getPublicUserData(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
         });
     });
 
@@ -173,6 +215,21 @@ describe('userController', () => {
                 message: 'User not found.'
             });
         });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { username: 'targetuser', skillName: 'Skill1' };
+
+            await userController.endorse(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('updatePassword', () => {
@@ -208,6 +265,33 @@ describe('userController', () => {
                 message: 'wrong password'
             });
         });
+
+        it('should return error when user not found', async () => {
+            req.decoded = { username: 'nonexistent' };
+            req.body = { oldPassword: 'pw', newPassword: 'newpw' };
+
+            await userController.updatePassword(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'User not found.'
+            });
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { oldPassword: 'oldpw', newPassword: 'newpw' };
+
+            await userController.updatePassword(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('updateLocation', () => {
@@ -226,6 +310,21 @@ describe('userController', () => {
             const user = await User.findOne({ username: 'testuser' });
             expect(user.location).toBe('Budapest');
         });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { location: 'test' };
+
+            await userController.updateLocation(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('updateEmail', () => {
@@ -243,6 +342,21 @@ describe('userController', () => {
 
             const user = await User.findOne({ username: 'testuser' });
             expect(user.email).toBe('new@test.com');
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { email: 'test@test.com' };
+
+            await userController.updateEmail(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
         });
     });
 
@@ -271,6 +385,21 @@ describe('userController', () => {
 
             const user = await User.findOne({ username: 'testuser' });
             expect(user.willingToTeach).toBe(false);
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { help: true };
+
+            await userController.updateHelp(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
         });
     });
 
@@ -317,6 +446,21 @@ describe('userController', () => {
                 success: false,
                 message: 'Tree not found.'
             });
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { mainTree: 'test', focusArea: 'Dev' };
+
+            await userController.handleFirstLogin(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
         });
     });
 });

@@ -34,10 +34,11 @@ exports.getSkillsForApproval = async (req, res) => {
 exports.searchSkillsByName = async (req, res) => {
     try {
         const data = req.body;
+        const searchValue = (data.value || '').toString().trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const user = await User.findOne({ username: req.decoded.username });
-        const foundUserSkills = user.skills.filter(obj => obj.name.match(new RegExp(".*" + data.value + ".*", "i")) != null);
+        const foundUserSkills = user.skills.filter(obj => obj.name.match(new RegExp(".*" + searchValue + ".*", "i")) != null);
         const foundGlobalSkills = await Skill.find({
-            "name": { $regex: ".*" + data.value + ".*", '$options': 'i' }
+            "name": { $regex: ".*" + searchValue + ".*", '$options': 'i' }
         });
 
         const resSkills = foundUserSkills.map(s => ({ name: s.name }));
@@ -56,8 +57,9 @@ exports.searchSkillsByName = async (req, res) => {
 exports.searchUserSkillsByName = async (req, res) => {
     try {
         const data = req.body;
+        const searchValue = (data.value || '').toString().trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const user = await User.findOne({ username: req.decoded.username });
-        const foundUserSkills = user.skills.filter(obj => obj.name.match(new RegExp(".*" + data.value + ".*", "i")) != null);
+        const foundUserSkills = user.skills.filter(obj => obj.name.match(new RegExp(".*" + searchValue + ".*", "i")) != null);
         res.json(foundUserSkills.map(s => ({ name: s.name })));
     } catch (err) {
         console.error(err);
@@ -68,9 +70,10 @@ exports.searchUserSkillsByName = async (req, res) => {
 exports.getPublicSkillData = async (req, res) => {
     try {
         const data = req.body;
+        const searchValue = (data.value || '').toString().trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         let outData = [];
         const foundSkills = await Skill.find({
-            "name": { $regex: ".*" + data.value + ".*", '$options': 'i' }
+            "name": { $regex: ".*" + searchValue + ".*", '$options': 'i' }
         }, 'name categoryName description descriptionWikipediaURL pointDescription');
 
         for (let s = 0; s < foundSkills.length; s++) {

@@ -39,8 +39,9 @@ exports.getUserData = async (req, res) => {
 exports.searchUsersByName = async (req, res) => {
     try {
         const data = req.body;
+        const searchValue = (data.value || '').toString().trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const foundUsers = await User.find({
-            "username": { $regex: ".*" + data.value + ".*", '$options': 'i' }
+            "username": { $regex: ".*" + searchValue + ".*", '$options': 'i' }
         });
         const resUsers = foundUsers.map(u => ({ name: u.username }));
         res.json(resUsers);
@@ -53,8 +54,9 @@ exports.searchUsersByName = async (req, res) => {
 exports.getPublicUserData = async (req, res) => {
     try {
         const data = req.body;
+        const searchValue = (data.value || '').toString().trim().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const foundUsers = await User.find({
-            "username": { $regex: ".*" + data.value + ".*", '$options': 'i' }
+            "username": { $regex: ".*" + searchValue + ".*", '$options': 'i' }
         }, 'username mainTree willingToTeach teachingDay teachingTime location focusArea skills trees');
         res.json(foundUsers);
     } catch (err) {

@@ -120,6 +120,17 @@ describe('treeUtils.js', () => {
             const result = await treeUtils.sortTree(skills);
             expect(result).toEqual(['Alone']);
         });
+
+        it('should insert skill above child when child is at row > 0', async () => {
+            const skills = [
+                { name: 'A', parents: [], children: [{ name: 'B', minPoint: 1, recommended: true }] },
+                { name: 'B', parents: ['A'], children: [] },
+                { name: 'C', parents: [], children: [{ name: 'B', minPoint: 1, recommended: true }] }
+            ];
+            const result = await treeUtils.sortTree(skills);
+            expect(result.indexOf('A')).toBeLessThan(result.indexOf('B'));
+            expect(result.indexOf('C')).toBeLessThan(result.indexOf('B'));
+        });
     });
 
     describe('sortAndAddTreeToUser', () => {

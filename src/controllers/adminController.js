@@ -33,7 +33,7 @@ exports.approveSkill = async (req, res) => {
                 minPoint: skillforapproval.minPoint,
                 recommended: skillforapproval.recommended
             }],
-            trainings: [{
+            trainings: skillforapproval.trainings || (skillforapproval.training ? [{
                 name: skillforapproval.training.name,
                 level: skillforapproval.training.level,
                 shortDescription: skillforapproval.training.shortDescription,
@@ -41,7 +41,7 @@ exports.approveSkill = async (req, res) => {
                 goal: skillforapproval.training.goal,
                 length: skillforapproval.traininglength,
                 language: skillforapproval.training.language
-            }]
+            }] : [])
         });
         await newGlobalSkill.save();
 
@@ -53,6 +53,7 @@ exports.approveSkill = async (req, res) => {
         for (let i = 0; i < dependency.length; i++) {
             const gs = await skillUtils.findSkillByName(dependency[i].name);
             if (gs === null) {
+                const depTrainings = dependency[i].trainings || (dependency[i].training ? [dependency[i].training] : []);
                 const depSkill = new Skill({
                     name: dependency[i].name,
                     categoryName: dependency[i].categoryName,
@@ -66,31 +67,9 @@ exports.approveSkill = async (req, res) => {
                         minPoint: dependency[i].minPoint,
                         recommended: dependency[i].recommended
                     }],
-                    trainings: [{
-                        name: dependency[i].training.name,
-                        level: dependency[i].training.level,
-                        shortDescription: dependency[i].training.shortDescription,
-                        URL: dependency[i].training.URL,
-                        goal: dependency[i].training.goal,
-                        length: dependency[i].traininglength,
-                        language: dependency[i].training.language
-                    }]
+                    trainings: depTrainings
                 });
                 await depSkill.save();
-            }
-        }
-
-        if (lastdependency && lastdependency.parents) {
-            for (let i = 0; i < lastdependency.parents.length; i++) {
-                const lastdependencyParent = await Skill.findOne({ name: lastdependency.parents[i] });
-                if (lastdependencyParent) {
-                    lastdependencyParent.children.push({
-                        name: lastdependency.name,
-                        minPoint: 0,
-                        recommended: false
-                    });
-                    await lastdependencyParent.save();
-                }
             }
         }
 

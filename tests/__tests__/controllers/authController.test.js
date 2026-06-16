@@ -28,7 +28,6 @@ describe('authController', () => {
 
             await authController.registration(req, res);
 
-            expect(res.json).toHaveBeenCalled();
             const response = res.json.mock.calls[0][0];
             expect(response.success).toBe(true);
             expect(response.token).toBeDefined();
@@ -47,9 +46,106 @@ describe('authController', () => {
             expect(res.json).toHaveBeenCalledWith({ success: false });
         });
 
+        it('should use fallback defaults when req.body is empty object', async () => {
+            req.body = {};
+
+            await authController.registration(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(400);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Username must be 2-50 characters.'
+            });
+        });
+
+        it('should use fallback defaults when req.body fields are null', async () => {
+            req.body = { username: null, password: 'password123' };
+
+            await authController.registration(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(400);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Username must be 2-50 characters.'
+            });
+        });
+
+        it('should reject short username', async () => {
+            req.body = { username: 'a', password: 'password123' };
+
+            await authController.registration(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(400);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Username must be 2-50 characters.'
+            });
+        });
+
+        it('should reject short password', async () => {
+            req.body = { username: 'validuser', password: 'ab' };
+
+            await authController.registration(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(400);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Password must be at least 4 characters.'
+            });
+        });
+
+        it('should skip email validation when email is empty string', async () => {
+            await Category.create({ name: 'General' });
+            req.body = { username: 'validuser', password: 'password123', email: '' };
+
+            await authController.registration(req, res);
+
+            const response = res.json.mock.calls[0][0];
+            expect(response.success).toBe(true);
+            expect(response.token).toBeDefined();
+        });
+
+        it('should reject invalid email', async () => {
+            req.body = {
+                username: 'validuser',
+                password: 'password123',
+                email: 'a'.repeat(255)
+            };
+
+            await authController.registration(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(400);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Invalid email.'
+            });
+        });
+
+        it('should register user with focus area and map tree names', async () => {
+            await Tree.create({ name: 'WebDev', focusArea: 'Development' });
+            await Tree.create({ name: 'MobileDev', focusArea: 'Development' });
+            await Category.create({ name: 'General' });
+
+            req.body = {
+                username: 'focususer',
+                password: 'password123',
+                email: 'focus@test.com',
+                focusArea: 'Development'
+            };
+
+            await authController.registration(req, res);
+
+            const response = res.json.mock.calls[0][0];
+            expect(response.success).toBe(true);
+            expect(response.token).toBeDefined();
+
+            const user = await User.findOne({ username: 'focususer' });
+            expect(user).not.toBeNull();
+        });
+
         it('should handle server error gracefully', async () => {
+            req.body = { username: 'validuser', password: 'pass1234' };
             const mockFindOne = jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
-            req.body = { username: 'test', password: 'pass' };
 
             await authController.registration(req, res);
 
@@ -86,6 +182,7 @@ describe('authController', () => {
 
             await authController.login(req, res);
 
+            expect(res.status).toHaveBeenCalledWith(401);
             expect(res.json).toHaveBeenCalledWith({
                 success: false,
                 message: 'Authentication failed. Wrong password.'
@@ -97,6 +194,7 @@ describe('authController', () => {
 
             await authController.login(req, res);
 
+            expect(res.status).toHaveBeenCalledWith(401);
             expect(res.json).toHaveBeenCalledWith({
                 success: false,
                 message: 'Authentication failed. User not found.'
@@ -118,6 +216,18 @@ describe('authController', () => {
             const jwt = require('jsonwebtoken');
             const decoded = jwt.verify(response.token, 'verysecret');
             expect(decoded.admin).toBe(true);
+        });
+
+        it('should reject missing credentials', async () => {
+            req.body = {};
+
+            await authController.login(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(400);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Username and password required.'
+            });
         });
 
         it('should handle server error', async () => {

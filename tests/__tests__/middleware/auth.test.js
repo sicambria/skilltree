@@ -29,53 +29,57 @@ describe('auth middleware', () => {
             expect(req.decoded).toBeDefined();
             expect(req.decoded.username).toBe('testuser');
             expect(req.decoded.admin).toBe(true);
-            expect(res.sendFile).not.toHaveBeenCalled();
         });
 
-        it('should send login file when invalid token is provided', () => {
+        it('should return 401 when invalid token is provided', () => {
             req.get.mockReturnValue('invalidtoken');
 
             auth.verifyToken(req, res, next);
 
-            expect(res.sendFile).toHaveBeenCalled();
+            expect(res.status).toHaveBeenCalledWith(401);
+            expect(res.json).toHaveBeenCalledWith({ success: false, message: 'Failed to authenticate token.' });
             expect(next).not.toHaveBeenCalled();
         });
 
-        it('should send login file when no token is provided', () => {
+        it('should return 401 when no token is provided', () => {
             req.get.mockReturnValue(null);
 
             auth.verifyToken(req, res, next);
 
-            expect(res.sendFile).toHaveBeenCalled();
+            expect(res.status).toHaveBeenCalledWith(401);
+            expect(res.json).toHaveBeenCalledWith({ success: false, message: 'No token provided.' });
             expect(next).not.toHaveBeenCalled();
         });
 
-        it('should send login file when token is undefined', () => {
+        it('should return 401 when token is undefined', () => {
             req.get.mockReturnValue(undefined);
 
             auth.verifyToken(req, res, next);
 
-            expect(res.sendFile).toHaveBeenCalled();
+            expect(res.status).toHaveBeenCalledWith(401);
+            expect(res.json).toHaveBeenCalledWith({ success: false, message: 'No token provided.' });
             expect(next).not.toHaveBeenCalled();
         });
 
-        it('should send login file when token is expired', () => {
+        it('should return 401 when token is expired', () => {
             const expiredToken = jwt.sign({ username: 'test' }, 'verysecret', { expiresIn: '0s' });
             req.get.mockReturnValue(expiredToken);
 
             auth.verifyToken(req, res, next);
 
-            expect(res.sendFile).toHaveBeenCalled();
+            expect(res.status).toHaveBeenCalledWith(401);
+            expect(res.json).toHaveBeenCalledWith({ success: false, message: 'Failed to authenticate token.' });
             expect(next).not.toHaveBeenCalled();
         });
 
-        it('should send login file when token is signed with wrong secret', () => {
+        it('should return 401 when token is signed with wrong secret', () => {
             const token = jwt.sign({ username: 'test' }, 'wrongsecret');
             req.get.mockReturnValue(token);
 
             auth.verifyToken(req, res, next);
 
-            expect(res.sendFile).toHaveBeenCalled();
+            expect(res.status).toHaveBeenCalledWith(401);
+            expect(res.json).toHaveBeenCalledWith({ success: false, message: 'Failed to authenticate token.' });
             expect(next).not.toHaveBeenCalled();
         });
     });

@@ -78,6 +78,28 @@ describe('skillController', () => {
             const data = res.json.mock.calls[0][0];
             expect(data).toEqual([]);
         });
+
+        it('should return success false when find returns falsy', async () => {
+            jest.spyOn(ApprovableSkill, 'find').mockResolvedValue(null);
+
+            await skillController.getSkillsForApproval(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: false });
+            jest.restoreAllMocks();
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(ApprovableSkill, 'find').mockRejectedValue(new Error('DB error'));
+
+            await skillController.getSkillsForApproval(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('searchSkillsByName', () => {
@@ -141,6 +163,21 @@ describe('skillController', () => {
             expect(data.length).toBe(1);
             expect(data[0].name).toBe('UserA');
         });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { value: 'test' };
+
+            await skillController.searchUserSkillsByName(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('getPublicSkillData', () => {
@@ -171,6 +208,20 @@ describe('skillController', () => {
 
             const data = res.json.mock.calls[0][0];
             expect(data).toEqual([]);
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(Skill, 'find').mockRejectedValue(new Error('DB error'));
+            req.body = { value: 'test' };
+
+            await skillController.getPublicSkillData(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
         });
     });
 
@@ -214,6 +265,21 @@ describe('skillController', () => {
             await skillController.getSkillDetails(req, res);
 
             expect(res.json).toHaveBeenCalledWith({ success: false });
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { value: 'test' };
+
+            await skillController.getSkillDetails(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
         });
     });
 
@@ -266,6 +332,107 @@ describe('skillController', () => {
                 message: 'skillexists'
             });
         });
+
+        it('should handle parent from global Skills', async () => {
+            await Skill.create({
+                name: 'ParentSkill',
+                categoryName: 'General',
+                maxPoint: 5
+            });
+
+            req.decoded = { username: 'testuser' };
+            req.body = {
+                name: 'NewSkill',
+                description: 'With parent',
+                categoryName: 'General',
+                maxPoint: 5,
+                parents: [{ name: 'ParentSkill', minPoint: 1, recommended: false }],
+                children: [],
+                trainings: []
+            };
+
+            await skillController.newSkill(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+
+            const user = await User.findOne({ username: 'testuser' });
+            expect(user.skills.length).toBe(2);
+
+            const parentInUser = user.skills.find(s => s.name === 'ParentSkill');
+            expect(parentInUser).toBeDefined();
+            expect(parentInUser.children[0].name).toBe('NewSkill');
+            expect(parentInUser.children[0].minPoint).toBe(1);
+        });
+
+        it('should handle parent already in user skills', async () => {
+            const user = await User.findOne({ username: 'testuser' });
+            user.skills.push({ name: 'ExistingSkill', parents: [], children: [], trainings: [] });
+            await user.save();
+
+            req.decoded = { username: 'testuser' };
+            req.body = {
+                name: 'NewSkill',
+                description: 'With existing parent',
+                categoryName: 'General',
+                maxPoint: 5,
+                parents: [{ name: 'ExistingSkill', minPoint: 2, recommended: true }],
+                children: [],
+                trainings: []
+            };
+
+            await skillController.newSkill(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+
+            const updatedUser = await User.findOne({ username: 'testuser' });
+            expect(updatedUser.skills.length).toBe(2);
+
+            const existingParent = updatedUser.skills.find(s => s.name === 'ExistingSkill');
+            expect(existingParent.children[0].name).toBe('NewSkill');
+            expect(existingParent.children[0].minPoint).toBe(2);
+            expect(existingParent.children[0].recommended).toBe(true);
+        });
+
+        it('should link to approvable parent', async () => {
+            await ApprovableSkill.create({
+                name: 'ApprovableParent',
+                username: 'otheruser'
+            });
+
+            req.decoded = { username: 'testuser' };
+            req.body = {
+                name: 'NewSkill',
+                description: 'Linked skill',
+                categoryName: 'General',
+                maxPoint: 5,
+                parents: [{ name: 'ApprovableParent', minPoint: 1, recommended: false }],
+                children: [],
+                trainings: []
+            };
+
+            await skillController.newSkill(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+
+            const apprParent = await ApprovableSkill.findOne({ name: 'ApprovableParent' });
+            expect(apprParent.children.length).toBe(1);
+            expect(apprParent.children[0].name).toBe('NewSkill');
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { name: 'NewSkill', parents: [] };
+
+            await skillController.newSkill(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('newTraining', () => {
@@ -304,6 +471,21 @@ describe('skillController', () => {
                 success: false,
                 message: 'skillnotexists'
             });
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = { skillName: 'test', trainings: [] };
+
+            await skillController.newTraining(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
         });
     });
 
@@ -351,6 +533,29 @@ describe('skillController', () => {
             expect(globalSkill.offers[0].achievedPoint).toBe(4);
         });
 
+        it('should update existing offer achievedPoint', async () => {
+            const user = await User.findOne({ username: 'testuser' });
+            user.willingToTeach = true;
+            user.location = 'NYC';
+            user.teachingDay = 'Mon';
+            user.teachingTime = '10:00';
+            await user.save();
+
+            await Skill.create({
+                name: 'Skill1',
+                offers: [{ username: 'testuser', achievedPoint: 2, location: 'NYC', teachingDay: 'Mon', teachingTime: '10:00' }]
+            });
+
+            req.decoded = { username: 'testuser' };
+            req.body = [{ name: 'Skill1', achievedPoint: 5 }];
+
+            await skillController.submitAll(req, res);
+
+            const globalSkill = await Skill.findOne({ name: 'Skill1' });
+            expect(globalSkill.offers.length).toBe(1);
+            expect(globalSkill.offers[0].achievedPoint).toBe(5);
+        });
+
         it('should remove offer when achievedPoint is 0', async () => {
             const user = await User.findOne({ username: 'testuser' });
             user.willingToTeach = true;
@@ -368,6 +573,21 @@ describe('skillController', () => {
 
             const globalSkill = await Skill.findOne({ name: 'Skill1' });
             expect(globalSkill.offers.length).toBe(0);
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.decoded = { username: 'testuser' };
+            req.body = [{ name: 'Skill1', achievedPoint: 0 }];
+
+            await skillController.submitAll(req, res);
+
+            expect(res.status).toHaveBeenCalledWith(500);
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'Server error'
+            });
+            jest.restoreAllMocks();
         });
     });
 });

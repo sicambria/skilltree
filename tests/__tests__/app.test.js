@@ -1,5 +1,6 @@
 const request = require('supertest');
 const { connectTestDB, disconnectTestDB } = require('../helpers/db');
+const mongoose = require('mongoose');
 
 let app;
 
@@ -50,38 +51,117 @@ describe('app.js', () => {
 });
 
 describe('global error handler', () => {
-    it('should handle custom error objects with status', () => {
-        const appWithErrors = require('express')();
-        appWithErrors.use(require('../../src/app'));
+    let testApp;
 
-        const req = {};
-        const res = {
-            status: jest.fn().mockReturnThis(),
-            json: jest.fn().mockReturnThis()
-        };
-
-        const err = new Error('Custom error');
-        err.status = 418;
-
-        const errorHandler = require('../../src/app');
-        expect(errorHandler).toBeDefined();
+    beforeEach(() => {
+        testApp = require('express')();
     });
 
-    it('should handle CastError', () => {
-        const castErr = new Error('Cast to ObjectId failed');
-        castErr.name = 'CastError';
-        castErr.path = '_id';
-        castErr.value = 'invalid';
+    it('should handle ValidationError with 400 and list of issues', async () => {
+        testApp.get('/test', (req, res, next) => {
+            const err = new mongoose.Error.ValidationError();
+            err.errors = {
+                email: { message: 'Invalid email' },
+                name: { message: 'Name is required' }
+            };
+            next(err);
+        });
+        testApp.use(app.errorHandler);
 
-        expect(castErr.name).toBe('CastError');
+        const res = await request(testApp).get('/test');
+
+        expect(res.status).toBe(400);
+        expect(res.body.success).toBe(false);
+        expect(res.body.message).toBe('Validation Error');
+        expect(res.body.issues).toEqual(['Invalid email', 'Name is required']);
     });
 
-    it('should handle ValidationError', () => {
-        const valErr = new Error('Validation failed');
-        valErr.name = 'ValidationError';
-        valErr.errors = { field: { message: 'Field is required' } };
+    it('should handle CastError with 400 and path details', async () => {
+        testApp.get('/test', (req, res, next) => {
+            next(new mongoose.Error.CastError('ObjectId', 'badvalue', 'testField'));
+        });
+        testApp.use(app.errorHandler);
 
-        expect(valErr.name).toBe('ValidationError');
-        expect(valErr.errors.field.message).toBe('Field is required');
+        const res = await request(testApp).get('/test');
+
+        expect(res.status).toBe(400);
+        expect(res.body.success).toBe(false);
+        expect(res.body.message).toBe('Invalid testField: badvalue');
+    });
+
+    it('should handle custom error with given status and message', async () => {
+        testApp.get('/test', (req, res, next) => {
+            const err = new Error('Custom error message');
+            err.status = 418;
+            next(err);
+        });
+        testApp.use(app.errorHandler);
+
+        const res = await request(testApp).get('/test');
+
+        expect(res.status).toBe(418);
+        expect(res.body.success).toBe(false);
+        expect(res.body.message).toBe('Custom error message');
+    });
+
+    it('should return 500 for error with no status', async () => {
+        testApp.get('/test', (req, res, next) => {
+            next(new Error('Plain error'));
+        });
+        testApp.use(app.errorHandler);
+
+        const res = await request(testApp).get('/test');
+
+        expect(res.status).toBe(500);
+        expect(res.body.success).toBe(false);
+        expect(res.body.message).toBe('Plain error');
+    });
+
+    it('should fallback to Internal Server Error when error has no message', async () => {
+        testApp.get('/test', (req, res, next) => {
+            next({ status: 500 });
+        });
+        testApp.use(app.errorHandler);
+
+        const res = await request(testApp).get('/test');
+
+        expect(res.status).toBe(500);
+        expect(res.body.success).toBe(false);
+        expect(res.body.message).toBe('Internal Server Error');
+    });
+
+    describe('development mode', () => {
+        const ORIG_NODE_ENV = process.env.NODE_ENV;
+
+        beforeAll(() => {
+            process.env.NODE_ENV = 'development';
+        });
+
+        afterAll(() => {
+            process.env.NODE_ENV = ORIG_NODE_ENV;
+        });
+
+        it('should log stack trace and include it in response', async () => {
+            const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
+            const devApp = require('express')();
+            devApp.get('/test', (req, res, next) => {
+                next(new Error('Dev mode error'));
+            });
+            devApp.use(app.errorHandler);
+
+            const res = await request(devApp).get('/test');
+
+            expect(res.status).toBe(500);
+            expect(res.body.success).toBe(false);
+            expect(res.body.message).toBe('Dev mode error');
+            expect(res.body.stack).toBeDefined();
+
+            expect(consoleSpy).toHaveBeenCalledWith(
+                expect.stringContaining('Stack:')
+            );
+
+            consoleSpy.mockRestore();
+        });
     });
 });

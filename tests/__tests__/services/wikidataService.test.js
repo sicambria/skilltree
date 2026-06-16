@@ -57,6 +57,26 @@ describe('wikidataService', () => {
             jest.restoreAllMocks();
         });
 
+        it('should return empty array when API response has no search property', async () => {
+            const mockResponse = JSON.stringify({});
+
+            jest.spyOn(https, 'get').mockImplementation((url, opts, cb) => {
+                if (typeof opts === 'function') cb = opts;
+                const res = {
+                    on: (event, handler) => {
+                        if (event === 'data') handler(mockResponse);
+                        if (event === 'end') handler();
+                    }
+                };
+                cb(res);
+                return { on: jest.fn() };
+            });
+
+            const results = await WikidataService.search('test');
+            expect(results).toEqual([]);
+            jest.restoreAllMocks();
+        });
+
         it('should handle JSON parse error', async () => {
             jest.spyOn(https, 'get').mockImplementation((url, opts, cb) => {
                 if (typeof opts === 'function') cb = opts;
