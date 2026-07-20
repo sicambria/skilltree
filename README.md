@@ -6,7 +6,6 @@
 [![codecov](https://codecov.io/gh/sicambria/skilltree/branch/main/graph/badge.svg)](https://codecov.io/gh/sicambria/skilltree)
 [![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](https://nodejs.org)
 [![License](https://img.shields.io/badge/license-AGPLv3-blue.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](docs/contribute/CONTRIBUTING.md)
 
 ## Features
 
