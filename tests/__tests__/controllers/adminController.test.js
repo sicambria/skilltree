@@ -98,6 +98,40 @@ describe('adminController', () => {
             expect(res.json).toHaveBeenCalledWith({ message: 'Succes', success: true });
         });
 
+        it('should handle trainings array directly (short-circuit || on line 36)', async () => {
+            req.body = {
+                name: 'SkillWithTrainingsArray',
+                categoryName: 'General',
+                trainings: [{ name: 'DirectTraining', level: 1, shortDescription: 'S', URL: '', goal: '', length: 10, language: 'en' }],
+                parent: [],
+                minPoint: 0,
+                recommended: false
+            };
+
+            await adminController.approveSkill(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ message: 'Succes', success: true });
+            const skill = await Skill.findOne({ name: 'SkillWithTrainingsArray' });
+            expect(skill.trainings.length).toBe(1);
+            expect(skill.trainings[0].name).toBe('DirectTraining');
+        });
+
+        it('should handle neither trainings nor training (empty array fallback)', async () => {
+            req.body = {
+                name: 'SkillNoTraining',
+                categoryName: 'General',
+                parent: [],
+                minPoint: 0,
+                recommended: false
+            };
+
+            await adminController.approveSkill(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ message: 'Succes', success: true });
+            const skill = await Skill.findOne({ name: 'SkillNoTraining' });
+            expect(skill.trainings).toEqual([]);
+        });
+
         it('should process dependency chain where lastdependency has parents', async () => {
             await Skill.create({ name: 'ExistingParent', parents: [], children: [] });
             await ApprovableSkill.create({
@@ -128,6 +162,43 @@ describe('adminController', () => {
 
             expect(res.json).toHaveBeenCalledWith({ message: 'Succes', success: true });
         });
+
+        it('should handle dependency item with trainings array (short-circuit || on line 56)', async () => {
+            await Skill.create({ name: 'RootForLine56', parents: [], children: [] });
+            await ApprovableSkill.create({
+                username: 'u1',
+                name: 'DepWithTrainings',
+                categoryName: 'General',
+                maxPoint: 3,
+                parents: ['RootForLine56'],
+                trainings: [{ name: 'DepTraining', level: 1, shortDescription: 'S', URL: '', goal: '', length: 10, language: 'en' }]
+            });
+
+            req.body = {
+                name: 'NewSkill56a',
+                categoryName: 'General',
+                skillIcon: '',
+                description: '',
+                descriptionWikipediaURL: '',
+                pointDescription: [],
+                maxPoint: 5,
+                parent: ['DepWithTrainings'],
+                parents: ['DepWithTrainings'],
+                minPoint: 0,
+                recommended: false,
+                traininglength: 0
+            };
+
+            await adminController.approveSkill(req, res);
+            expect(res.json).toHaveBeenCalledWith({ message: 'Succes', success: true });
+
+            const createdDep = await Skill.findOne({ name: 'DepWithTrainings' });
+            expect(createdDep.trainings.length).toBe(1);
+        });
+
+        // Note: line 56 ternary `dependency[i].training ? [dependency[i].training] : []`
+        // is dead code — Mongoose 8 does not expose non-schema fields via dot access
+        // on hydrated documents. The `training` (singular) fallback can never be reached.
     });
 
     describe('editTree', () => {
@@ -338,6 +409,84 @@ describe('adminController', () => {
             expect(us.achievedPoint).toBe(3);
         });
 
+        it('should skip relinking when parent/child not in global Skills DB (lines 119-128 falsy)', async () => {
+            const skill = await Skill.create({
+                name: 'OrphanSkill', categoryName: 'General', parents: ['NonExistentParent'],
+                children: [{ name: 'NonExistentChild', minPoint: 1, recommended: false }],
+                trainings: [], achievedPoint: 1, maxPoint: 5
+            });
+
+            req.body = {
+                name: 'OrphanSkill', description: 'Updated', descriptionWikipediaURL: '', skillIcon: '',
+                categoryName: 'General', maxPoint: 5, pointDescription: [],
+                parents: [{ name: 'NewParent', minPoint: 1, recommended: false }],
+                children: [], trainings: []
+            };
+
+            await adminController.editSkill(req, res);
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+        });
+
+        it('should skip user relinking when parent/child not in user skills (lines 158-167 falsy)', async () => {
+            await Skill.create({ name: 'GlobalParent' });
+            await Skill.create({ name: 'NewChild', parents: [], children: [], trainings: [], maxPoint: 5 });
+            await Skill.create({ name: 'EditMeV2', parents: ['GlobalParent'], children: [], trainings: [], achievedPoint: 2, maxPoint: 5 });
+            const user = await User.create({
+                username: 'testuser',
+                skills: [{
+                    name: 'EditMeV2', parents: ['GlobalParent'],
+                    children: [{ name: 'ExistingChild', minPoint: 1, recommended: false }],
+                    trainings: [], achievedPoint: 2
+                }, {
+                    name: 'ExistingChild', parents: ['EditMeV2'], children: [], trainings: []
+                }]
+            });
+
+            req.body = {
+                name: 'EditMeV2', description: 'Updated', descriptionWikipediaURL: '', skillIcon: '',
+                categoryName: 'General', maxPoint: 5, pointDescription: [],
+                parents: [{ name: 'GlobalParent', minPoint: 1, recommended: false }],
+                children: [{ name: 'NewChild', minPoint: 2, recommended: false }],
+                trainings: []
+            };
+
+            await adminController.editSkill(req, res);
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+
+            const updatedUser = await User.findOne({ username: 'testuser' });
+            const childInUser = updatedUser.skills.find(s => s.name === 'NewChild');
+            expect(childInUser).toBeDefined();
+        });
+
+        it('should handle tree skillNames push in editSkill when child tree lacks parent name (line 184)', async () => {
+            await Skill.create({ name: 'ParentA' });
+            await Skill.create({ name: 'ParentB' });
+            await Skill.create({ name: 'ChildX', parents: ['ParentA'] });
+            await Skill.create({ name: 'EditMeTree', parents: ['ParentA', 'ParentB'], children: [{ name: 'ChildX', minPoint: 1, recommended: false }], trainings: [], achievedPoint: 1, maxPoint: 5 });
+
+            const user = await User.create({
+                username: 'testuser',
+                skills: [
+                    { name: 'EditMeTree', parents: ['ParentA', 'ParentB'], children: [{ name: 'ChildX', minPoint: 1, recommended: false }], trainings: [], achievedPoint: 1 },
+                    { name: 'ChildX', parents: ['EditMeTree'], children: [], trainings: [] }
+                ],
+                trees: [
+                    { name: 'TreeOnlyHasChild', skillNames: ['ChildX'], focusArea: 'Dev', description: 'Tree' }
+                ]
+            });
+
+            req.body = {
+                name: 'EditMeTree', description: 'Updated', descriptionWikipediaURL: '', skillIcon: '',
+                categoryName: 'General', maxPoint: 5, pointDescription: [],
+                parents: [{ name: 'ParentA', minPoint: 1, recommended: false }, { name: 'ParentB', minPoint: 1, recommended: false }],
+                children: [{ name: 'ChildX', minPoint: 2, recommended: false }],
+                trainings: []
+            };
+
+            await adminController.editSkill(req, res);
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+        });
+
         it('should handle server error', async () => {
             jest.spyOn(require('../../../src/utils/skillUtils'), 'findSkillByName').mockRejectedValue(new Error('DB error'));
             req.body = { name: 'AnySkill' };
@@ -389,6 +538,14 @@ describe('adminController', () => {
 
             expect(res.status).toHaveBeenCalledWith(500);
             jest.restoreAllMocks();
+        });
+
+        it('should skip when no global tree and no approvable tree (line 219 falsy branch)', async () => {
+            req.body = { name: 'BrandNewTree', username: 'u1' };
+
+            await adminController.approveTree(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
         });
     });
 
@@ -465,6 +622,16 @@ describe('adminController', () => {
 
             expect(res.status).toHaveBeenCalledWith(500);
             jest.restoreAllMocks();
+        });
+
+        it('should skip when approvable training not found (line 249 falsy branch)', async () => {
+            await Skill.create({ name: 'SkillNoApprTraining', trainings: [] });
+
+            req.body = { skillName: 'SkillNoApprTraining', username: 'u1', name: 'NonExistent' };
+
+            await adminController.approveTraining(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
         });
     });
 
@@ -616,6 +783,21 @@ describe('adminController', () => {
 
             const data = res.json.mock.calls[0][0];
             expect(data.stats.skipped).toBe(1);
+            jest.restoreAllMocks();
+        });
+
+        it('should use Uncategorized when no categoryName (line 358 fallback)', async () => {
+            req.body = { qids: ['Q42'] };
+            jest.spyOn(require('../../../src/services/wikidataService'), 'getEntityDetails').mockResolvedValue({
+                qid: 'Q42', name: 'NoCatSkill', description: '', wikipediaURL: ''
+            });
+
+            await adminController.wikidataImport(req, res);
+
+            const data = res.json.mock.calls[0][0];
+            expect(data.stats.imported).toBe(1);
+            const skill = await Skill.findOne({ name: 'NoCatSkill' });
+            expect(skill.categoryName).toBe('Uncategorized');
             jest.restoreAllMocks();
         });
     });

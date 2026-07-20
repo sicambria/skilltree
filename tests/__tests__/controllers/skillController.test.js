@@ -136,6 +136,16 @@ describe('skillController', () => {
             expect(userSkillCount).toBe(1);
         });
 
+        it('should handle regex special characters in search (lines 37, 60, 73 sanitization)', async () => {
+            req.decoded = { username: 'testuser' };
+            req.body = { value: '.*+?^${}()|[\\]\\\\' };
+
+            await skillController.searchSkillsByName(req, res);
+
+            expect(res.status).not.toHaveBeenCalledWith(500);
+            expect(Array.isArray(res.json.mock.calls[0][0])).toBe(true);
+        });
+
         it('should handle server error', async () => {
             jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
             req.decoded = { username: 'testuser' };
@@ -162,6 +172,19 @@ describe('skillController', () => {
             const data = res.json.mock.calls[0][0];
             expect(data.length).toBe(1);
             expect(data[0].name).toBe('UserA');
+        });
+
+        it('should handle regex special characters (line 60 sanitization)', async () => {
+            await User.create({
+                username: 'regexuser',
+                skills: [{ name: 'RegexSkill', parents: [], children: [], trainings: [] }]
+            });
+            req.decoded = { username: 'regexuser' };
+            req.body = { value: '.*+?^${}()|[\\]\\\\' };
+
+            await skillController.searchUserSkillsByName(req, res);
+
+            expect(res.status).not.toHaveBeenCalledWith(500);
         });
 
         it('should handle server error', async () => {
@@ -208,6 +231,14 @@ describe('skillController', () => {
 
             const data = res.json.mock.calls[0][0];
             expect(data).toEqual([]);
+        });
+
+        it('should handle regex special characters in public search (line 73 sanitization)', async () => {
+            req.body = { value: '.*+?^${}()|[\\]\\\\' };
+
+            await skillController.getPublicSkillData(req, res);
+
+            expect(res.status).not.toHaveBeenCalledWith(500);
         });
 
         it('should handle server error', async () => {
@@ -419,6 +450,20 @@ describe('skillController', () => {
             expect(apprParent.children[0].name).toBe('NewSkill');
         });
 
+        it('should return error when user not found (line 133)', async () => {
+            jest.spyOn(User, 'findOne').mockResolvedValue(null);
+            req.decoded = { username: 'nonexistent' };
+            req.body = { name: 'NewSkill', parents: [] };
+
+            await skillController.newSkill(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'User not found.'
+            });
+            jest.restoreAllMocks();
+        });
+
         it('should handle server error', async () => {
             jest.spyOn(User, 'findOne').mockRejectedValue(new Error('DB error'));
             req.decoded = { username: 'testuser' };
@@ -471,6 +516,20 @@ describe('skillController', () => {
                 success: false,
                 message: 'skillnotexists'
             });
+        });
+
+        it('should return error when user not found in newTraining (line 201)', async () => {
+            jest.spyOn(User, 'findOne').mockResolvedValue(null);
+            req.decoded = { username: 'nonexistent' };
+            req.body = { skillName: 'Skill1', trainings: [] };
+
+            await skillController.newTraining(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'User not found.'
+            });
+            jest.restoreAllMocks();
         });
 
         it('should handle server error', async () => {
@@ -573,6 +632,45 @@ describe('skillController', () => {
 
             const globalSkill = await Skill.findOne({ name: 'Skill1' });
             expect(globalSkill.offers.length).toBe(0);
+        });
+
+        it('should handle empty data array gracefully (line 232 loop)', async () => {
+            req.decoded = { username: 'testuser' };
+            req.body = [];
+
+            await skillController.submitAll(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+        });
+
+        it('should return error when user not found in submitAll (line 232)', async () => {
+            jest.spyOn(User, 'findOne').mockResolvedValue(null);
+            req.decoded = { username: 'nonexistent' };
+            req.body = [];
+
+            await skillController.submitAll(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'User not found.'
+            });
+            jest.restoreAllMocks();
+        });
+
+        it('should handle willingToTeach with no matching globalSkill (line 243 falsy)', async () => {
+            const user = await User.findOne({ username: 'testuser' });
+            user.willingToTeach = true;
+            user.location = 'NYC';
+            user.teachingDay = 'Mon';
+            user.teachingTime = '10:00';
+            await user.save();
+
+            req.decoded = { username: 'testuser' };
+            req.body = [{ name: 'NonExistentGlobalSkill', achievedPoint: 3 }];
+
+            await skillController.submitAll(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
         });
 
         it('should handle server error', async () => {

@@ -119,6 +119,24 @@ describe('userController', () => {
             expect(data[0].name).toBe('john_doe');
         });
 
+        it('should handle undefined value (|| fallback on line 42)', async () => {
+            await User.create({ username: 'fallback_user' });
+            req.body = {};
+
+            await userController.searchUsersByName(req, res);
+
+            const data = res.json.mock.calls[0][0];
+            expect(data.length).toBeGreaterThanOrEqual(1);
+        });
+
+        it('should handle regex special characters in search (line 42)', async () => {
+            req.body = { value: '.*+?^${}()|[\\]\\\\' };
+
+            await userController.searchUsersByName(req, res);
+
+            expect(res.status).not.toHaveBeenCalledWith(500);
+        });
+
         it('should handle server error', async () => {
             jest.spyOn(User, 'find').mockRejectedValue(new Error('DB error'));
             req.body = { value: 'test' };
@@ -151,6 +169,14 @@ describe('userController', () => {
             expect(data.length).toBe(1);
             expect(data[0].username).toBe('publicuser');
             expect(data[0].mainTree).toBe('Tree1');
+        });
+
+        it('should handle undefined value (|| fallback on line 57)', async () => {
+            req.body = {};
+
+            await userController.getPublicUserData(req, res);
+
+            expect(res.status).not.toHaveBeenCalledWith(500);
         });
 
         it('should handle server error', async () => {
@@ -325,6 +351,20 @@ describe('userController', () => {
             });
             jest.restoreAllMocks();
         });
+
+        it('should return error when user not found (line 116)', async () => {
+            jest.spyOn(User, 'findOne').mockResolvedValue(null);
+            req.decoded = { username: 'nonexistent' };
+            req.body = { location: 'Budapest' };
+
+            await userController.updateLocation(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'User not found.'
+            });
+            jest.restoreAllMocks();
+        });
     });
 
     describe('updateEmail', () => {
@@ -355,6 +395,20 @@ describe('userController', () => {
             expect(res.json).toHaveBeenCalledWith({
                 success: false,
                 message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
+
+        it('should return error when user not found (line 130)', async () => {
+            jest.spyOn(User, 'findOne').mockResolvedValue(null);
+            req.decoded = { username: 'nonexistent' };
+            req.body = { email: 'test@test.com' };
+
+            await userController.updateEmail(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'User not found.'
             });
             jest.restoreAllMocks();
         });
@@ -398,6 +452,20 @@ describe('userController', () => {
             expect(res.json).toHaveBeenCalledWith({
                 success: false,
                 message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
+
+        it('should return error when user not found (line 144)', async () => {
+            jest.spyOn(User, 'findOne').mockResolvedValue(null);
+            req.decoded = { username: 'nonexistent' };
+            req.body = { help: true };
+
+            await userController.updateHelp(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'User not found.'
             });
             jest.restoreAllMocks();
         });
@@ -459,6 +527,20 @@ describe('userController', () => {
             expect(res.json).toHaveBeenCalledWith({
                 success: false,
                 message: 'Server error'
+            });
+            jest.restoreAllMocks();
+        });
+
+        it('should return error when user not found in handleFirstLogin (line 159)', async () => {
+            jest.spyOn(User, 'findOne').mockResolvedValue(null);
+            req.decoded = { username: 'nonexistent' };
+            req.body = { mainTree: 'test', focusArea: 'Dev' };
+
+            await userController.handleFirstLogin(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({
+                success: false,
+                message: 'User not found.'
             });
             jest.restoreAllMocks();
         });

@@ -9,7 +9,9 @@
         "db:seed": "node src/utils/seed.js",
         "test": "jest --coverage",
         "test:watch": "jest --watch",
-        "test:coverage": "jest --coverage --coverageThreshold='{}'"
+        "test:coverage": "jest --coverage --coverageThreshold='{}'",
+        "test:frontend": "jest --config jest.frontend.config.js",
+        "test:all": "npm test && npm run test:frontend"
     },
     "dependencies": {
         "body-parser": "^1.20.0",
@@ -22,7 +24,9 @@
     },
     "license": "AGPL-3.0-only",
     "devDependencies": {
+        "fast-check": "^4.9.0",
         "jest": "^30.4.2",
+        "jest-environment-jsdom": "^30.4.1",
         "mongodb-memory-server": "^11.2.0",
         "supertest": "^7.2.2"
     }

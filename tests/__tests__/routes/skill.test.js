@@ -40,9 +40,18 @@ describe('Protected Skill Routes', () => {
                 .post('/protected/offers')
                 .set('x-access-token', validToken)
                 .send({ name: 'GlobalSkill' });
-
             expect(res.status).toBe(200);
             expect(res.body.name).toBe('GlobalSkill');
+        });
+    });
+
+    describe('GET /protected/skillsforapproval', () => {
+        it('should get skills for approval', async () => {
+            const res = await request(app)
+                .get('/protected/skillsforapproval')
+                .set('x-access-token', validToken);
+            expect(res.status).toBe(200);
+            expect(Array.isArray(res.body)).toBe(true);
         });
     });
 
@@ -52,9 +61,69 @@ describe('Protected Skill Routes', () => {
                 .post('/protected/searchSkillsByName')
                 .set('x-access-token', validToken)
                 .send({ value: 'Skill' });
-
             expect(res.status).toBe(200);
             expect(res.body.length).toBeGreaterThanOrEqual(2);
+        });
+    });
+
+    describe('POST /protected/searchUserSkillsByName', () => {
+        it('should search user skills by name', async () => {
+            const res = await request(app)
+                .post('/protected/searchUserSkillsByName')
+                .set('x-access-token', validToken)
+                .send({ value: 'My' });
+            expect(res.status).toBe(200);
+            expect(Array.isArray(res.body)).toBe(true);
+            expect(res.body.length).toBeGreaterThanOrEqual(1);
+        });
+
+        it('should return empty for non-matching', async () => {
+            const res = await request(app)
+                .post('/protected/searchUserSkillsByName')
+                .set('x-access-token', validToken)
+                .send({ value: 'XYZ' });
+            expect(res.status).toBe(200);
+            expect(res.body.length).toBe(0);
+        });
+    });
+
+    describe('POST /protected/getPublicSkillData', () => {
+        it('should get public skill data', async () => {
+            const res = await request(app)
+                .post('/protected/getPublicSkillData')
+                .set('x-access-token', validToken)
+                .send({ value: 'Skill' });
+            expect(res.status).toBe(200);
+            expect(Array.isArray(res.body)).toBe(true);
+        });
+    });
+
+    describe('POST /protected/getskill', () => {
+        it('should get skill details from global skills', async () => {
+            const res = await request(app)
+                .post('/protected/getskill')
+                .set('x-access-token', validToken)
+                .send({ value: 'GlobalSkill' });
+            expect(res.status).toBe(200);
+            expect(res.body.success).toBe(true);
+        });
+
+        it('should get skill details from user skills', async () => {
+            const res = await request(app)
+                .post('/protected/getskill')
+                .set('x-access-token', validToken)
+                .send({ value: 'MySkill' });
+            expect(res.status).toBe(200);
+            expect(res.body.success).toBe(true);
+        });
+
+        it('should return failure for unknown skill', async () => {
+            const res = await request(app)
+                .post('/protected/getskill')
+                .set('x-access-token', validToken)
+                .send({ value: 'NonExistent' });
+            expect(res.status).toBe(200);
+            expect(res.body.success).toBe(false);
         });
     });
 
@@ -72,9 +141,34 @@ describe('Protected Skill Routes', () => {
                     children: [],
                     trainings: []
                 });
-
             expect(res.status).toBe(200);
             expect(res.body.success).toBe(true);
+        });
+    });
+
+    describe('POST /protected/newtraining', () => {
+        it('should add training to existing skill', async () => {
+            const res = await request(app)
+                .post('/protected/newtraining')
+                .set('x-access-token', validToken)
+                .send({
+                    skillName: 'MySkill',
+                    trainings: [{ name: 'Training1', level: 1, shortDescription: 'Desc', URL: 'http://example.com' }]
+                });
+            expect(res.status).toBe(200);
+            expect(res.body.success).toBe(true);
+        });
+
+        it('should return error for non-existent skill', async () => {
+            const res = await request(app)
+                .post('/protected/newtraining')
+                .set('x-access-token', validToken)
+                .send({
+                    skillName: 'NonExistent',
+                    trainings: [{ name: 'T1' }]
+                });
+            expect(res.status).toBe(200);
+            expect(res.body.success).toBe(false);
         });
     });
 
@@ -84,7 +178,6 @@ describe('Protected Skill Routes', () => {
                 .post('/protected/submitall')
                 .set('x-access-token', validToken)
                 .send([{ name: 'MySkill', achievedPoint: 4 }]);
-
             expect(res.status).toBe(200);
             expect(res.body.success).toBe(true);
         });
