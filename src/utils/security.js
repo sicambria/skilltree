@@ -10,7 +10,7 @@ function hashPassword (password) {
 
     var hash = crypto.pbkdf2Sync(password, salt, iterations, hashLength, "sha512");
 
-    var hashData = new Buffer(hash.length + salt.length + 8);
+    var hashData = Buffer.alloc(hash.length + salt.length + 8);
 
     // include the size of the salt so that we can, during verification,
     // figure out how much of the hash is salt

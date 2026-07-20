@@ -2,135 +2,188 @@
 
 > A web application to visualize skills, motivate self-development, and foster a culture of collaboration and knowledge sharing.
 
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/sicambria/skilltree.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/sicambria/skilltree/alerts/)
-[![Maintainability](https://api.codeclimate.com/v1/badges/0315c0b0650106013493/maintainability)](https://codeclimate.com/github/sicambria/skilltree/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/0315c0b0650106013493/test_coverage)](https://codeclimate.com/github/sicambria/skilltree/test_coverage)
+[![Test Suite](https://github.com/sicambria/skilltree/actions/workflows/test.yml/badge.svg)](https://github.com/sicambria/skilltree/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/sicambria/skilltree/branch/main/graph/badge.svg)](https://codecov.io/gh/sicambria/skilltree)
 
-## ✨ Features
+## Features
 
 - **Visual Skill Recording** – Track your skills and proficiency levels in visual form
 - **Self-Development Awareness** – Immediately see growth opportunities, available help & trainings
 - **Personal Learning Plans** – Create time-framed development roadmaps
 - **Expert Discovery** – Find people with specific skills willing to share knowledge
 - **Peer-to-Peer Training** – Request or offer training for specific skills at any level
+- **Graph Visualization** – Explore the full skill dependency graph
+- **Wikidata Import** – Import skills from Wikidata with admin tools
+- **Approval Workflow** – Skills, trees, and trainings go through an approval process
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology |
 |-----------|------------|
-| **Runtime** | [Node.js](https://nodejs.org) |
+| **Runtime** | [Node.js](https://nodejs.org) (18+) |
 | **Framework** | [Express.js](https://expressjs.com/) |
-| **Database** | [MongoDB](https://www.mongodb.com/) |
-| **Web Server** | [Nginx](https://www.nginx.com/) |
-| **SSL** | [Let's Encrypt](https://letsencrypt.org/) |
+| **Database** | [MongoDB](https://www.mongodb.com/) (via [Mongoose 8](https://mongoosejs.com/)) |
+| **Auth** | JWT + PBKDF2 |
+| **Testing** | [Jest](https://jestjs.io/) + [supertest](https://github.com/ladjs/supertest) + [mongodb-memory-server](https://github.com/nodkz/mongodb-memory-server) |
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org) (v14+)
+- [Node.js](https://nodejs.org) (v18+)
 - [MongoDB](https://www.mongodb.com/) (running locally or via Atlas)
 
 ### Local Development
 
-1. **Install dependencies**:
+1. **Clone and install**:
    ```bash
+   git clone https://github.com/sicambria/skilltree.git
+   cd skilltree
    npm install
    ```
 
-2. **Initialize Database**:
-   Ensure MongoDB is running, then seed the database with initial data:
+2. **Configure environment**:
+   ```bash
+   cp .env.example .env
+   # Edit .env with your settings
+   ```
+
+3. **Initialize Database**:
+   Ensure MongoDB is running, then seed the database:
    ```bash
    npm run db:seed
    ```
 
-3. **Run the Application**:
-   - **Development mode** (with auto-reload):
+4. **Run the Application**:
+   - **Development** (with auto-reload):
      ```bash
      npm run dev
      ```
-   - **Production mode**:
+   - **Production**:
      ```bash
-cd ~
-mkdir skilltree && cd skilltree
-wget https://raw.githubusercontent.com/sicambria/skilltree/master/install/skilltree_install_debian9.sh
-chmod +x skilltree_install_debian9.sh
-nano skilltree_install_debian9.sh  # Configure before running
-./skilltree_install_debian9.sh
-```
+     npm start
+     ```
 
-**Option 2: Docker (Beta)**
+5. **Open in browser**: `http://localhost:3000`
+   - Default credentials: **admin** / **admin**
+
+### Running Tests
 
 ```bash
-# Build images
-docker build --no-cache -t localhost/skilltree-mongodb:latest ./docker-build/mongodb/
-docker build --no-cache -t localhost/skilltree-nginx:latest ./docker-build/nginx/
-docker build --no-cache -t localhost/skilltree-nodejs:latest ./docker-build/nodejs/
+# Full test suite (backend + frontend)
+npm test
 
-# Run containers (in order)
-docker run -d -p <IP>:27017:27017 localhost/skilltree-mongodb
-docker run -d -p <IP>:3000:3000 -e DBADDRESS=<IP> localhost/skilltree-nodejs
-docker run -d -e BACKEND=<IP> -p 0.0.0.0:80:80 localhost/skilltree-nginx
+# Frontend tests only
+npm run test:frontend
+
+# All tests
+npm run test:all
 ```
 
-### Production Nginx Setup
+## Project Structure
 
-After installation, configure `/etc/nginx/sites-available/default`:
-
-```nginx
-server {
-    listen 443 ssl default_server;
-    listen [::]:443 ssl default_server;
-
-    ssl_certificate     /etc/letsencrypt/live/YOUR_DOMAIN/cert.pem;
-    ssl_certificate_key /etc/letsencrypt/live/YOUR_DOMAIN/privkey.pem;
-
-    location / {
-        proxy_pass http://localhost:3000/;
-    }
-}
-
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    return 301 https://$host$request_uri;
-}
+```
+skilltree/
+├── src/                    # Application source
+│   ├── app.js              # Express app configuration & middleware
+│   ├── server.js           # Entry point (DB connection + server start)
+│   ├── config/             # DB connection & environment config
+│   ├── controllers/        # Business logic (auth, user, skill, tree, admin, graph)
+│   ├── middleware/          # JWT authentication middleware
+│   ├── models/             # Mongoose schemas (User, Skill, Tree, etc.)
+│   ├── routes/             # Express route definitions
+│   ├── services/           # External API integrations (Wikidata)
+│   └── utils/              # Helpers (password hashing, tree sorting, seeding)
+├── public/                 # Static frontend assets (HTML, CSS, JS)
+├── tests/                  # Test suites
+│   ├── __tests__/          # Backend tests (controllers, routes, models, utils)
+│   ├── frontend/           # Frontend tests (login, helper functions)
+│   └── helpers/            # Test DB lifecycle (mongodb-memory-server)
+├── assets/json/            # Seed data (skills, trees, categories)
+├── install/                # Deployment scripts
+└── docs/                   # Documentation
 ```
 
-## ⚙️ Configuration
+## Configuration
 
-### Environment Variables (.env)
+### Environment Variables (`.env`)
 
-For local development, a `.env` file is used to store environment-specific settings. This file is ignored by Git.
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `JWT_SECRET` | `verysecret` | Secret key for JWT signing (change in production!) |
+| `MONGODB_URI` | `mongodb://127.0.0.1:27017/skilltreenew` | MongoDB connection string |
+| `NODE_ENV` | `development` | Environment mode (`development` / `production`) |
+| `PORT` | `3000` | Server listening port |
 
-Default credentials for local testing:
-- **Username**: `admin`
-    - **Password**: `admin`
+## API Endpoints
 
-1. **Domain**: Register a domain (e.g., via [Freenom](https://www.freenom.com))
-2. **Security**: Update `config.js` with a long, random secret key
-3. **Database**: Configure MongoDB connection (local or [MongoDB Atlas](https://cloud.mongodb.com/))
+### Public
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/registration` | POST | Create a new user account |
+| `/auth` | POST | Authenticate and receive JWT |
 
-## 📖 Documentation
+### Protected (requires `x-access-token` header)
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/protected/userdata` | GET | Get current user's full profile |
+| `/protected/offers` | POST | Get skill teaching offers |
+| `/protected/searchSkillsByName` | POST | Search skills by name |
+| `/protected/searchUserSkillsByName` | POST | Search user's skills |
+| `/protected/getPublicSkillData` | POST | Get skill details with learners |
+| `/protected/getPublicUserData` | POST | Get public user data |
+| `/protected/getskill` | POST | Get skill details with dependency tree |
+| `/protected/newskill` | POST | Propose a new skill |
+| `/protected/newtraining` | POST | Add training to a skill |
+| `/protected/submitall` | POST | Batch update skill levels |
+| `/protected/newtree` | POST | Create a new skill tree |
+| `/protected/editmytree` | POST | Edit a user's tree |
+| `/protected/deletemytree` | POST | Delete a user's tree |
+| `/protected/addTreeToUser` | POST | Add a global tree to user |
+| `/protected/searchTreesByName` | POST | Search trees by name |
+| `/protected/getPublicTreeData` | POST | Get public tree data |
+| `/protected/gettree` | POST | Get tree details |
+| `/protected/endorse` | POST | Endorse a user's skill |
+| `/protected/newpassword` | POST | Change password |
+| `/protected/newplace` | POST | Update location |
+| `/protected/newemail` | POST | Update email |
+| `/protected/newhelp` | POST | Toggle teaching availability |
+| `/protected/firstlogindata` | POST | Save initial setup |
+
+### Admin (requires admin JWT)
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/admin/approveskill` | POST | Approve a proposed skill |
+| `/admin/editskill` | POST | Edit a global skill |
+| `/admin/edittree` | POST | Edit a global tree |
+| `/admin/approvetree` | POST | Approve a proposed tree |
+| `/admin/approvetraining` | POST | Approve proposed training |
+| `/admin/dropoffers` | POST | Clear all teaching offers |
+| `/admin/setadmin` | POST | Grant/revoke admin role |
+| `/admin/deleteUser` | POST | Delete a user |
+| `/admin/wikidata/search` | GET | Search Wikidata entities |
+| `/admin/wikidata/import` | POST | Import skills from Wikidata |
+| `/admin/export` | GET | Export skills/trees as JSON |
+| `/admin/import` | POST | Import skills/trees from JSON |
+
+### Graph
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/graph/data` | GET | Get full skill dependency graph |
+
+## Documentation
 
 - [Architecture Overview](ARCHITECTURE.MD)
+- [Testing Guide](TESTING.md)
 - [Contributing Guide](docs/contribute/CONTRIBUTING.md)
-- [Project Roadmap](https://github.com/sicambria/skilltree/projects)
+- [Skill Levels](docs/skills/skill-levels.md)
+- [Metamodels Framework](docs/framework/metamodels.md)
+- [Wikidata Import](docs/features/wikidata-import.md)
+- [Graph View](docs/features/graph-view.md)
 
-## 🤝 Contributing
+## License
 
-We welcome contributions! You can help by:
+This project is dual-licensed:
 
-- Extending the [list of skills](assets/json/skills.json) and [trees](assets/json/trees.json)
-- Improving code quality and test coverage
-- Creating new features
-- Spreading the word about SkillTree
-
-Please read our [Contributing Guidelines](docs/contribute/CONTRIBUTING.md) before submitting PRs.
-
-## 📜 License
-
-This project is dual-licensed to ensure both systemic openness and software freedom:
-
-- **Source Code**: Licensed under the [GNU Affero General Public License v3.0](LICENSE) (AGPLv3).
-- **Textual Content & Data**: All curriculum, documentation, and systemic data are licensed under [Creative Commons Attribution-ShareAlike 4.0 International](LICENSE-TEXT) (CC-BY-SA 4.0).
+- **Source Code**: [GNU Affero General Public License v3.0](LICENSE) (AGPLv3)
+- **Textual Content & Data**: [Creative Commons Attribution-ShareAlike 4.0 International](LICENSE-TEXT) (CC-BY-SA 4.0)
