@@ -31,3 +31,19 @@ yarn-error.log*
 
 # OS
 Thumbs.db
+# AI Harness (kaizen) — local only, never on GitHub
+.harness/
+.harness/*
+.harness/state/
+.prepush-logs/
+.worktrees/
+AGENTS.md
+CLAUDE.md
+opencode.jsonc
+.claude/
+.github/workflows/kaizen-gate.yml
+.github/workflows/osv-scan.yml
+.github/copilot-instructions.md
+.gitlab-ci.yml
+bitbucket-pipelines.yml
+.cursor/rules/kaizen.mdc
