@@ -42,7 +42,14 @@
         "length": 0,
         "language": "many"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:scrum"
   },
   {
     "name": "UI/UX Design",
@@ -71,7 +78,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ui-ux-design"
   },
   {
     "name": "Stakeholder Engagement",
@@ -100,7 +114,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:stakeholder-engagement"
   },
   {
     "name": "Scaled Agile Framework",
@@ -141,7 +162,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:scaled-agile-framework"
   },
   {
     "name": "Training",
@@ -172,7 +200,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:training"
   },
   {
     "name": "Retrieval-Augmented Generation (RAG)",
@@ -201,7 +236,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:retrieval-augmented-generation-rag"
   },
   {
     "name": "Vector Database Management",
@@ -230,7 +272,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:vector-database-management"
   },
   {
     "name": "Synthetic Data Generation",
@@ -259,7 +308,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:synthetic-data-generation"
   },
   {
     "name": "Semantic Search Design",
@@ -288,7 +344,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:semantic-search-design"
   },
   {
     "name": "Reinforcement Learning from Human Feedback (RLHF)",
@@ -317,7 +380,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:reinforcement-learning-from-human-feedback-rlhf"
   },
   {
     "name": "Transformer Architecture Fundamentals",
@@ -346,7 +416,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:transformer-architecture-fundamentals"
   },
   {
     "name": "Transparency Reporting",
@@ -375,7 +452,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:transparency-reporting"
   },
   {
     "name": "User Consent Design",
@@ -404,7 +488,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:user-consent-design"
   },
   {
     "name": "Robot Ethics",
@@ -433,7 +524,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:robot-ethics"
   },
   {
     "name": "Technological Humility",
@@ -462,7 +560,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:technological-humility"
   },
   {
     "name": "Systems Thinking",
@@ -491,7 +596,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:systems-thinking"
   },
   {
     "name": "Regenerative Design",
@@ -520,7 +632,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:regenerative-design"
   },
   {
     "name": "Resilience Engineering",
@@ -549,7 +668,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:resilience-engineering"
   },
   {
     "name": "Supply Chain Resilience",
@@ -578,7 +704,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:supply-chain-resilience"
   },
   {
     "name": "Sustainable Software Development",
@@ -607,7 +740,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:sustainable-software-development"
   },
   {
     "name": "Visual Storytelling for Data",
@@ -636,7 +776,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:visual-storytelling-for-data"
   },
   {
     "name": "User Empowerment Psychology",
@@ -665,7 +812,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:user-empowerment-psychology"
   },
   {
     "name": "Quantum Computing Foundations",
@@ -694,7 +848,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:quantum-computing-foundations"
   },
   {
     "name": "Zero-Knowledge Proofs",
@@ -723,7 +884,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:zero-knowledge-proofs"
   },
   {
     "name": "Scenario Planning",
@@ -752,7 +920,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:scenario-planning"
   },
   {
     "name": "Strategic Foresight",
@@ -781,7 +956,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:strategic-foresight"
   },
   {
     "name": "Value-Based Pricing for AI",
@@ -810,7 +992,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:value-based-pricing-for-ai"
   },
   {
     "name": "Technological Sovereignty",
@@ -839,7 +1028,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:technological-sovereignty"
   },
   {
     "name": "Transformative Social Systems (TSS)",
@@ -868,7 +1064,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:transformative-social-systems-tss"
   },
   {
     "name": "Radical Self-Responsibility",
@@ -897,7 +1100,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:radical-self-responsibility"
   },
   {
     "name": "Trauma-Informed Governance",
@@ -926,7 +1136,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:trauma-informed-governance"
   },
   {
     "name": "RDG 8: Continental-Scale Ecological Corridors",
@@ -955,7 +1172,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:rdg-8-continental-scale-ecological-corridors"
   },
   {
     "name": "Regenerative Hydrology",
@@ -984,7 +1208,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:regenerative-hydrology"
   },
   {
     "name": "Soil Microbiome Stewardship",
@@ -1013,7 +1244,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:soil-microbiome-stewardship"
   },
   {
     "name": "RDG 15: Economic Democracy & Fair Distribution",
@@ -1042,7 +1280,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:rdg-15-economic-democracy-fair-distribution"
   },
   {
     "name": "Solidarity Economy Design",
@@ -1071,7 +1316,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:solidarity-economy-design"
   },
   {
     "name": "Warm Data Analysis",
@@ -1100,7 +1352,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:warm-data-analysis"
   },
   {
     "name": "Relational Solidarity Forging",
@@ -1129,7 +1388,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:relational-solidarity-forging"
   },
   {
     "name": "Requisite Variety Management",
@@ -1158,7 +1424,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:requisite-variety-management"
   },
   {
     "name": "Transformative Apology Facilitation",
@@ -1187,7 +1460,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:transformative-apology-facilitation"
   },
   {
     "name": "Vision-Locked Tactical Flexibility",
@@ -1216,7 +1496,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:vision-locked-tactical-flexibility"
   },
   {
     "name": "vMEME Value Set Translation",
@@ -1245,7 +1532,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:vmeme-value-set-translation"
   },
   {
     "name": "Second-Tier Integral Thinking",
@@ -1274,7 +1568,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:second-tier-integral-thinking"
   },
   {
     "name": "Systematic Correspondence Mapping",
@@ -1303,6 +1604,13 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:systematic-correspondence-mapping"
   }
 ]

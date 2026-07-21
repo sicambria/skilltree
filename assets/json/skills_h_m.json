@@ -39,7 +39,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:javascript"
   },
   {
     "name": "Machine Learning",
@@ -68,7 +75,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:machine-learning"
   },
   {
     "name": "HR Policies",
@@ -97,7 +111,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:hr-policies"
   },
   {
     "name": "Identifying External Influences",
@@ -126,7 +147,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:identifying-external-influences"
   },
   {
     "name": "Managing Talent",
@@ -155,7 +183,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:managing-talent"
   },
   {
     "name": "LLM Benchmarking",
@@ -184,7 +219,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:llm-benchmarking"
   },
   {
     "name": "Multimodal Interaction",
@@ -213,7 +255,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:multimodal-interaction"
   },
   {
     "name": "Human-Centric Design for Automation",
@@ -242,7 +291,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:human-centric-design-for-automation"
   },
   {
     "name": "Instructional Design for AI",
@@ -271,7 +327,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:instructional-design-for-ai"
   },
   {
     "name": "Mindfulness for Technical Precision",
@@ -300,7 +363,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:mindfulness-for-technical-precision"
   },
   {
     "name": "Interdisciplinary Synthesis",
@@ -329,7 +399,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:interdisciplinary-synthesis"
   },
   {
     "name": "Homomorphic Encryption",
@@ -358,7 +435,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:homomorphic-encryption"
   },
   {
     "name": "Horizon Scanning",
@@ -387,7 +471,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:horizon-scanning"
   },
   {
     "name": "Impact-Driven Strategy",
@@ -416,7 +507,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:impact-driven-strategy"
   },
   {
     "name": "Intergenerational Strategy",
@@ -445,7 +543,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:intergenerational-strategy"
   },
   {
     "name": "Living Systems Intelligence",
@@ -474,7 +579,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:living-systems-intelligence"
   },
   {
     "name": "Hózhó Principle (Harmony & Beauty)",
@@ -503,7 +615,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:h-zh-principle-harmony-beauty"
   },
   {
     "name": "Institutional Acupuncture",
@@ -532,7 +651,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:institutional-acupuncture"
   },
   {
     "name": "Leverage Point Identification",
@@ -561,7 +687,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:leverage-point-identification"
   },
   {
     "name": "Kardashev Energy Mastery",
@@ -590,7 +723,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:kardashev-energy-mastery"
   },
   {
     "name": "Marginal Return Analysis",
@@ -619,7 +759,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:marginal-return-analysis"
   },
   {
     "name": "Multi-Sensory Wayfinding",
@@ -648,7 +795,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:multi-sensory-wayfinding"
   },
   {
     "name": "Leverage Point Identification (Deep Systems)",
@@ -677,6 +831,13 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:leverage-point-identification-deep-systems"
   }
 ]

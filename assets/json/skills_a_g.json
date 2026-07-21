@@ -26,7 +26,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:coaching"
   },
   {
     "name": "Commercial Awareness",
@@ -55,7 +62,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:commercial-awareness"
   },
   {
     "name": "Conflict resolution",
@@ -84,7 +98,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:conflict-resolution"
   },
   {
     "name": "Facilitation",
@@ -113,7 +134,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:facilitation"
   },
   {
     "name": "Building Trust",
@@ -142,7 +170,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:building-trust"
   },
   {
     "name": "Creating Company Culture",
@@ -171,7 +206,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:creating-company-culture"
   },
   {
     "name": "Effective Listening",
@@ -200,7 +242,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:effective-listening"
   },
   {
     "name": "Being Approachable & Accessible",
@@ -229,7 +278,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:being-approachable-accessible"
   },
   {
     "name": "Change Management",
@@ -260,7 +316,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:change-management"
   },
   {
     "name": "Consulting",
@@ -291,7 +354,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:consulting"
   },
   {
     "name": "Agentic Workflow Design",
@@ -320,7 +390,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:agentic-workflow-design"
   },
   {
     "name": "AI Model Fine-tuning",
@@ -349,7 +426,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ai-model-fine-tuning"
   },
   {
     "name": "Context Window Management",
@@ -378,7 +462,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:context-window-management"
   },
   {
     "name": "Auto-GPT Execution",
@@ -407,7 +498,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:auto-gpt-execution"
   },
   {
     "name": "AI Tool Integration",
@@ -436,7 +534,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ai-tool-integration"
   },
   {
     "name": "AI Latency Optimization",
@@ -465,7 +570,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ai-latency-optimization"
   },
   {
     "name": "AI Hallucination Detection",
@@ -494,7 +606,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ai-hallucination-detection"
   },
   {
     "name": "Copilot Orchestration",
@@ -523,7 +642,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:copilot-orchestration"
   },
   {
     "name": "AI-Augmented Coding",
@@ -552,7 +678,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ai-augmented-coding"
   },
   {
     "name": "Algorithmic Bias Mitigation",
@@ -581,7 +714,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:algorithmic-bias-mitigation"
   },
   {
     "name": "Digital Rights Advocacy",
@@ -610,7 +750,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:digital-rights-advocacy"
   },
   {
     "name": "AI Safety Protocols",
@@ -639,7 +786,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ai-safety-protocols"
   },
   {
     "name": "Explainable AI (XAI)",
@@ -668,7 +822,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:explainable-ai-xai"
   },
   {
     "name": "Data Sovereignty",
@@ -697,7 +858,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:data-sovereignty"
   },
   {
     "name": "AI Impact Assessment",
@@ -726,7 +894,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ai-impact-assessment"
   },
   {
     "name": "Ethical Data Sourcing",
@@ -755,7 +930,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ethical-data-sourcing"
   },
   {
     "name": "Differential Privacy",
@@ -784,7 +966,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:differential-privacy"
   },
   {
     "name": "AI Governance Frameworks",
@@ -813,7 +1002,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ai-governance-frameworks"
   },
   {
     "name": "Deepfake Verification",
@@ -842,7 +1038,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:deepfake-verification"
   },
   {
     "name": "Complexity Theory for Business",
@@ -871,7 +1074,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:complexity-theory-for-business"
   },
   {
     "name": "Circular Economy Modeling",
@@ -900,7 +1110,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:circular-economy-modeling"
   },
   {
     "name": "Biomimicry in Tech",
@@ -929,7 +1146,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:biomimicry-in-tech"
   },
   {
     "name": "Dynamic Resource Allocation",
@@ -958,7 +1182,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:dynamic-resource-allocation"
   },
   {
     "name": "Decentralized Governance",
@@ -987,7 +1218,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:decentralized-governance"
   },
   {
     "name": "Ecosystem Mapping",
@@ -1016,7 +1254,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ecosystem-mapping"
   },
   {
     "name": "Bio-Digital Architecture",
@@ -1045,7 +1290,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:bio-digital-architecture"
   },
   {
     "name": "Adaptive Leadership",
@@ -1074,7 +1326,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:adaptive-leadership"
   },
   {
     "name": "Feedback Loop Optimization",
@@ -1103,7 +1362,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:feedback-loop-optimization"
   },
   {
     "name": "Active Listening for Virtual Environments",
@@ -1132,7 +1398,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:active-listening-for-virtual-environments"
   },
   {
     "name": "Emotional Intelligence in AI Teams",
@@ -1161,7 +1434,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:emotional-intelligence-in-ai-teams"
   },
   {
     "name": "Critical Thinking in the Post-Truth Era",
@@ -1190,7 +1470,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:critical-thinking-in-the-post-truth-era"
   },
   {
     "name": "Cross-Cultural Digital Collaboration",
@@ -1219,7 +1506,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:cross-cultural-digital-collaboration"
   },
   {
     "name": "Digital Wellbeing Management",
@@ -1248,7 +1542,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:digital-wellbeing-management"
   },
   {
     "name": "Conflict Resolution in Async Teams",
@@ -1277,7 +1578,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:conflict-resolution-in-async-teams"
   },
   {
     "name": "Empathy-Driven Engineering",
@@ -1306,7 +1614,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:empathy-driven-engineering"
   },
   {
     "name": "Creative Problem Solving",
@@ -1335,7 +1650,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:creative-problem-solving"
   },
   {
     "name": "Ethics of Care",
@@ -1364,7 +1686,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ethics-of-care"
   },
   {
     "name": "Digital Storytelling",
@@ -1393,7 +1722,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:digital-storytelling"
   },
   {
     "name": "Collective Intelligence Facilitation",
@@ -1422,7 +1758,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:collective-intelligence-facilitation"
   },
   {
     "name": "Cognitive Load Management",
@@ -1451,7 +1794,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:cognitive-load-management"
   },
   {
     "name": "Blockchain for Supply Chain",
@@ -1480,7 +1830,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:blockchain-for-supply-chain"
   },
   {
     "name": "Edge Computing Architecture",
@@ -1509,7 +1866,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:edge-computing-architecture"
   },
   {
     "name": "Brain-Computer Interface Basics",
@@ -1538,7 +1902,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:brain-computer-interface-basics"
   },
   {
     "name": "Augmented Reality UI Design",
@@ -1567,7 +1938,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:augmented-reality-ui-design"
   },
   {
     "name": "Digital Twin Orchestration",
@@ -1596,7 +1974,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:digital-twin-orchestration"
   },
   {
     "name": "Decentralized Identity (DID)",
@@ -1625,7 +2010,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:decentralized-identity-did"
   },
   {
     "name": "Bio-Informatics Data Analysis",
@@ -1654,7 +2046,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:bio-informatics-data-analysis"
   },
   {
     "name": "Future of Work Analysis",
@@ -1683,7 +2082,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:future-of-work-analysis"
   },
   {
     "name": "Antifragile Business Modeling",
@@ -1712,7 +2118,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:antifragile-business-modeling"
   },
   {
     "name": "Digital Transformation Leadership",
@@ -1741,7 +2154,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:digital-transformation-leadership"
   },
   {
     "name": "Global Risk Assessment",
@@ -1770,7 +2190,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:global-risk-assessment"
   },
   {
     "name": "Community-Led Innovation",
@@ -1799,7 +2226,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:community-led-innovation"
   },
   {
     "name": "Continuous Learning Cultures",
@@ -1828,7 +2262,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:continuous-learning-cultures"
   },
   {
     "name": "Ecological Grief Processing",
@@ -1857,7 +2298,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ecological-grief-processing"
   },
   {
     "name": "Anishinaabe Relational Epistemology",
@@ -1886,7 +2334,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:anishinaabe-relational-epistemology"
   },
   {
     "name": "Bioregional Animism",
@@ -1915,7 +2370,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:bioregional-animism"
   },
   {
     "name": "Avian & Pollinator Corridor Design",
@@ -1944,7 +2406,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:avian-pollinator-corridor-design"
   },
   {
     "name": "Biomimicry in Social Systems",
@@ -1973,7 +2442,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:biomimicry-in-social-systems"
   },
   {
     "name": "Bioregional Supply Chain Mapping",
@@ -2002,7 +2478,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:bioregional-supply-chain-mapping"
   },
   {
     "name": "Gift Economy Facilitation",
@@ -2031,7 +2514,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:gift-economy-facilitation"
   },
   {
     "name": "Circular Economy Modeling",
@@ -2060,7 +2550,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:circular-economy-modeling"
   },
   {
     "name": "Autopoiesis & Emergence Diagnosis",
@@ -2089,7 +2586,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:autopoiesis-emergence-diagnosis"
   },
   {
     "name": "Epistemic Pluralism",
@@ -2118,7 +2622,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:epistemic-pluralism"
   },
   {
     "name": "Collective Intelligence Facilitation",
@@ -2147,7 +2658,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:collective-intelligence-facilitation"
   },
   {
     "name": "Design Thinking for Wicked Problems",
@@ -2176,7 +2694,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:design-thinking-for-wicked-problems"
   },
   {
     "name": "Efficiency-First Paradigm Design",
@@ -2205,7 +2730,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:efficiency-first-paradigm-design"
   },
   {
     "name": "Graceful Degradation Design",
@@ -2234,7 +2766,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:graceful-degradation-design"
   },
   {
     "name": "Gram Swaraj (Decentralized Governance)",
@@ -2263,7 +2802,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:gram-swaraj-decentralized-governance"
   },
   {
     "name": "Bija Swaraj (Seed Democracy)",
@@ -2292,7 +2838,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:bija-swaraj-seed-democracy"
   },
   {
     "name": "Critical Ancestral Retrieval",
@@ -2321,7 +2874,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:critical-ancestral-retrieval"
   },
   {
     "name": "Environmental Personhood Advocacy",
@@ -2350,7 +2910,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:environmental-personhood-advocacy"
   },
   {
     "name": "Adaptive Cycle Navigation",
@@ -2379,7 +2946,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:adaptive-cycle-navigation"
   },
   {
     "name": "Cross-Scale 'Revolt & Remember' Dynamics",
@@ -2408,7 +2982,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:cross-scale-revolt-remember-dynamics"
   },
   {
     "name": "Commons Governance Design",
@@ -2437,7 +3018,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:commons-governance-design"
   },
   {
     "name": "Ecological Permeation (Sila)",
@@ -2466,7 +3054,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:ecological-permeation-sila"
   },
   {
     "name": "Cybernetic Recursive Scaling",
@@ -2495,7 +3090,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:cybernetic-recursive-scaling"
   },
   {
     "name": "Cyclical Inhibition Management (Wuxing)",
@@ -2524,6 +3126,13 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:cyclical-inhibition-management-wuxing"
   }
 ]

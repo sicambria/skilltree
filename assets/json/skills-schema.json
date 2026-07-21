@@ -11,7 +11,8 @@
       "categoryName",
       "skillIcon",
       "description",
-      "maxPoint"
+      "maxPoint",
+      "reusability"
     ],
     "properties": {
       "name": {
@@ -101,7 +102,7 @@
         "examples": [
           5
         ],
-        "maximum": 10.0
+        "maximum": 10
       },
       "parents": {
         "$id": "#/items/properties/parents",
@@ -187,8 +188,8 @@
               "examples": [
                 1
               ],
-              "minimum": 0.0,
-              "maximum": 10.0
+              "minimum": 0,
+              "maximum": 10
             },
             "shortDescription": {
               "$id": "#/items/properties/trainings/items/properties/shortDescription",
@@ -250,6 +251,84 @@
               ],
               "pattern": "^(..|many)$"
             }
+          }
+        }
+      },
+      "reusability": {
+        "type": "string",
+        "title": "The Reusability Schema",
+        "enum": [
+          "transversal",
+          "cross-sectoral",
+          "sector-specific",
+          "occupation-specific"
+        ]
+      },
+      "skillId": {
+        "type": "string",
+        "title": "The SkillId Schema"
+      },
+      "relationships": {
+        "type": "array",
+        "title": "The Relationships Schema",
+        "items": {
+          "type": "object",
+          "properties": {
+            "skillName": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "prerequisite",
+                "complement",
+                "substitute",
+                "specializes",
+                "adjacent"
+              ]
+            }
+          }
+        }
+      },
+      "crosswalks": {
+        "type": "object",
+        "title": "The Crosswalks Schema",
+        "properties": {
+          "esco": {
+            "type": "string"
+          },
+          "onet": {
+            "type": "string"
+          },
+          "sfia": {
+            "type": "string"
+          },
+          "lightcast": {
+            "type": "string"
+          }
+        }
+      },
+      "temporal": {
+        "type": "object",
+        "title": "The Temporal Schema",
+        "properties": {
+          "stage": {
+            "type": "string",
+            "enum": [
+              "emerging",
+              "growing",
+              "mature",
+              "declining"
+            ]
+          },
+          "demand_score": {
+            "type": "number"
+          },
+          "growth_rate": {
+            "type": "number"
+          },
+          "emergence_date": {
+            "type": "string"
           }
         }
       }

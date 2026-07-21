@@ -26,7 +26,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:project-coordination"
   },
   {
     "name": "Negotiation",
@@ -55,7 +62,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:negotiation"
   },
   {
     "name": "Professional Networking",
@@ -84,7 +98,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:professional-networking"
   },
   {
     "name": "Persuasion",
@@ -115,7 +136,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:persuasion"
   },
   {
     "name": "Negotiating",
@@ -146,7 +174,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:negotiating"
   },
   {
     "name": "Problem-Solving",
@@ -177,7 +212,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "transversal",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:problem-solving"
   },
   {
     "name": "Prompt Engineering",
@@ -206,7 +248,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:prompt-engineering"
   },
   {
     "name": "Prompt Versioning",
@@ -235,7 +284,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:prompt-versioning"
   },
   {
     "name": "Privacy-Preserving Computation",
@@ -264,7 +320,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:privacy-preserving-computation"
   },
   {
     "name": "Network Theory",
@@ -293,7 +356,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:network-theory"
   },
   {
     "name": "Public Speaking for Avatars",
@@ -322,7 +392,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:public-speaking-for-avatars"
   },
   {
     "name": "Non-Violent Communication for Devs",
@@ -351,7 +428,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:non-violent-communication-for-devs"
   },
   {
     "name": "Post-Quantum Cryptography",
@@ -380,7 +464,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:post-quantum-cryptography"
   },
   {
     "name": "Privacy-First Analytics",
@@ -409,7 +500,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:privacy-first-analytics"
   },
   {
     "name": "Neuromorphic Computing",
@@ -438,7 +536,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:neuromorphic-computing"
   },
   {
     "name": "Platform Ecosystem Strategy",
@@ -467,7 +572,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:platform-ecosystem-strategy"
   },
   {
     "name": "Policy-as-Code",
@@ -496,7 +608,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:policy-as-code"
   },
   {
     "name": "Prefigurative Temporality Practice",
@@ -525,7 +644,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:prefigurative-temporality-practice"
   },
   {
     "name": "Post-Growth Business Logic",
@@ -554,7 +680,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:post-growth-business-logic"
   },
   {
     "name": "Net-Positive Handprint Analysis",
@@ -583,7 +716,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:net-positive-handprint-analysis"
   },
   {
     "name": "Polycentric Governance Architectures",
@@ -612,7 +752,14 @@
         "length": 0,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:polycentric-governance-architectures"
   },
   {
     "name": "Planetary Intelligence Synchrony",
@@ -641,7 +788,14 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:planetary-intelligence-synchrony"
   },
   {
     "name": "Paradigm Transcendence",
@@ -670,6 +824,13 @@
         "length": 8,
         "language": "en"
       }
-    ]
+    ],
+    "reusability": "cross-sectoral",
+    "relationships": [],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:paradigm-transcendence"
   }
 ]
