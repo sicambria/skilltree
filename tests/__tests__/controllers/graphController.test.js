@@ -56,6 +56,23 @@ describe('graphController', () => {
             expect(parentChildLink.target).toBe('skill-ChildSkill');
         });
 
+        it('should create relationship links from Framework relationships field', async () => {
+            await Skill.create({
+                name: 'Main',
+                parents: [],
+                children: [],
+                relationships: [{ skillName: 'RelatedSkill', type: 'complement' }]
+            });
+
+            await graphController.getGraphData(req, res);
+
+            const data = res.json.mock.calls[0][0];
+            const relLink = data.links.find(l => l.type === 'complement');
+            expect(relLink).toBeDefined();
+            expect(relLink.source).toBe('skill-Main');
+            expect(relLink.target).toBe('skill-RelatedSkill');
+        });
+
         it('should not duplicate nodes', async () => {
             await Skill.create({ name: 'Unique', parents: [], children: [] });
 

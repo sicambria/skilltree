@@ -571,6 +571,25 @@ describe('skillController', () => {
             expect(user.skills[0].achievedPoint).toBe(3);
         });
 
+        it('should accept 5-factor assessment and compute effectiveLevel', async () => {
+            req.decoded = { username: 'testuser' };
+            req.body = [{
+                name: 'Skill1',
+                achievedPoint: 3,
+                assessment: { autonomy: 3, complexity: 2, influence: 2, knowledge: 3, business_skills: 2 }
+            }];
+
+            await skillController.submitAll(req, res);
+
+            expect(res.json).toHaveBeenCalledWith({ success: true });
+
+            const user = await User.findOne({ username: 'testuser' });
+            expect(user.skills[0].assessment).toBeDefined();
+            expect(user.skills[0].assessment.autonomy).toBe(3);
+            expect(user.skills[0].assessment.complexity).toBe(2);
+            expect(user.skills[0].assessment.effectiveLevel).toBe(2);
+        });
+
         it('should handle willingToTeach with offers', async () => {
             const user = await User.findOne({ username: 'testuser' });
             user.willingToTeach = true;
@@ -686,6 +705,195 @@ describe('skillController', () => {
                 message: 'Server error'
             });
             jest.restoreAllMocks();
+        });
+    });
+
+    describe('listSkills', () => {
+        beforeEach(async () => {
+            await Skill.create({ name: 'Alpha', reusability: 'transversal', temporal: { stage: 'mature' } });
+            await Skill.create({ name: 'Beta', reusability: 'cross-sectoral', temporal: { stage: 'growing' } });
+        });
+
+        it('should list all skills', async () => {
+            req.query = {};
+            await skillController.listSkills(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.length).toBe(2);
+            expect(data.meta.total).toBe(2);
+        });
+
+        it('should filter by q', async () => {
+            req.query = { q: 'Alp' };
+            await skillController.listSkills(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.length).toBe(1);
+            expect(data.data[0].name).toBe('Alpha');
+        });
+
+        it('should filter by reusability', async () => {
+            req.query = { reusability: 'transversal' };
+            await skillController.listSkills(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.length).toBe(1);
+            expect(data.data[0].name).toBe('Alpha');
+        });
+
+        it('should filter by temporal stage', async () => {
+            req.query = { stage: 'growing' };
+            await skillController.listSkills(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.length).toBe(1);
+            expect(data.data[0].name).toBe('Beta');
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(Skill, 'find').mockRejectedValue(new Error('DB error'));
+            req.query = {};
+            await skillController.listSkills(req, res);
+            expect(res.status).toHaveBeenCalledWith(500);
+            jest.restoreAllMocks();
+        });
+    });
+
+    describe('getSkillById', () => {
+        beforeEach(async () => {
+            await Skill.create({ name: 'Test', skillId: 'skilltree:skill:test', reusability: 'cross-sectoral' });
+        });
+
+        it('should get skill by name', async () => {
+            req.params = { id: 'Test' };
+            req.query = {};
+            await skillController.getSkillById(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.name).toBe('Test');
+        });
+
+        it('should get skill by skillId', async () => {
+            req.params = { id: 'skilltree:skill:test' };
+            req.query = {};
+            await skillController.getSkillById(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.name).toBe('Test');
+        });
+
+        it('should return 404 for unknown skill', async () => {
+            req.params = { id: 'Unknown' };
+            req.query = {};
+            await skillController.getSkillById(req, res);
+            expect(res.status).toHaveBeenCalledWith(404);
+        });
+
+        it('should handle server error', async () => {
+            jest.spyOn(Skill, 'findOne').mockRejectedValue(new Error('DB error'));
+            req.params = { id: 'Test' };
+            req.query = {};
+            await skillController.getSkillById(req, res);
+            expect(res.status).toHaveBeenCalledWith(500);
+            jest.restoreAllMocks();
+        });
+    });
+
+    describe('getSkillProficiency', () => {
+        beforeEach(async () => {
+            await Skill.create({ name: 'Test', pointDescription: ['L1', 'L2', 'L3', 'L4', 'L5'] });
+        });
+
+        it('should return proficiency levels', async () => {
+            req.params = { id: 'Test' };
+            await skillController.getSkillProficiency(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.length).toBe(5);
+            expect(data.data[0].level).toBe(1);
+        });
+
+        it('should return 404 for unknown skill', async () => {
+            req.params = { id: 'Unknown' };
+            await skillController.getSkillProficiency(req, res);
+            expect(res.status).toHaveBeenCalledWith(404);
+        });
+    });
+
+    describe('getSkillProficiencyLevel', () => {
+        beforeEach(async () => {
+            await Skill.create({ name: 'Test', pointDescription: ['L1', 'L2', 'L3', 'L4', 'L5'] });
+        });
+
+        it('should return a single level', async () => {
+            req.params = { id: 'Test', level: '3' };
+            await skillController.getSkillProficiencyLevel(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.level).toBe(3);
+            expect(data.data.description).toBe('L3');
+        });
+
+        it('should return 400 for invalid level', async () => {
+            req.params = { id: 'Test', level: '8' };
+            await skillController.getSkillProficiencyLevel(req, res);
+            expect(res.status).toHaveBeenCalledWith(400);
+        });
+    });
+
+    describe('getSkillCrosswalks', () => {
+        beforeEach(async () => {
+            await Skill.create({ name: 'Test', crosswalks: { esco: 'http://esco/1', onet: '2.A' } });
+        });
+
+        it('should return crosswalks', async () => {
+            req.params = { id: 'Test' };
+            await skillController.getSkillCrosswalks(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.esco).toBe('http://esco/1');
+        });
+
+        it('should return empty object when no crosswalks', async () => {
+            await Skill.create({ name: 'NoCross' });
+            req.params = { id: 'NoCross' };
+            await skillController.getSkillCrosswalks(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data).toEqual({});
+        });
+    });
+
+    describe('getSkillRelationships', () => {
+        beforeEach(async () => {
+            await Skill.create({
+                name: 'Test',
+                parents: ['ParentA'],
+                children: [{ name: 'ChildA', minPoint: 1, recommended: false }],
+                relationships: [{ skillName: 'Related', type: 'complement' }]
+            });
+        });
+
+        it('should return all relationship types', async () => {
+            req.params = { id: 'Test' };
+            await skillController.getSkillRelationships(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.length).toBe(3);
+            expect(data.data.find(r => r.type === 'parent')).toBeDefined();
+            expect(data.data.find(r => r.type === 'child')).toBeDefined();
+            expect(data.data.find(r => r.type === 'complement')).toBeDefined();
+        });
+    });
+
+    describe('getSkillTemporal', () => {
+        beforeEach(async () => {
+            await Skill.create({ name: 'Test', temporal: { stage: 'mature', demand_score: 78 } });
+        });
+
+        it('should return temporal data', async () => {
+            req.params = { id: 'Test' };
+            await skillController.getSkillTemporal(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.stage).toBe('mature');
+            expect(data.data.demand_score).toBe(78);
+        });
+
+        it('should return default when no temporal data', async () => {
+            await Skill.create({ name: 'NoTemp' });
+            req.params = { id: 'NoTemp' };
+            await skillController.getSkillTemporal(req, res);
+            const data = res.json.mock.calls[0][0];
+            expect(data.data.stage).toBe('mature');
         });
     });
 });

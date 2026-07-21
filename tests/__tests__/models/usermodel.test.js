@@ -30,6 +30,14 @@ describe('User model', () => {
                 categoryName: 'Programming',
                 achievedPoint: 3,
                 maxPoint: 5,
+                assessment: {
+                    autonomy: 3,
+                    complexity: 2,
+                    influence: 2,
+                    knowledge: 3,
+                    business_skills: 2,
+                    effectiveLevel: 2
+                },
                 parents: [],
                 children: [],
                 trainings: [],
@@ -40,6 +48,9 @@ describe('User model', () => {
         });
         expect(user.admin).toBe(true);
         expect(user.skills.length).toBe(1);
+        expect(user.skills[0].assessment).toBeDefined();
+        expect(user.skills[0].assessment.autonomy).toBe(3);
+        expect(user.skills[0].assessment.effectiveLevel).toBe(2);
         expect(user.skills[0].endorsement).toEqual(['user2']);
         expect(user.trees.length).toBe(1);
     });
