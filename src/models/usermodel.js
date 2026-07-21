@@ -1,8 +1,15 @@
-// get an instance of mongoose and mongoose.Schema
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-// set up a mongoose model and pass it using module.exports
+var assessmentSchema = new Schema({
+    autonomy: { type: Number, min: 1, max: 7 },
+    complexity: { type: Number, min: 1, max: 7 },
+    influence: { type: Number, min: 1, max: 7 },
+    knowledge: { type: Number, min: 1, max: 7 },
+    business_skills: { type: Number, min: 1, max: 7 },
+    effectiveLevel: { type: Number, min: 1, max: 7 }
+}, { _id: false });
+
 module.exports = mongoose.model('User', new Schema({
     username: String,
     admin: Boolean,
@@ -33,6 +40,7 @@ module.exports = mongoose.model('User', new Schema({
             pointDescription: [String],
             achievedPoint: Number,
             maxPoint: Number,
+            assessment: assessmentSchema,
             parents: [String],
             children: [
                 {
