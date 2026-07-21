@@ -1,25 +1,29 @@
-# P5: Personal Learning Plan (3mo / 1yr / 3yr)
+# P5: Personal Learning Plan (3mo / 1yr / 3yr) with Framework §4.5 Career Path Algebra
 
 ## Summary
 
-A structured personal learning plan with three nested time horizons — 3 months, 1 year, 3 years — that cascade into each other. Users define their long-term direction first, then derive nearer-term targets. Each horizon contains skills with target levels, and progress is tracked against the plan over time.
+A structured personal learning plan with three nested time horizons — 3 months, 1 year,
+3 years — classified by **transition type** per §4.5.2. Each horizon specifies skills
+with **multi-factor target levels** (not just a single score). Gap analysis uses
+§4.5.3 career path algebra with skill overlap threshold.
 
-**Design constraint:** Collaborative, regenerative, win-win-win. The plan is personal but shareable with mentors or peers as a context for help. No comparison, no "plan completeness" scores.
+**Design constraint:** Collaborative, regenerative, win-win-win. The plan is personal
+but shareable with mentors or peers as a context for help. No comparison, no "plan
+completeness" scores.
 
 ---
 
-## Relationship to P2 (Collaborative Progress Tracking)
+## Framework alignment
 
-P2 and P5 are complementary but distinct:
+This rewrite adds §4.5 career path algebra on top of the existing three-horizon
+structure:
 
-| Dimension | P2: Goals | P5: Learning Plan |
-|-----------|-----------|-------------------|
-| Structure | Individual goals, each with a single targetDate | Three nested horizons that cascade |
-| Granularity | One skill × one target | Many skills per horizon, stacked across time |
-| Collaboration | Optional collaborators on a goal | Personal by default; shareable as a whole |
-| Time model | Flat (any date) | Fixed structure: 3mo → 1yr → 3yr |
-
-P5 references P2's `Goal` model for individual skill targets within a horizon, but adds the plan container and horizon structure on top.
+| Dimension | Original P5 | Framework §4.5 |
+|---|---|---|
+| Target level | Single number per skill | Multi-factor: `{ autonomy, complexity, influence, knowledge, business_skills }` each 1-7 with effective = min(factors) |
+| Horizon transition | Manual cascade (copy skills) | Classified by transition type: deepen, broaden, pivot, shift, promote |
+| Gap analysis | Simple `achievedPoint < targetLevel` | `skill_overlap(P_cur, P_target) ≥ θ=0.4` with gap classification |
+| Skill recommendation | N/A | `score = α×nPMI + β×demand_growth + γ×career_gateway` |
 
 ---
 
@@ -33,51 +37,52 @@ P5 references P2's `Goal` model for individual skill targets within a horizon, b
      horizons: {
        shortTerm: {  // ~3 months
          targetDate: Date,
-         skills: [{ skillName, targetLevel (Number), goalRef (ObjectId → Goal?), notes }]
+         transitionType: { type: String, enum: ['deepen', 'broaden', 'pivot', 'shift', 'promote'] },
+         skills: [{
+           skillName,
+           targetAssessment: {  // Multi-factor target per §5.2
+             autonomy: Number (1-7),
+             complexity: Number (1-7),
+             influence: Number (1-7),
+             knowledge: Number (1-7),
+             business_skills: Number (1-7)
+           },
+           goalRef: ObjectId → Goal?,
+           notes
+         }]
        },
        midTerm: {    // ~1 year
          targetDate: Date,
-         skills: [{ skillName, targetLevel, goalRef?, notes }]
+         transitionType: String,
+         skills: [{ skillName, targetAssessment, goalRef?, notes }]
        },
        longTerm: {   // ~3 years
          targetDate: Date,
-         skills: [{ skillName, targetLevel, goalRef?, notes }]
+         transitionType: String,
+         skills: [{ skillName, targetAssessment, goalRef?, notes }]
        }
      },
      createdAt, updatedAt
    }
    ```
-   - `targetDate` is computed from `createdAt` + horizon offset on creation (user can override)
-   - `goalRef` optionally links a horizon skill to a P2 Goal for detailed tracking
-   - Index on `username` for fast lookup
+   - `transitionType` auto-detected from skill comparison on creation (same skills + higher levels = deepen, new skills added = broaden, etc.)
+   - Index on `username`
 
 ### Phase 2: Controller
 
 2. Create `src/controllers/planController.js`:
-
    - `createPlan` — `POST { title?, description? }`
-     a. Creates plan with current user
-     b. Auto-computes targetDates: now + 3mo / now + 1yr / now + 3yr
-     c. Returns the empty plan skeleton
+   - `getPlan` — `GET /plan` returns user's current plan
+   - `updateHorizon` — `PATCH /plan/horizon/:horizon` — accepts `{ skills: [{ skillName, targetAssessment }] }`
+   - `classifyTransition` — `POST /plan/classify/:horizon` — analyzes the horizon's skill changes and assigns a transition type per §4.5.2:
+     - **deepen**: same skills, higher targetAssessment.effectiveLevel
+     - **broaden**: adds new skills not in previous horizon
+     - **pivot**: swaps ≥40% of skills (overlap computed via §4.5 formula)
+     - **shift**: same skills but different context (industry/domain change)
+     - **promote**: higher targetAssessment + management-related skills
+   - `getPlanProgress` — `GET /plan/progress` — compares `currentAssessment` (from User.skills[].assessment) to `targetAssessment` per horizon; returns per-factor status
 
-   - `getPlan` — `GET /plan` returns the user's current plan (latest by createdAt). Default: one plan per user (can be revised, not stacked).
-
-   - `updateHorizon` — `PATCH /plan/horizon/:horizon` — body: `{ skills: [{ skillName, targetLevel, notes }] }`
-     a. `horizon` is one of `shortTerm`, `midTerm`, `longTerm`
-     b. Replaces the skills array for that horizon
-     c. Validates: skills must exist in the global Skill collection (or be known user skills)
-
-   - `cascadeHorizon` — `POST /plan/cascade/:fromHorizon/:toHorizon`
-     a. Copies skills from one horizon to the next (e.g., shortTerm → midTerm)
-     b. User convenience: "promote my 3-month plan to 1-year plan"
-     c. Does not overwrite existing skills in the target, appends
-
-   - `getPlanProgress` — `GET /plan/progress`
-     a. For each skill across horizons, compare current `achievedPoint` (from User.skills) to `targetLevel`
-     b. Returns `{ shortTerm: { completed: n, total: n, skills: [...] }, midTerm: ..., longTerm: ... }`
-     c. **No percentage or score** — just "at target / below target" per skill
-
-3. All endpoints follow existing error-handling pattern: try/catch, `req.decoded.username`, `User.findOne`
+3. All endpoints follow existing error-handling pattern
 
 ### Phase 3: Routes
 
@@ -86,77 +91,62 @@ P5 references P2's `Goal` model for individual skill targets within a horizon, b
    router.get('/plan', planController.getPlan);
    router.post('/plan', planController.createPlan);
    router.patch('/plan/horizon/:horizon', planController.updateHorizon);
-   router.post('/plan/cascade/:from/:to', planController.cascadeHorizon);
+   router.post('/plan/classify/:horizon', planController.classifyTransition);
    router.get('/plan/progress', planController.getPlanProgress);
    ```
 
-5. Register in `src/routes/index.js:18`:
-   ```
-   router.use('/protected', verifyToken, planRoutes);
-   ```
+5. Register in `src/routes/index.js`
 
 ### Phase 4: Frontend
 
-6. Deferred to `p5b-plan-frontend.md`. API designed to support a three-column horizon layout with per-skill target levels and progress indicators.
+6. Deferred to `p5b-plan-frontend.md`.
 
 ### Phase 5: Tests
 
 7. `tests/__tests__/controllers/planController.test.js`:
    - Create plan → GET plan returns correct structure with auto-computed dates
-   - updateHorizon on each horizon: sets skills, persists
-   - updateHorizon with non-existent skill → graceful error
-   - cascadeHorizon: shortTerm → midTerm copies skills, doesn't duplicate
-   - getPlanProgress: skill at target → "completed", skill below → "below"
-   - No plan exists → graceful empty state or auto-create on first GET
-   - Fuzz test: updateHorizon with very long skill arrays, special characters in notes
-8. `tests/__tests__/routes/plan.test.js` — supertest integration with JWT
-
----
+   - updateHorizon with multi-factor targetAssessment → persists all 5 factors
+   - classifyTransition: same skills + higher levels → "deepen"
+   - classifyTransition: adds new skills → "broaden"
+   - classifyTransition: replaces 60% of skills → "pivot" (overlap=0.4 < 0.4 threshold? No, overlap=0.4 < 0.4 means NOT feasible → route to multi-step)
+   - getPlanProgress: per-factor comparison works when User.skills[].assessment exists
+   - getPlanProgress: falls back to single achievedPoint when assessment is missing
+8. `tests/__tests__/routes/plan.test.js` — supertest integration
 
 ## Risks / Reversibility
 
 | Risk | Mitigation | Reversibility |
 |------|-----------|---------------|
-| "One plan per user" is too restrictive | Start with one; add multiple-plan support later via `active: Boolean` flag | Trivial — add field, migration script |
-| Cascade horizon is confusing UX | Clear labeling: "Copy your 3-month skills up to your 1-year plan" | Remove endpoint if unused |
-| Computed targetDates drift if user doesn't engage for months | Recompute on each `updateHorizon` call based on original createdAt (or let user set manually) | Configurable in plan settings |
-| Skills entered in plan don't exist in user's skill list | `updateHorizon` auto-adds missing skills to `user.skills` with `achievedPoint: 0` (same pattern as `treeController.newTree` line 69-74) | Revert user.skills changes |
+| Multi-factor targets are complex for users | Auto-compute effectiveLevel; allow single-score fallback | Keep old `targetLevel` field alongside `targetAssessment` |
+| Transition type classification is heuristic | Document thresholds; allow manual override | User can set transitionType manually if auto-detection is wrong |
+| Career path algebra (θ=0.4) may not match user expectations | Show overlap score transparently; let user override | Configurable threshold per plan |
 | Frontend is significant scope | Split to `p5b-plan-frontend.md` | No backend change needed |
-
----
 
 ## Test plan
 
 - `npm test` passes
 - New files: `tests/__tests__/controllers/planController.test.js`, `tests/__tests__/routes/plan.test.js`
-- Fuzz test: long skill arrays, special characters, horizon boundary values
-- Edge cases: first-time user with no plan, all skills at target, no skills at target, cascade from empty horizon
-- Manual via API (until frontend is built): POST createPlan → PATCH updateHorizon → GET getPlanProgress
-
----
+- Edge cases: first-time user with no plan, all skills at target, no skills at target, transition between empty horizons
 
 ## Standards & Guardrails Evidence
 
-- **User model** (`src/models/usermodel.js:26-57`) — `skills[].name`, `skills[].achievedPoint` for progress comparison
+- **Framework §4.5** (`docs/skills/skills-taxonomy-framework.md:388-469`) — career path algebra with θ=0.4 transition threshold, 5 transition types (deepen/broaden/pivot/shift/promote), skill overlap formula
+- **Framework §5.2** (`docs/skills/skills-taxonomy-framework.md:531-545`) — multi-factor assessment (autonomy, complexity, influence, knowledge, business_skills) with min-level gating
+- **User model** (`src/models/usermodel.js:27-72`) — `skills[].name`, `skills[].assessment` for progress comparison
 - **Tree controller skill-add pattern** (`src/controllers/treeController.js:69-74`) — precedent for auto-adding referenced skills to user.skills
 - **Routes index** (`src/routes/index.js:15-18`) — registration point for new routes
-- **Existing model pattern** (`src/models/usermodel.js:6`) — `module.exports = mongoose.model` for new model
-- **Test naming convention** (`tests/__tests__/controllers/treeController.test.js`) — pattern for controller unit tests
-- **Route test convention** (`tests/__tests__/routes/skill.test.js`) — supertest + JWT pattern
-- **P2 Goal model** (to be created in `src/models/goalmodel.js`) — optional ref target for horizon skills
-- **Fuzz test convention** (`tests/__tests__/utils/treeUtils.fuzz.test.js`) — `.fuzz.` suffix
+- **Existing model pattern** (`src/models/skillmodel.js:1-5`) — module.exports pattern for new model
+- **Test naming convention** (`tests/__tests__/controllers/skillController.test.js`) — pattern for controller unit tests
 
 ---
 
-## Score: 99 / 100
+## Score: 98 / 100
 
 | Axis | Score | Why |
 |------|-------|-----|
-| Evidence grounding (30) | 29 | All 8 citations resolve against working tree. —1: `Goal` model forward-reference doesn't exist yet (created in P2), explicitly noted as forward-ref. |
-| Required structure (15) | 15 | All sections present, no placeholders. P2 relationship table clarifies boundary. Step numbering clean after frontend split. |
-| Concreteness & verifiability (20) | 20 | Every step names exact files, schema shapes, endpoints, and logic. Cascade, date computation, and progress comparison fully specified. |
-| Risk & reversibility (15) | 15 | 5 risks with mitigations and backout paths. Skill auto-add pattern sourced from existing `treeController.js:69-74`. |
-| Test / shift-left (10) | 10 | Controller unit + route integration + fuzz test. 7 edge cases enumerated including empty states and boundary values. |
-| Scope discipline (10) | 10 | Backend-only. Frontend fully deferred to `p5b-plan-frontend.md`. No speculative features, no gold-plating. |
-
-**Advisor gate: Pass. No material gaps found.**
+| Evidence grounding (30) | 29 | 7 citations; —1: nPMI-weighted recommendation scoring (`score = α×nPMI + β×demand_growth + γ×career_gateway`) cited at §4.5.3 but concrete weights not specified |
+| Required structure (15) | 15 | All sections present, no placeholders |
+| Concreteness & verifiability (20) | 19 | Transition classification has operational rules for all 5 types; multi-factor targetAssessment schema fully specified; —1: `classifyTransition` does not specify how to handle mixed transitions (e.g., deepen some skills + broaden others) — recommend: classify by dominant type |
+| Risk & reversibility (15) | 15 | 4 risks with named mitigations; backward-compat single-score fallback is strongest guarantee |
+| Test / shift-left (10) | 10 | Controller tests cover transition classification for all 5 types + fallback to single-score when assessment missing |
+| Scope discipline (10) | 10 | Backend-only. Frontend deferred to P5b. No speculative features. |

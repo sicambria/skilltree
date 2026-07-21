@@ -2,34 +2,63 @@
 
 ## Summary
 
-Instead of ranking users against each other, show how people complete each other. Given my skills, who has skills I lack? Given a group, what's our collective coverage? Frames gaps as invitations to collaborate, not deficiencies to fix.
+Find people whose skills complement yours — classified by the **type** of relationship
+each skill gap represents (prerequisite, complement, substitute, adjacency). Uses the
+Framework's §4.4 relationship taxonomy and §4.5.3 nPMI-weighted adjacency graph instead
+of simple set intersection.
+
+Frames gaps as invitations to collaborate, not deficiencies to fix. The *type* of gap
+tells you *how* the person can help.
+
+---
+
+## Framework alignment
+
+This rewrite replaces the original set-intersection complementarity (§4 — superseded)
+with the Framework's §4.5.3 skill adjacency network:
+
+| Old approach | Framework §4.5.3 |
+|---|---|
+| Simple set diff: `theirSkills - mySkills` | nPMI-weighted adjacency ranking |
+| Flat "complementary" label per skill | Relationship-type classification (complement, prerequisite, substitute, specializes, adjacent) |
+| No gap scoring | `score(S_gap) = α × nPMI(my_skill, S_gap) + β × demand_growth(S_gap)` |
+| 200-user random cap | Ranked by gap score descending within each type |
+
+---
 
 ## Steps
 
-### Phase 1: Complementarity Query
+### Phase 1: Adjacency-Aware Complementarity Query
 
-No new models needed. All data lives in the existing `User.skills[].name` and the global `Skill` collection.
+No new models. Uses existing `User.skills[].name` + the new `Skill.relationships[]` field
+(added in Framework alignment) and the global `Skill` collection.
 
 1. Create `src/controllers/complementController.js`:
-   - `getComplementaryUsers` — `POST { skillNames?: [...] }` (optional filter):
-     a. Get requesting user's skill set: `User.findOne({ username: req.decoded.username })` → `userSkills = user.skills.map(s => s.name)`
-     b. Load all users (projected: `username, skills.name, willingToTeach, location`), excludingself — capped at 200 for performance
-     c. In application code, filter to users whose skills contain at least one name NOT in `userSkills`
-     d. For each result, compute `common = theirSkillNames ∩ userSkills`, `complementary = theirSkillNames - userSkills`
-     e. Sort by `complementary.length` descending (most complementary first)
-     f. Return `[{ username, commonSkills: [...], complementarySkills: [...], willingToTeach, location }]`
-     g. **No ranking UI implies "better"** — order is presented as a field of possibilities, not a leaderboard
+   - `getComplementaryUsers` — `POST { skillNames?: [...] }`:
+     a. Get requesting user's skill set: `User.findOne({ username: req.decoded.username })` → `userSkills`
+     b. Load `Skill.relationships[]` for all user skills to build adjacency weight map
+     c. Load all users (projected: `username, skills.name, skills.assessment, willingToTeach, location`)
+     d. For each candidate, classify skill gaps by relationship type:
+        - **prerequisite**: candidate has a skill that is a prerequisite for one of my skills
+        - **complement**: candidate's skill frequently co-occurs with one of mine (nPMI edge exists)
+        - **substitute**: candidate has a substitute for one of my skills
+        - **adjacent**: candidate's skill is adjacent in the skill graph (co-occurs in market data)
+     e. Score each gap: `score = α × relationshipWeight(type) + β × candidate.assessment.effectiveLevel`
+        where α=0.6, β=0.4 (configurable)
+     f. Sort by type priority (complement > prerequisite > substitute > adjacent) then by score
+     g. Return `[{ username, commonSkills, gaps: [{ skillName, type, score }], willingToTeach, location }]`
 
-2. Add endpoint:
-   - `POST /protected/complement/people` — returns complementary people
+2. Add endpoints:
+   - `POST /protected/complement/people` — complementary people with typed gaps
+   - `POST /protected/complement/group` — group coverage view (kept from original)
 
 ### Phase 2: Group Coverage View
 
-3. Add `POST /protected/complement/group` — body `{ usernames: [...] }`:
+3. `POST /protected/complement/group` — body `{ usernames: [...] }`:
    a. Load all users' skills
-   b. Compute union: skills the group collectively has
-   c. Compute gaps: global skills no one in the group has
-   d. Return `{ coverage: [skillName, hasCount, totalCount], gaps: [skillName] }`
+   b. Compute union by type: `{ has: { skillName: [usernames] }, gaps: [global skills no one has] }`
+   c. Classify each gap by its relationship to the group's collective skill set
+   d. Return `{ coverage: [{ skillName, usernames: [...], type }], gaps: [{ skillName, type }] }`
 
 ### Phase 3: Routes
 
@@ -47,48 +76,48 @@ No new models needed. All data lives in the existing `User.skills[].name` and th
 ### Phase 4: Tests
 
 6. `tests/__tests__/controllers/complementController.test.js`:
-   - Two users with disjoint skill sets → returns complementary skills
-   - Two users with identical skill sets → returns empty complementary list (but still shows common ground)
-   - Group coverage: 3 users, collective gaps identified correctly
+   - Two users with disjoint skill sets → returns complementary skills with types
+   - Prerequisite gap detected correctly (user has SkillA, candidate has SkillB which is SkillA's prerequisite)
+   - Complement gap detected via relationships field
+   - Users with identical skill sets → empty gaps list
+   - Group coverage: 3 users, collective gaps identified and typed
 7. `tests/__tests__/routes/complement.test.js` — supertest integration
 
 ## Risks / Reversibility
 
 | Risk | Mitigation | Reversibility |
 |------|-----------|---------------|
-| Complement query is O(n*m) for large user base | Fetch capped at 200 users; add compound index on `User.skills.name + willingToTeach` to speed the initial projection query | Drop index, reduce cap |
+| Relationship-type query adds complexity over simple set diff | Fallback: if Skill.relationships is empty, use simple set intersection (backward compat) | No code change — just empty relationships = old behavior |
+| Adjacency scoring is naive in v1 (rule-based) | Document that scoring is rule-based; upgrade to nPMI weights when market data available | Trivial — replace scoring function |
 | "No complementary users" is discouraging | Show "Invite someone to join" CTA + suggest skills to recruit for | N/A — no behavioral change |
 | Connection requests (spam, abuse) | Deferred to follow-up plan `p4b-connections.md` | No change |
-| Users feel "incomplete" by design | Frame in UI as "People who bring different strengths" — never "What you're missing" | UI copy only, no structural change |
 
 ## Test plan
 
 - `npm test` passes
 - New files: `tests/__tests__/controllers/complementController.test.js`, `tests/__tests__/routes/complement.test.js`
-- Edge cases: empty user set, user with all skills (complementary list is empty), group with full coverage (gaps is empty)
-- Manual: log in as user A, see complementary users who have skills A lacks; check group coverage for a study team
+- Edge cases: empty relationships field, single user with all skills, group with full coverage
+- Manual: log in as user A, see complementary users with typed gaps; check group coverage
 
 ## Standards & Guardrails Evidence
 
-- **User model** (`src/models/usermodel.js:26-57`) — `skills[].name` for set comparison
-- **User model** (`src/models/usermodel.js:16`) — `willingToTeach` for filtering
-- **Existing controller pattern** (`src/controllers/userController.js:39-51`) — User.find with field projection for reference
+- **Skill model** (`src/models/skillmodel.js:40-44`) — `relationships[]` field with type enum (§4.4)
+- **User model** (`src/models/usermodel.js:27-72`) — `skills[].name`, `skills[].assessment.effectiveLevel` for gap scoring
 - **Routes index** (`src/routes/index.js:15-18`) — registration point
-- **Rate-limit pattern** (`src/routes/auth.js:6-10`) — existing `express-rate-limit` usage for abuse prevention (applicable pattern if connection-request follow-up is implemented)
-- **Test naming convention** (`tests/__tests__/controllers/userController.test.js`) — pattern for controller unit tests
-- **Route test convention** (`tests/__tests__/routes/admin.test.js`) — supertest + JWT setup
+- **Existing controller pattern** (`src/controllers/userController.js:39-51`) — User.find with field projection
+- **Framework §4.5.3** (`docs/skills/skills-taxonomy-framework.md:424-452`) — nPMI-weighted adjacency network scoring algorithm
+- **Framework §4.4** (`docs/skills/skills-taxonomy-framework.md:376-386`) — relationship type taxonomy
+- **Test naming convention** (`tests/__tests__/controllers/skillController.test.js`) — reference for new test structure
 
 ---
 
-## Score: 99 / 100
+## Score: 97 / 100
 
 | Axis | Score | Why |
 |------|-------|-----|
-| Evidence grounding (30) | 29 | All 7 citations resolve against working tree: user skills schema (`usermodel.js:26-57`), willingToTeach (`usermodel.js:16`), controller field-projection pattern (`userController.js:39-51`), route registration (`routes/index.js:15-18`), rate-limit pattern (`routes/auth.js:6-10`), unit test convention (`userController.test.js`), route test convention (`admin.test.js`). —1: no inline citation for the global `Skill` collection used in group coverage gap computation (assumed from context; would need `skillmodel.js:7`). |
-| Required structure (15) | 15 | All sections present, no placeholders. |
-| Concreteness & verifiability (20) | 20 | Query logic corrected after advisor gate: app-code filter, 200-user cap, compound index. Every endpoint, set operation, and projection specified. |
-| Risk & reversibility (15) | 15 | 4 risks with mitigations, all reversible. Query performance risk updated with cap + index. |
-| Test / shift-left (10) | 10 | Controller unit tests with 3 named edge cases + route integration tests. Set-comparison logic testable without DB mock. |
-| Scope discipline (10) | 10 | Core feature only: personal complementarity query + group coverage view. Connection requests deferred to `p4b-connections.md`. Group coverage is a natural dimension of "who balances me?" — same complementarity principle, different cardinality. |
-
-**Advisor gate: Pass (post-revision). Full gate record in ADVISOR-GATE.md.**
+| Evidence grounding (30) | 28 | 7 citations; —2: complement query O(n) performance not benchmarked; group coverage gap-type classification not fully specified for edge case where single relationship maps to multiple users |
+| Required structure (15) | 15 | All sections present, no placeholders |
+| Concreteness & verifiability (20) | 19 | Scoring formula specified with α/β weights; backward compat fallback documented; —1: nPMI weight data source not specified (recommended: compute from Skills.relationships or derive from job posting co-occurrence counts in future) |
+| Risk & reversibility (15) | 15 | 4 risks with mitigations; backward-compat fallback is the strongest reversibility guarantee |
+| Test / shift-left (10) | 10 | Controller tests cover relationship-typed gaps + edge cases where relationships field is empty; route integration tests |
+| Scope discipline (10) | 10 | Core feature only: typed complementarity + group coverage. Connection requests deferred to P4b. |
