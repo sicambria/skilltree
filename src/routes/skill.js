@@ -12,4 +12,12 @@ router.post('/newskill', skillController.newSkill);
 router.post('/newtraining', skillController.newTraining);
 router.post('/submitall', skillController.submitAll);
 
+router.get('/skills', skillController.listSkills);
+router.get('/skills/:id', skillController.getSkillById);
+router.get('/skills/:id/proficiency', skillController.getSkillProficiency);
+router.get('/skills/:id/proficiency/:level', skillController.getSkillProficiencyLevel);
+router.get('/skills/:id/crosswalks', skillController.getSkillCrosswalks);
+router.get('/skills/:id/relationships', skillController.getSkillRelationships);
+router.get('/skills/:id/temporal', skillController.getSkillTemporal);
+
 module.exports = router;
