@@ -8,6 +8,7 @@
 | [P2: Collaborative Progress Tracking](p2-collaborative-progress-tracking.md) | **High** | Skill-history timeline, collaborative goals, joint learning plans. No streaks or leaderboards. | 100/100 | Advisor passed |
 | [P3: Mentor Recommendations](p3-mentor-recommendations.md) | **Medium** | "What should I learn next?" — mentors, paths, trainings based on skill gaps and goals. | 100/100 | Advisor passed |
 | [P4: Skill Complementarity](p4-skill-complementarity.md) | **Medium** | "Who balances me?" — find people with skills you lack; group coverage view. | 99/100 | Advisor passed (revised) |
+| [P5: Personal Learning Plan](p5-personal-learning-plan.md) | **High** | 3-month / 1-year / 3-year nested learning plan with cascade, progress tracking. Companion to P2. | 99/100 | Advisor passed |
 
 ## Deferred Follow-ups
 

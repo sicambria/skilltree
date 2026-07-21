@@ -84,5 +84,6 @@ Gate performed after all 4 plans scored > 90 on self-rubric and scope-creep phas
 | P2: Progress Tracking | 95 → **100** | 100 | **Pass** — added test naming convention citations, fixed scoring section. |
 | P3: Mentor Recommendations | 96 → **100** | 100 | **Pass** — added inline Skill model citation with line numbers, added test convention citation, fixed scoring section. |
 | P4: Skill Complementarity | 96 → **99** | 99 | **Pass after revision** — `$nin` query fixed to app-code filter; rate-limit config confirmed at `routes/auth.js:6-10`; group coverage justified as in-scope. |
+| [P5: Personal Learning Plan](p5-personal-learning-plan.md) | 97 → **99** | 99 | **Pass** — scope-trimmed (frontend deferred to p5b). No material gaps found. |
 
 P4 query logic was corrected from `$nin` to app-code filter. All plans now ≥ 99 on final scoring.
