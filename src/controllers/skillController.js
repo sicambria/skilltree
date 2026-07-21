@@ -148,8 +148,13 @@ exports.newSkill = async (req, res) => {
             parentNames.push(data.parents[i].name);
         }
 
+        const slug = data.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        const skillId = data.skillId || `skilltree:skill:${slug}`;
+        const reusability = data.reusability || 'cross-sectoral';
+
         user.skills.push({
             name: data.name,
+            skillId: skillId,
             description: data.description,
             descriptionWikipediaURL: data.descriptionWikipediaURL,
             skillIcon: data.skillIcon,
@@ -157,8 +162,12 @@ exports.newSkill = async (req, res) => {
             achievedPoint: 0,
             maxPoint: data.maxPoint,
             pointDescription: data.pointDescription,
+            reusability: reusability,
             parents: parentNames,
-            trainings: data.trainings
+            relationships: data.relationships || [],
+            crosswalks: data.crosswalks || {},
+            temporal: data.temporal || {},
+            trainings: data.trainings || []
         });
 
         await user.save();
@@ -174,15 +183,20 @@ exports.newSkill = async (req, res) => {
         const apprSkill = new ApprovableSkill({
             username: user.username,
             name: data.name,
+            skillId: skillId,
             description: data.description,
             descriptionWikipediaURL: data.descriptionWikipediaURL,
             skillIcon: data.skillIcon,
             categoryName: data.categoryName,
             maxPoint: data.maxPoint,
             pointDescription: data.pointDescription,
+            reusability: reusability,
             parents: parentNames,
-            children: data.children,
-            trainings: data.trainings
+            children: data.children || [],
+            relationships: data.relationships || [],
+            crosswalks: data.crosswalks || {},
+            temporal: data.temporal || {},
+            trainings: data.trainings || []
         });
         await apprSkill.save();
 

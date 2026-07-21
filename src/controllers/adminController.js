@@ -21,18 +21,23 @@ exports.approveSkill = async (req, res) => {
 
         const newGlobalSkill = new Skill({
             name: skillforapproval.name,
+            skillId: skillforapproval.skillId,
             categoryName: skillforapproval.categoryName,
             skillIcon: skillforapproval.skillIcon,
             description: skillforapproval.description,
             descriptionWikipediaURL: skillforapproval.descriptionWikipediaURL,
             pointDescription: skillforapproval.pointDescription,
             maxPoint: skillforapproval.maxPoint,
+            reusability: skillforapproval.reusability,
             parents: skillforapproval.parent,
             children: [{
                 name: skillforapproval.name,
                 minPoint: skillforapproval.minPoint,
                 recommended: skillforapproval.recommended
             }],
+            relationships: skillforapproval.relationships || [],
+            crosswalks: skillforapproval.crosswalks || {},
+            temporal: skillforapproval.temporal || {},
             trainings: skillforapproval.trainings || (skillforapproval.training ? [{
                 name: skillforapproval.training.name,
                 level: skillforapproval.training.level,
@@ -56,17 +61,22 @@ exports.approveSkill = async (req, res) => {
                 const depTrainings = dependency[i].trainings || (dependency[i].training ? [dependency[i].training] : []);
                 const depSkill = new Skill({
                     name: dependency[i].name,
+                    skillId: dependency[i].skillId,
                     categoryName: dependency[i].categoryName,
                     skillIcon: dependency[i].skillIcon,
                     description: dependency[i].description,
                     pointDescription: dependency[i].pointDescription,
                     maxPoint: dependency[i].maxPoint,
+                    reusability: dependency[i].reusability,
                     parents: dependency[i].parent,
                     children: [{
                         name: dependency[i].name,
                         minPoint: dependency[i].minPoint,
                         recommended: dependency[i].recommended
                     }],
+                    relationships: dependency[i].relationships || [],
+                    crosswalks: dependency[i].crosswalks || {},
+                    temporal: dependency[i].temporal || {},
                     trainings: depTrainings
                 });
                 await depSkill.save();
@@ -133,14 +143,19 @@ exports.editSkill = async (req, res) => {
 
         // Update skill data
         skill.name = data.name;
+        skill.skillId = data.skillId;
         skill.description = data.description;
         skill.descriptionWikipediaURL = data.descriptionWikipediaURL;
         skill.skillIcon = data.skillIcon;
         skill.categoryName = data.categoryName;
         skill.maxPoint = data.maxPoint;
+        skill.reusability = data.reusability;
         skill.pointDescription = data.pointDescription;
         skill.parents = data.parents.map(obj => obj.name);
         skill.children = data.children;
+        skill.relationships = data.relationships || [];
+        skill.crosswalks = data.crosswalks || {};
+        skill.temporal = data.temporal || {};
         skill.trainings = data.trainings;
 
         if (data.maxPoint < skill.achievedPoint) skill.achievedPoint = data.maxPoint;
@@ -193,9 +208,13 @@ exports.editSkill = async (req, res) => {
             userSkill.skillIcon = data.skillIcon;
             userSkill.categoryName = data.categoryName;
             userSkill.maxPoint = data.maxPoint;
+            userSkill.reusability = data.reusability;
             userSkill.pointDescription = data.pointDescription;
             userSkill.parents = parentNames;
             userSkill.children = data.children;
+            userSkill.relationships = data.relationships || [];
+            userSkill.crosswalks = data.crosswalks || {};
+            userSkill.temporal = data.temporal || {};
             userSkill.trainings = data.trainings;
 
             if (data.maxPoint < userSkill.achievedPoint) userSkill.achievedPoint = data.maxPoint;
@@ -353,16 +372,22 @@ exports.wikidataImport = async (req, res) => {
                     continue;
                 }
 
+                const slug = details.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
                 const newSkill = new Skill({
                     name: details.name,
+                    skillId: `skilltree:skill:${slug}`,
                     categoryName: categoryName || 'Uncategorized',
                     description: details.description,
                     descriptionWikipediaURL: details.wikipediaURL,
-                    skillIcon: 'pictures/icons/default.png', // Placeholder
+                    skillIcon: 'pictures/icons/default.png',
                     maxPoint: 5,
+                    reusability: 'cross-sectoral',
                     pointDescription: ['Novice', 'Beginner', 'Intermediate', 'Advanced', 'Expert'],
                     parents: [],
                     children: [],
+                    relationships: [],
+                    crosswalks: {},
+                    temporal: { stage: 'emerging' },
                     trainings: []
                 });
 
