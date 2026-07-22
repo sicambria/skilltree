@@ -385,3 +385,28 @@ a {
 .hide-on-expand[aria-expanded=true]  {
     display: none;
 }
+
+/* community modal sizing */
+.modal-content.modal-lg {
+    width: 95%;
+    max-width: 900px;
+}
+
+.feed-comments {
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.feed-comment {
+    border-bottom: 1px solid #eee;
+}
+
+.feed-comment:last-child {
+    border-bottom: none;
+}
+
+.goal-edit-form {
+    border-top: 1px solid #dee2e6;
+    padding-top: 6px;
+}

@@ -76,6 +76,18 @@
             <a class="dropdown-item" onclick = "editMyTree()">Edit My SkillTrees</a>
           </div>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Community
+          </a>
+          <div class="dropdown-menu" aria-labelledby="communityDropdown">
+            <a class="dropdown-item" onclick="openFeed()">Feed</a>
+            <a class="dropdown-item" onclick="openGoals()">Goals</a>
+            <a class="dropdown-item" onclick="openRecommendations()">Recommendations</a>
+            <a class="dropdown-item" onclick="openComplementary()">Complementary People</a>
+            <a class="dropdown-item" onclick="openPlan()">Learning Plan</a>
+          </div>
+        </li>
         <li class="nav-item dropdown" id = "openAdminMenu" style = "display: none;">
           <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -1046,6 +1058,172 @@
   </div>
   <!-- end of Export/Import modal -->
 
+  <!-- start of community modals -->
+
+  <!-- Feed modal -->
+  <div class="modal" id="feedModal">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <span class="modalClose" onclick="closeCommunityModal('feedModal')">&times;</span>
+        <h2>Community Feed</h2>
+      </div>
+      <div class="modal-body">
+        <div id="feedPostList"></div>
+        <hr>
+        <h5>Create Post</h5>
+        <div class="form-group">
+          <textarea class="form-control" id="feedPostBody" rows="2" placeholder="What's on your mind?"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" id="feedPostSkill" placeholder="Skill name (optional)">
+          </div>
+          <div class="col">
+            <select class="form-control" id="feedPostType">
+              <option value="update">Update</option>
+              <option value="milestone">Milestone</option>
+              <option value="question">Question</option>
+              <option value="resource">Resource</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary mt-2" onclick="createPost(document.getElementById('feedPostType').value)">Post</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Goals modal -->
+  <div class="modal" id="goalsModal">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <span class="modalClose" onclick="closeCommunityModal('goalsModal')">&times;</span>
+        <h2>Goals</h2>
+      </div>
+      <div class="modal-body">
+        <div id="goalsList"></div>
+        <hr>
+        <h5>New Goal</h5>
+        <div class="form-group">
+          <input type="text" class="form-control" id="goalTitle" placeholder="Goal title">
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" id="goalSkill" placeholder="Skill name">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="goalTargetLevel" placeholder="Target level" min="1">
+          </div>
+          <div class="col">
+            <input type="date" class="form-control" id="goalTargetDate">
+          </div>
+        </div>
+        <button class="btn btn-primary mt-2" onclick="createGoal()">Create Goal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- History modal -->
+  <div class="modal" id="historyModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modalClose" onclick="closeCommunityModal('historyModal')">&times;</span>
+        <h2 id="historyTitle">Skill History</h2>
+      </div>
+      <div class="modal-body" id="historyContent">
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommendations modal -->
+  <div class="modal" id="recommendModal">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <span class="modalClose" onclick="closeCommunityModal('recommendModal')">&times;</span>
+        <h2>Recommendations</h2>
+      </div>
+      <div class="modal-body">
+        <h5>Mentors</h5>
+        <div class="input-group input-group-sm mb-2">
+          <input type="text" class="form-control" id="mentorSearchSkill" placeholder="Search mentors by skill">
+          <div class="input-group-append">
+            <button class="btn btn-outline-primary" onclick="searchMentors()">Search</button>
+          </div>
+        </div>
+        <div id="recommendMentors"></div>
+        <hr>
+        <h5>Suggested Paths</h5>
+        <div id="recommendTrees"></div>
+        <hr>
+        <h5>Suggested Trainings</h5>
+        <div id="recommendTrainings"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Complementarity modal -->
+  <div class="modal" id="complementModal">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <span class="modalClose" onclick="closeCommunityModal('complementModal')">&times;</span>
+        <h2>Complementary People</h2>
+      </div>
+      <div class="modal-body">
+        <div id="complementList"></div>
+        <hr>
+        <button class="btn btn-outline-info" onclick="openGroupCoverage()">Group Coverage</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Group Coverage modal -->
+  <div class="modal" id="groupCoverageModal">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <span class="modalClose" onclick="closeCommunityModal('groupCoverageModal')">&times;</span>
+        <h2>Group Skill Coverage</h2>
+      </div>
+      <div class="modal-body" id="groupCoverageContent">
+      </div>
+    </div>
+  </div>
+
+  <!-- Learning Plan modal -->
+  <div class="modal" id="planModal">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <span class="modalClose" onclick="closeCommunityModal('planModal')">&times;</span>
+        <h2>Learning Plan</h2>
+      </div>
+      <div class="modal-body">
+        <div id="planTabContent"></div>
+        <div id="planHorizonEditForm" style="display:none" class="mt-3 p-3 border rounded">
+          <h6>Edit Horizon Skills</h6>
+          <div class="form-group">
+            <input type="text" class="form-control" id="planHorizonSkills" placeholder="Enter skill names, comma-separated">
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="savePlanHorizon()">Save</button>
+          <button class="btn btn-secondary btn-sm" onclick="document.getElementById('planHorizonEditForm').style.display='none'">Cancel</button>
+        </div>
+        <hr>
+        <button class="btn btn-outline-primary" onclick="openPlanProgress()">View Progress</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Plan Progress modal -->
+  <div class="modal" id="planProgressModal">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <span class="modalClose" onclick="closeCommunityModal('planProgressModal')">&times;</span>
+        <h2>Plan Progress</h2>
+      </div>
+      <div class="modal-body" id="planProgressContent">
+      </div>
+    </div>
+  </div>
+
+  <!-- end of community modals -->
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -1063,5 +1241,6 @@
   <script src = "src/init.js"></script>
   <script src = "src/display.js"></script>
   <script src = "chartandtree.js"></script>
+  <script src = "src/community.js"></script>
 </body>
 </html>
