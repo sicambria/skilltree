@@ -10,7 +10,7 @@
       "Mastering process tools; designing meetings; skilled at using the right decision making method, achieving consensus, and getting true closure; handling feedback activities and conducting process checks; using exit surveys; good at managing meetings in an effective manner; able to help a group set goals and objectives that are measurable; skilled at checking assumptions and challenging ideas.",
       "Skilled at managing conflict and making immediate interventions; able to deal with resistance and personal attacks; making design changes on the spot; sizing up a group and using the right strategies for its development stage; managing survey feedback exercises; able to design and conduct interviews and focus groups, design and implement surveys; consolidating ideas from a mass of information into coherent summaries.",
       "Design and implement process interventions in response to complex organisational issues; use tools to promote process improvement, customer intimacy, and overall organisational effectiveness; able to support teams in the various stages of team development.",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 5 (World Class) proficiency in Coaching"
     ],
     "maxPoint": 5,
     "parents": [],
@@ -42,11 +42,11 @@
     "description": "Knowledge of how businesses make money, what customers want, and what problems there are in particular areas of business:",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Commercial Awareness",
+      "Level 2 (Basic) proficiency in Commercial Awareness",
+      "Level 3 (Intermediate) proficiency in Commercial Awareness",
+      "Level 4 (Advanced) proficiency in Commercial Awareness",
+      "Level 5 (World Class) proficiency in Commercial Awareness"
     ],
     "maxPoint": 5,
     "parents": [],
@@ -82,7 +82,7 @@
       " Active listeningSeveral strategies help with distinguishing who has a problem with a behavior and who takes ownership. One of those strategies is active listening. Active listening is attending carefully to all aspects of what a student says and attempting to understand or empathize as much as one can (Seifert & Sutton). Active listening consists of continually asking questions in order to test your understanding. It also requires giving encouragement to the student by letting them tell their story, and paraphrasing what the student says so you can form an unbiased conclusion. It is key not to move too quickly at solving the problem by just giving advice, instructions, or scolding. Responding too soon with solutions can shut down the student’s communication and leave you with inaccurate impressions of the source or nature of the problem (Seifert & Sutton)",
       " After getting each party’s viewpoint on the conflict, the next step is to get each to identify how the situation could be changed. Again, question the parties to solicit their ideas: “How can you make things better between you?” ",
       " Identify solutions both disputants can support. You are listening for the most acceptable course of action. Point out the merits of various ideas, not only from each other’s perspective, but in terms of the benefits to the organization.",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 5 (World Class) proficiency in Conflict resolution"
     ],
     "maxPoint": 5,
     "parents": [],
@@ -114,27 +114,16 @@
     "description": "A process where an individual who is agreed upon and acceptable to all of a group's members intervenes to assist the group in solving problems and making decisions to improve productivity and efficiency but who has no authority to make decisions.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Facilitation_(business)",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Facilitation",
+      "Level 2 (Basic) proficiency in Facilitation",
+      "Level 3 (Intermediate) proficiency in Facilitation",
+      "Level 4 (Advanced) proficiency in Facilitation",
+      "Level 5 (World Class) proficiency in Facilitation"
     ],
     "maxPoint": 5,
     "parents": [],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},
@@ -150,27 +139,16 @@
     "description": "Trust is one of the keyfactors to be considered. Trust forms the basis of all relationships and interactions. It is just as important in professional relationships as it is in personal ones. Without each party trusting one another the ability to come to an agreement or consensus on an issue is always going to be compromised. Some benefits of trust: Increased productivity amonst staff Improved morale amongst employees and staff The ability to work more effectively as a team, rather than individuals Reduce the time to make and discuss key issues as each individual trusts in the judgement and expertise of their colleagues.",
     "descriptionWikipediaURL": "https://www.forbes.com/sites/forbescoachescouncil/2018/01/04/five-simple-tips-for-building-trust-as-a-leader/#6e209e3459bb",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Building Trust",
+      "Level 2 (Basic) proficiency in Building Trust",
+      "Level 3 (Intermediate) proficiency in Building Trust",
+      "Level 4 (Advanced) proficiency in Building Trust",
+      "Level 5 (World Class) proficiency in Building Trust"
     ],
     "maxPoint": 5,
     "parents": [],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},
@@ -186,27 +164,16 @@
     "description": "Creating a strong organisational culture is vital for an HR Consultant. The company culture will narrate the direction of your organisation, as it will heavily influence how the people behave and perform. Aspects of creating a great company culture include:– Understanding and meeting the needs of employees – Implementing professional development plans that increase skillsets while helping your people feel valued – Helping to the people to really feel connected with your company’s values and goals",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Organizational_culture",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Creating Company Culture",
+      "Level 2 (Basic) proficiency in Creating Company Culture",
+      "Level 3 (Intermediate) proficiency in Creating Company Culture",
+      "Level 4 (Advanced) proficiency in Creating Company Culture",
+      "Level 5 (World Class) proficiency in Creating Company Culture"
     ],
     "maxPoint": 5,
     "parents": [],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},
@@ -222,27 +189,16 @@
     "description": "Listening is an essential part of spoken communication. Speaking and listening go together and oral communication cannot be effective without proper listening. Poor listening defeats the very purpose of spoken words. Listening is a deliberate effort and is much more than hearing. It requires getting the full meaning of what is being said. Listening effectively takes skill, self-motivation, and practice. Effective listening means concentrating on what the speaker says rather than on how it is said. Lack of attention and respectful listening can be costly - leading to mistakes, poor service, misaligned goals, wasted time and lack of teamwork.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Active_listening",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Effective Listening",
+      "Level 2 (Basic) proficiency in Effective Listening",
+      "Level 3 (Intermediate) proficiency in Effective Listening",
+      "Level 4 (Advanced) proficiency in Effective Listening",
+      "Level 5 (World Class) proficiency in Effective Listening"
     ],
     "maxPoint": 5,
     "parents": [],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},
@@ -258,27 +214,16 @@
     "description": "Keeping yourself actively involved in your company’s day-to-day affairs. Making yourself accessible and approachable to the people you’re representing will give you a level of company knowledge that cannot be found on monthly performance reports or attendance sheets.",
     "descriptionWikipediaURL": "https://www.lollydaskal.com/leadership/leadership-be-approachable/",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Being Approachable & Accessible",
+      "Level 2 (Basic) proficiency in Being Approachable & Accessible",
+      "Level 3 (Intermediate) proficiency in Being Approachable & Accessible",
+      "Level 4 (Advanced) proficiency in Being Approachable & Accessible",
+      "Level 5 (World Class) proficiency in Being Approachable & Accessible"
     ],
     "maxPoint": 5,
     "parents": [],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},
@@ -294,29 +239,18 @@
     "description": "Manages change in a systematic approach both from an organizational and an individual level. Ability to create the structure to execute and sustain change through clear design, aligned roles  relationships and governance. Applies structured approaches to shift individuals, teams, and organizations from a current state to a desired state.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Change_management",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Change Management",
+      "Level 2 (Basic) proficiency in Change Management",
+      "Level 3 (Intermediate) proficiency in Change Management",
+      "Level 4 (Advanced) proficiency in Change Management",
+      "Level 5 (World Class) proficiency in Change Management"
     ],
     "maxPoint": 5,
     "parents": [
       "Soft Skills"
     ],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},
@@ -332,29 +266,18 @@
     "description": "Using knowledge of the Nokia business model and processes, the external operating environment and domain expertise to improve human capital and business outcomes. Asking the  right developmental questions.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Consultant",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Consulting",
+      "Level 2 (Basic) proficiency in Consulting",
+      "Level 3 (Intermediate) proficiency in Consulting",
+      "Level 4 (Advanced) proficiency in Consulting",
+      "Level 5 (World Class) proficiency in Consulting"
     ],
     "maxPoint": 5,
     "parents": [
       "Soft Skills"
     ],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},

@@ -21,8 +21,7 @@ describe('seed.js', () => {
         expect(content).toContain('Tree.deleteMany');
         expect(content).toContain('User.deleteMany');
         expect(content).toContain('insertMany');
-        expect(content).toContain('security.hashPassword');
-        expect(content).toContain("username: 'admin'");
+        expect(content).toContain('admin/setadmin');
         expect(content).toContain('process.exit(0)');
         expect(content).toContain('process.exit(1)');
     });

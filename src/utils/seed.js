@@ -52,18 +52,8 @@ const seed = async () => {
         console.log(`   + Inserted ${skillInsert.length} skills`);
         console.log(`   + Inserted ${treeInsert.length} trees`);
 
-        // Create default admin user
-        console.log('👤 Creating default admin user...');
-        const adminUser = new User({
-            username: 'admin',
-            admin: true,
-            email: 'admin@skilltree.local',
-            hashData: security.hashPassword('admin'),
-            categories: categories
-        });
-        await adminUser.save();
-        console.log('   + Created user: admin / admin');
-
+        // Admin user creation removed — use registration + manual promotion via /admin/setadmin
+        console.log('   ~ Default admin user not created. Register first user, then promote via admin/setadmin.');
         console.log('--------------------------------------------------');
         console.log('✨ Seeding completed successfully!');
         console.log('--------------------------------------------------');

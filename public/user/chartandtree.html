@@ -55,25 +55,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="intelligenceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Intelligence
+          <a class="nav-link dropdown-toggle" id="discoverDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Discover
           </a>
-          <div class="dropdown-menu" aria-labelledby="intelligenceDropdown">
+          <div class="dropdown-menu" aria-labelledby="discoverDropdown">
+            <a class="dropdown-item" onclick="openBrowseSkills()">Browse Skills</a>
+            <a class="dropdown-item" onclick="openBrowseTrees()">Browse Trees</a>
+            <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/user/graph.html">Global Graph View</a>
-            <a class="dropdown-item" onclick="wikidataImport()">Wikidata Skill Importer</a>
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Editor
+          <a class="nav-link dropdown-toggle"  id="myGrowthDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Growth
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" onclick = "createSkill()">Create Skill</a>
-            <a class="dropdown-item" onclick = "editMySkill()">Edit My Skills</a>
-            <a class="dropdown-item" onclick = "addTraining()">Add Training Link</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" onclick = "createTree()" id = "openCreator">Create SkillTree</a>
-            <a class="dropdown-item" onclick = "editMyTree()">Edit My SkillTrees</a>
+          <div class="dropdown-menu" aria-labelledby="myGrowthDropdown">
+            <a class="dropdown-item" onclick="editMySkill()">My Skills</a>
+            <a class="dropdown-item" onclick="openPlan()">Learning Plan</a>
+            <a class="dropdown-item" onclick="openGoals()">Goals</a>
+            <a class="dropdown-item" onclick="openHistory()">Progress</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -82,19 +82,29 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="communityDropdown">
             <a class="dropdown-item" onclick="openFeed()">Feed</a>
-            <a class="dropdown-item" onclick="openGoals()">Goals</a>
             <a class="dropdown-item" onclick="openRecommendations()">Recommendations</a>
             <a class="dropdown-item" onclick="openComplementary()">Complementary People</a>
-            <a class="dropdown-item" onclick="openPlan()">Learning Plan</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="contributeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Contribute
+          </a>
+          <div class="dropdown-menu" aria-labelledby="contributeDropdown">
+            <a class="dropdown-item" onclick="createSkill()">Create Skill</a>
+            <a class="dropdown-item" onclick="createTree()" id="openCreator">Create Tree</a>
+            <a class="dropdown-item" onclick="addTraining()">Add Training</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" onclick="wikidataImport()">Wikidata Import</a>
           </div>
         </li>
         <li class="nav-item dropdown" id = "openAdminMenu" style = "display: none;">
           <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" onclick = "editSkill()">Edit Skill</a>
-              <a class="dropdown-item" onclick = "editTree()">Edit SkillTree</a>
+              <a class="dropdown-item" onclick = "editTree()">Edit Tree</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" onclick = "approveTrees()">Approve SkillTrees</a>
+              <a class="dropdown-item" onclick = "approveTrees()">Approve Trees</a>
               <a class="dropdown-item" onclick = "approveSkills()">Approve Skills</a>
               <a class="dropdown-item" onclick = "approveTrainings()">Approve Trainings</a>
               <div class="dropdown-divider"></div>
@@ -104,21 +114,20 @@
               <a class="dropdown-item" onclick = "setAdmin()">Admin rights</a>
           </div>
         </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" onclick="logout()"><i class="fas fa-power-off"></i></a>
-        </li> -->
       </ul>
 
 
     </div>
 
     <a class="nav-link" href="#advSearch" data-toggle="collapse" data-target="#advSearch" role="button" aria-haspopup="true" aria-expanded="false">
-      Search
+      <i class="fas fa-search"></i>
     </a>
     <a id = "submitBtn" class = "nav-link" role = "button" onclick = "submit()">
       Saved
     </a>
-
+    <a class="nav-link" id="helpBtn" role="button" onclick="openHelp()">
+      <i class="fas fa-question-circle"></i>
+    </a>
     <a class="nav-link" href="#userprofile" data-toggle="collapse" data-target="#userprofile" role="button" aria-haspopup="true" aria-expanded="false">
       <img src="./pictures/profile.png">
     </a>
@@ -250,146 +259,15 @@
           <!-- end of personal-tab content -->
           <!-- requests-offers-tab content -->
           <div class="tab-panel fade" id="requests-offers" role="tabpanel" aria-labelledby="requests-offers-tab">
-            <form>
-                <h3>My requested trainings</h3>
-                 <p>I requested trainings for this skills:</p>
-                 <div class="row">
-                    <div class="col-sm-3">
-                      <div class="card border-warning" style="width: fit-content; border-width: 5px;">
-                        <a href="" role="button"><img src="pictures/icons/HTML.png"></a>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="card" style="width: fit-content;">
-                         <a href="" role="button"><img src="pictures/icons/Scrum.png" style="opacity: 0.2;"></a>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="card" style="width: fit-content;">
-                         <a href="" role="button"><img src="pictures/icons/JavaScript.png" style="opacity: 0.2;"></a>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="card border-warning" style="width: fit-content; border-width: 5px;">
-                         <a href="" role="button"><img src="pictures/icons/CSS.png"></a>
-                      </div>
-                    </div>
-                 </div>
-                 <div class="row">
-                    <div class="col-sm-3">
-                      <div class="card border-warning" style="width: fit-content; border-width: 5px;">
-                        <a href="" role="button"><img src="pictures/icons/Photoshop.png"></a>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="card border-warning" style="width: fit-content; border-width: 5px;">
-                         <a href="" role="button"><img src="pictures/icons/CSS_tools.png"></a>
-                      </div>
-                    </div>
-                    <!-- <div class="col-sm-3">
-                      <div class="card disabled" style="width: fit-content;">
-                         <a href="" role="button"><img src="pictures/icons/HTML.png" style="opacity: 0.2;"></a>
-                      </div>
-                    </div> -->
-                    <!-- <div class="col-sm-3">
-                      <div class="card disabled" style="width: fit-content;">
-                         <a href="" role="button"><img src="pictures/icons/HTML.png" style="opacity: 0.2;"></a>
-                      </div>
-                    </div>  -->
-                 </div>
-                <h3>Offering trainings</h3>
-                 <p>I offered trainings for this skills:</p>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <div class="card border-warning" style="width: fit-content; border-width: 5px;">
-                        <a href="" role="button"><img src="pictures/icons/HTML.png"></a>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="card" style="width: fit-content;">
-                         <a href="" role="button"><img src="pictures/icons/Scrum.png" style="opacity: 0.2;"></a>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="card" style="width: fit-content;">
-                         <a href="" role="button"><img src="pictures/icons/JavaScript.png" style="opacity: 0.2;"></a>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="card border-warning" style="width: fit-content; border-width: 5px;">
-                         <a href="" role="button"><img src="pictures/icons/CSS.png"></a>
-                      </div>
-                    </div>
-                 </div>
-                 <div class="row">
-                    <div class="col-sm-3">
-                      <div class="card" style="width: fit-content;">
-                        <a href="" role="button"><img src="pictures/icons/Photoshop.png" style="opacity: 0.2;"></a>
-                      </div>
-                    </div>
-                    <div class="col-sm-3">
-                      <div class="card" style="width: fit-content;">
-                         <a href="" role="button"><img src="pictures/icons/CSS_tools.png" style="opacity: 0.2;"></a>
-                      </div>
-                    </div>
-                    <!-- <div class="col-sm-3">
-                      <div class="card disabled" style="width: fit-content;">
-                         <a href="" role="button"><img src="pictures/icons/HTML.png" style="opacity: 0.2;"></a>
-                      </div>
-                    </div> -->
-                    <!-- <div class="col-sm-3">
-                      <div class="card disabled" style="width: fit-content;">
-                         <a href="" role="button"><img src="pictures/icons/HTML.png" style="opacity: 0.2;"></a>
-                      </div>
-                    </div>  -->
-                 </div>
+            <form id="requestsOffersContent">
+                <div id="requestsOffersDynamic"></div>
             </form>
           </div>
           <!-- end of requests-offers-tab content -->
           <!-- trainings-tab content -->
           <div class="tab-panel fade" id="peer-learning" role="tabpanel" aria-labelledby="peer-learning-tab">
-            <form>
-                <h3>Signed up trainings</h3>
-                 <p>I signed up for these trainings:</p>
-                 <div class="row">
-                    <div class="col-sm-3">
-                        <div class="card">
-                            <img class="card-img-top w-50 mx-auto" src="pictures/icons/HTML.png" alt="Card image cap">
-                            <div class="card-body bg-light">
-                              <p class="card-text"><i class="fas fa-user"></i> User1</hp>
-                              <p class="card-text"><i class="fas fa-calendar-alt"></i> 2019-02-10 13.30-14.00</p>
-                              <p class="card-text"><i class="fas fa-map-marker"></i> B.4.M05</p>
-                              <a href="#" class="btn btn-danger btn-sm">Cancel</a>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-3">
-                        <div class="card">
-                            <img class="card-img-top w-50 mx-auto" src="pictures/icons/CSS.png" alt="Card image cap">
-                            <div class="card-body bg-light">
-                              <p class="card-text"><i class="fas fa-user"></i> User2</hp>
-                              <p class="card-text"><i class="fas fa-calendar-alt"></i> 2019-02-10 13.30-14.00</p>
-                              <p class="card-text"><i class="fas fa-map-marker"></i> B.4.M05</p>
-                              <a href="#" class="btn btn-danger btn-sm">Cancel</a>
-                            </div>
-                        </div>
-                      </div>
-                </div>
-
-                <h3>My trainings</h3>
-                 <p>I will hold these trainings:</p>
-                <div class="row">
-                      <div class="col-sm-3">
-                        <div class="card">
-                            <img class="card-img-top w-50 mx-auto" src="pictures/icons/Adobe_Photoshop.png" alt="Card image cap">
-                            <div class="card-body bg-light">
-                              <p class="card-text"><i class="fas fa-user"></i> User1</hp>
-                              <p class="card-text"><i class="fas fa-calendar-alt"></i> 2019-02-10 13.30-14.00</p>
-                              <p class="card-text"><i class="fas fa-map-marker"></i> B.4.M05</p>
-                              <a href="#" class="btn btn-danger btn-sm">Cancel</a>
-                        </div>
-                      </div>
-                </div>
+            <form id="peerLearningContent">
+                <div id="peerLearningDynamic"></div>
             </form>
           </div>
         </div>
@@ -771,27 +649,118 @@
   </div>
   <!-- end of modal -->
 
+  <!-- Browse Skills modal -->
+  <div class="modal" id="browseSkillsModal">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <span class="modalClose" onclick="closeCommunityModal('browseSkillsModal')">&times;</span>
+        <h2>All Skills</h2>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <input type="text" class="form-control" id="browseSkillsSearch" placeholder="Filter skills..." onkeyup="filterBrowseSkills(this.value)">
+        </div>
+        <div id="browseSkillsList" class="row"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Browse Trees modal -->
+  <div class="modal" id="browseTreesModal">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <span class="modalClose" onclick="closeCommunityModal('browseTreesModal')">&times;</span>
+        <h2>All Skill Trees</h2>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <input type="text" class="form-control" id="browseTreesSearch" placeholder="Filter trees..." onkeyup="filterBrowseTrees(this.value)">
+        </div>
+        <div id="browseTreesList" class="row"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Help / Getting Started modal -->
+  <div class="modal" id="helpModal">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <span class="modalClose" onclick="closeCommunityModal('helpModal')">&times;</span>
+        <h2>Getting Started</h2>
+      </div>
+      <div class="modal-body">
+        <h5>What is SkillTree?</h5>
+        <p>SkillTree helps you map, assess, and grow your skills. Visualize your skill landscape, find learning paths, and connect with peers.</p>
+        <hr>
+        <h5>How to use this app</h5>
+        <ul>
+          <li><strong>Discover</strong> — Browse all skills and career trees to see what's available.</li>
+          <li><strong>My Growth</strong> — Rate your current skill levels, set goals, and track progress over time.</li>
+          <li><strong>Community</strong> — Connect with peers, get recommendations, and find complementary skills.</li>
+          <li><strong>Contribute</strong> — Create new skills, build skill trees, and add training resources.</li>
+        </ul>
+        <hr>
+        <h5>Skill Levels</h5>
+        <p>Skills are rated 1-5: <strong>1</strong> (Initial) → <strong>2</strong> (Basic) → <strong>3</strong> (Intermediate) → <strong>4</strong> (Advanced) → <strong>5</strong> (World Class). Rate yourself honestly and update as you grow.</p>
+        <hr>
+        <h5>Learning Plan</h5>
+        <p>Create a 3-month, 1-year, and 3-year plan. The plan auto-classifies your growth as <em>deepen</em>, <em>broaden</em>, or <em>pivot</em> based on your goals.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- start of modal -->
   <div id = "firstLogin" class = "modal">
       <div class = "modal-content">
           <div class="modal-header">
-              <h2>Set up your account</h2>
+              <h2>Welcome! Let's set up your skill journey</h2>
           </div>
           <div class="modal-body">
               <form id = "firstLoginForm" onsubmit = "return false" novalidate>
-                  <h4>Please select your focus area!</h4>
-                  <select id = "focusareasel" class = "form-control" style = "width: 200px;" onchange = "selectMainTree()">
-                      <option hidden disabled selected value> - select an option - </option>
-                      <option value = "People">People</option>
-                      <option value = "Engineering">Engineering</option>
-                      <option value = "Business">Business</option>
-                      <option value = "Communication">Communication</option>
-                      <option value = "Support functions">Support functions</option>
-                  </select>
-                  <div id = "maintreediv" style = "display: none;">
-                      <h4>Please select your main skill tree!</h4>
-                      <select id = "maintree" class = "form-control" style = "width: 200px;" required></select>
-                      <input type = "submit" value = "Save" id = "savebtn" class = "btn btn-success float-right">
+                  <div id="onboardingStep1">
+                      <h4>Step 1: Choose your focus area</h4>
+                      <p>What domain are you primarily interested in?</p>
+                      <select id = "focusareasel" class = "form-control" style = "width: 200px;" onchange = "selectMainTree()">
+                          <option hidden disabled selected value> - select an option - </option>
+                          <option value = "People">People</option>
+                          <option value = "Engineering">Engineering</option>
+                          <option value = "Business">Business</option>
+                          <option value = "Communication">Communication</option>
+                          <option value = "Support functions">Support functions</option>
+                      </select>
+                      <div id = "maintreediv" style = "display: none;">
+                          <h4>Select your starting skill tree</h4>
+                          <select id = "maintree" class = "form-control" style = "width: 200px;" required></select>
+                          <input type = "button" value = "Next" id = "onboardingNext1" class = "btn btn-primary float-right mt-3">
+                      </div>
+                  </div>
+                  <div id="onboardingStep2" style="display:none;">
+                      <h4>Step 2: Quick self-assessment</h4>
+                      <p>Rate your current level in these suggested skills (1 = Beginner, 5 = Expert)</p>
+                      <div id="onboardingSkills"></div>
+                      <input type = "button" value = "Next" id = "onboardingNext2" class = "btn btn-primary float-right mt-3">
+                  </div>
+                  <div id="onboardingStep3" style="display:none;">
+                      <h4>Step 3: Create your learning plan</h4>
+                      <p>Your skill tree suggests these skills. Add them to your 3-month, 1-year, or 3-year plan.</p>
+                      <div class="form-group">
+                          <label>3-Month Plan (Short term)</label>
+                          <input type="text" id="planShortTerm" class="form-control" placeholder="Skill names, comma-separated">
+                      </div>
+                      <div class="form-group">
+                          <label>1-Year Plan (Medium term)</label>
+                          <input type="text" id="planMediumTerm" class="form-control" placeholder="Skill names, comma-separated">
+                      </div>
+                      <div class="form-group">
+                          <label>3-Year Plan (Long term)</label>
+                          <input type="text" id="planLongTerm" class="form-control" placeholder="Skill names, comma-separated">
+                      </div>
+                      <input type = "button" value = "Finish" id = "onboardingFinish" class = "btn btn-success float-right mt-3">
+                  </div>
+                  <div id="onboardingStep4" style="display:none;" class="text-center">
+                      <h4>You're all set!</h4>
+                      <p>Your personal learning plan is ready. Start exploring your skill tree and tracking your growth.</p>
+                      <input type = "button" value = "Start Learning" id = "savebtn" class = "btn btn-success float-right mt-3">
                   </div>
                   <div class="alert alert-danger alert-dismissible invalid-alert" style = "display: none;">
                       <a href="#" class="close" onclick = "$('.invalid-alert').hide()">&times;</a>

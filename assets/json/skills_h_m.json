@@ -91,11 +91,11 @@
     "description": "Series of policies country-, business- and company-dependant which shape contractual relationships.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in HR Policies",
+      "Level 2 (Basic) proficiency in HR Policies",
+      "Level 3 (Intermediate) proficiency in HR Policies",
+      "Level 4 (Advanced) proficiency in HR Policies",
+      "Level 5 (World Class) proficiency in HR Policies"
     ],
     "maxPoint": 5,
     "parents": [],
@@ -127,27 +127,16 @@
     "description": "How you identify and handle external threats and opportunities that might affect the companie’s human capital. Examples of external threats and opportunities that an HR business partner should know to look out for might include:– Changes to employment legislation – New job openings from close competitors – Mass redundancies within your industry",
     "descriptionWikipediaURL": "https://sites.google.com/a/my.shu.ac.uk/hr-group-8/external-influences",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Identifying External Influences",
+      "Level 2 (Basic) proficiency in Identifying External Influences",
+      "Level 3 (Intermediate) proficiency in Identifying External Influences",
+      "Level 4 (Advanced) proficiency in Identifying External Influences",
+      "Level 5 (World Class) proficiency in Identifying External Influences"
     ],
     "maxPoint": 5,
     "parents": [],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},
@@ -163,27 +152,16 @@
     "description": "A keen eye for the kind of talent a company really needs; the ability to find and attract that talent; and a great talent retention strategy to ensure business continuity.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Talent_management",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Managing Talent",
+      "Level 2 (Basic) proficiency in Managing Talent",
+      "Level 3 (Intermediate) proficiency in Managing Talent",
+      "Level 4 (Advanced) proficiency in Managing Talent",
+      "Level 5 (World Class) proficiency in Managing Talent"
     ],
     "maxPoint": 5,
     "parents": [],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},

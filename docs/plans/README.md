@@ -9,6 +9,7 @@
 | [P3: Mentor Recommendations](p3-mentor-recommendations.md) | **Medium** | "What should I learn next?" — mentors, paths, trainings based on skill gaps and goals. | 100/100 | ✅ Complete (FE + BE) |
 | [P4: Skill Complementarity](p4-skill-complementarity.md) | **Medium** | "Who balances me?" — find people with skills you lack; group coverage view. | 99/100 | ✅ Complete (FE + BE) |
 | [P5: Personal Learning Plan](p5-personal-learning-plan.md) | **High** | 3-month / 1-year / 3-year nested learning plan with cascade, progress tracking. Companion to P2. | 99/100 | ✅ Complete (FE + BE) |
+| [P6: JTBD Menu & UX Overhaul](p6-jtbd-menu-and-ux-overhaul.md) | **High** | JTBD-based navigation, browse-all pages, onboarding wizard, dummy content removal. | 99/100 | ✅ Complete (FE) |
 
 ## Deferred Follow-ups
 
