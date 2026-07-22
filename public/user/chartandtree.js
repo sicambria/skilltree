@@ -1148,7 +1148,7 @@ function hideMenus () {
 }
 
 function hideCardsAndAlerts (event) {
-    if (!event.target.matches("#userCard, .float-right *")) $(".hide-on-click").collapse("hide");
+    if (!event.target.matches("#userCard, .float-right *, .navbar, .navbar *")) $(".hide-on-click").collapse("hide");
     if (!event.target.matches("#createTree")) $(".alert").hide();
 }
 
