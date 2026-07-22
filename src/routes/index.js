@@ -10,6 +10,7 @@ const goalRoutes = require('./goal');
 const skillHistoryRoutes = require('./skillHistory');
 const recommendRoutes = require('./recommend');
 const complementRoutes = require('./complement');
+const planRoutes = require('./plan');
 const adminRoutes = require('./admin');
 const { verifyToken, verifyAdmin } = require('../middleware/auth');
 
@@ -25,6 +26,7 @@ router.use('/protected', verifyToken, goalRoutes);
 router.use('/protected', verifyToken, skillHistoryRoutes);
 router.use('/protected', verifyToken, recommendRoutes);
 router.use('/protected', verifyToken, complementRoutes);
+router.use('/protected', verifyToken, planRoutes);
 router.use('/graph', graphRoutes);
 
 // Admin routes (require admin token)
