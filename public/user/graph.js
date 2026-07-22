@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const width = container.clientWidth;
     const height = container.clientHeight;
     
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('loginToken');
     if (!token) {
         window.location.href = '/';
         return;
@@ -24,8 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             .attr("height", "100%")
             .call(d3.zoom().on("zoom", (event) => {
                 g.attr("transform", event.transform);
-            }))
-            .append("g");
+            }));
 
         const g = svg.append("g");
 
