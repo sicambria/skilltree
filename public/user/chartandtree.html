@@ -55,7 +55,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="discoverDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="discoverDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Discover menu">
             Discover
           </a>
           <div class="dropdown-menu" aria-labelledby="discoverDropdown">
@@ -66,7 +66,7 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"  id="myGrowthDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle"  id="myGrowthDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="My Growth menu">
             My Growth
           </a>
           <div class="dropdown-menu" aria-labelledby="myGrowthDropdown">
@@ -77,7 +77,7 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="communityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Community menu">
             Community
           </a>
           <div class="dropdown-menu" aria-labelledby="communityDropdown">
@@ -87,7 +87,7 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="contributeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" id="contributeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Contribute menu">
             Contribute
           </a>
           <div class="dropdown-menu" aria-labelledby="contributeDropdown">
@@ -119,19 +119,19 @@
 
     </div>
 
-    <a class="nav-link" href="#advSearch" data-toggle="collapse" data-target="#advSearch" role="button" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link" href="#advSearch" data-toggle="collapse" data-target="#advSearch" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Search">
       <i class="fas fa-search"></i>
     </a>
-    <a id = "submitBtn" class = "nav-link" role = "button" onclick = "submit()">
+    <a id = "submitBtn" class = "nav-link" role = "button" onclick = "submit()" aria-label="Save changes">
       Saved
     </a>
-    <a class="nav-link" id="helpBtn" role="button" onclick="openHelp()">
+    <a class="nav-link" id="helpBtn" role="button" onclick="openHelp()" aria-label="Help">
       <i class="fas fa-question-circle"></i>
     </a>
-    <a class="nav-link" href="#userprofile" data-toggle="collapse" data-target="#userprofile" role="button" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link" href="#userprofile" data-toggle="collapse" data-target="#userprofile" role="button" aria-haspopup="true" aria-expanded="false" aria-label="Profile">
       <img src="./pictures/profile.png">
     </a>
-      <a class="nav-link" role="button" onclick="logout()"><i class="fas fa-power-off"></i></a>
+      <a class="nav-link" role="button" onclick="logout()" aria-label="Logout"><i class="fas fa-power-off"></i></a>
   </nav>
   <!-- end of navbar -->
 
@@ -655,10 +655,11 @@
       <div class="modal-header">
         <span class="modalClose" onclick="closeCommunityModal('browseSkillsModal')">&times;</span>
         <h2>All Skills</h2>
+        <span class="text-muted small ml-2" id="browseSkillsCount"></span>
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <input type="text" class="form-control" id="browseSkillsSearch" placeholder="Filter skills..." onkeyup="filterBrowseSkills(this.value)">
+          <input type="text" class="form-control" id="browseSkillsSearch" placeholder="Filter skills by name..." onkeyup="filterBrowseSkills(this.value)" aria-label="Filter skills">
         </div>
         <div id="browseSkillsList" class="row"></div>
       </div>
@@ -671,10 +672,11 @@
       <div class="modal-header">
         <span class="modalClose" onclick="closeCommunityModal('browseTreesModal')">&times;</span>
         <h2>All Skill Trees</h2>
+        <span class="text-muted small ml-2" id="browseTreesCount"></span>
       </div>
       <div class="modal-body">
         <div class="form-group">
-          <input type="text" class="form-control" id="browseTreesSearch" placeholder="Filter trees..." onkeyup="filterBrowseTrees(this.value)">
+          <input type="text" class="form-control" id="browseTreesSearch" placeholder="Filter trees by name..." onkeyup="filterBrowseTrees(this.value)" aria-label="Filter trees">
         </div>
         <div id="browseTreesList" class="row"></div>
       </div>
