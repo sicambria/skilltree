@@ -10,13 +10,6 @@ function formatDate(ts) {
     return d.toLocaleDateString() + ' ' + d.toLocaleTimeString();
 }
 
-function calcEffectiveLevel(skillName, knownSkills) {
-    if (!knownSkills) return 0;
-    for (var i = 0; i < knownSkills.length; ++i) {
-        if (knownSkills[i].skillName === skillName) return knownSkills[i].effectiveLevel || knownSkills[i].level || 0;
-    }
-    return 0;
-}
 
 function closeCommunityModal(modalId) {
     document.getElementById(modalId).style.display = 'none';
@@ -250,10 +243,6 @@ function shareGoal(goalId) {
     });
 }
 
-function doShareGoal(goalId) {
-    shareGoal(goalId);
-}
-
 /* ───────── Skill History ───────── */
 
 function openSkillHistory(skillName) {
@@ -346,7 +335,7 @@ function renderRecommendations(recs) {
             var tr = recs.trainings[i];
             trainingHtml += '<li class="list-group-item py-1">' +
                             (tr.title ? '<strong>' + escHtml(tr.title) + '</strong><br>' : '') +
-                            (tr.url ? '<a href="' + escHtml(tr.url) + '" target="_blank">' + escHtml(tr.url) + '</a>' : escHtml(tr.name || tr.description || 'Training')) +
+                            (tr.url ? '<a href="' + escHtml(tr.url) + '" target="_blank" rel="noopener noreferrer">' + escHtml(tr.url) + '</a>' : escHtml(tr.name || tr.description || 'Training')) +
                             (tr.provider ? '<br><small class="text-muted">' + escHtml(tr.provider) + '</small>' : '') +
                             '</li>';
         }
@@ -523,7 +512,6 @@ function renderPlan(plan) {
     var html = '<ul class="nav nav-tabs" id="planHorizonTabs" role="tablist">';
     var horizons = ['short', 'mid', 'long'];
     var horizonLabels = { short: 'Short-term (1-3 mo)', mid: 'Mid-term (3-12 mo)', long: 'Long-term (1-3 yr)' };
-    var horizonNames = { short: 'short', mid: 'mid', long: 'long' };
     for (var i = 0; i < horizons.length; ++i) {
         var h = horizons[i];
         var active = i === 0 ? ' active' : '';
@@ -536,7 +524,7 @@ function renderPlan(plan) {
         var active = i === 0 ? ' show active' : '';
         var horizonData = plan.horizons && plan.horizons[h] ? plan.horizons[h] : [];
         html += '<div class="tab-pane fade' + active + '" id="horizon-' + h + '" role="tabpanel">';
-        html += '<div class="mb-2"><button class="btn btn-sm btn-outline-primary" onclick="showPlanHorizon(\'' + h + '\')"><i class="fas fa-edit"></i> Edit</button></div>';
+        html += '<div class="mb-2"><button class="btn btn-sm btn-outline-primary" onclick="showPlanHorizon(\'' + h + '\')"><i class="fas fa-edit"></i> Edit</button> <button class="btn btn-sm btn-outline-info" onclick="classifyPlanHorizon(\'' + h + '\')"><i class="fas fa-tag"></i> Classify</button></div>';
         if (horizonData.length > 0) {
             html += '<ul class="list-group list-group-flush">';
             for (var j = 0; j < horizonData.length; ++j) {
@@ -557,17 +545,12 @@ function renderPlan(plan) {
     }
     html += '</div>';
     document.getElementById('planTabContent').innerHTML = html;
-    $('.nav-tabs a[data-toggle="tab"]').on('shown.bs.tab', function () {});
 }
 
 function showPlanHorizon(horizon) {
     document.getElementById('planHorizonEditForm').style.display = 'block';
     document.getElementById('planHorizonEditForm').dataset.horizon = horizon;
     document.getElementById('planHorizonSkills').value = '';
-}
-
-function editPlanHorizon(horizon) {
-    showPlanHorizon(horizon);
 }
 
 function savePlanHorizon() {
