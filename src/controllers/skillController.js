@@ -2,6 +2,7 @@ const User = require('../models/usermodel');
 const Skill = require('../models/skillmodel');
 const ApprovableSkill = require('../models/skillsforapprovemodel');
 const ApprovableTraining = require('../models/trainingsforapprovemodel');
+const FeedPost = require('../models/feedpostmodel');
 const treeUtils = require('../utils/treeUtils');
 
 exports.getOffers = async (req, res) => {
@@ -265,10 +266,15 @@ exports.submitAll = async (req, res) => {
         const user = await User.findOne({ username: req.decoded.username });
         if (!user) return res.json({ success: false, message: 'User not found.' });
 
+        const levelups = [];
         for (let i = 0; i < data.length; ++i) {
             const skill = user.skills.find(obj => obj.name == data[i].name);
             if (skill) {
+                const oldPoint = skill.achievedPoint;
                 skill.achievedPoint = data[i].achievedPoint;
+                if (data[i].achievedPoint > 0 && data[i].achievedPoint !== oldPoint) {
+                    levelups.push({ skillName: skill.name, skillLevel: data[i].achievedPoint });
+                }
                 if (data[i].assessment) {
                     skill.assessment = {
                         autonomy: data[i].assessment.autonomy,
@@ -308,6 +314,17 @@ exports.submitAll = async (req, res) => {
             }
         }
         await user.save();
+
+        for (const lu of levelups) {
+            await new FeedPost({
+                username: req.decoded.username,
+                type: 'levelup',
+                skillName: lu.skillName,
+                skillLevel: lu.skillLevel,
+                body: ''
+            }).save();
+        }
+
         res.json({ success: true });
     } catch (err) {
         console.error(err);
