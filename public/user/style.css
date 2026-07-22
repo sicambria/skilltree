@@ -128,6 +128,7 @@ a {
 #pixiCanvas{
   position: fixed;
   z-index: 10;
+  pointer-events: none;
   background-image: url(pictures/tree_bg/landscape1920_CC0.jpg);
 }
 
