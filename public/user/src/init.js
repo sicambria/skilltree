@@ -1,3 +1,10 @@
+function escHtml(str) {
+    if (str == null) return '';
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(String(str)));
+    return div.innerHTML;
+}
+
 // get data from server
 function initData(){
   var dataRequest = new XMLHttpRequest();
@@ -71,7 +78,7 @@ function checkFirstLogin() {
 
     document.getElementById('onboardingNext1').onclick = function() {
         if (!focusArea.value || !mainTree.value) {
-            showBottomAlert('Please select both a focus area and a skill tree.');
+            showBottomAlert('warning', 'Please select both a focus area and a skill tree.');
             return;
         }
         document.getElementById('onboardingStep1').style.display = 'none';
@@ -153,7 +160,7 @@ function saveOnboardingData() {
                 }
             }
             if (skillsToSave.length > 0) {
-                request('POST', '/protected/submitall', { skills: skillsToSave }, function() {
+                request('POST', '/protected/submitall', skillsToSave, function () {
                     if (this.readyState == 4) createLearningPlan();
                 });
             } else {
@@ -170,20 +177,39 @@ function createLearningPlan() {
 
     var planData = {
         title: 'My Learning Plan',
-        description: 'Auto-created during onboarding',
-        horizons: {
-            shortTerm: { skills: short, targetDate: new Date(Date.now() + 90*86400000).toISOString().split('T')[0] },
-            mediumTerm: { skills: med, targetDate: new Date(Date.now() + 365*86400000).toISOString().split('T')[0] },
-            longTerm: { skills: long, targetDate: new Date(Date.now() + 3*365*86400000).toISOString().split('T')[0] }
-        }
+        description: 'Auto-created during onboarding'
     };
 
     request('POST', '/protected/plan', planData, function() {
-        if (this.readyState == 4) {
-            document.getElementById('onboardingStep3').style.display = 'none';
-            document.getElementById('onboardingStep4').style.display = 'block';
+        if (this.readyState == 4 && this.status == 200) {
+            var done = 0;
+            var total = (short.length > 0 ? 1 : 0) + (med.length > 0 ? 1 : 0) + (long.length > 0 ? 1 : 0);
+            function onHorizonSaved() { if (++done >= total) showOnboardingDone(); }
+            if (short.length > 0) {
+                request('PATCH', '/protected/plan/horizon/shortTerm', { skills: short }, function() {
+                    if (this.readyState == 4) onHorizonSaved();
+                });
+            }
+            if (med.length > 0) {
+                request('PATCH', '/protected/plan/horizon/midTerm', { skills: med }, function() {
+                    if (this.readyState == 4) onHorizonSaved();
+                });
+            }
+            if (long.length > 0) {
+                request('PATCH', '/protected/plan/horizon/longTerm', { skills: long }, function() {
+                    if (this.readyState == 4) onHorizonSaved();
+                });
+            }
+            if (total === 0) showOnboardingDone();
+        } else {
+            showOnboardingDone();
         }
     });
+}
+
+function showOnboardingDone() {
+    document.getElementById('onboardingStep3').style.display = 'none';
+    document.getElementById('onboardingStep4').style.display = 'block';
 }
 
 function selectMainTree () {

@@ -464,6 +464,7 @@ function formatSkillResponse(skill, include) {
     const result = {
         id: skill.skillId || `skilltree:skill:${skill.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
         name: skill.name,
+        skillIcon: skill.skillIcon,
         categoryName: skill.categoryName,
         description: skill.description,
         descriptionWikipediaURL: skill.descriptionWikipediaURL,

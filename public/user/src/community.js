@@ -645,7 +645,7 @@ function openBrowseSkills() {
     request('GET', '/protected/skills', undefined, function () {
         if (this.readyState !== 4) return;
         if (this.status === 200) {
-            var skills = this.response;
+            var skills = this.response && this.response.data ? this.response.data : (Array.isArray(this.response) ? this.response : []);
             window._browseAllSkills = skills;
             renderBrowseSkills(skills);
         } else {
@@ -689,7 +689,7 @@ function openBrowseTrees() {
     modal.style.display = 'block';
     var list = document.getElementById('browseTreesList');
     list.innerHTML = '<div class="text-center w-100"><i class="fas fa-spinner fa-spin"></i> Loading...</div>';
-    request('POST', '/protected/searchTreesByName', { name: '' }, function () {
+    request('POST', '/protected/searchTreesByName', { value: '' }, function () {
         if (this.readyState !== 4) return;
         if (this.status === 200) {
             var trees = this.response;
