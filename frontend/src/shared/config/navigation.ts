@@ -1,6 +1,28 @@
 'use client';
 
+import {
+  LayoutDashboard,
+  BookOpen,
+  TreePine,
+  Users,
+  Plus,
+  Settings,
+  HelpCircle,
+  MessageSquare,
+  Search,
+  Star,
+  FilePlus,
+  Database,
+  GraduationCap,
+  Shield,
+  BookOpenCheck,
+  BarChart,
+  Target,
+  UserCheck,
+  GitBranch,
+} from 'lucide-react';
 import React from 'react';
+
 import { cn } from '@/shared/lib/utils';
 
 export interface SidebarNavItem {
@@ -8,7 +30,7 @@ export interface SidebarNavItem {
   href?: string;
   disabled?: boolean;
   external?: boolean;
-  icon?: React.ComponentType<{ className?: string }> | null;
+  icon?: React.ComponentType<{ className?: string }>;
   items?: SidebarNavItem[];
 }
 
@@ -21,51 +43,49 @@ const navigation: SidebarNavGroup[] = [
   {
     title: 'Discover',
     items: [
-      { title: 'Browse Skills', href: '/skills', icon: null },
-      { title: 'Browse Trees', href: '/trees', icon: null },
-      { title: 'Global Graph', href: '/graph', icon: null },
+      { title: 'Dashboard', href: '/', icon: LayoutDashboard },
+      { title: 'Browse Skills', href: '/skills', icon: BookOpen },
+      { title: 'Browse Trees', href: '/trees', icon: TreePine },
+      { title: 'Global Graph', href: '/graph', icon: BarChart },
     ],
   },
   {
     title: 'My Growth',
     items: [
-      { title: 'Dashboard', href: '/', icon: null },
-      { title: 'My Skills', href: '/skills/me', icon: null },
-      { title: 'Learning Plan', href: '/plan', icon: null },
-      { title: 'Progress', href: '/progress', icon: null },
+      { title: 'Learning Plan', href: '/plan', icon: Target },
+      { title: 'My Skills', href: '/my-skills', icon: Star },
+      { title: 'Progress', href: '/progress', icon: BarChart },
     ],
   },
   {
     title: 'Community',
     items: [
-      { title: 'Feed', href: '/community', icon: null },
-      { title: 'Recommendations', href: '/community/recommendations', icon: null },
-      { title: 'People', href: '/community/people', icon: null },
+      { title: 'Feed', href: '/community', icon: MessageSquare },
+      { title: 'Recommendations', href: '/recommendations', icon: UserCheck },
     ],
   },
   {
     title: 'Contribute',
     items: [
-      { title: 'Create Skill', href: '/create/skill', icon: null },
-      { title: 'Create Tree', href: '/create/tree', icon: null },
-      { title: 'Add Training', href: '/create/training', icon: null },
-      { title: 'Wikidata Import', href: '/create/import', icon: null },
+      { title: 'Create Skill', href: '/contribute/skill', icon: FilePlus },
+      { title: 'Create Tree', href: '/contribute/tree', icon: TreePine },
+      { title: 'Add Training', href: '/contribute/training', icon: BookOpenCheck },
     ],
   },
   {
     title: 'Admin',
     items: [
-      { title: 'Users', href: '/admin/users', icon: null },
-      { title: 'Content', href: '/admin/content', icon: null },
-      { title: 'Seed Data', href: '/admin/seed', icon: null },
+      { title: 'Users', href: '/admin/users', icon: Users },
+      { title: 'Content', href: '/admin/content', icon: Database },
+      { title: 'Seed Data', href: '/admin/seed', icon: Shield },
     ],
   },
   {
     title: 'Help',
     items: [
-      { title: 'Getting Started', href: '/help/getting-started', icon: null },
-      { title: 'Documentation', href: '/help/docs', icon: null },
-      { title: 'Support', href: '/help/support', icon: null },
+      { title: 'Getting Started', href: '/help/getting-started', icon: GraduationCap },
+      { title: 'Documentation', href: '/help/docs', icon: BookOpen },
+      { title: 'Support', href: '/help/support', icon: HelpCircle },
     ],
   },
 ];

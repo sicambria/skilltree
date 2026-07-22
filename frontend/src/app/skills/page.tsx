@@ -1,14 +1,16 @@
 'use client';
 
+import { Search, ChevronLeft, ChevronRight, BookOpen, ArrowRight, Plus } from 'lucide-react';
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Input } from '@/shared/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/ui/select';
+
+import { useSkills } from '@/shared/api/hooks';
+import type { Skill } from '@/shared/api/schemas';
+import { Badge } from '@/shared/ui/badge';
 import { Button } from '@/shared/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/shared/ui/card';
-import { Badge } from '@/shared/ui/badge';
-import { useSkills } from '@/shared/api/hooks';
-import { Search, Filter, ChevronLeft, ChevronRight, BookOpen, ArrowRight, Plus } from 'lucide-react';
+import { Input } from '@/shared/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/shared/ui/select';
 
 const categories = [
   'All',
@@ -50,9 +52,15 @@ export function SkillsPage() {
     );
   }
 
-  const skills = data?.skills || [];
-  const total = data?.total || 0;
-  const totalPages = data?.totalPages || 1;
+  interface PaginatedSkills {
+    skills: Skill[];
+    total: number;
+    totalPages: number;
+  }
+  const paginatedData = data as PaginatedSkills | undefined;
+  const skills = paginatedData?.skills || [];
+  const total = paginatedData?.total || 0;
+  const totalPages = paginatedData?.totalPages || 1;
 
   return (
     <div className="space-y-6">
@@ -145,7 +153,7 @@ export function SkillsPage() {
   );
 }
 
-function SkillCard({ skill }: { skill: any }) {
+function SkillCard({ skill }: { skill: Skill }) {
   return (
     <Card className="flex flex-col h-full transition-shadow hover:shadow-md">
       <CardHeader>
@@ -160,7 +168,7 @@ function SkillCard({ skill }: { skill: any }) {
       <CardContent className="flex-1">
         <div className="flex flex-wrap gap-1.5 mb-3">
           <Badge variant="secondary">{skill.category}</Badge>
-          {skill.levels?.map((l: any) => (
+          {skill.levels?.map((l: { level: number; description: string }) => (
             <Badge key={l.level} variant="outline">
               L{l.level}: {l.description?.slice(0, 30)}...
             </Badge>

@@ -1,9 +1,11 @@
 'use client';
 
 import * as React from 'react';
-import { Sidebar } from './sidebar';
-import { Header } from './header';
+
 import { cn } from '@/shared/lib/utils';
+
+import { Header } from './header';
+import { Sidebar } from './sidebar';
 
 interface AppShellProps {
   children: React.ReactNode;

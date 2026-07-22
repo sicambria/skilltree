@@ -28,5 +28,3 @@ export function QueryProvider({ children }: { children: ReactNode }) {
     </QueryClientProvider>
   );
 }
-
-export { queryClient } from './query-client';

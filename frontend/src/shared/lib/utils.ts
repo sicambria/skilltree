@@ -5,6 +5,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export function isServer(): boolean {
+  return typeof window === 'undefined';
+}
+
 export function formatDate(date: string | Date, options?: Intl.DateTimeFormatOptions): string {
   const d = typeof date === 'string' ? new Date(date) : date;
   return d.toLocaleDateString(undefined, {
@@ -67,7 +71,9 @@ export function throttle<T extends (...args: unknown[]) => unknown>(
 
 export function parseJwt(token: string): Record<string, unknown> | null {
   try {
-    const base64Url = token.split('.')[1];
+    const parts = token.split('.');
+    if (parts.length < 2) return null;
+    const base64Url = parts[1]!;
     const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     const jsonPayload = decodeURIComponent(
       atob(base64)

@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+
 import { useUIStore } from '@/shared/lib/store';
 
 interface UIProviderProps {

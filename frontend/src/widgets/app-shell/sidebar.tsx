@@ -1,12 +1,6 @@
 'use client';
 
-import * as React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/shared/lib/utils';
 import { ChevronLeft, ChevronRight, Settings, HelpCircle, X } from 'lucide-react';
-import { useUIStore } from '@/shared/lib/store';
-import { Button } from '@/shared/ui/button';
 import {
   LayoutDashboard,
   BookOpen,
@@ -23,6 +17,14 @@ import {
   BookOpenCheck,
   Database,
 } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import * as React from 'react';
+
+import { useUIStore } from '@/shared/lib/store';
+import { cn } from '@/shared/lib/utils';
+import { Button } from '@/shared/ui/button';
+
 
 const navigation = [
   {

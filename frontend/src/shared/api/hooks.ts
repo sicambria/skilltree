@@ -1,5 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { z } from 'zod';
+
 import { authResponseSchema, loginSchema, registerSchema, userDataSchema, skillSchema, treeSchema, trainingSchema, planSchema, historyEntrySchema, communityFeedItemSchema, planProgressSchema, recommendationSchema, submitAllSchema, type UserData, type Skill, type Tree, type Training, type HistoryEntry, type Plan, type PlanProgress, type CommunityFeedItem, type Recommendation, type LoginInput, type RegisterInput, type SubmitAllInput } from './schemas';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || '/api/backend';
@@ -25,44 +26,13 @@ async function fetchJson<T>(url: string, options?: RequestInit): Promise<T> {
   return res.json();
 }
 
-// Auth
-export function useLogin() {
-  return useMutation({
-    mutationFn: (data: LoginInput) => fetchJson<z.infer<typeof authResponseSchema>>('/auth/login', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-  });
+interface PaginatedResponse<T> {
+  skills: T[];
+  total: number;
+  page: number;
+  totalPages: number;
 }
 
-export function useRegister() {
-  return useMutation({
-    mutationFn: (data: RegisterInput) => fetchJson<z.infer<typeof authResponseSchema>>('/auth/register', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    }),
-  });
-}
-
-export function useMe() {
-  return useQuery({
-    queryKey: ['me'],
-    queryFn: () => fetchJson<UserData>('/protected/userdata'),
-    staleTime: 5 * 60 * 1000,
-  });
-}
-
-export function useLogout() {
-  const queryClient = useQueryClient();
-  return useMutation({
-    mutationFn: () => fetchJson<void>('/auth/logout', { method: 'POST' }),
-    onSuccess: () => {
-      queryClient.clear();
-    },
-  });
-}
-
-// Skills
 export function useSkills(params?: { category?: string; search?: string; page?: number; limit?: number }) {
   const searchParams = new URLSearchParams();
   if (params?.category) searchParams.set('category', params.category);
@@ -70,9 +40,9 @@ export function useSkills(params?: { category?: string; search?: string; page?: 
   if (params?.page) searchParams.set('page', params.page.toString());
   if (params?.limit) searchParams.set('limit', params.limit.toString());
 
-  return useQuery({
+  return useQuery<PaginatedResponse<Skill>>({
     queryKey: ['skills', params],
-    queryFn: () => fetchJson<Skill[]>(`/protected/skills?${searchParams}`),
+    queryFn: () => fetchJson<PaginatedResponse<Skill>>(`/protected/skills?${searchParams}`),
   });
 }
 
@@ -174,7 +144,7 @@ export function useRecommendations() {
 export function useSubmitSkills() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: (data: SubmitAllInput) => fetchJson<void>('/protected/submitall', {
+    mutationFn: (data: SubmitAllInput) => fetchJson<unknown>('/protected/submitall', {
       method: 'POST',
       body: JSON.stringify(data),
     }),
@@ -198,7 +168,7 @@ export function useSetAdmin() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: ({ userId, isAdmin }: { userId: string; isAdmin: boolean }) =>
-      fetchJson<void>(`/admin/users/${userId}/role`, {
+      fetchJson(`/admin/users/${userId}/role`, {
         method: 'POST',
         body: JSON.stringify({ isAdmin }),
       }),

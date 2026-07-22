@@ -1,40 +1,25 @@
 'use client';
 
-import * as React from 'react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/shared/lib/utils';
-import { Button } from '@/shared/ui/button';
 import {
-  Home,
-  BookOpen,
-  TreePine,
-  Users,
-  Plus,
-  Settings,
-  HelpCircle,
-  Menu,
-  X,
-  LogOut,
-  User,
-  ChevronDown,
   Sun,
   Moon,
-  LayoutDashboard,
-  Book,
-  GitBranch,
-  Target,
-  MessageSquare,
-  Search,
-  Star,
-  FilePlus,
-  Database,
-  GraduationCap,
-  Shield,
-  BookOpenCheck,
+  User,
+  Settings,
+  HelpCircle,
+  LogOut,
+  Menu,
+  X,
 } from 'lucide-react';
-import { useUIStore } from '@/shared/lib/store';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useTheme } from 'next-themes';
+import React from 'react';
+
+import { navigation } from '@/shared/config/navigation';
+import { useUIStore } from '@/shared/lib/store';
+import { cn } from '@/shared/lib/utils';
+import { Avatar, AvatarFallback, AvatarImage } from '@/shared/ui/avatar';
+import { Button } from '@/shared/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -42,8 +27,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/shared/ui/dropdown-menu';
-import { Avatar, AvatarFallback, AvatarImage } from '@/shared/ui/avatar';
-import { navigation } from '@/shared/config/navigation';
 
 export function Header() {
   const pathname = usePathname();
@@ -66,12 +49,13 @@ export function Header() {
         <nav className="flex flex-1 items-center gap-2 lg:gap-4" aria-label="Main navigation">
           {navigation.flatMap((group) =>
             group.items.map((item) => {
-              const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+              const href = item.href ?? '#';
+              const isActive = pathname === href || (href !== '/' && pathname.startsWith(href));
               const Icon = item.icon;
               return (
                 <Link
                   key={item.title}
-                  href={item.href}
+                  href={href}
                   className={cn(
                     'flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors',
                     isActive

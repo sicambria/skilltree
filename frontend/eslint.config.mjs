@@ -12,6 +12,7 @@ export default defineConfig([
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
+  ...tseslint.configs.strict,
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
@@ -31,7 +32,6 @@ export default defineConfig([
     settings: {
       react: { version: '18.3' },
       'import/resolver': {
-        typescript: { project: './tsconfig.json' },
         node: { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
       },
     },

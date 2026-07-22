@@ -1,10 +1,11 @@
 'use client';
 
-import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/shared/ui/card';
-import { Button } from '@/shared/ui/button';
 import { ArrowRight, BarChart, BookOpen, Star, Target, TrendingUp, Users } from 'lucide-react';
+import React from 'react';
+
 import { cn } from '@/shared/lib/utils';
+import { Button } from '@/shared/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/shared/ui/card';
 
 const stats = [
   { name: 'Skills Rated', value: '24', icon: BookOpen, color: 'text-blue-500', bg: 'bg-blue-500/10' },

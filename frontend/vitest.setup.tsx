@@ -16,11 +16,11 @@ vi.mock('next/navigation', () => ({
 // Mock framer-motion
 vi.mock('framer-motion', () => ({
   motion: {
-    div: ({ children, ...props }) => <div {...props}>{children}</div>,
-    button: ({ children, ...props }) => <button {...props}>{children}</button>,
-    span: ({ children, ...props }) => <span {...props}>{children}</span>,
+    div: ({ children, ...props }: React.HTMLAttributes<HTMLDivElement>) => <div {...props}>{children}</div>,
+    button: ({ children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) => <button {...props}>{children}</button>,
+    span: ({ children, ...props }: React.HTMLAttributes<HTMLSpanElement>) => <span {...props}>{children}</span>,
   },
-  AnimatePresence: ({ children }) => children,
+  AnimatePresence: ({ children }: { children: React.ReactNode }) => children,
   useReducedMotion: () => false,
 }));
 
