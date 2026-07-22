@@ -657,6 +657,8 @@ function openBrowseSkills() {
 function renderBrowseSkills(skills) {
     var list = document.getElementById('browseSkillsList');
     list.innerHTML = '';
+    var count = document.getElementById('browseSkillsCount');
+    if (count) count.textContent = skills.length + ' skills';
     for (var i = 0; i < skills.length; ++i) {
         var s = skills[i];
         var col = document.createElement('div');
@@ -702,6 +704,8 @@ function openBrowseTrees() {
 function renderBrowseTrees(trees) {
     var list = document.getElementById('browseTreesList');
     list.innerHTML = '';
+    var count = document.getElementById('browseTreesCount');
+    if (count) count.textContent = trees.length + ' trees';
     for (var i = 0; i < trees.length; ++i) {
         var t = trees[i];
         var col = document.createElement('div');
