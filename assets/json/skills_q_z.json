@@ -58,11 +58,11 @@
     "description": "User experience design (UX, UXD, UED or XD) is the process of enhancing user satisfaction with a product by improving the usability, accessibility, and pleasure provided in the interaction with the product. User experience design encompasses traditional human–computer interaction (HCI) design, and extends it by addressing all aspects of a product or service as perceived by users.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/User_experience_design",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in UI/UX Design",
+      "Level 2 (Basic) proficiency in UI/UX Design",
+      "Level 3 (Intermediate) proficiency in UI/UX Design",
+      "Level 4 (Advanced) proficiency in UI/UX Design",
+      "Level 5 (World Class) proficiency in UI/UX Design"
     ],
     "maxPoint": 5,
     "parents": [],
@@ -94,11 +94,11 @@
     "description": "Stakeholder engagement is the process by which an organization involves people who may be affected by the decisions it makes or can influence the implementation of its decisions. They may support or oppose the decisions, be influential in the organization or within the community in which it operates, hold relevant official positions or be affected in the long term.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Stakeholder_engagement",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Stakeholder Engagement",
+      "Level 2 (Basic) proficiency in Stakeholder Engagement",
+      "Level 3 (Intermediate) proficiency in Stakeholder Engagement",
+      "Level 4 (Advanced) proficiency in Stakeholder Engagement",
+      "Level 5 (World Class) proficiency in Stakeholder Engagement"
     ],
     "maxPoint": 5,
     "parents": [],
@@ -130,11 +130,11 @@
     "description": "SAFe promotes alignment, collaboration, and delivery across large numbers of agile teams. It was developed by and for practitioners, by leveraging three primary bodies of knowledge: agile software development, lean product development, and systems thinking.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Scaled_agile_framework",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Scaled Agile Framework",
+      "Level 2 (Basic) proficiency in Scaled Agile Framework",
+      "Level 3 (Intermediate) proficiency in Scaled Agile Framework",
+      "Level 4 (Advanced) proficiency in Scaled Agile Framework",
+      "Level 5 (World Class) proficiency in Scaled Agile Framework"
     ],
     "maxPoint": 5,
     "parents": [
@@ -178,29 +178,18 @@
     "description": "Knowledge and skills in training techniques for both the occasional (L1, L2) and professional trainer (L3, L4, L5). Use of instructional styles adequate to the target group and training objectives, apply presentation and communication skills using various delivery methods and tools. Based on the level, including learning technologies needed in a modern (virtual) learning environment.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Training",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Training",
+      "Level 2 (Basic) proficiency in Training",
+      "Level 3 (Intermediate) proficiency in Training",
+      "Level 4 (Advanced) proficiency in Training",
+      "Level 5 (World Class) proficiency in Training"
     ],
     "maxPoint": 5,
     "parents": [
       "Soft Skills"
     ],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},

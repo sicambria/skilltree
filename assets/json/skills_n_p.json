@@ -6,11 +6,11 @@
     "description": "Administration that oversees the day-to-day operations of a particular project within an organization. ",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Project Coordination",
+      "Level 2 (Basic) proficiency in Project Coordination",
+      "Level 3 (Intermediate) proficiency in Project Coordination",
+      "Level 4 (Advanced) proficiency in Project Coordination",
+      "Level 5 (World Class) proficiency in Project Coordination"
     ],
     "maxPoint": 5,
     "parents": [],
@@ -45,8 +45,8 @@
       "At the basic level, the negotiator has learned and developed an organized or systematic framework for preparing for and conducting negotiations.  Generally, basic level negotiators have limited experience and skill in applying a limited set of tools.  ",
       "At the intermediate level, the negotiator has mastered basic negotiating tools and has begun adding additional tools to his or her negotiation tool kit.  More importantly, the negotiator uses the tools to prepare for, conduct and review each negotiation.  The negotiator explicitly uses the tools across a range of experiences so that he or she develops a great deal of experience and confidence in applying these tools. ",
       "The advanced negotiation skill level is reached when the negotiator has not only accumulated a wide range of negotiation tools, frameworks and processes, through study, practice and experience but has also developed awareness of his or her own negotiation strengths and weaknesses and consciously uses that knowledge to manage him or herself so that negotiation strengths are maximized and negotiation weaknesses don’t impede the negotiations.  A negotiator who has reached the advanced stage also has strong skills in negotiation process design(designing how the parties will negotiate, not just that about which they will negotiate) and has developed the discretion as to when to use which tools and processes and can execute the selected tools with skill.   ",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 4 (Advanced) proficiency in Negotiation",
+      "Level 5 (World Class) proficiency in Negotiation"
     ],
     "maxPoint": 5,
     "parents": [],
@@ -78,27 +78,16 @@
     "description": "Creating external partnerships (not only internal) that benefit the company. Human resources is often seen as an ‘internal’ part of business but doesn’t mean outside world is not important. Strike up new relationships that benefit to the workforce and to the company’s goals. It’s a great way of gaining external credibility.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Business_networking",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Professional Networking",
+      "Level 2 (Basic) proficiency in Professional Networking",
+      "Level 3 (Intermediate) proficiency in Professional Networking",
+      "Level 4 (Advanced) proficiency in Professional Networking",
+      "Level 5 (World Class) proficiency in Professional Networking"
     ],
     "maxPoint": 5,
     "parents": [],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},
@@ -114,29 +103,18 @@
     "description": "Uses persuasion and negotiation to gain agreement and buy-in. Promotes idea, agenda or direction on behalf of self or others. Seeks support from communities to ensure that persuasion is effective. Stands up and speaks the mind up, escalates when  needed.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Persuasion",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Persuasion",
+      "Level 2 (Basic) proficiency in Persuasion",
+      "Level 3 (Intermediate) proficiency in Persuasion",
+      "Level 4 (Advanced) proficiency in Persuasion",
+      "Level 5 (World Class) proficiency in Persuasion"
     ],
     "maxPoint": 5,
     "parents": [
       "Soft Skills"
     ],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},
@@ -152,29 +130,18 @@
     "description": "Can negotiate skillfully in tough situations with both internal and external groups; can settle differences with minimum noise; can win concessions without damaging relationships; can be both direct and forceful as well as diplomatic; gains trust quickly of other parties to the negotiations; has a good sense of timing. Understands that all interaction can be considered as negotiation, e.g. finding positions and motives. Prepares for the commercial and/or technical sales negotiations with the appropriate team involved. Makes negotiation strategy that enhances the long term relationship and executes it with confidence and persuasion following company policies. Influences on negotiation process and negotiators to gain the deal that does not compromise the pre set targets. Never agrees terms which are detrimental to profitability in the long run across the solution/product lifecycle.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Negotiation",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Negotiating",
+      "Level 2 (Basic) proficiency in Negotiating",
+      "Level 3 (Intermediate) proficiency in Negotiating",
+      "Level 4 (Advanced) proficiency in Negotiating",
+      "Level 5 (World Class) proficiency in Negotiating"
     ],
     "maxPoint": 5,
     "parents": [
       "Soft Skills"
     ],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},
@@ -190,29 +157,18 @@
     "description": "Uses rigorous logic and methods to solve difficult problems with effective solutions; probes all fruitful sources for answers; can see hidden problems; looks beyond the obvious and doesn't stop at the first answers.",
     "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Problem_solving",
     "pointDescription": [
-      "Insert Level 1 (Initial) Skill Description Here",
-      "Insert Level 2 (Basic) Skill Description Here",
-      "Insert Level 3 (Intermediate) Skill Description Here",
-      "Insert Level 4 (Advanced) Skill Description Here",
-      "Insert Level 5 (World Class) Skill Description Here"
+      "Level 1 (Initial) proficiency in Problem-Solving",
+      "Level 2 (Basic) proficiency in Problem-Solving",
+      "Level 3 (Intermediate) proficiency in Problem-Solving",
+      "Level 4 (Advanced) proficiency in Problem-Solving",
+      "Level 5 (World Class) proficiency in Problem-Solving"
     ],
     "maxPoint": 5,
     "parents": [
       "Soft Skills"
     ],
     "children": [],
-    "trainings": [
-      {
-        "name": "Introduction To PostgreSQL",
-        "level": 1,
-        "shortDescription": "Introduce yourself to PostgreSQL , and learn about its features and usage.",
-        "URL": "https://youtu.be/jNq5EAb2biY",
-        "URLlastAccessed": "2018-12-15",
-        "goal": "",
-        "length": 0,
-        "language": "en"
-      }
-    ],
+    "trainings": [],
     "reusability": "transversal",
     "relationships": [],
     "crosswalks": {},

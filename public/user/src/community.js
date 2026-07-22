@@ -18,7 +18,8 @@ function closeCommunityModal(modalId) {
 
 window.addEventListener('click', function (e) {
     var modals = ['feedModal', 'goalsModal', 'historyModal', 'recommendModal', 'complementModal',
-                  'groupCoverageModal', 'planModal', 'planProgressModal'];
+                  'groupCoverageModal', 'planModal', 'planProgressModal',
+                  'browseSkillsModal', 'browseTreesModal', 'helpModal'];
     for (var i = 0; i < modals.length; ++i) {
         var m = document.getElementById(modals[i]);
         if (e.target === m) m.style.display = 'none';
@@ -632,4 +633,146 @@ function renderPlanProgress(progress) {
         html = '<div class="text-muted">No progress data available yet.</div>';
     }
     container.innerHTML = html;
+}
+
+/* ───────── Browse ───────── */
+
+function openBrowseSkills() {
+    var modal = document.getElementById('browseSkillsModal');
+    modal.style.display = 'block';
+    var list = document.getElementById('browseSkillsList');
+    list.innerHTML = '<div class="text-center w-100"><i class="fas fa-spinner fa-spin"></i> Loading...</div>';
+    request('GET', '/protected/skills', undefined, function () {
+        if (this.readyState !== 4) return;
+        if (this.status === 200) {
+            var skills = this.response;
+            window._browseAllSkills = skills;
+            renderBrowseSkills(skills);
+        } else {
+            list.innerHTML = '<div class="alert alert-danger w-100">Failed to load skills.</div>';
+        }
+    });
+}
+
+function renderBrowseSkills(skills) {
+    var list = document.getElementById('browseSkillsList');
+    list.innerHTML = '';
+    for (var i = 0; i < skills.length; ++i) {
+        var s = skills[i];
+        var col = document.createElement('div');
+        col.className = 'col-sm-4 col-md-3 mb-3';
+        col.innerHTML = '<div class="card h-100" style="cursor:pointer" onclick="showSkillDetail(\'' + escHtml(s.name) + '\')">' +
+            '<div class="card-body text-center">' +
+            '<img src="' + escHtml(s.skillIcon || 'pictures/icons/default.png') + '" style="width:48px;height:48px" class="mb-2">' +
+            '<h6 class="card-title">' + escHtml(s.name) + '</h6>' +
+            '<small class="text-muted">' + escHtml(s.categoryName || '') + '</small>' +
+            '</div></div>';
+        list.appendChild(col);
+    }
+    if (skills.length === 0) {
+        list.innerHTML = '<div class="text-muted w-100 text-center">No skills found.</div>';
+    }
+}
+
+function filterBrowseSkills(query) {
+    var all = window._browseAllSkills || [];
+    if (!query) return renderBrowseSkills(all);
+    var q = query.toLowerCase();
+    var filtered = all.filter(function (s) { return s.name.toLowerCase().indexOf(q) !== -1; });
+    renderBrowseSkills(filtered);
+}
+
+function openBrowseTrees() {
+    var modal = document.getElementById('browseTreesModal');
+    modal.style.display = 'block';
+    var list = document.getElementById('browseTreesList');
+    list.innerHTML = '<div class="text-center w-100"><i class="fas fa-spinner fa-spin"></i> Loading...</div>';
+    request('POST', '/protected/searchTreesByName', { name: '' }, function () {
+        if (this.readyState !== 4) return;
+        if (this.status === 200) {
+            var trees = this.response;
+            window._browseAllTrees = trees;
+            renderBrowseTrees(trees);
+        } else {
+            list.innerHTML = '<div class="alert alert-danger w-100">Failed to load trees.</div>';
+        }
+    });
+}
+
+function renderBrowseTrees(trees) {
+    var list = document.getElementById('browseTreesList');
+    list.innerHTML = '';
+    for (var i = 0; i < trees.length; ++i) {
+        var t = trees[i];
+        var col = document.createElement('div');
+        col.className = 'col-sm-6 mb-3';
+        col.innerHTML = '<div class="card h-100" style="cursor:pointer" onclick="loadTreeFromBrowse(\'' + escHtml(t.name) + '\')">' +
+            '<div class="card-body">' +
+            '<h6 class="card-title">' + escHtml(t.name) + '</h6>' +
+            '<small class="text-muted">' + escHtml(t.description || '') + '</small>' +
+            '</div></div>';
+        list.appendChild(col);
+    }
+    if (trees.length === 0) {
+        list.innerHTML = '<div class="text-muted w-100 text-center">No trees found.</div>';
+    }
+}
+
+function filterBrowseTrees(query) {
+    var all = window._browseAllTrees || [];
+    if (!query) return renderBrowseTrees(all);
+    var q = query.toLowerCase();
+    var filtered = all.filter(function (t) { return t.name.toLowerCase().indexOf(q) !== -1; });
+    renderBrowseTrees(filtered);
+}
+
+function loadTreeFromBrowse(name) {
+    closeCommunityModal('browseTreesModal');
+    if (typeof showTree === 'function') {
+        document.getElementById('submitBtn').style.display = 'block';
+        showTree(name, data, true);
+    }
+}
+
+function showSkillDetail(name) {
+    closeCommunityModal('browseSkillsModal');
+    var skillInput = document.getElementById('cardSearchBar');
+    if (skillInput) {
+        skillInput.value = name;
+        switchSearch('Skill');
+        document.getElementById('cardSearch').click();
+    }
+}
+
+/* ───────── Help ───────── */
+
+function openHelp() {
+    document.getElementById('helpModal').style.display = 'block';
+}
+
+/* ───────── History shortcut ───────── */
+
+function openHistory() {
+    if (typeof openHistoryModal === 'function') {
+        openHistoryModal();
+    } else {
+        document.getElementById('historyModal').style.display = 'block';
+        request('GET', '/protected/allHistory', undefined, function () {
+            if (this.readyState === 4 && this.status === 200) {
+                var container = document.getElementById('historyContent');
+                if (container) {
+                    var data = this.response;
+                    var html = '<table class="table table-sm table-striped"><thead><tr><th>Date</th><th>Skill</th><th>Change</th></tr></thead><tbody>';
+                    for (var i = 0; i < data.length; ++i) {
+                        var h = data[i];
+                        html += '<tr><td>' + (h.date ? new Date(h.date).toLocaleDateString() : '') + '</td>' +
+                                '<td>' + escHtml(h.skillName || '') + '</td>' +
+                                '<td>' + escHtml(h.change || '') + '</td></tr>';
+                    }
+                    html += '</tbody></table>';
+                    container.innerHTML = html;
+                }
+            }
+        });
+    }
 }
