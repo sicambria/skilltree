@@ -3,6 +3,7 @@ const Skill = require('../models/skillmodel');
 const ApprovableSkill = require('../models/skillsforapprovemodel');
 const ApprovableTraining = require('../models/trainingsforapprovemodel');
 const FeedPost = require('../models/feedpostmodel');
+const SkillHistory = require('../models/skillhistorymodel');
 const treeUtils = require('../utils/treeUtils');
 
 exports.getOffers = async (req, res) => {
@@ -316,6 +317,11 @@ exports.submitAll = async (req, res) => {
         await user.save();
 
         for (const lu of levelups) {
+            await new SkillHistory({
+                username: req.decoded.username,
+                skillName: lu.skillName,
+                achievedPoint: lu.skillLevel
+            }).save();
             await new FeedPost({
                 username: req.decoded.username,
                 type: 'levelup',

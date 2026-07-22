@@ -6,6 +6,8 @@ const skillRoutes = require('./skill');
 const treeRoutes = require('./tree');
 const graphRoutes = require('./graph');
 const feedRoutes = require('./feed');
+const goalRoutes = require('./goal');
+const skillHistoryRoutes = require('./skillHistory');
 const adminRoutes = require('./admin');
 const { verifyToken, verifyAdmin } = require('../middleware/auth');
 
@@ -17,6 +19,8 @@ router.use('/protected', verifyToken, userRoutes);
 router.use('/protected', verifyToken, skillRoutes);
 router.use('/protected', verifyToken, treeRoutes);
 router.use('/protected', verifyToken, feedRoutes);
+router.use('/protected', verifyToken, goalRoutes);
+router.use('/protected', verifyToken, skillHistoryRoutes);
 router.use('/graph', graphRoutes);
 
 // Admin routes (require admin token)

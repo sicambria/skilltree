@@ -571,6 +571,35 @@ describe('skillController', () => {
             expect(user.skills[0].achievedPoint).toBe(3);
         });
 
+        it('should log skill history on level-up', async () => {
+            const SkillHistory = require('../../../src/models/skillhistorymodel');
+
+            req.decoded = { username: 'testuser' };
+            req.body = [{ name: 'Skill1', achievedPoint: 3 }];
+
+            await skillController.submitAll(req, res);
+
+            const history = await SkillHistory.find({ username: 'testuser' });
+            expect(history.length).toBe(1);
+            expect(history[0].skillName).toBe('Skill1');
+            expect(history[0].achievedPoint).toBe(3);
+        });
+
+        it('should not log skill history when achievedPoint unchanged', async () => {
+            const SkillHistory = require('../../../src/models/skillhistorymodel');
+            const user = await User.findOne({ username: 'testuser' });
+            user.skills[0].achievedPoint = 3;
+            await user.save();
+
+            req.decoded = { username: 'testuser' };
+            req.body = [{ name: 'Skill1', achievedPoint: 3 }];
+
+            await skillController.submitAll(req, res);
+
+            const history = await SkillHistory.find({ username: 'testuser' });
+            expect(history.length).toBe(0);
+        });
+
         it('should accept 5-factor assessment and compute effectiveLevel', async () => {
             req.decoded = { username: 'testuser' };
             req.body = [{
