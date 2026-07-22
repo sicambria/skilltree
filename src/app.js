@@ -11,7 +11,23 @@ const app = express();
 app.set('superSecret', config.secret);
 
 // Security headers
-app.use(helmet());
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            baseUri: ["'self'"],
+            fontSrc: ["'self'", "https:", "data:"],
+            formAction: ["'self'"],
+            frameAncestors: ["'self'"],
+            imgSrc: ["'self'", "data:"],
+            objectSrc: ["'none'"],
+            scriptSrc: ["'self'", "'unsafe-inline'", "https://code.jquery.com", "https://cdnjs.cloudflare.com", "https://stackpath.bootstrapcdn.com", "https://d3js.org"],
+            scriptSrcAttr: ["'unsafe-inline'"],
+            styleSrc: ["'self'", "https:", "'unsafe-inline'"],
+            upgradeInsecureRequests: []
+        }
+    }
+}));
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));

@@ -52,7 +52,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse hide-on-click" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" id="intelligenceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -112,17 +112,17 @@
 
     </div>
 
-    <a class="nav-link" href="#advSearch" data-toggle="collapse" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link" href="#advSearch" data-toggle="collapse" data-target="#advSearch" role="button" aria-haspopup="true" aria-expanded="false">
       Search
     </a>
     <a id = "submitBtn" class = "nav-link" role = "button" onclick = "submit()">
       Saved
     </a>
 
-    <a class="nav-link" href="#userprofile" data-toggle="collapse" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <a class="nav-link" href="#userprofile" data-toggle="collapse" data-target="#userprofile" role="button" aria-haspopup="true" aria-expanded="false">
       <img src="./pictures/profile.png">
     </a>
-      <a class="nav-link" role="button" data-toggle="collapse" data-toggle="dropdown" onclick="logout()"><i class="fas fa-power-off"></i></a>
+      <a class="nav-link" role="button" onclick="logout()"><i class="fas fa-power-off"></i></a>
   </nav>
   <!-- end of navbar -->
 

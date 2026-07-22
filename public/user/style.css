@@ -228,6 +228,10 @@ a {
 
 .modal {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */

@@ -16,11 +16,14 @@ function validate() {
 
 				//Listener, if response comes, it runs.
 				httpRequest.onreadystatechange = function() {
-		    		if(httpRequest.readyState == 4 && httpRequest.status == 200) {
-						if (httpRequest.response.success) {
+		    	if(httpRequest.readyState == 4) {
+						if (httpRequest.status == 200 && httpRequest.response.success) {
 							localStorage.setItem("loginToken", httpRequest.response.token);
 							window.open("/user", "_self");
-						} else showBottomAlert("Incorrect credentials! Username already taken.");
+						} else {
+							var msg = httpRequest.response && httpRequest.response.message ? httpRequest.response.message : "Incorrect credentials!";
+							showBottomAlert(msg);
+						}
 					}
 				}
 
