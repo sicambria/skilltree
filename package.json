@@ -11,7 +11,10 @@
         "test:watch": "jest --watch",
         "test:coverage": "jest --coverage --coverageThreshold='{}'",
         "test:frontend": "jest --config jest.frontend.config.js",
-        "test:all": "npm test && npm run test:frontend"
+        "test:all": "npm test && npm run test:frontend",
+        "test:e2e": "playwright test --config tests/e2e/playwright.config.js",
+        "test:e2e:ui": "playwright test --config tests/e2e/playwright.config.js --headed",
+        "test:e2e:debug": "playwright test --config tests/e2e/playwright.config.js --debug"
     },
     "dependencies": {
         "dotenv": "^16.4.7",
@@ -24,6 +27,7 @@
     },
     "license": "AGPL-3.0-only",
     "devDependencies": {
+        "@playwright/test": "^1.61.1",
         "fast-check": "^4.9.0",
         "jest": "^30.4.2",
         "jest-environment-jsdom": "^30.4.1",

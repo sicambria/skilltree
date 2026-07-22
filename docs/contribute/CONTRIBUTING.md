@@ -32,25 +32,10 @@ For Atom, installing some plugins are helpful:
 apm install emmet todo minimap pigments minimap-pigments linter file-icons git-diff atom-beautify ask-stack highlight-selected
 ```
 
-On the server, give it a try:
+On the server, start the app with `screen` (required — see [DEVELOPMENT.md](DEVELOPMENT.md) for why):
 
 ```sh
-cd skilltree
-node app.js
-```
-
-Alternatively, to keep up with changes automatically, install & use PM2 (recommended):
-```sh
-cd skilltree
-pm2 create skilltree
-```
-To run:
-```sh
-pm2 start skilltree --watch
-```
-To query the status:
-```sh
-pm2 list
+screen -dmS skilltree bash -c 'cd skilltree && node src/server.js > /tmp/server.log 2>&1'
 ```
 
 ### Testing

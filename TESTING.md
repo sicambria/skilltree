@@ -9,6 +9,9 @@
 | `npm run test:coverage` | Run with coverage report |
 | `npm run test:frontend` | Run frontend tests only |
 | `npm run test:all` | Run both backend and frontend tests |
+| `npm run test:e2e` | Run Playwright E2E tests (headless) |
+| `npm run test:e2e:ui` | Run Playwright E2E tests (headed/browser visible) |
+| `npm run test:e2e:debug` | Run Playwright E2E tests with debug inspector |
 
 ## Architecture
 
@@ -18,12 +21,30 @@
 - **Timeout:** 30s (set in `jest.config.js`) to accommodate MongoMemoryServer startup
 - **Frontend:** Jest + jsdom environment via `jest.frontend.config.js`
 
+## E2E Tests
+
+End-to-end tests use **Playwright** with a real Chromium browser against an Express server backed by `mongodb-memory-server`. The web server starts automatically via the Playwright config's `webServer` option.
+
+- **Framework:** Playwright
+- **Database:** Shared in-memory MongoDB with pre-seeded categories, skills, and trees
+- **Port:** 3099 (E2E server), separate from the dev/production port
+- **Tests cover:** Login/registration flow, all navigation menus, modals, graph page, admin features, and API integration testing
+
 ## Structure
 
 ```
 tests/
   helpers/
     db.js                 # connectTestDB, disconnectTestDB, clearTestDB
+  e2e/
+    playwright.config.js  # Playwright configuration
+    helpers/
+      setup.js            # E2E server startup with in-memory DB + seed data
+    tests/
+      auth.spec.js        # Login page, register page, auth flow
+      navigation.spec.js  # All menus, modals, panels, search
+      graph.spec.js       # D3 graph page, controls, interactions
+      admin.spec.js       # Admin features, API integration
   __tests__/
     app.test.js           # Express app setup & error handlers
     config/
