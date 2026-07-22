@@ -226,6 +226,7 @@ a {
 /* MODAL STYLE */
 
 .modal {
+    display: none;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
