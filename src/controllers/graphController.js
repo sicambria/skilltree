@@ -62,7 +62,12 @@ exports.getGraphData = async (req, res) => {
             });
         });
 
-        res.json({ nodes, links });
+        // Filter out links that reference non-existent nodes
+        const validLinks = links.filter(link => 
+            nodeMap.has(link.source) && nodeMap.has(link.target)
+        );
+
+        res.json({ nodes, links: validLinks });
     } catch (err) {
         console.error('Graph Data Error:', err);
         res.status(500).json({ success: false, message: 'Failed to fetch graph data' });

@@ -83,4 +83,41 @@ test.describe('Graph Page', () => {
     await searchInput.fill('Java');
     await expect(searchInput).toHaveValue('Java');
   });
+
+  test('should render graph nodes without console errors', async ({ page }) => {
+    const consoleErrors = [];
+    page.on('console', msg => {
+      if (msg.type() === 'error') {
+        consoleErrors.push(msg.text());
+      }
+    });
+    page.on('pageerror', error => {
+      consoleErrors.push(error.message);
+    });
+
+    await page.goto('/user/graph.html');
+    await page.waitForTimeout(3000); // Wait for D3 simulation to run
+
+    // Filter out known acceptable errors (network errors from fetch if auth fails)
+    const graphErrors = consoleErrors.filter(e => 
+      e.includes('node not found') || 
+      e.includes('Graph Error') ||
+      e.includes('forceSimulation')
+    );
+    
+    expect(graphErrors, `Graph rendering errors: ${graphErrors.join('; ')}`).toHaveLength(0);
+  });
+
+  test('should have SVG nodes rendered in graph container', async ({ page }) => {
+    await page.goto('/user/graph.html');
+    await page.waitForTimeout(3000); // Wait for D3 simulation to run
+
+    const svg = page.locator('#graph-container svg');
+    await expect(svg).toBeVisible();
+    
+    // Check that at least some nodes (circles) are rendered
+    const nodes = page.locator('#graph-container svg .nodes circle');
+    const nodeCount = await nodes.count();
+    expect(nodeCount).toBeGreaterThan(0);
+  });
 });

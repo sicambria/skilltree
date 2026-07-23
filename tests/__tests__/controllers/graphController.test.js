@@ -63,6 +63,7 @@ describe('graphController', () => {
                 children: [],
                 relationships: [{ skillName: 'RelatedSkill', type: 'complement' }]
             });
+            await Skill.create({ name: 'RelatedSkill', parents: [], children: [] });
 
             await graphController.getGraphData(req, res);
 

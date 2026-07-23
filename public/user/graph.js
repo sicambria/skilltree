@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
         const data = await response.json();
 
+        if (!data.nodes || !data.links) {
+            throw new Error(data.message || 'Failed to load graph data');
+        }
+
         let filteredNodes = [...data.nodes];
         let filteredLinks = [...data.links];
 
@@ -163,5 +167,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     } catch (err) {
         console.error('Graph Error:', err);
+        document.getElementById('graph-container').innerHTML = 
+            `<div style="color:#fc8181; padding:20px; text-align:center;">Failed to load graph: ${err.message}</div>`;
     }
 });
