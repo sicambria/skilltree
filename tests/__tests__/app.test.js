@@ -48,6 +48,17 @@ describe('app.js', () => {
         expect(res.status).toBe(200);
         expect(res.body.success).toBe(true);
     });
+
+    it('should return health status at /health', async () => {
+        const res = await request(app).get('/health');
+        expect(res.status).toBe(200);
+        expect(res.body.success).toBe(true);
+        expect(res.body.status).toBe('ok');
+        expect(res.body).toHaveProperty('uptime');
+        expect(res.body).toHaveProperty('timestamp');
+        expect(res.body.version).toBe('1.0.0');
+        expect(res.body.database).toBe('connected');
+    });
 });
 
 describe('global error handler', () => {

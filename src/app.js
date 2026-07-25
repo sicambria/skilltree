@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const helmet = require('helmet');
+const mongoose = require('mongoose');
 const config = require('./config/config');
 const routes = require('./routes');
 
@@ -42,6 +43,27 @@ app.get('/', (req, res) => res.sendFile('login.html', { root: path.join(__dirnam
 app.get('/user', (req, res) => res.sendFile('chartandtree.html', { root: path.join(__dirname, '../public/user') }));
 
 app.get('/apitest', (req, res) => res.json({ success: true }));
+
+app.get('/health', (req, res) => {
+    const dbState = mongoose.connection.readyState;
+    const dbStatus = {
+        0: 'disconnected',
+        1: 'connected',
+        2: 'connecting',
+        3: 'disconnecting'
+    }[dbState] || 'unknown';
+
+    const healthy = dbState === 1;
+
+    res.status(healthy ? 200 : 503).json({
+        success: healthy,
+        status: healthy ? 'ok' : 'degraded',
+        uptime: process.uptime(),
+        timestamp: new Date().toISOString(),
+        version: '1.0.0',
+        database: dbStatus
+    });
+});
 
 // API Routes
 app.use('/', routes);
