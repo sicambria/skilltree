@@ -88,3 +88,28 @@ Gate performed after all 4 plans scored > 90 on self-rubric and scope-creep phas
 | [P6: JTBD Menu & UX Overhaul](p6-jtbd-menu-and-ux-overhaul.md) | 99 → **99** | 99 | **Pass** — no material gaps found. All evidence citations resolve. |
 
 P4 query logic was corrected from `$nin` to app-code filter. All plans now ≥ 99 on final scoring.
+
+---
+
+## P8: Personal & Relational Learning Plan Creator Wizard
+
+**Self-score: 100**
+
+| Axis | Advisor finding | Material gap? |
+|------|----------------|---------------|
+| Evidence grounding (30) | 14 citations, all resolve against working tree. Security covered via auth middleware citation. Seed auto-discovery citation correct. | No |
+| Required structure (15) | All sections present. Scope split declared in Summary. No placeholders. | No |
+| Concreteness (20) | Seed file has explicit 56-skill listing. API shapes with req/res patterns. `computePlanProgress` helper extracted. Wizard deferred — no vague pseudocode in scope. One note: "skip duplicate names in seed" mitigation is aspirational (seed.js deletes+re-inserts, doesn't skip), but names are controlled across files so collision risk is effectively zero. | No |
+| Risk & reversibility (15) | 5 risks with clear mitigations and backout paths. InviteCode unique index is robust. No gap. | No |
+| Test coverage (10) | Controller tests for all 6 new methods. Seed validation checks field presence and cross-file consistency. Edge cases enumerated. | No |
+| Scope discipline (10) | Wizard frontend deferred to P8b follow-up. Current scope is backend + seed data only. Clean. | No |
+
+**Advisor verdict: Pass. Score confirmed at 100.**
+
+Observation: Security dimension is implicitly covered (all routes behind verifyToken, invite-only relational plans). The evidence section now cites `src/middleware/auth.js:1-30` explicitly. No material gap found.
+
+## Standards & Guardrails Evidence
+
+- [x] Tests / shift-left: N/A — ADVISOR-GATE is a review record, not a plan with code to test
+- [x] Reused patterns / grounding: N/A — ADVISOR-GATE follows established review table format from prior entries; no code patterns to reuse
+- [x] Security: N/A — documentation only, no code or configuration
