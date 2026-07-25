@@ -29,7 +29,7 @@ import {
 } from '@/shared/ui/dropdown-menu';
 
 export function Header() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '/';
   const { theme, setTheme } = useTheme();
   const { isMobileSidebarOpen, toggleMobileSidebar } = useUIStore();
 

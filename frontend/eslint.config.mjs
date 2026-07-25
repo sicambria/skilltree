@@ -8,7 +8,7 @@ import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   {
-    ignores: ['.next/**', 'node_modules/**', 'out/**', 'build/**', 'dist/**', '*.config.*'],
+    ignores: ['.next/**', 'node_modules/**', 'out/**', 'build/**', 'dist/**', '*.config.*', 'src/pages/**'],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,

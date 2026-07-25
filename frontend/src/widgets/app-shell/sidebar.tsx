@@ -62,7 +62,7 @@ const navigation = [
 ];
 
 export function Sidebar() {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '/';
   const { isSidebarOpen, isMobileSidebarOpen, setMobileSidebarOpen, toggleSidebar } = useUIStore();
 
   if (isMobileSidebarOpen) {
@@ -183,7 +183,7 @@ export function Sidebar() {
 }
 
 function SidebarContent({ onNavigate }: { onNavigate: () => void }) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? '/';
 
   const handleNavigate = (href: string) => {
     onNavigate();

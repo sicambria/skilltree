@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { z } from 'zod';
 
-import { authResponseSchema, loginSchema, registerSchema, userDataSchema, skillSchema, treeSchema, trainingSchema, planSchema, historyEntrySchema, communityFeedItemSchema, planProgressSchema, recommendationSchema, submitAllSchema, type UserData, type Skill, type Tree, type Training, type HistoryEntry, type Plan, type PlanProgress, type CommunityFeedItem, type Recommendation, type LoginInput, type RegisterInput, type SubmitAllInput } from './schemas';
+import { authResponseSchema, loginSchema, registerSchema, userDataSchema, skillSchema, treeSchema, trainingSchema, planSchema, historyEntrySchema, communityFeedItemSchema, planProgressSchema, recommendationSchema, submitAllSchema, type UserData, type Skill, type Tree, type Training, type HistoryEntry, type Plan, type PlanProgress, type CommunityFeedItem, type Recommendation, type LoginInput, type RegisterInput, type SubmitAllInput, type AuthResponse } from './schemas';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || '/api/backend';
 
@@ -81,6 +81,43 @@ export function useTrainings(skillId?: string) {
     queryKey: ['trainings', skillId],
     queryFn: () => fetchJson<Training[]>(skillId ? `/protected/skills/${skillId}/trainings` : '/protected/trainings'),
     enabled: !!skillId,
+  });
+}
+
+// Auth
+export function useMe() {
+  return useQuery({
+    queryKey: ['me'],
+    queryFn: () => fetchJson<UserData>('/protected/userdata'),
+    staleTime: 5 * 60 * 1000,
+  });
+}
+
+export function useLogin() {
+  return useMutation({
+    mutationFn: (data: LoginInput) => fetchJson<AuthResponse>('/auth/login', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }),
+  });
+}
+
+export function useRegister() {
+  return useMutation({
+    mutationFn: (data: RegisterInput) => fetchJson<AuthResponse>('/auth/register', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    }),
+  });
+}
+
+export function useLogout() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: () => fetchJson<unknown>('/auth/logout', { method: 'POST' }),
+    onSuccess: () => {
+      queryClient.clear();
+    },
   });
 }
 

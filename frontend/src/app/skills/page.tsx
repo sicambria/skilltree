@@ -1,6 +1,8 @@
 'use client';
 
 import { Search, ChevronLeft, ChevronRight, BookOpen, ArrowRight, Plus } from 'lucide-react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useState, useEffect } from 'react';
 
@@ -23,7 +25,8 @@ const categories = [
   'Security',
 ];
 
-export function SkillsPage() {
+export default function SkillsPage() {
+  const router = useRouter();
   const [search, setSearch] = useState('');
   const [category, setCategory] = useState('All');
   const [page, setPage] = useState(1);
@@ -69,12 +72,10 @@ export function SkillsPage() {
           <h1 className="text-3xl font-bold tracking-tight">Browse Skills</h1>
           <p className="text-text-muted">Discover skills to add to your learning journey</p>
         </div>
-        <Button variant="outline" asChild>
-          <a href="/contribute/skill">
+        <Button variant="outline" onClick={() => router.push('/contribute/skill')}>
             <Plus className="mr-2 h-4 w-4" />
             Create Skill
-          </a>
-        </Button>
+          </Button>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4">
@@ -118,9 +119,9 @@ export function SkillsPage() {
         ) : (
           <div>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {skills.map((skill) => (
-                <SkillCard key={skill.id} skill={skill} />
-              ))}
+{skills.map((skill) => (
+              <SkillCard key={skill.id} skill={skill} router={router} />
+            ))}
             </div>
 
             {totalPages > 1 && (
@@ -153,7 +154,7 @@ export function SkillsPage() {
   );
 }
 
-function SkillCard({ skill }: { skill: Skill }) {
+function SkillCard({ skill, router }: { skill: Skill; router: ReturnType<typeof useRouter> }) {
   return (
     <Card className="flex flex-col h-full transition-shadow hover:shadow-md">
       <CardHeader>
@@ -176,10 +177,8 @@ function SkillCard({ skill }: { skill: Skill }) {
         </div>
       </CardContent>
       <CardFooter className="flex-1 flex justify-end pt-0">
-        <Button variant="outline" size="sm" asChild>
-          <a href={`/skills/${skill.id}`}>
-            View Details <ArrowRight className="ml-1 h-3 w-3" />
-          </a>
+        <Button variant="outline" size="sm" onClick={() => router.push(`/skills/${skill.id}`)}>
+          View Details <ArrowRight className="ml-1 h-3 w-3" />
         </Button>
       </CardFooter>
     </Card>

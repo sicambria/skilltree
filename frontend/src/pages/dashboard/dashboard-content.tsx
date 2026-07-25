@@ -1,6 +1,7 @@
 'use client';
 
 import { ArrowRight, BarChart, BookOpen, Star, Target, TrendingUp, Users } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 import { cn } from '@/shared/lib/utils';
@@ -21,7 +22,9 @@ const recentActivity = [
   { type: 'level_up', skill: 'GraphQL', level: 3, time: '5 days ago' },
 ];
 
-export function DashboardContent() {
+export default function DashboardContent() {
+  const router = useRouter();
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -29,8 +32,8 @@ export function DashboardContent() {
           <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
           <p className="text-text-muted">Welcome back! Here's your learning overview.</p>
         </div>
-        <Button variant="outline" asChild>
-          <a href="/plan">View Plan <ArrowRight className="ml-2 h-4 w-4" /></a>
+        <Button variant="outline" onClick={() => router.push('/plan')}>
+          View Plan <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </div>
 
@@ -99,33 +102,25 @@ export function DashboardContent() {
           </CardHeader>
           <CardContent className="pt-0">
             <div className="grid gap-3 sm:grid-cols-2">
-              <Button variant="outline" className="h-auto py-4 flex-col items-start gap-2" asChild>
-                <a href="/skills">
-                  <BookOpen className="h-6 w-6" />
-                  <span className="font-medium">Browse Skills</span>
-                  <p className="text-xs text-text-muted">Discover new skills to learn</p>
-                </a>
+              <Button variant="outline" className="h-auto py-4 flex-col items-start gap-2" onClick={() => router.push('/skills')}>
+                <BookOpen className="h-6 w-6" />
+                <span className="font-medium">Browse Skills</span>
+                <p className="text-xs text-text-muted">Discover new skills to learn</p>
               </Button>
-              <Button variant="outline" className="h-auto py-4 flex-col items-start gap-2" asChild>
-                <a href="/trees">
-                  <TrendingUp className="h-6 w-6" />
-                  <span className="font-medium">Browse Trees</span>
-                  <p className="text-xs text-text-muted">Explore learning paths</p>
-                </a>
+              <Button variant="outline" className="h-auto py-4 flex-col items-start gap-2" onClick={() => router.push('/trees')}>
+                <TrendingUp className="h-6 w-6" />
+                <span className="font-medium">Browse Trees</span>
+                <p className="text-xs text-text-muted">Explore learning paths</p>
               </Button>
-              <Button variant="outline" className="h-auto py-4 flex-col items-start gap-2" asChild>
-                <a href="/plan">
-                  <Target className="h-6 w-6" />
-                  <span className="font-medium">Update Plan</span>
-                  <p className="text-xs text-text-muted">Adjust your learning goals</p>
-                </a>
+              <Button variant="outline" className="h-auto py-4 flex-col items-start gap-2" onClick={() => router.push('/plan')}>
+                <Target className="h-6 w-6" />
+                <span className="font-medium">Update Plan</span>
+                <p className="text-xs text-text-muted">Adjust your learning goals</p>
               </Button>
-              <Button variant="outline" className="h-auto py-4 flex-col items-start gap-2" asChild>
-                <a href="/community">
-                  <Users className="h-6 w-6" />
-                  <span className="font-medium">Community</span>
-                  <p className="text-xs text-text-muted">Connect with learners</p>
-                </a>
+              <Button variant="outline" className="h-auto py-4 flex-col items-start gap-2" onClick={() => router.push('/community')}>
+                <Users className="h-6 w-6" />
+                <span className="font-medium">Community</span>
+                <p className="text-xs text-text-muted">Connect with learners</p>
               </Button>
             </div>
           </CardContent>
