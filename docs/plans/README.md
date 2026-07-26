@@ -10,6 +10,7 @@
 | [P4: Skill Complementarity](p4-skill-complementarity.md) | **Medium** | "Who balances me?" — find people with skills you lack; group coverage view. | 99/100 | ✅ Complete (FE + BE) |
 | [P5: Personal Learning Plan](p5-personal-learning-plan.md) | **High** | 3-month / 1-year / 3-year nested learning plan with cascade, progress tracking. Companion to P2. | 99/100 | ✅ Complete (FE + BE) |
 | [P6: JTBD Menu & UX Overhaul](p6-jtbd-menu-and-ux-overhaul.md) | **High** | JTBD-based navigation, browse-all pages, onboarding wizard, dummy content removal. | 99/100 | ✅ Complete (FE) |
+| [P8: Personal & Relational Learning Plan Wizard](p8-personal-relational-learning-wizard.md) | **High** | Curated 56-skill 21st century catalog (Human Skills, EQ, Cognitive, Regenerative, Ecovillage, Permaculture), relational plans with invite/join flow, wizard backend. | 100/100 | ✅ Complete (BE + seed) |
 
 ## Deferred Follow-ups
 
@@ -18,6 +19,7 @@
 | P1b: In-app notifications | P1 | Notifications polling not included in frontend sweep. |
 | P2b: Check-in nudges + timeline export | P2 | Nice-to-haves. Middleware for gentle reminders, JSON export. |
 | P4b: Connection requests | P4 | Follow-up. Messaging system for pairing based on complementarity. |
+| P8b: Wizard frontend | P8 | Frontend HTML page for the wizard steps (deferred to keep P8 backend-only). |
 
 ## Complete
 
@@ -25,6 +27,7 @@
 |------|-----------|---------|
 | [Increase meaningful test coverage](increase-meaningful-test-coverage.md) | Yes | 357 tests, 99.44% stmts, 95.48% branches |
 | [Frontend UI for new features](done/frontend-ui-for-new-features.md) | Yes | Community navbar dropdown, 8 modals, 25+ JS functions, 855 LOC added |
+| [P8: Personal & Relational Learning Plan Wizard](done/p8-personal-relational-learning-wizard.md) | Yes | Backend + seed data: 56 skills, 6 new API endpoints, relational plan flow. Wizard frontend deferred to P8b. |
 
 ## Gate Record
 
