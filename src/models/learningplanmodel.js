@@ -26,6 +26,10 @@ module.exports = mongoose.model('LearningPlan', new Schema({
     username: { type: String, index: true },
     title: String,
     description: String,
+    type: { type: String, enum: ['personal', 'relational'], default: 'personal' },
+    participants: [String],
+    inviteCode: { type: String, sparse: true, unique: true },
+    wizardStep: { type: Number, default: 0, min: 0, max: 5 },
     horizons: {
         shortTerm: horizonSchema,
         midTerm: horizonSchema,

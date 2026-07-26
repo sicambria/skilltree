@@ -1,0 +1,2051 @@
+[
+  {
+    "name": "Coaching",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Coaching is a developmental process where an experienced guide supports a learner in achieving specific personal or professional goals. Unlike mentoring, coaching focuses on unlocking potential through structured questioning and accountability rather than giving direct advice. It empowers individuals to discover their own solutions and take ownership of their growth journey.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Coaching",
+    "pointDescription": [
+      "Understands the core distinctions between coaching, mentoring, consulting, and therapy; can establish a coaching agreement and build basic rapport with clients.",
+      "Applies active listening and powerful questioning techniques consistently; can hold space for the client without inserting personal judgment or solutions.",
+      "Demonstrates proficiency with multiple coaching frameworks such as GROW, OSKAR, or Co-Active; can adapt approach to the client's learning style and emotional state.",
+      "Works effectively with complex client scenarios involving limiting beliefs, systemic constraints, and competing values; able to coach leaders and teams simultaneously.",
+      "Mastery in designing transformative coaching programs; mentors other coaches and contributes to the evolution of coaching methodology and ethical standards."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Active Listening",
+      "Empathy"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Active Listening",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Mentoring",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:coaching"
+  },
+  {
+    "name": "Active Listening",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Active listening is a communication technique that requires the listener to fully concentrate, understand, respond, and then remember what is being said. It goes beyond passive hearing by engaging with the speaker through verbal and non-verbal feedback. This skill is foundational for building trust, resolving conflicts, and fostering meaningful dialogue in any collaborative environment.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Active_listening",
+    "pointDescription": [
+      "Distinguishes active listening from passive hearing; can maintain eye contact, use affirmative gestures, and avoid interrupting the speaker.",
+      "Employs paraphrasing, summarizing, and open-ended questions to confirm understanding; resists the urge to formulate responses while the other person is speaking.",
+      "Reads emotional subtext and body language; can reflect feelings back to the speaker and hold space for silence without discomfort.",
+      "Adapts listening style to high-stakes, cross-cultural, or emotionally charged situations; able to listen for values, assumptions, and unspoken concerns.",
+      "Teaches active listening as a practice; facilitates listening circles and embeds deep listening norms into team culture and organizational communication."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Nonviolent Communication",
+        "type": "complement"
+      },
+      {
+        "skillName": "Empathy",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:active-listening"
+  },
+  {
+    "name": "Nonviolent Communication",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Nonviolent Communication (NVC), developed by Marshall Rosenberg, is a communication framework based on observations, feelings, needs, and requests. It fosters compassionate connection by moving away from judgment, blame, and criticism toward honest self-expression and empathic understanding. NVC is widely used in conflict resolution, mediation, and restorative practices.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Nonviolent_Communication",
+    "pointDescription": [
+      "Understands the four components of NVC: observations, feelings, needs, and requests; can distinguish observation from evaluation.",
+      "Practices expressing feelings and needs without blaming or criticizing; can make clear, doable requests rather than demands.",
+      "Applies empathic listening to hear the needs behind difficult messages; capable of navigating heated conversations with compassion.",
+      "Facilitates NVC-based dialogue in group settings; can mediate conflicts using the NVC framework to restore mutual understanding.",
+      "Trains others in NVC and integrates its principles into organizational culture, restorative justice systems, and community-building practices."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Active Listening",
+      "Empathy"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Active Listening",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Conflict Resolution",
+        "type": "specializes"
+      },
+      {
+        "skillName": "Compassion",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:nonviolent-communication"
+  },
+  {
+    "name": "Public Speaking",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Public speaking is the act of delivering a structured message to a live audience with the intention to inform, persuade, or inspire. It encompasses content preparation, audience analysis, vocal delivery, body language, and managing stage anxiety. Mastery of public speaking amplifies leadership presence and enables leaders to mobilize groups around shared visions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Public_speaking",
+    "pointDescription": [
+      "Structures a basic presentation with a clear opening, body, and conclusion; manages nervousness through breathing and preparation techniques.",
+      "Uses storytelling, analogies, and rhetorical devices to engage the audience; adjusts pace, volume, and tone for emphasis and clarity.",
+      "Reads audience energy and adapts delivery in real time; handles Q&A sessions with poise and handles difficult questions gracefully.",
+      "Delivers keynote-level talks without notes; commands the stage with confident body language and authentic presence across diverse audiences.",
+      "Coaches others in public speaking; designs and delivers training programs that transform apprehensive speakers into compelling communicators."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Active Listening"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Leadership",
+        "type": "complement"
+      },
+      {
+        "skillName": "Facilitation",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:public-speaking"
+  },
+  {
+    "name": "Collaboration",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Collaboration is the practice of working jointly with others toward a shared goal, leveraging diverse skills and perspectives to achieve outcomes beyond individual capability. Effective collaboration requires trust, clear communication, mutual accountability, and the ability to navigate different working styles. It is the cornerstone of high-performing teams and collective intelligence.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Collaboration",
+    "pointDescription": [
+      "Participates actively in team tasks; shares information openly and follows through on commitments; respects others' time and contributions.",
+      "Contributes to team discussions with constructive ideas; gives and receives feedback gracefully; adapts personal style for group cohesion.",
+      "Proactively bridges gaps between team members; facilitates shared understanding when perspectives diverge; helps the team stay aligned on goals.",
+      "Designs collaborative workflows and decision-making processes that harness diverse strengths; capable of leading distributed and cross-functional teams.",
+      "Cultivates a culture of collaboration across an organization; designs systems that reward collective success and break down silos at scale."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Active Listening",
+      "Conflict Resolution"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Facilitation",
+        "type": "complement"
+      },
+      {
+        "skillName": "Conflict Resolution",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:collaboration"
+  },
+  {
+    "name": "Conflict Resolution",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Conflict resolution encompasses the methods and processes used to facilitate the peaceful ending of disagreement and the restoration of constructive relationships. It involves understanding the root causes of conflict, managing emotions, communicating effectively, and negotiating solutions that address the interests of all parties. Skilled conflict resolvers turn adversarial dynamics into opportunities for growth and innovation.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Conflict_resolution",
+    "pointDescription": [
+      "Identifies common sources of interpersonal conflict; distinguishes between positions, interests, and needs; remains calm when tension arises.",
+      "Applies active listening and reframing to de-escalate emotional situations; facilitates a structured conversation between conflicting parties.",
+      "Uses interest-based negotiation to generate win-win outcomes; handles power imbalances and mediates disputes with neutrality and empathy.",
+      "Designs conflict resolution systems for teams and organizations; trains others in restorative practices and peer mediation.",
+      "Integrates conflict resolution into organizational culture; transforms recurring patterns of conflict into systemic learning and improvement."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Active Listening",
+      "Nonviolent Communication"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Nonviolent Communication",
+        "type": "complement"
+      },
+      {
+        "skillName": "Collaboration",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:conflict-resolution"
+  },
+  {
+    "name": "Cultural Competence",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Cultural competence is the ability to understand, communicate with, and effectively interact with people across cultures. It encompasses awareness of one's own cultural worldview, knowledge of different cultural practices, and the development of cross-cultural skills. In increasingly diverse teams and global markets, cultural competence is essential for equitable collaboration and inclusive leadership.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Cultural_competence",
+    "pointDescription": [
+      "Recognizes that cultural background shapes communication styles, values, and behaviors; reflects on personal cultural biases and assumptions.",
+      "Seeks knowledge about other cultural traditions and norms; adapts communication style to be respectful across cultural contexts.",
+      "Navigates cross-cultural misunderstandings with curiosity rather than judgment; adjusts facilitation and collaboration methods for multicultural groups.",
+      "Designs inclusive policies, programs, and practices that honor diverse cultural perspectives; advocates for equity in organizational systems.",
+      "Mentors others in cultural competence; embeds cultural humility into team norms and organizational strategy at a systemic level."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Active Listening",
+      "Empathy"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Empathy",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Collaboration",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:cultural-competence"
+  },
+  {
+    "name": "Mentoring",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Mentoring is a developmental partnership through which an experienced individual shares knowledge, wisdom, and perspective to support the growth of a less experienced person. Unlike coaching, mentoring often involves direct guidance, career advice, and role modeling based on the mentor's own experience. Effective mentoring accelerates learning, builds confidence, and strengthens the talent pipeline within organizations and communities.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Mentoring",
+    "pointDescription": [
+      "Understands the roles and boundaries of a mentor; can establish a mentoring agreement and build trust with a mentee.",
+      "Shares relevant experience and insights while encouraging mentee autonomy; provides constructive feedback and celebrates progress.",
+      "Adapts mentoring style to the mentee's developmental stage and learning needs; helps mentees navigate career decisions and organizational dynamics.",
+      "Designs structured mentoring programs that pair mentors and mentees effectively; trains other mentors in best practices and ethical boundaries.",
+      "Cultivates a mentoring culture across the organization; measures mentoring outcomes and continuously improves program design."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Coaching",
+      "Active Listening"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Coaching",
+        "type": "adjacent"
+      },
+      {
+        "skillName": "Leadership",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:mentoring"
+  },
+  {
+    "name": "Facilitation",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Facilitation is the art of guiding a group toward achieving its objectives while remaining neutral on content. A facilitator designs and manages participatory processes that ensure everyone contributes, decisions are made effectively, and time is used well. Skilled facilitation is the engine of productive meetings, workshops, and collaborative problem-solving sessions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Facilitation_(business)",
+    "pointDescription": [
+      "Understands the role of a neutral facilitator; can prepare an agenda, manage time, and ensure balanced participation in straightforward meetings.",
+      "Designs participatory activities for diverse group sizes; uses techniques like brainstorming, dot-voting, and breakout groups to engage all voices.",
+      "Handles challenging group dynamics including dominant voices, low energy, and disagreement; makes real-time design adjustments to keep the group productive.",
+      "Facilitates complex multi-stakeholder processes with divergent interests; uses advanced methods like World Cafe, Open Space, and consensus-building.",
+      "Trains facilitators and designs facilitation systems for organizations; embeds participatory practices into organizational culture and governance."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Active Listening",
+      "Collaboration"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Leadership",
+        "type": "adjacent"
+      },
+      {
+        "skillName": "Participatory Decision-Making",
+        "type": "specializes"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:facilitation"
+  },
+  {
+    "name": "Leadership",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Leadership is the ability to inspire, influence, and guide individuals or groups toward a shared vision or goal. It encompasses setting direction, building alignment, and fostering commitment within a team or organization. Leadership is not tied to formal authority; it is a practice that can be exercised at any level through vision, integrity, and empowering others.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Leadership",
+    "pointDescription": [
+      "Takes initiative and demonstrates accountability; communicates a clear vision and inspires others through personal example and enthusiasm.",
+      "Delegates effectively, empowers team members, and provides regular feedback; navigates team dynamics and resolves conflicts constructively.",
+      "Develops other leaders; thinks strategically about organizational challenges; makes sound decisions under uncertainty with input from diverse perspectives.",
+      "Leads organizational change and transformation; builds a culture of trust, innovation, and psychological safety across teams.",
+      "Embodies servant leadership; leaves a legacy of empowered individuals and resilient systems that function effectively in the leader's absence."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Collaboration",
+      "Conflict Resolution"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Servant Leadership",
+        "type": "specializes"
+      },
+      {
+        "skillName": "Delegation",
+        "type": "complement"
+      },
+      {
+        "skillName": "Facilitation",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:leadership"
+  },
+  {
+    "name": "Servant Leadership",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Servant leadership is a leadership philosophy in which the primary goal is to serve others first, prioritizing the growth, well-being, and empowerment of team members. Coined by Robert Greenleaf, this approach inverts traditional power structures by placing the leader in a supporting role. Servant leaders build trust, foster collaboration, and create conditions for people to do their best work.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Servant_leadership",
+    "pointDescription": [
+      "Understands the core principles of servant leadership and distinguishes it from traditional command-and-control approaches; practices active listening and empathy.",
+      "Prioritizes team members' needs and creates conditions for their success; shares power and credit generously while owning mistakes.",
+      "Builds a team culture of psychological safety, trust, and mutual respect; facilitates others' growth through coaching and mentoring.",
+      "Leads organizational change through service rather than authority; designs systems that amplify frontline voice and distribute decision-making.",
+      "Embodies servant leadership as a lived practice; mentors next-generation servant leaders and influences organizational culture toward stewardship and service."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Leadership",
+      "Empathy"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Leadership",
+        "type": "specializes"
+      },
+      {
+        "skillName": "Empathy",
+        "type": "prerequisite"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:servant-leadership"
+  },
+  {
+    "name": "Delegation",
+    "categoryName": "Human Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Delegation is the assignment of authority and responsibility to another person to carry out specific activities while retaining overall accountability. Effective delegation empowers team members, develops their skills, and frees the leader to focus on higher-level strategic work. Poor delegation leads to micromanagement, bottlenecks, and disengagement.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Delegation",
+    "pointDescription": [
+      "Identifies tasks suitable for delegation; communicates expectations clearly and matches tasks to team members' skills and development needs.",
+      "Provides adequate authority and resources for delegated tasks; sets checkpoints without micromanaging; offers support when needed.",
+      "Delegates to stretch team members' capabilities and foster growth; balances autonomy with appropriate oversight across multiple concurrent tasks.",
+      "Designs delegation systems that distribute work effectively across teams; creates accountability frameworks that build trust rather than control.",
+      "Develops organizational-wide delegation capability; coaches other leaders to overcome delegation barriers and build empowered, autonomous teams."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Leadership",
+      "Coaching"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Leadership",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Coaching",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:delegation"
+  },
+  {
+    "name": "Self-Awareness",
+    "categoryName": "Emotional Intelligence",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Self-awareness is the conscious knowledge of one's own character, emotions, motives, and patterns of behavior. It is the foundational competency of emotional intelligence, enabling individuals to recognize how their feelings affect their performance and relationships. Greater self-awareness allows for more intentional choices rather than reactive behavior.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Self-awareness",
+    "pointDescription": [
+      "Recognizes basic emotional states and physical sensations as they occur; identifies personal strengths and areas for growth with honesty.",
+      "Understands the triggers and patterns behind emotional reactions; connects emotional responses to underlying values, needs, and beliefs.",
+      "Maintains self-awareness under stress and in difficult interpersonal situations; uses self-reflection to continuously refine understanding of personal patterns.",
+      "Integrates feedback from multiple sources to deepen self-knowledge; aware of blind spots and shadow aspects; works actively on personal development.",
+      "Embarks on ongoing inner work; models radical self-honesty; creates environments that encourage others to cultivate their own self-awareness."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Self-Regulation",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Inner Work",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:self-awareness"
+  },
+  {
+    "name": "Self-Regulation",
+    "categoryName": "Emotional Intelligence",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Self-regulation is the ability to manage one's emotions, impulses, and behaviors in alignment with conscious values rather than momentary reactions. It involves staying calm under pressure, thinking before acting, and adapting to changing circumstances with composure. This competency is critical for maintaining trust, integrity, and effectiveness in high-stakes environments.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Emotional_self-regulation",
+    "pointDescription": [
+      "Recognizes rising emotional intensity and uses basic techniques such as breathing or pausing to prevent impulsive reactions.",
+      "Consistently manages emotional responses in moderately stressful situations; maintains professional composure when faced with criticism or setbacks.",
+      "Transforms difficult emotions into constructive responses; adapts behavior flexibly to diverse situations without losing integrity or authenticity.",
+      "Maintains equilibrium in prolonged crises and high-stakes negotiations; models emotional steadiness that stabilizes teams under pressure.",
+      "Coaches others in self-regulation practices; creates organizational cultures that support emotional health and reduce reactivity at a systemic level."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Self-Awareness"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Self-Awareness",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Resilience",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:self-regulation"
+  },
+  {
+    "name": "Empathy",
+    "categoryName": "Emotional Intelligence",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Empathy is the ability to understand and share the feelings of another person, seeing the world from their perspective without judgment. It includes cognitive empathy (understanding another's perspective), emotional empathy (feeling with another), and empathic concern (being moved to help). Empathy is the foundation of trust, collaboration, and compassionate leadership.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Empathy",
+    "pointDescription": [
+      "Distinguishes empathy from sympathy; practices perspective-taking in everyday interactions; listens without interrupting or offering solutions.",
+      "Recognizes emotional cues in others' verbal and non-verbal communication; responds with warmth and validation even when disagreeing.",
+      "Maintains empathic connection during conflict and disagreement; can hold compassion for others while maintaining personal boundaries.",
+      "Applies systemic empathy to understand the experiences of diverse stakeholders; designs inclusive experiences and policies.",
+      "Cultivates empathy as an organizational value; teaches empathic communication practices; fosters environments where diverse experiences are deeply understood."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Self-Awareness"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Compassion",
+        "type": "adjacent"
+      },
+      {
+        "skillName": "Active Listening",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:empathy"
+  },
+  {
+    "name": "Social Awareness",
+    "categoryName": "Emotional Intelligence",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Social awareness is the ability to read the emotional currents, power dynamics, and unspoken norms within a group or organization. It extends empathy from one-on-one interactions to whole systems, enabling accurate perception of group climate and cultural dynamics. Leaders with strong social awareness navigate organizational politics effectively and build coalitions across diverse stakeholders.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Social_awareness",
+    "pointDescription": [
+      "Notices group dynamics and emotional tone in meetings; recognizes when team members are engaged, confused, or uncomfortable.",
+      "Reads organizational culture and power dynamics accurately; adapts communication and approach to different social contexts.",
+      "Anticipates how decisions will affect different stakeholders; navigates sensitive topics with cultural and contextual intelligence.",
+      "Builds strategic relationships across diverse groups; senses emerging tensions before they become conflicts and intervenes proactively.",
+      "Shapes organizational culture intentionally; mentors others in social awareness; creates systems that surface diverse perspectives and promote inclusion."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Empathy"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Empathy",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Relationship Management",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:social-awareness"
+  },
+  {
+    "name": "Relationship Management",
+    "categoryName": "Emotional Intelligence",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Relationship management is the competency of building and maintaining healthy, productive connections with others. It encompasses communication, influence, conflict management, and the ability to inspire and develop people. Strong relationship management transforms transactional interactions into lasting partnerships built on mutual trust and respect.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Relationship_management",
+    "pointDescription": [
+      "Builds rapport easily with diverse individuals; maintains positive working relationships; follows up and follows through on commitments.",
+      "Navigates disagreements constructively; gives feedback that strengthens rather than damages relationships; repairs trust after misunderstandings.",
+      "Inspires and influences others without formal authority; builds networks of allies and collaborators across organizational boundaries.",
+      "Resolves systemic relational patterns that cause recurring conflict; mentors others in relationship-building skills; facilitates team bonding.",
+      "Creates organizational cultures where relationships are prioritized alongside results; designs systems that foster belonging, trust, and mutual support."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Social Awareness",
+      "Conflict Resolution"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Social Awareness",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Conflict Resolution",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:relationship-management"
+  },
+  {
+    "name": "Resilience",
+    "categoryName": "Emotional Intelligence",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Resilience is the capacity to recover quickly from setbacks, adapt to change, and keep growing despite adversity. It is not about avoiding difficulty but about developing the inner resources to navigate challenges without breaking. Resilient individuals maintain perspective, learn from failure, and bounce back with greater wisdom and strength.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Psychological_resilience",
+    "pointDescription": [
+      "Recognizes personal stress signals and uses basic recovery strategies; maintains perspective during minor setbacks and disappointments.",
+      "Bounces back from moderate challenges within a reasonable timeframe; extracts lessons from failure without excessive self-criticism.",
+      "Maintains effectiveness and well-being during prolonged or intense adversity; supports others through their challenges with steadiness.",
+      "Thrives in conditions of uncertainty and rapid change; transforms adversity into growth and innovation; maintains optimism grounded in realism.",
+      "Designs systems and cultures that build collective resilience; mentors others in developing their resilient capacities; anticipates future challenges."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Self-Regulation"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Self-Regulation",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Mindfulness",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:resilience"
+  },
+  {
+    "name": "Mindfulness",
+    "categoryName": "Emotional Intelligence",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Mindfulness is the practice of maintaining non-judgmental awareness of the present moment with clarity and acceptance. Rooted in contemplative traditions and supported by modern neuroscience, mindfulness enhances focus, emotional regulation, and cognitive flexibility. Regular practice rewires the brain for greater calm, clarity, and compassion in both personal and professional life.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Mindfulness",
+    "pointDescription": [
+      "Practices basic mindfulness meditation; can sustain attention on breath or body sensations for several minutes; recognizes when the mind has wandered.",
+      "Applies mindfulness to daily activities such as eating, walking, or listening; notices automatic patterns of reactivity without judgment.",
+      "Maintains mindful awareness during challenging conversations and high-pressure situations; uses mindfulness to regulate emotional arousal.",
+      "Integrates mindfulness into leadership, decision-making, and creative work; offers mindfulness guidance to teams and organizations.",
+      "Trains others in mindfulness practices; designs workplace mindfulness programs; embodies mindful presence as a way of being."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Self-Awareness"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Self-Awareness",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Emotional Agility",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:mindfulness"
+  },
+  {
+    "name": "Compassion",
+    "categoryName": "Emotional Intelligence",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Compassion is the ability to recognize suffering in others and take action to alleviate it. It combines empathy with a motivation to help, making it an active rather than passive quality. Research shows that compassion is a key driver of team trust, psychological safety, and organizational resilience.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Compassion",
+    "pointDescription": [
+      "Notices when others are struggling and feels concern; distinguishes compassion from pity or over-identification with suffering.",
+      "Responds to others' distress with kindness and practical support; maintains boundaries while being genuinely caring.",
+      "Extends compassion to people in difficult circumstances and to those with whom one disagrees; practices self-compassion consistently.",
+      "Designs compassionate systems, policies, and cultures; advocates for humane treatment in organizational decision-making.",
+      "Embodies compassion as a core leadership principle; teaches compassionate practices; transforms institutional cultures toward care and mutual support."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Empathy"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Empathy",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Nonviolent Communication",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:compassion"
+  },
+  {
+    "name": "Emotional Agility",
+    "categoryName": "Emotional Intelligence",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Emotional agility, a concept developed by Susan David, is the ability to navigate one's inner experiences with mindfulness, courage, and values-based action. It involves facing emotions with curiosity and compassion rather than avoiding or clinging to them. Emotionally agile individuals respond to life's challenges with flexibility rather than rigidity, staying aligned with their core values.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Emotional_agility",
+    "pointDescription": [
+      "Learns to recognize and label emotions with precision; understands that emotions are information, not directives for action.",
+      "Creates space between stimulus and response; observes difficult thoughts and feelings without being controlled by them.",
+      "Acts in alignment with personal values even when uncomfortable emotions arise; practices acceptance of inner experience while choosing conscious response.",
+      "Helps others develop emotional agility; navigates complex emotional landscapes in teams and relationships with grace.",
+      "Emotionally agile presence enables courageous conversations and transformative change; integrates this capability into leadership development and culture."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Self-Awareness",
+      "Mindfulness"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Mindfulness",
+        "type": "complement"
+      },
+      {
+        "skillName": "Self-Regulation",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "growing"
+    },
+    "skillId": "skilltree:skill:emotional-agility"
+  },
+  {
+    "name": "Inner Work",
+    "categoryName": "Emotional Intelligence",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Inner work is the intentional practice of turning attention inward to examine one's own psyche, patterns, beliefs, and shadow aspects. Drawing on depth psychology, contemplative traditions, and transformative practices, inner work uncovers unconscious drivers that shape behavior. It is essential for authentic leadership, emotional maturity, and breaking free from limiting patterns.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Inner_work",
+    "pointDescription": [
+      "Understands the concept of the unconscious and personal shadow; engages in regular self-reflection through journaling or meditation.",
+      "Identifies recurring patterns and limiting beliefs; traces them to their origins and works with them with curiosity rather than judgment.",
+      "Engages with difficult emotions and previously avoided aspects of self; integrates shadow material into conscious awareness.",
+      "Facilitates inner work processes for others; holds space for deep transformational work in individuals and groups.",
+      "Embarks on a lifelong inner work journey; embodies the fruits of inner work in service, wisdom, and compassionate action."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Self-Awareness"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Self-Awareness",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Emotional Agility",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "growing"
+    },
+    "skillId": "skilltree:skill:inner-work"
+  },
+  {
+    "name": "Critical Thinking",
+    "categoryName": "Cognitive Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Critical thinking is the disciplined art of analyzing and evaluating information to form a reasoned judgment. It involves questioning assumptions, identifying biases, evaluating evidence, and considering alternative perspectives before reaching conclusions. In an era of information overload and misinformation, critical thinking is an essential safeguard against manipulation and poor decisions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Critical_thinking",
+    "pointDescription": [
+      "Distinguishes between fact, opinion, and inference; asks basic clarifying questions; identifies obvious logical fallacies in arguments.",
+      "Evaluates the credibility of sources and evidence; constructs well-reasoned arguments with appropriate supporting data.",
+      "Identifies hidden assumptions and biases in own thinking and others'; analyzes complex issues from multiple perspectives before forming conclusions.",
+      "Synthesizes information from diverse and conflicting sources; evaluates arguments for strength, relevance, and completeness under uncertainty.",
+      "Teaches critical thinking methodologies; designs systems that embed critical analysis into organizational decision-making processes."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Metacognition",
+        "type": "complement"
+      },
+      {
+        "skillName": "Sensemaking",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:critical-thinking"
+  },
+  {
+    "name": "Systems Thinking",
+    "categoryName": "Cognitive Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Systems thinking is a holistic approach to analysis that focuses on how constituent parts interrelate and how systems work over time within the context of larger systems. It helps identify leverage points, feedback loops, and unintended consequences that linear thinking misses. Mastery of systems thinking is critical for addressing complex, wicked problems in any domain.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Systems_thinking",
+    "pointDescription": [
+      "Understands basic systems concepts such as elements, interconnections, and purpose; can draw simple causal loop diagrams.",
+      "Identifies feedback loops (reinforcing and balancing), delays, and stocks and flows in real-world situations; sees patterns over time.",
+      "Finds leverage points in complex systems; anticipates unintended consequences of interventions; thinks in terms of dynamic relationships rather than static snapshots.",
+      "Applies systems thinking to multi-stakeholder, multi-scale challenges; designs interventions that account for systemic complexity and emergence.",
+      "Facilitates systems thinking workshops; builds system dynamics models; mentors others in applying systems thinking to organizational and societal challenges."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Critical Thinking"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Critical Thinking",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Pattern Recognition",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:systems-thinking"
+  },
+  {
+    "name": "Creative Problem-Solving",
+    "categoryName": "Cognitive Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Creative problem-solving is a structured method for generating novel solutions by combining divergent and convergent thinking. It involves clarifying the problem, generating ideas, developing solutions, and implementing them effectively. This skill bridges analytical thinking and imagination, enabling breakthrough solutions that conventional approaches miss.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Creative_problem-solving",
+    "pointDescription": [
+      "Uses basic brainstorming techniques; approaches problems with curiosity and openness; generates multiple alternatives before selecting one.",
+      "Applies structured creative methods such as SCAMPER, mind mapping, and analogical thinking; suspends judgment during idea generation.",
+      "Navigates between convergent and divergent thinking with flexibility; reframes problems to reveal new solution pathways; prototypes ideas rapidly.",
+      "Facilitates creative problem-solving sessions for teams; integrates creative approaches with analytical rigor; overcomes creative blocks effectively.",
+      "Designs innovation systems and processes; coaches teams in creative methods; fosters organizational cultures where creative problem-solving thrives."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Critical Thinking"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Critical Thinking",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Integrative Thinking",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:creative-problem-solving"
+  },
+  {
+    "name": "Decision Making",
+    "categoryName": "Cognitive Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Decision making is the cognitive process of selecting a course of action from multiple alternatives based on available information, values, and preferences. Effective decision-making balances analytical rigor, intuition, and ethical considerations while managing uncertainty and risk. Good decision-making is the hallmark of effective leadership and personal agency.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Decision-making",
+    "pointDescription": [
+      "Identifies when a decision is needed; defines criteria for good outcomes; gathers relevant information; distinguishes between trivial and consequential choices.",
+      "Applies structured frameworks such as decision matrices, cost-benefit analysis, and pros-and-cons lists; makes timely decisions without analysis paralysis.",
+      "Navigates high-stakes decisions under uncertainty; balances analytical input with intuition and ethical considerations; involves stakeholders appropriately.",
+      "Facilitates group decision-making processes; handles disagreement and builds consensus; makes decisions that account for long-term systemic effects.",
+      "Designs decision-making systems and governance structures; mentors others in decision-making competencies; fosters a culture of empowered, informed decisions."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Critical Thinking"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Critical Thinking",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Integrative Thinking",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:decision-making"
+  },
+  {
+    "name": "Metacognition",
+    "categoryName": "Cognitive Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Metacognition is the awareness and understanding of one's own thought processes, often described as thinking about thinking. It involves monitoring, evaluating, and regulating how we learn, reason, and solve problems. Strong metacognitive skills enable learners to identify what they know and do not know, choose effective strategies, and adapt their approach when something is not working.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Metacognition",
+    "pointDescription": [
+      "Distinguishes between what is known and unknown; reflects on learning experiences; sets learning goals before starting a task.",
+      "Monitors comprehension and progress during learning; adjusts strategies when current approaches are not effective; self-tests understanding.",
+      "Articulates personal thinking patterns, biases, and heuristics; deliberately selects problem-solving strategies based on task demands.",
+      "Teaches metacognitive strategies to others; designs learning experiences that build metacognitive skills; applies metacognition to complex, ill-defined problems.",
+      "Researches and advances metacognitive practices; integrates metacognition into educational and organizational learning systems."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Critical Thinking"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Learning How to Learn",
+        "type": "complement"
+      },
+      {
+        "skillName": "Critical Thinking",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:metacognition"
+  },
+  {
+    "name": "Pattern Recognition",
+    "categoryName": "Cognitive Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Pattern recognition is the ability to identify regularities, recurring structures, and trends in data, events, or behaviors. It is a fundamental cognitive ability that underlies learning, prediction, and expert intuition. Skilled pattern recognizers can cut through complexity to identify what is truly important, making faster and more accurate judgments.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Pattern_recognition_(psychology)",
+    "pointDescription": [
+      "Notices simple repeating patterns in everyday situations and data; distinguishes meaningful patterns from random noise.",
+      "Identifies patterns across different domains and contexts; recognizes analogies that reveal deeper structural similarities.",
+      "Detects subtle patterns and anomalies that others miss; uses pattern recognition to anticipate future events and emerging trends.",
+      "Applies pattern recognition to complex systems and long time horizons; distinguishes between generative and limiting patterns in organizations.",
+      "Mentors others in pattern recognition skills; designs tools and frameworks that support pattern finding in teams and organizations."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Critical Thinking"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Systems Thinking",
+        "type": "complement"
+      },
+      {
+        "skillName": "Sensemaking",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:pattern-recognition"
+  },
+  {
+    "name": "Sensemaking",
+    "categoryName": "Cognitive Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Sensemaking is the process of creating meaning and understanding out of complex, ambiguous, or contradictory information. Coined by Karl Weick, sensemaking involves noticing, interpreting, and enacting plausible understandings in situations where traditional frameworks break down. It is the critical cognitive skill for navigating novelty, uncertainty, and accelerating change.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Sensemaking",
+    "pointDescription": [
+      "Recognizes when current mental models are insufficient; gathers diverse information from multiple sources without jumping to conclusions.",
+      "Constructs plausible narratives that make sense of ambiguous situations; tests interpretations against new information and alternative perspectives.",
+      "Navigates conflicting data and competing interpretations; helps groups converge on shared understanding without forcing premature consensus.",
+      "Applies sensemaking to organizational crises and strategic pivots; facilitates collective sensemaking processes with diverse stakeholders.",
+      "Designs sensemaking practices and rituals for organizations; coaches leaders to hold uncertainty and guide teams through ambiguity."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Critical Thinking",
+      "Systems Thinking"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Systems Thinking",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Anticipatory Thinking",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "growing"
+    },
+    "skillId": "skilltree:skill:sensemaking"
+  },
+  {
+    "name": "Anticipatory Thinking",
+    "categoryName": "Cognitive Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Anticipatory thinking is the ability to foresee future possibilities, challenges, and opportunities by understanding trends, drivers of change, and emerging patterns. It combines foresight, scenario planning, and strategic intuition to prepare for multiple plausible futures. In a rapidly changing world, anticipatory thinking enables proactive rather than reactive responses.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Anticipatory_thinking",
+    "pointDescription": [
+      "Identifies current trends and projects them forward; distinguishes between probable, possible, and preferable futures at a basic level.",
+      "Develops multiple scenarios for how a situation might evolve; identifies early warning signals for different future possibilities.",
+      "Integrates anticipatory thinking into strategic planning and decision-making; reframes present challenges in terms of future trajectories.",
+      "Facilitates futures-thinking workshops; builds foresight capacity in teams and organizations; uses backcasting to align present actions with desired futures.",
+      "Designs strategic foresight systems; contributes to the field of futures studies; mentors next-generation foresight practitioners."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Systems Thinking",
+      "Pattern Recognition"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Systems Thinking",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Sensemaking",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "growing"
+    },
+    "skillId": "skilltree:skill:anticipatory-thinking"
+  },
+  {
+    "name": "Integrative Thinking",
+    "categoryName": "Cognitive Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Integrative thinking is the ability to creatively resolve tensions between opposing models or ideas by generating a new solution that contains elements of both but is superior to either. Developed by Roger Martin, this approach rejects either-or trade-offs in favor of-and synthesis. Integrative thinkers build the capacity to hold ambiguity and create breakthrough strategies.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Integrative_thinking",
+    "pointDescription": [
+      "Recognizes when two seemingly opposing positions each contain valid insights; resists the impulse to choose one side prematurely.",
+      "Articulates the assumptions underlying each opposing model; identifies what is valuable in each perspective.",
+      "Generates creative resolutions that transcend the initial opposition; builds models that capture the strengths of conflicting viewpoints.",
+      "Applies integrative thinking to complex organizational and strategic challenges; facilitates teams through tension toward synthesis.",
+      "Teaches integrative thinking as a discipline; designs processes and cultures that leverage productive tension for breakthrough innovation."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Critical Thinking",
+      "Creative Problem-Solving"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Creative Problem-Solving",
+        "type": "complement"
+      },
+      {
+        "skillName": "Decision Making",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "growing"
+    },
+    "skillId": "skilltree:skill:integrative-thinking"
+  },
+  {
+    "name": "Learning How to Learn",
+    "categoryName": "Cognitive Skills",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Learning how to learn is the meta-skill of understanding and optimizing one's own learning process. It encompasses knowledge of how the brain acquires and retains information, effective study techniques, time management, and the ability to transfer knowledge across contexts. In a world where knowledge rapidly obsolesces, this skill determines long-term adaptability and growth.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Meta-learning",
+    "pointDescription": [
+      "Understands basic principles of how memory works; practices spaced repetition and active recall; identifies personal learning preferences.",
+      "Creates effective learning plans with clear goals, resources, and schedules; seeks feedback to calibrate understanding; learns from mistakes systematically.",
+      "Transfers knowledge and skills across different domains; learns efficiently from multiple formats including books, courses, projects, and peers.",
+      "Designs learning experiences for others; facilitates learning circles and peer coaching; adapts learning strategies based on task complexity.",
+      "Cultivates a lifelong learning mindset; creates organizational learning systems; contributes to the science and practice of learning."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Metacognition"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Metacognition",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Critical Thinking",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:learning-how-to-learn"
+  },
+  {
+    "name": "Regenerative Agriculture",
+    "categoryName": "Regenerative Practices",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Regenerative agriculture is a farming approach that focuses on restoring and enhancing soil health, biodiversity, and ecosystem function rather than merely sustaining them. It goes beyond sustainable practices by actively rebuilding organic matter and improving the living systems that support agriculture. This approach sequesters carbon, improves water cycles, and produces nutrient-dense food.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Regenerative_agriculture",
+    "pointDescription": [
+      "Understands the core principles of regenerative agriculture: minimal soil disturbance, permanent soil cover, plant diversity, and integration of livestock.",
+      "Implements basic regenerative practices such as cover cropping, crop rotation, and compost application on a small scale.",
+      "Manages a farm or garden using no-till methods, diverse polycultures, and holistic grazing; observes improvements in soil structure and biology.",
+      "Designs regenerative systems for multiple acres; integrates trees, animals, and crops in synergistic designs; measures soil carbon and biodiversity indicators.",
+      "Teaches regenerative methods; advises farms transitioning from conventional to regenerative systems; contributes to policy and research advancing regenerative agriculture."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Soil Health Management",
+      "Permaculture Design"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Soil Health Management",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Carbon Sequestration",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:regenerative-agriculture"
+  },
+  {
+    "name": "Soil Health Management",
+    "categoryName": "Regenerative Practices",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Soil health management is the practice of nurturing the living ecosystem beneath our feet as the foundation of productive and resilient landscapes. Healthy soil is teeming with microorganisms, fungi, and invertebrates that cycle nutrients, store water, and support plant growth. Managing for soil health involves minimizing disturbance, maximizing biodiversity, and keeping living roots in the ground year-round.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Soil_health",
+    "pointDescription": [
+      "Understands that soil is a living ecosystem; identifies basic soil types, soil texture, and the role of organic matter in soil function.",
+      "Performs simple soil tests for pH, nutrient levels, and biological activity; applies compost, mulches, and amendments to improve soil condition.",
+      "Manages soil biology through diverse crop rotations, reduced tillage, and green manures; recognizes indicators of healthy versus degraded soil.",
+      "Designs soil-building strategies for different contexts and scales; restores degraded soils using regenerative techniques; monitors soil health metrics over time.",
+      "Advises on soil health policy; trains farmers and land managers; contributes to the science of soil ecology and regenerative land management."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Regenerative Agriculture"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Regenerative Agriculture",
+        "type": "specializes"
+      },
+      {
+        "skillName": "Water Cycle Restoration",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:soil-health-management"
+  },
+  {
+    "name": "Holistic Management",
+    "categoryName": "Regenerative Practices",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Holistic Management is a decision-making framework developed by Allan Savory that helps land managers make better decisions by considering the whole system: social, environmental, and financial. It is best known for its application in holistic planned grazing, which mimics how wild herbivores move across landscapes. This approach can reverse desertification, restore grasslands, and sequester large amounts of carbon.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Holistic_management_(agriculture)",
+    "pointDescription": [
+      "Understands the holistic management framework including the holistic goal, ecosystem processes, and the testing questions for decisions.",
+      "Develops a personal or organizational holistic goal; applies the seven testing questions to guide operational decisions.",
+      "Implements holistic planned grazing; monitors ecosystem indicators; adapts plans based on observation and feedback.",
+      "Facilitates holistic management for multiple stakeholders; integrates financial planning with ecological and social considerations.",
+      "Trains others in holistic management; contributes to the global regenerative movement; influences land management policy and practice."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Regenerative Agriculture",
+      "Systems Thinking"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Regenerative Agriculture",
+        "type": "complement"
+      },
+      {
+        "skillName": "Systems Thinking",
+        "type": "prerequisite"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:holistic-management"
+  },
+  {
+    "name": "Carbon Sequestration",
+    "categoryName": "Regenerative Practices",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Carbon sequestration is the process of capturing and storing atmospheric carbon dioxide in plants, soils, and other carbon sinks. In a regenerative context, it emphasizes biological approaches such as increasing soil organic matter, afforestation, and building with carbon-storing materials. Carbon farming and regenerative land management offer scalable natural climate solutions.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Carbon_sequestration",
+    "pointDescription": [
+      "Understands the carbon cycle, the difference between biological and geological carbon sequestration, and why soil carbon matters for climate.",
+      "Identifies practices that sequester carbon: cover crops, no-till, agroforestry, biochar, and compost applications; measures basic carbon stocks.",
+      "Designs carbon farming plans that maximize sequestration while maintaining productivity; accounts for carbon in management decisions.",
+      "Monitors and verifies carbon sequestration using established protocols; integrates carbon sequestration with economic incentives and carbon markets.",
+      "Advises on carbon sequestration policy; designs large-scale sequestration programs; contributes to the science of carbon drawdown and climate restoration."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Regenerative Agriculture",
+      "Soil Health Management"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Regenerative Agriculture",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Circular Systems Design",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:carbon-sequestration"
+  },
+  {
+    "name": "Water Cycle Restoration",
+    "categoryName": "Regenerative Practices",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Water cycle restoration is the practice of restoring the natural movement of water across landscapes through infiltration, evaporation, and transpiration. Degraded landscapes shed water rapidly, causing floods, drought, and erosion. Restoration techniques such as swales, keyline design, rainwater harvesting, and revegetation rebuild the landscape's capacity to hold, filter, and slowly release water.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Water_cycle",
+    "pointDescription": [
+      "Understands the hydrologic cycle and how land management affects water infiltration, runoff, and evaporation; reads the landscape for water flow patterns.",
+      "Implements basic water-harvesting earthworks such as swales, berms, and ponds; observes how these structures affect water retention and vegetation.",
+      "Designs keyline water systems for farms and landscapes; integrates water harvesting with road design, fencing, and planting plans.",
+      "Restores degraded watersheds through comprehensive water cycle management; works at catchment scale with multiple stakeholders.",
+      "Advises on water policy and watershed restoration; trains water harvesters and landscape designers; contributes to the global water restoration movement."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Water Harvesting",
+      "Regenerative Agriculture"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Water Harvesting",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Biodiversity Enhancement",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:water-cycle-restoration"
+  },
+  {
+    "name": "Biodiversity Enhancement",
+    "categoryName": "Regenerative Practices",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Biodiversity enhancement is the active practice of increasing the variety of life forms in a given area to build ecosystem resilience, productivity, and beauty. It goes beyond conservation to actively reintroduce native species, create habitat corridors, and design polycultures that support mutualistic relationships. Greater biodiversity leads to more stable, productive, and adaptive ecosystems.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Biodiversity",
+    "pointDescription": [
+      "Understands the importance of biodiversity for ecosystem health; identifies common native and invasive species in the local area.",
+      "Creates simple habitat enhancements such as bird boxes, pollinator gardens, and native plantings; removes invasive species manually.",
+      "Designs diverse polycultures and habitat mosaics; establishes wildlife corridors and riparian buffers; monitors species presence over time.",
+      "Restores ecosystems at scale through rewilding, species reintroduction, and landscape connectivity planning; works with multiple stakeholders.",
+      "Advises on biodiversity policy; trains land managers in ecological restoration; contributes to conservation science and practice."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Regenerative Agriculture",
+      "Permaculture Design"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Guild Planting",
+        "type": "specializes"
+      },
+      {
+        "skillName": "Water Cycle Restoration",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:biodiversity-enhancement"
+  },
+  {
+    "name": "Regenerative Economics",
+    "categoryName": "Regenerative Practices",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Regenerative economics is an economic framework designed to restore and regenerate natural and social capital rather than depleting it. It shifts the goal of economic activity from endless growth to thriving within planetary boundaries. Principles include circular material flows, distributive ownership, regional self-reliance, and measuring success by well-being rather than GDP.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Regenerative_economics",
+    "pointDescription": [
+      "Understands the differences between extractive, sustainable, and regenerative economic models; recognizes the limitations of GDP as a measure of success.",
+      "Identifies regenerative economic practices: cooperatives, local currencies, circular supply chains, and benefit corporations; supports them as a consumer or worker.",
+      "Designs regenerative business models that restore natural and social capital; integrates multiple bottom lines into decision-making.",
+      "Advises organizations and communities on transitioning to regenerative economic practices; develops metrics for measuring regenerative outcomes.",
+      "Contributes to the theory and practice of regenerative economics; influences economic policy toward regenerative principles; mentors next-generation economic designers."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Systems Thinking",
+      "Circular Systems Design"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Circular Systems Design",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Community Economics",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "growing"
+    },
+    "skillId": "skilltree:skill:regenerative-economics"
+  },
+  {
+    "name": "Circular Systems Design",
+    "categoryName": "Regenerative Practices",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Circular systems design is the practice of creating systems that eliminate waste by keeping materials and resources in continuous use. Inspired by natural cycles where waste equals food, circular design moves beyond recycling to regenerative material flows. It applies to products, business models, cities, and entire economies, representing a fundamental shift from linear take-make-waste patterns.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Circular_economy",
+    "pointDescription": [
+      "Understands the circular economy principles: eliminate waste, circulate materials, and regenerate nature; distinguishes circular from linear and recycling-only approaches.",
+      "Conducts basic material flow analyses; identifies opportunities to close loops in personal or organizational resource use.",
+      "Designs products and services for durability, repairability, remanufacturing, and eventual decomposition; applies biomimetic principles to design.",
+      "Advises organizations on circular business models such as product-as-a-service, leasing, and shared platforms; evaluates circularity metrics.",
+      "Designs circular systems at regional scale; influences policy toward circular economy; contributes to the global transition to regenerative material flows."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Systems Thinking"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Regenerative Economics",
+        "type": "complement"
+      },
+      {
+        "skillName": "Appropriate Technology",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "growing"
+    },
+    "skillId": "skilltree:skill:circular-systems-design"
+  },
+  {
+    "name": "Community Governance (Sociocracy)",
+    "categoryName": "Ecovillage Design",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Sociocracy is a governance system based on consent decision-making, circle organization, and double-linking that enables organizations to function effectively, equitably, and transparently. It distributes authority to semi-autonomous circles while maintaining alignment with the whole. Sociocratic principles are widely adopted in ecovillages, cooperatives, and progressive organizations seeking distributed leadership.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Sociocracy",
+    "pointDescription": [
+      "Understands the core elements of sociocracy: circles, consent decision-making, double-linking, and elections by consent.",
+      "Participates in sociocratic meetings effectively; uses rounds, consent, and proposal-forming processes in circle work.",
+      "Serves as a circle leader or delegate; facilitates consent-based meetings; designs circle structures for organizations.",
+      "Installs sociocratic governance in organizations; trains members in sociocratic practices; handles the transition from hierarchical to consent-based governance.",
+      "Trains sociocracy facilitators; adapts sociocratic methods to diverse cultural contexts; advances the practice of consent-based governance."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Facilitation",
+      "Participatory Decision-Making"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Participatory Decision-Making",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Facilitation",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:community-governance-sociocracy"
+  },
+  {
+    "name": "Participatory Decision-Making",
+    "categoryName": "Ecovillage Design",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Participatory decision-making involves processes that engage all members of a group in shaping the decisions that affect them. It encompasses methods such as consensus, consent, deliberative polling, and citizen assemblies. Beyond being democratic, participatory decision-making produces better outcomes by incorporating diverse perspectives and building collective ownership of the result.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Participatory_decision-making",
+    "pointDescription": [
+      "Understands the spectrum of decision-making methods from autocratic to consensus; knows when each is appropriate; can participate constructively in a consensus process.",
+      "Facilitates basic consensus-building processes; helps groups identify concerns and generate proposals that address them; manages the proposal-shaping process.",
+      "Designs participatory processes for diverse group sizes and contexts; handles blocks and stand-asides gracefully; ensures marginalized voices are heard.",
+      "Facilitates multi-stakeholder participatory processes with conflicting interests; integrates participatory methods with organizational governance.",
+      "Trains facilitators in participatory methods; designs participatory systems for organizations and communities; contributes to the theory and practice of deliberative democracy."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Facilitation",
+      "Collaboration"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Facilitation",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Community Governance (Sociocracy)",
+        "type": "specializes"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:participatory-decision-making"
+  },
+  {
+    "name": "Eco-Building Design",
+    "categoryName": "Ecovillage Design",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Eco-building design integrates ecological principles into the construction, operation, and eventual deconstruction of buildings. It encompasses passive solar design, natural materials, energy efficiency, water conservation, and healthy indoor environments. Eco-buildings function as living systems that generate energy, capture water, and support the well-being of their inhabitants while minimizing ecological impact.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Sustainable_architecture",
+    "pointDescription": [
+      "Understands basic principles of passive solar design, insulation, and thermal mass; can identify energy-efficient building features.",
+      "Specifies low-toxicity, renewable, and locally sourced building materials; performs basic energy modeling and heat-loss calculations.",
+      "Designs buildings that integrate solar energy, rainwater harvesting, natural ventilation, and greywater systems; applies biophilic design principles.",
+      "Manages the construction of eco-buildings, coordinating with architects, engineers, and contractors; achieves net-zero energy or passive house standards.",
+      "Designs regenerative buildings that sequester carbon, produce more energy than they consume, and restore the surrounding ecosystem."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Natural Building",
+      "Water Harvesting"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Natural Building",
+        "type": "adjacent"
+      },
+      {
+        "skillName": "Appropriate Technology",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:eco-building-design"
+  },
+  {
+    "name": "Permaculture Design",
+    "categoryName": "Ecovillage Design",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Permaculture design is a holistic system for creating sustainable human settlements that mimic natural ecosystems. It integrates land, resources, people, and structures through thoughtful design based on observation of natural patterns. The permaculture design process uses ethics, principles, and a systematic design methodology to create regenerative landscapes and communities.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Permaculture",
+    "pointDescription": [
+      "Understands the three permaculture ethics and core design principles; can read a landscape and identify zones, sectors, and patterns.",
+      "Creates a basic permaculture design for a home or small property using zones, sector analysis, and element mapping.",
+      "Designs integrated systems that stack functions, connect elements in beneficial relationships, and close resource loops.",
+      "Designs for multiple acres or community-scale projects; presents and defends designs to clients; manages permaculture implementation projects.",
+      "Teaches permaculture design courses; mentors design students; designs large-scale regenerative systems for ecovillages and regional landscapes."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Permaculture Ethics & Principles",
+      "Pattern Observation"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Permaculture Ethics & Principles",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Zone & Sector Analysis",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:permaculture-design"
+  },
+  {
+    "name": "Appropriate Technology",
+    "categoryName": "Ecovillage Design",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Appropriate technology is technology designed to be contextually suitable for the social, economic, and environmental conditions in which it is used. Coined by E.F. Schumacher, it favors small-scale, decentralized, energy-efficient, and locally maintainable solutions. Examples include solar cookers, biogas digesters, ram pumps, and pedal-powered machines.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Appropriate_technology",
+    "pointDescription": [
+      "Understands the principles of appropriate technology: affordable, accessible, maintainable, and culturally appropriate; distinguishes it from technology transfer.",
+      "Installs and maintains basic appropriate technology devices such as solar water heaters, rainwater filters, and composting toilets.",
+      "Designs simple appropriate technology solutions for specific local contexts; uses locally available materials and skills.",
+      "Leads appropriate technology projects in communities; trains local technicians; evaluates technology choices for social and environmental fit.",
+      "Teaches appropriate technology design; develops open-source appropriate technology plans; advocates for policies that support distributed, appropriate infrastructure."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Permaculture Design"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Permaculture Design",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Circular Systems Design",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:appropriate-technology"
+  },
+  {
+    "name": "Social Permaculture",
+    "categoryName": "Ecovillage Design",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Social permaculture applies the ethics and principles of permaculture to human relationships, organizations, and communities. It designs social structures that are regenerative, resilient, and cooperative by applying ecological thinking to culture, governance, economics, and communication. Social permaculture recognizes that human systems are part of nature and must be designed accordingly.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Social_permaculture",
+    "pointDescription": [
+      "Understands how permaculture principles apply to social systems; applies the edge effect to diverse groups; uses relative location to build relationships.",
+      "Creates social structures that stack functions: a meeting serves multiple purposes; a team includes complementary skills.",
+      "Designs cooperative processes for decision-making, conflict resolution, and resource sharing using ecological patterns.",
+      "Facilitates social permaculture design processes for groups and organizations; integrates social and ecological design into unified projects.",
+      "Teaches social permaculture; designs regenerative community cultures; applies social permaculture to regional and bioregional scale."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Permaculture Design",
+      "Facilitation"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Permaculture Design",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Community Governance (Sociocracy)",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:social-permaculture"
+  },
+  {
+    "name": "Conflict Transformation",
+    "categoryName": "Ecovillage Design",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Conflict transformation goes beyond resolution to harness the energy of conflict as a catalyst for positive change and deeper relationship. Rooted in peacebuilding and restorative practices, it addresses the underlying structural and relational causes of conflict. Transformed conflict becomes a source of learning, innovation, and stronger community bonds.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Conflict_transformation",
+    "pointDescription": [
+      "Distinguishes between conflict resolution, management, and transformation; understands conflict as a normal and potentially productive phenomenon.",
+      "Uses restorative questions to shift from blame to understanding; facilitates conversations that address root causes and rebuild trust.",
+      "Designs processes that transform recurring conflict patterns into systemic learning; addresses power dynamics and structural inequities.",
+      "Facilitates multi-party conflict transformation in divided communities; integrates trauma awareness and healing practices into conflict work.",
+      "Trains conflict transformation practitioners; designs community-based peacebuilding systems; contributes to the theory and practice of transformative justice."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Conflict Resolution",
+      "Nonviolent Communication"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Conflict Resolution",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Social Permaculture",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "growing"
+    },
+    "skillId": "skilltree:skill:conflict-transformation"
+  },
+  {
+    "name": "Community Economics",
+    "categoryName": "Ecovillage Design",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Community economics focuses on creating local, resilient, and equitable economic systems that serve community well-being rather than external growth. It encompasses local currencies, time banks, cooperative enterprises, community land trusts, and participatory budgeting. Community economics empowers communities to meet their own needs while building wealth that stays in the community.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Community_economics",
+    "pointDescription": [
+      "Understands the principles of community economics: localization, cooperation, circulation, and reciprocity; knows how money flows through a local economy.",
+      "Participates in or supports local economic alternatives such as farmers markets, food co-ops, credit unions, and local currencies.",
+      "Starts or manages a cooperative enterprise, community land trust, or local exchange system; helps capital circulate within the community.",
+      "Designs community economic development strategies; integrates multiple enterprises in a cohesive local economic ecosystem.",
+      "Teaches community economics; advises on policy for community wealth building; contributes to the movement for local, regenerative economies."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Regenerative Economics",
+      "Participatory Decision-Making"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Regenerative Economics",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Participatory Decision-Making",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:community-economics"
+  },
+  {
+    "name": "Permaculture Ethics & Principles",
+    "categoryName": "Permaculture",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Permaculture ethics and principles form the philosophical and practical foundation of permaculture design. The three ethics are Earth Care, People Care, and Fair Share, which guide all permaculture decisions. From these ethics flow design principles such as observe and interact, catch and store energy, obtain a yield, and use edges and value the marginal. Mastery of these is essential before undertaking permaculture design.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Permaculture#Ethics",
+    "pointDescription": [
+      "Articulates the three permaculture ethics and their implications; understands how they guide decision-making in all permaculture applications.",
+      "Explains the core permaculture principles with concrete examples; can identify when principles are being applied or violated in real situations.",
+      "Applies multiple principles simultaneously in design work; uses principles as creative constraints that generate innovative solutions.",
+      "Integrates ethics and principles into organizational governance, economic systems, and social structures beyond land design.",
+      "Teaches the ethics and principles from lived experience; mentors others in integrating them into every aspect of life and work."
+    ],
+    "maxPoint": 5,
+    "parents": [],
+    "children": [],
+    "trainings": [],
+    "reusability": "transversal",
+    "relationships": [
+      {
+        "skillName": "Pattern Observation",
+        "type": "complement"
+      },
+      {
+        "skillName": "Permaculture Design",
+        "type": "specializes"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:permaculture-ethics-principles"
+  },
+  {
+    "name": "Pattern Observation",
+    "categoryName": "Permaculture",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Pattern observation is the practice of seeing and understanding the patterns that recur in nature and human systems. Patterns are the language of ecological design, from spiral vines and branching rivers to network hubs and nested systems. Learning to recognize, draw, and apply patterns allows designers to work with nature rather than against it, creating efficient, beautiful, and resilient designs.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Pattern_(architecture)",
+    "pointDescription": [
+      "Understands the importance of observation before intervention; can identify simple patterns in nature such as spirals, waves, and branches.",
+      "Sits in observation for extended periods; sketches and maps patterns observed in a landscape; recognizes edge, patch, and corridor patterns.",
+      "Applies pattern language to design; uses patterns such as keyline, zoning, and stacking to organize elements effectively in space and time.",
+      "Reads landscape patterns at multiple scales from micro to watershed; uses pattern understanding to identify leverage points for design.",
+      "Teaches pattern literacy; develops original pattern languages for new domains; mentors designers in deep observation and pattern thinking."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Permaculture Ethics & Principles"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Permaculture Ethics & Principles",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Pattern Recognition",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:pattern-observation"
+  },
+  {
+    "name": "Sheet Mulching",
+    "categoryName": "Permaculture",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Sheet mulching is a no-dig gardening technique that layers cardboard, compost, and organic mulch to build fertile soil, suppress weeds, and retain moisture. Also called lasagna gardening, it transforms poor soil or even lawn into productive garden beds without tilling. Sheet mulching mimics the forest floor, where organic matter accumulates and decomposes into rich soil.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Sheet_mulching",
+    "pointDescription": [
+      "Understands the purpose and benefits of sheet mulching; identifies the required materials: cardboard, nitrogen-rich greens, carbon-rich browns, and mulch.",
+      "Lays a sheet mulch correctly with proper layer sequence, thickness, and overlap; avoids common mistakes such as using weed-contaminated materials.",
+      "Adapts sheet mulching to different climates and soil conditions; integrates sheet mulching with swales, paths, and planting plans.",
+      "Designs large-scale sheet mulching projects for orchards, food forests, or land restoration; manages the timing and sourcing of materials.",
+      "Teaches sheet mulching workshops; contributes to the practice through experimentation and innovation; advocates for no-dig methods in horticulture."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Permaculture Design",
+      "Soil Health Management"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Permaculture Design",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Food Forest Design",
+        "type": "complement"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:sheet-mulching"
+  },
+  {
+    "name": "Food Forest Design",
+    "categoryName": "Permaculture",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Food forest design creates multi-story, perennial edible ecosystems modeled after natural forests. By stacking layers from canopy trees to root crops, food forests produce abundant food with minimal external inputs. The design focuses on creating plant communities where each species supports the others through nitrogen fixation, pollination support, pest management, and microclimate creation.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Forest_gardening",
+    "pointDescription": [
+      "Understands the seven layers of a food forest: canopy, understory, shrub, herbaceous, ground cover, vine, and root; can name examples for each layer.",
+      "Selects species for each layer based on climate, soil, and functional relationships; designs simple guilds with beneficial plant pairings.",
+      "Designs a multi-layer food forest with careful attention to succession, sunlight, and water flow; integrates animals for pest control and fertility.",
+      "Manages the establishment and ongoing evolution of food forests; makes design adjustments based on observations in the maturing system.",
+      "Teaches food forest design; creates regional food forest planting guides; designs large-scale community food forests and edible landscapes."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Permaculture Design",
+      "Guild Planting"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Permaculture Design",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Guild Planting",
+        "type": "prerequisite"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:food-forest-design"
+  },
+  {
+    "name": "Water Harvesting",
+    "categoryName": "Permaculture",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Water harvesting is the practice of capturing, storing, and directing rainwater and runoff for productive use in the landscape. It includes simple techniques like rain barrels and roof catchment, as well as larger-scale earthworks such as swales, ponds, and keyline systems. Effective water harvesting builds drought resilience, recharges groundwater, and prevents erosion.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Rainwater_harvesting",
+    "pointDescription": [
+      "Understands the water harvesting principle: slow it, spread it, sink it; calculates catchment area and storage needs for a simple system.",
+      "Installs rain barrels, gutter systems, and simple diversion swales; uses harvested water for garden irrigation.",
+      "Designs integrated water harvesting systems including swales, ponds, and roof catchment; stores water in the landscape and in tanks.",
+      "Designs keyline water systems for farms and landscapes; integrates water harvesting with road design, fire protection, and ecosystem restoration.",
+      "Teaches water harvesting design; consults on large-scale water restoration projects; contributes to the global water harvesting movement."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Permaculture Design",
+      "Pattern Observation"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Permaculture Design",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Water Cycle Restoration",
+        "type": "specializes"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:water-harvesting"
+  },
+  {
+    "name": "Natural Building",
+    "categoryName": "Permaculture",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Natural building uses locally available, minimally processed natural materials to create healthy, energy-efficient homes and structures. Techniques include cob, straw bale, rammed earth, light clay straw, and timber framing with natural plasters. Natural buildings breathe, regulate humidity, and create living spaces that feel deeply healthy and connected to the land.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Natural_building",
+    "pointDescription": [
+      "Understands the principles of natural building: use local and natural materials, prioritize low embodied energy, create healthy indoor environments.",
+      "Mixes and applies basic natural building materials such as cob, earthen plaster, and lime render; builds simple structures like garden walls or benches.",
+      "Constructs a small natural building such as a shed, studio, or tiny house using a single natural technique: straw bale, cob, or cordwood.",
+      "Designs and manages the construction of full-scale natural homes; integrates passive solar, natural ventilation, and renewable energy systems.",
+      "Teaches natural building techniques; trains natural building instructors; designs natural building codes and advocates for regulatory acceptance."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Permaculture Design"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Permaculture Design",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Eco-Building Design",
+        "type": "adjacent"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:natural-building"
+  },
+  {
+    "name": "Zone & Sector Analysis",
+    "categoryName": "Permaculture",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Zone and sector analysis is a foundational permaculture design tool that organizes landscape and settlement elements based on frequency of use and external influences. Zones range from Zone 0 (the home) through Zone 5 (wilderness), placing the most intensively managed elements closest to where people live. Sectores map external energies such as sun, wind, water flow, fire risk, and wildlife corridors.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Permaculture#Zone_design",
+    "pointDescription": [
+      "Understands the zone system from Zone 0 to Zone 5 and the logic behind what goes where; can map basic sectors on a property.",
+      "Creates a zone plan for a home or small property, placing high-maintenance elements near the house and low-maintenance ones farther out.",
+      "Combines zone and sector maps to inform element placement; designs site access, water systems, and planting according to sector analysis.",
+      "Applies zone and sector thinking at community and bioregional scales; integrates multiple properties into a cohesive zoned landscape plan.",
+      "Teaches zone and sector analysis; develops advanced sector mapping tools; integrates sector analysis with broader landscape design and planning."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Permaculture Ethics & Principles",
+      "Pattern Observation"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Permaculture Design",
+        "type": "specializes"
+      },
+      {
+        "skillName": "Pattern Observation",
+        "type": "prerequisite"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:zone-sector-analysis"
+  },
+  {
+    "name": "Guild Planting",
+    "categoryName": "Permaculture",
+    "skillIcon": "pictures/icons/default.png",
+    "description": "Guild planting is the practice of assembling groups of plants, animals, and fungi that work together in mutually beneficial relationships. A well-designed guild provides nutrients, pest control, pollination, weed suppression, microclimate management, and harvestable yields with minimal external inputs. The classic example is the Three Sisters: corn, beans, and squash.",
+    "descriptionWikipediaURL": "https://en.wikipedia.org/wiki/Guild_(permaculture)",
+    "pointDescription": [
+      "Understands the concept of functional guilds and what makes a beneficial plant community; identifies common roles: nitrogen fixer, dynamic accumulator, pollinator attractor, pest repellent.",
+      "Designs simple guilds with two or three complementary species; selects plants that occupy different niches and support each other.",
+      "Creates multi-function guilds with five or more species covering all key functions: fertility, pest management, pollination, ground cover, and food production.",
+      "Designs guilds for specific contexts such as under fruit trees, along swales, or as hedge rows; manages the guild through maturity and succession.",
+      "Teaches guild design; develops regional guild planting templates; contributes to the science of polyculture design and ecological plant community management."
+    ],
+    "maxPoint": 5,
+    "parents": [
+      "Permaculture Design",
+      "Pattern Observation"
+    ],
+    "children": [],
+    "trainings": [],
+    "reusability": "cross-sectoral",
+    "relationships": [
+      {
+        "skillName": "Permaculture Design",
+        "type": "prerequisite"
+      },
+      {
+        "skillName": "Food Forest Design",
+        "type": "specializes"
+      }
+    ],
+    "crosswalks": {},
+    "temporal": {
+      "stage": "mature"
+    },
+    "skillId": "skilltree:skill:guild-planting"
+  }
+]

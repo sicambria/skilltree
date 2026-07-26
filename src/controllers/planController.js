@@ -1,5 +1,7 @@
 const LearningPlan = require('../models/learningplanmodel');
 const User = require('../models/usermodel');
+const Skill = require('../models/skillmodel');
+const crypto = require('crypto');
 
 function computeEffectiveLevel(assessment) {
     if (!assessment) return null;
@@ -38,6 +40,36 @@ function classifyTransitionType(horizon, previousSkills) {
     if (overlap >= 0.6 && !higherLevels.length && !hasNewSkills) return 'shift';
 
     return 'broaden';
+}
+
+function computePlanProgress(user, plan) {
+    const progress = {};
+    for (const horizonKey of ['shortTerm', 'midTerm', 'longTerm']) {
+        const horizon = plan.horizons[horizonKey];
+        if (!horizon || !horizon.skills) continue;
+
+        progress[horizonKey] = horizon.skills.map(skill => {
+            const userSkill = user.skills.find(s => s.name === skill.skillName);
+            const current = userSkill ? userSkill.assessment : null;
+            const target = skill.targetAssessment;
+
+            return {
+                skillName: skill.skillName,
+                target,
+                current: current ? {
+                    autonomy: current.autonomy,
+                    complexity: current.complexity,
+                    influence: current.influence,
+                    knowledge: current.knowledge,
+                    business_skills: current.business_skills,
+                    effectiveLevel: current.effectiveLevel
+                } : { achievedPoint: userSkill ? userSkill.achievedPoint : null },
+                targetEffectiveLevel: computeEffectiveLevel(target),
+                currentEffectiveLevel: current ? current.effectiveLevel : (userSkill ? userSkill.achievedPoint : null)
+            };
+        });
+    }
+    return progress;
 }
 
 exports.createPlan = async (req, res) => {
@@ -144,34 +176,167 @@ exports.getPlanProgress = async (req, res) => {
         const plan = await LearningPlan.findOne({ username: req.decoded.username });
         if (!plan) return res.json({ success: false, message: 'No plan found.' });
 
-        const progress = {};
-        for (const horizonKey of ['shortTerm', 'midTerm', 'longTerm']) {
-            const horizon = plan.horizons[horizonKey];
-            if (!horizon || !horizon.skills) continue;
+        const progress = computePlanProgress(user, plan);
+        res.json({ username: req.decoded.username, progress });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
 
-            progress[horizonKey] = horizon.skills.map(skill => {
-                const userSkill = user.skills.find(s => s.name === skill.skillName);
-                const current = userSkill ? userSkill.assessment : null;
-                const target = skill.targetAssessment;
+exports.getSkillCatalog = async (req, res) => {
+    try {
+        const curatedCategories = ['Human Skills', 'Emotional Intelligence', 'Cognitive Skills', 'Regenerative Practices', 'Ecovillage Design', 'Permaculture'];
+        const skills = await Skill.find({ categoryName: { $in: curatedCategories } });
+        const catalog = {};
+        curatedCategories.forEach(cat => {
+            catalog[cat] = skills.filter(s => s.categoryName === cat).map(s => ({
+                name: s.name,
+                categoryName: s.categoryName,
+                description: s.description,
+                skillIcon: s.skillIcon,
+                reusability: s.reusability,
+                relationships: s.relationships,
+                parents: s.parents,
+                maxPoint: s.maxPoint
+            }));
+        });
+        res.json({ success: true, catalog });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
 
-                return {
-                    skillName: skill.skillName,
-                    target,
-                    current: current ? {
-                        autonomy: current.autonomy,
-                        complexity: current.complexity,
-                        influence: current.influence,
-                        knowledge: current.knowledge,
-                        business_skills: current.business_skills,
-                        effectiveLevel: current.effectiveLevel
-                    } : { achievedPoint: userSkill ? userSkill.achievedPoint : null },
-                    targetEffectiveLevel: computeEffectiveLevel(target),
-                    currentEffectiveLevel: current ? current.effectiveLevel : (userSkill ? userSkill.achievedPoint : null)
-                };
-            });
+exports.createRelationalPlan = async (req, res) => {
+    try {
+        const { partnerUsername } = req.body;
+        if (!partnerUsername) return res.json({ success: false, message: 'Partner username required.' });
+
+        const partner = await User.findOne({ username: partnerUsername });
+        if (!partner) return res.json({ success: false, message: 'Partner not found.' });
+
+        const owner = req.decoded.username;
+        if (partnerUsername === owner) return res.json({ success: false, message: 'Cannot create relational plan with yourself.' });
+
+        const threeMonths = new Date();
+        threeMonths.setMonth(threeMonths.getMonth() + 3);
+        const oneYear = new Date();
+        oneYear.setFullYear(oneYear.getFullYear() + 1);
+        const threeYears = new Date();
+        threeYears.setFullYear(threeYears.getFullYear() + 3);
+
+        const plan = new LearningPlan({
+            username: owner,
+            title: `${owner} & ${partnerUsername}'s Learning Plan`,
+            description: '',
+            type: 'relational',
+            participants: [owner, partnerUsername],
+            horizons: {
+                shortTerm: { targetDate: threeMonths, skills: [] },
+                midTerm: { targetDate: oneYear, skills: [] },
+                longTerm: { targetDate: threeYears, skills: [] }
+            }
+        });
+        await plan.save();
+        res.json({ success: true, plan });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
+
+exports.updateWizardStep = async (req, res) => {
+    try {
+        const { step } = req.body;
+        if (step == null || step < 0 || step > 5) {
+            return res.json({ success: false, message: 'Invalid step. Must be 0-5.' });
         }
 
-        res.json({ username: req.decoded.username, progress });
+        const plan = await LearningPlan.findOne({ username: req.decoded.username });
+        if (!plan) return res.json({ success: false, message: 'No plan found.' });
+
+        plan.wizardStep = step;
+        plan.updatedAt = new Date();
+        await plan.save();
+        res.json({ success: true, wizardStep: step });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
+
+exports.relationalInvite = async (req, res) => {
+    try {
+        const plan = await LearningPlan.findOne({ username: req.decoded.username });
+        if (!plan) return res.json({ success: false, message: 'No plan found.' });
+        if (plan.type !== 'relational') return res.json({ success: false, message: 'Not a relational plan.' });
+
+        let inviteCode;
+        let retries = 3;
+        while (retries > 0) {
+            inviteCode = crypto.randomBytes(3).toString('hex');
+            const existing = await LearningPlan.findOne({ inviteCode });
+            if (!existing) break;
+            retries--;
+        }
+        if (!inviteCode) return res.status(500).json({ success: false, message: 'Could not generate unique invite code.' });
+
+        plan.inviteCode = inviteCode;
+        plan.updatedAt = new Date();
+        await plan.save();
+        res.json({ success: true, inviteCode });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
+
+exports.joinRelationalPlan = async (req, res) => {
+    try {
+        const { inviteCode } = req.body;
+        if (!inviteCode) return res.json({ success: false, message: 'Invite code required.' });
+
+        const plan = await LearningPlan.findOne({ inviteCode });
+        if (!plan) return res.json({ success: false, message: 'Invalid invite code.' });
+        if (plan.type !== 'relational') return res.json({ success: false, message: 'Not a relational plan.' });
+        if (plan.participants.length >= 2) return res.json({ success: false, message: 'Plan already has 2 participants.' });
+
+        const username = req.decoded.username;
+        if (plan.participants.includes(username)) return res.json({ success: false, message: 'Already a participant.' });
+
+        plan.participants.push(username);
+        plan.updatedAt = new Date();
+        await plan.save();
+        res.json({ success: true, plan });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
+
+exports.getRelationalProgress = async (req, res) => {
+    try {
+        const plan = await LearningPlan.findOne({ username: req.decoded.username });
+        if (!plan) return res.json({ success: false, message: 'No plan found.' });
+        if (plan.type !== 'relational') return res.json({ success: false, message: 'Not a relational plan.' });
+
+        const participants = plan.participants || [];
+        const users = await User.find({ username: { $in: participants } });
+        const userMap = {};
+        users.forEach(u => { userMap[u.username] = u; });
+
+        const relationalProgress = {};
+        for (const username of participants) {
+            const user = userMap[username];
+            if (!user) {
+                relationalProgress[username] = null;
+                continue;
+            }
+            relationalProgress[username] = computePlanProgress(user, plan);
+        }
+
+        res.json({ success: true, participants, progress: relationalProgress });
     } catch (err) {
         console.error(err);
         res.status(500).json({ success: false, message: 'Server error' });
