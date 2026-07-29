@@ -496,6 +496,36 @@ function formatSkillResponse(skill, include) {
     return result;
 }
 
+exports.getSkillCatalog = async (req, res) => {
+    try {
+        const { era } = req.query;
+        const eraFilters = {
+            '20th': { 'temporal.stage': { $in: ['mature', 'declining'] } },
+            '21st': { 'temporal.stage': { $in: ['mature', 'growing', 'emerging'] } },
+            'specialization': { reusability: { $in: ['sector-specific', 'occupation-specific'] } },
+            'future_proof': { 'temporal.stage': 'emerging' }
+        };
+
+        let result = {};
+        if (era && eraFilters[era]) {
+            result[era] = await Skill.find(eraFilters[era]).sort({ name: 1 });
+        } else if (era === 'all') {
+            for (const [key, filter] of Object.entries(eraFilters)) {
+                result[key] = await Skill.find(filter).sort({ name: 1 });
+            }
+        } else {
+            for (const [key, filter] of Object.entries(eraFilters)) {
+                result[key] = await Skill.find(filter).sort({ name: 1 });
+            }
+        }
+
+        res.json({ success: true, catalog: result });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
+
 function getLevelLabel(level7) {
     const labels = { 1: 'Follow', 2: 'Assist', 3: 'Apply', 4: 'Enable', 5: 'Advise', 6: 'Lead', 7: 'Pioneer' };
     return labels[level7] || 'Unknown';

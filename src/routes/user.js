@@ -11,5 +11,9 @@ router.post('/newplace', userController.updateLocation);
 router.post('/newemail', userController.updateEmail);
 router.post('/newhelp', userController.updateHelp);
 router.post('/firstlogindata', userController.handleFirstLogin);
+router.post('/onboarding/depth', userController.handleDepthOnboarding);
+router.get('/onboarding/domains', userController.getSkillDomains);
+router.post('/profile/export', userController.exportProfile);
+router.post('/profile/import', userController.importProfile);
 
 module.exports = router;

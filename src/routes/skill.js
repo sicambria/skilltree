@@ -12,6 +12,8 @@ router.post('/newskill', skillController.newSkill);
 router.post('/newtraining', skillController.newTraining);
 router.post('/submitall', skillController.submitAll);
 
+router.get('/skills/catalog/all', skillController.getSkillCatalog);
+router.get('/skills/catalog', skillController.getSkillCatalog);
 router.get('/skills', skillController.listSkills);
 router.get('/skills/:id', skillController.getSkillById);
 router.get('/skills/:id/proficiency', skillController.getSkillProficiency);

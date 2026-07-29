@@ -19,6 +19,7 @@ module.exports = mongoose.model('User', new Schema({
         name: String,
         treeNames: [String],
     },
+    domainPath: [String],
     location: String,
     willingToTeach: Boolean,
     teachingDay: String,

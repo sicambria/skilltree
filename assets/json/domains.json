@@ -1,0 +1,33 @@
+[
+  {"name": "Information Technology", "depth": 0, "parent": null, "description": "Computing, networks, and digital systems", "icon": "laptop", "skillNames": ["Prompt Engineering", "AI Tool Integration", "Agentic Workflow Design"]},
+  {"name": "Healthcare", "depth": 0, "parent": null, "description": "Medicine, wellness, and health sciences", "icon": "heartbeat", "skillNames": []},
+  {"name": "Business", "depth": 0, "parent": null, "description": "Commerce, management, and entrepreneurship", "icon": "briefcase", "skillNames": ["Commercial Awareness", "Stakeholder Engagement"]},
+  {"name": "Education", "depth": 0, "parent": null, "description": "Teaching, training, and learning", "icon": "book", "skillNames": ["Coaching", "Mentoring", "Facilitation"]},
+  {"name": "Creative Arts", "depth": 0, "parent": null, "description": "Design, media, and visual arts", "icon": "palette", "skillNames": []},
+  {"name": "Trades & Manufacturing", "depth": 0, "parent": null, "description": "Skilled trades, fabrication, and production", "icon": "wrench", "skillNames": []},
+  {"name": "Science", "depth": 0, "parent": null, "description": "Research, experimentation, and discovery", "icon": "flask", "skillNames": []},
+  {"name": "Humanities", "depth": 0, "parent": null, "description": "Culture, language, and philosophy", "icon": "globe", "skillNames": []},
+
+  {"name": "Software Engineering", "depth": 1, "parent": "Information Technology", "description": "Design, development, and maintenance of software", "icon": "code", "skillNames": ["Python", "JavaScript", "Java", "C++", "Git", "Agile Methodologies", "Test-Driven Development"]},
+  {"name": "IT Engineering", "depth": 1, "parent": "Information Technology", "description": "Infrastructure, systems, and IT operations", "icon": "server", "skillNames": ["Linux Administration", "Network Security", "Database Administration", "ITIL"]},
+  {"name": "Network Engineering", "depth": 1, "parent": "Information Technology", "description": "Network design, configuration, and management", "icon": "sitemap", "skillNames": ["TCP/IP", "Routing & Switching", "Network Security", "SDN"]},
+  {"name": "Data Engineering", "depth": 1, "parent": "Information Technology", "description": "Data pipelines, storage, and processing", "icon": "database", "skillNames": ["SQL", "Python", "Apache Spark", "Data Warehousing", "ETL"]},
+  {"name": "Security Engineering", "depth": 1, "parent": "Information Technology", "description": "Cybersecurity, compliance, and threat management", "icon": "shield-alt", "skillNames": ["Network Security", "Cryptography", "Incident Response", "Penetration Testing", "SOC 2 Compliance"]},
+  {"name": "Cloud Engineering", "depth": 1, "parent": "Information Technology", "description": "Cloud infrastructure, architecture, and operations", "icon": "cloud", "skillNames": ["Cloud Computing", "Containerization", "Docker", "Kubernetes", "Infrastructure as Code"]},
+  {"name": "Management", "depth": 1, "parent": "Business", "description": "Organizational leadership and team management", "icon": "users", "skillNames": ["Leadership", "Delegation", "Conflict Resolution", "Project Management"]},
+  {"name": "Marketing", "depth": 1, "parent": "Business", "description": "Market research, promotion, and brand strategy", "icon": "chart-line", "skillNames": ["Market Research", "Content Strategy", "SEO", "Social Media Marketing"]},
+  {"name": "Finance", "depth": 1, "parent": "Business", "description": "Financial planning, analysis, and management", "icon": "dollar-sign", "skillNames": ["Financial Analysis", "Bookkeeping", "Risk Management", "Financial Modeling"]},
+  {"name": "Entrepreneurship", "depth": 1, "parent": "Business", "description": "Venture creation, innovation, and business development", "icon": "lightbulb", "skillNames": ["Business Planning", "Lean Startup", "MVP Development", "Pitching"]},
+
+  {"name": "AWS Engineering", "depth": 2, "parent": "Cloud Engineering", "description": "Amazon Web Services architecture and operations", "icon": "cloud", "skillNames": ["AWS EC2", "AWS S3", "AWS Lambda", "AWS VPC", "AWS IAM", "CloudFormation"]},
+  {"name": "Azure Engineering", "depth": 2, "parent": "Cloud Engineering", "description": "Microsoft Azure architecture and operations", "icon": "cloud", "skillNames": ["Azure VMs", "Azure Blob Storage", "Azure Functions", "Azure DevOps", "ARM Templates"]},
+  {"name": "GCP Engineering", "depth": 2, "parent": "Cloud Engineering", "description": "Google Cloud Platform architecture and operations", "icon": "cloud", "skillNames": ["GCP Compute Engine", "GCP Cloud Storage", "GCP Cloud Functions", "GKE", "Deployment Manager"]},
+  {"name": "DevOps Engineering", "depth": 2, "parent": "Cloud Engineering", "description": "CI/CD, automation, and platform reliability", "icon": "sync-alt", "skillNames": ["Docker", "Kubernetes", "Jenkins", "GitLab CI", "Terraform", "Ansible", "Prometheus"]},
+  {"name": "Data Science", "depth": 2, "parent": "Data Engineering", "description": "Statistical analysis, ML, and predictive modeling", "icon": "chart-bar", "skillNames": ["Python", "R", "Machine Learning", "Statistics", "TensorFlow", "Data Visualization"]},
+  {"name": "Analytics Engineering", "depth": 2, "parent": "Data Engineering", "description": "Data modeling, transformation, and BI tools", "icon": "table", "skillNames": ["dbt", "SQL", "Data Modeling", "Looker", "Tableau"]},
+  {"name": "ML Engineering", "depth": 2, "parent": "Data Engineering", "description": "ML system design, MLOps, and model serving", "icon": "robot", "skillNames": ["TensorFlow", "PyTorch", "MLflow", "Kubeflow", "Model Deployment", "Feature Engineering"]},
+
+  {"name": "AWS Solutions Architect", "depth": 3, "parent": "AWS Engineering", "description": "Designing distributed systems on AWS", "icon": "project-diagram", "skillNames": ["AWS EC2", "AWS S3", "AWS Lambda", "AWS VPC", "AWS IAM", "CloudFormation", "Microservices Architecture"]},
+  {"name": "AWS DevOps", "depth": 3, "parent": "AWS Engineering", "description": "CI/CD and infrastructure automation on AWS", "icon": "cogs", "skillNames": ["CloudFormation", "AWS CodePipeline", "Docker", "Kubernetes", "Terraform"]},
+  {"name": "AWS Security", "depth": 3, "parent": "AWS Engineering", "description": "Security best practices and compliance on AWS", "icon": "lock", "skillNames": ["AWS IAM", "AWS KMS", "AWS WAF", "AWS Shield", "GuardDuty", "SOC 2 Compliance"]}
+]

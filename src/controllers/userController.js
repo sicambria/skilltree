@@ -1,8 +1,13 @@
 const User = require('../models/usermodel');
 const Tree = require('../models/treemodel');
+const SkillDomain = require('../models/skilldomainmodel');
 const ApprovableTree = require('../models/treesforapprovemodel');
 const ApprovableSkill = require('../models/skillsforapprovemodel');
 const ApprovableTraining = require('../models/trainingsforapprovemodel');
+const Goal = require('../models/goalmodel');
+const LearningPlan = require('../models/learningplanmodel');
+const FeedPost = require('../models/feedpostmodel');
+const Skill = require('../models/skillmodel');
 const security = require('../utils/security');
 
 exports.getUserData = async (req, res) => {
@@ -175,6 +180,235 @@ exports.handleFirstLogin = async (req, res) => {
         await sortAndAddTreeToUser(selectedTree, user);
 
         res.json({ success: true });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
+
+exports.handleDepthOnboarding = async (req, res) => {
+    try {
+        const { domainPath } = req.body;
+        if (!domainPath || !Array.isArray(domainPath) || domainPath.length === 0) {
+            return res.json({ success: false, message: 'domainPath array required.' });
+        }
+
+        const user = await User.findOne({ username: req.decoded.username });
+        if (!user) return res.json({ success: false, message: 'User not found.' });
+
+        const leafDomain = await SkillDomain.findOne({ name: domainPath[domainPath.length - 1] });
+        if (!leafDomain) return res.json({ success: false, message: 'Leaf domain not found.' });
+
+        user.domainPath = domainPath;
+
+        const allNames = [];
+        const parentDomainNames = [];
+        for (let i = 0; i < domainPath.length; i++) {
+            const d = await SkillDomain.findOne({ name: domainPath[i] });
+            if (d) {
+                d.skillNames.forEach(sn => { if (!allNames.includes(sn)) allNames.push(sn); });
+                if (i < domainPath.length - 1) parentDomainNames.push(domainPath[i]);
+            }
+        }
+
+        const globalSkills = await Skill.find({ name: { $in: allNames } });
+        for (const gs of globalSkills) {
+            if (!user.skills.find(s => s.name === gs.name)) {
+                const skillObj = gs.toObject();
+                delete skillObj._id;
+                delete skillObj.__v;
+                user.skills.push({ ...skillObj, achievedPoint: 0 });
+            }
+        }
+
+        const matchingTree = await Tree.findOne({ name: domainPath[domainPath.length - 1] })
+            || await Tree.findOne({ name: { $regex: leafDomain.name, $options: 'i' } });
+        if (matchingTree) {
+            user.mainTree = matchingTree.name;
+            const { sortAndAddTreeToUser } = require('../utils/treeUtils');
+            await sortAndAddTreeToUser(matchingTree, user);
+        }
+
+        user.focusArea = {
+            name: leafDomain.name,
+            treeNames: matchingTree ? [matchingTree.name] : []
+        };
+
+        await user.save();
+        res.json({ success: true, domainPath });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
+
+exports.getSkillDomains = async (req, res) => {
+    try {
+        const { parent } = req.query;
+        const filter = parent !== undefined ? { parent: parent || null } : {};
+        const domains = await SkillDomain.find(filter).sort({ depth: 1, name: 1 });
+        const data = domains.map(d => ({
+            name: d.name,
+            depth: d.depth,
+            parent: d.parent,
+            description: d.description,
+            icon: d.icon,
+            skillCount: d.skillNames.length
+        }));
+        res.json({ success: true, data });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
+
+exports.exportProfile = async (req, res) => {
+    try {
+        const user = await User.findOne({ username: req.decoded.username });
+        if (!user) return res.json({ success: false, message: 'User not found.' });
+
+        const userData = user.toObject();
+        delete userData._id;
+        delete userData.__v;
+        delete userData.hashData;
+
+        const goals = await Goal.find({ $or: [{ username: user.username }, { collaborators: user.username }] });
+        const plans = await LearningPlan.find({ $or: [{ username: user.username }, { participants: user.username }] });
+        const feedPosts = await FeedPost.find({ username: user.username });
+
+        res.json({
+            success: true,
+            profile: {
+                exportedAt: new Date().toISOString(),
+                version: '1.0.0',
+                user: userData,
+                goals,
+                learningPlans: plans,
+                feedPosts
+            }
+        });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Server error' });
+    }
+};
+
+exports.importProfile = async (req, res) => {
+    try {
+        const { profile, mode } = req.body;
+        if (!profile || !profile.user) {
+            return res.json({ success: false, message: 'Invalid profile data.' });
+        }
+
+        const importMode = mode === 'overwrite' ? 'overwrite' : mode === 'merge' ? 'merge' : 'skip';
+        const user = await User.findOne({ username: req.decoded.username });
+        if (!user) return res.json({ success: false, message: 'User not found.' });
+
+        const stats = { skills: { imported: 0, skipped: 0 }, trees: { imported: 0, skipped: 0 }, goals: 0, plans: 0 };
+
+        const incomingUser = profile.user;
+
+        if (incomingUser.focusArea) {
+            user.focusArea = incomingUser.focusArea;
+        }
+        if (incomingUser.domainPath) {
+            user.domainPath = incomingUser.domainPath;
+        }
+        if (incomingUser.location) {
+            user.location = incomingUser.location;
+        }
+        if (incomingUser.willingToTeach !== undefined) {
+            user.willingToTeach = incomingUser.willingToTeach;
+        }
+        if (incomingUser.teachingDay) user.teachingDay = incomingUser.teachingDay;
+        if (incomingUser.teachingTime) user.teachingTime = incomingUser.teachingTime;
+
+        if (incomingUser.categories) {
+            if (importMode === 'overwrite') {
+                user.categories = incomingUser.categories;
+            } else {
+                for (const inc of incomingUser.categories) {
+                    const existing = user.categories.find(c => c.name === inc.name);
+                    if (!existing) user.categories.push(inc);
+                    else stats.categories_skipped = (stats.categories_skipped || 0) + 1;
+                }
+            }
+        }
+
+        if (incomingUser.skills) {
+            if (importMode === 'overwrite') {
+                user.skills = incomingUser.skills.map(s => ({ ...s, achievedPoint: s.achievedPoint || 0 }));
+                stats.skills.imported = incomingUser.skills.length;
+            } else if (importMode === 'merge') {
+                for (const inc of incomingUser.skills) {
+                    const existing = user.skills.find(s => s.name === inc.name);
+                    if (!existing) {
+                        user.skills.push({ ...inc, achievedPoint: inc.achievedPoint || 0 });
+                        stats.skills.imported++;
+                    } else {
+                        stats.skills.skipped++;
+                    }
+                }
+            }
+        }
+
+        if (incomingUser.trees) {
+            if (importMode === 'overwrite') {
+                user.trees = incomingUser.trees;
+                stats.trees.imported = incomingUser.trees.length;
+            } else {
+                for (const inc of incomingUser.trees) {
+                    const existing = user.trees.find(t => t.name === inc.name);
+                    if (!existing) {
+                        user.trees.push(inc);
+                        stats.trees.imported++;
+                    } else {
+                        stats.trees.skipped++;
+                    }
+                }
+            }
+        }
+
+        if (incomingUser.mainTree) user.mainTree = incomingUser.mainTree;
+        if (incomingUser.email) user.email = incomingUser.email;
+
+        await user.save();
+
+        if (profile.goals && Array.isArray(profile.goals)) {
+            for (const g of profile.goals) {
+                const existing = await Goal.findById(g._id).catch(() => null) ||
+                    await Goal.findOne({ username: user.username, title: g.title, skillName: g.skillName });
+                if (!existing) {
+                    await new Goal({
+                        username: user.username,
+                        title: g.title,
+                        skillName: g.skillName,
+                        targetLevel: g.targetLevel,
+                        targetDate: g.targetDate,
+                    }).save();
+                    stats.goals++;
+                }
+            }
+        }
+
+        if (profile.learningPlans && Array.isArray(profile.learningPlans)) {
+            for (const p of profile.learningPlans) {
+                const existing = await LearningPlan.findById(p._id).catch(() => null);
+                if (!existing) {
+                    await new LearningPlan({
+                        username: user.username,
+                        title: p.title,
+                        description: p.description,
+                        type: p.type || 'personal',
+                        participants: [user.username],
+                        horizons: p.horizons || { shortTerm: {}, midTerm: {}, longTerm: {} }
+                    }).save();
+                    stats.plans++;
+                }
+            }
+        }
+
+        res.json({ success: true, message: 'Profile imported successfully.', stats });
     } catch (err) {
         console.error(err);
         res.status(500).json({ success: false, message: 'Server error' });
