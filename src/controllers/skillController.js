@@ -500,8 +500,8 @@ exports.getSkillCatalog = async (req, res) => {
     try {
         const { era } = req.query;
         const eraFilters = {
-            '20th': { 'temporal.stage': { $in: ['mature', 'declining'] } },
-            '21st': { 'temporal.stage': { $in: ['mature', 'growing', 'emerging'] } },
+            '20th': { 'temporal.stage': { $in: ['mature', 'declining'] }, reusability: { $in: ['occupation-specific', 'sector-specific', 'cross-sectoral'] } },
+            '21st': { 'temporal.stage': { $in: ['growing', 'emerging'] } },
             'specialization': { reusability: { $in: ['sector-specific', 'occupation-specific'] } },
             'future_proof': { 'temporal.stage': 'emerging' }
         };
@@ -509,10 +509,6 @@ exports.getSkillCatalog = async (req, res) => {
         let result = {};
         if (era && eraFilters[era]) {
             result[era] = await Skill.find(eraFilters[era]).sort({ name: 1 });
-        } else if (era === 'all') {
-            for (const [key, filter] of Object.entries(eraFilters)) {
-                result[key] = await Skill.find(filter).sort({ name: 1 });
-            }
         } else {
             for (const [key, filter] of Object.entries(eraFilters)) {
                 result[key] = await Skill.find(filter).sort({ name: 1 });

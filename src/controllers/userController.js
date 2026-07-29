@@ -201,14 +201,10 @@ exports.handleDepthOnboarding = async (req, res) => {
 
         user.domainPath = domainPath;
 
+        const allDomains = await SkillDomain.find({ name: { $in: domainPath } });
         const allNames = [];
-        const parentDomainNames = [];
-        for (let i = 0; i < domainPath.length; i++) {
-            const d = await SkillDomain.findOne({ name: domainPath[i] });
-            if (d) {
-                d.skillNames.forEach(sn => { if (!allNames.includes(sn)) allNames.push(sn); });
-                if (i < domainPath.length - 1) parentDomainNames.push(domainPath[i]);
-            }
+        for (const d of allDomains) {
+            d.skillNames.forEach(sn => { if (!allNames.includes(sn)) allNames.push(sn); });
         }
 
         const globalSkills = await Skill.find({ name: { $in: allNames } });
@@ -226,7 +222,12 @@ exports.handleDepthOnboarding = async (req, res) => {
         if (matchingTree) {
             user.mainTree = matchingTree.name;
             const { sortAndAddTreeToUser } = require('../utils/treeUtils');
-            await sortAndAddTreeToUser(matchingTree, user);
+            user.trees.push({
+                name: matchingTree.name,
+                focusArea: matchingTree.focusArea,
+                description: matchingTree.description,
+                skillNames: matchingTree.skillNames
+            });
         }
 
         user.focusArea = {
@@ -272,9 +273,9 @@ exports.exportProfile = async (req, res) => {
         delete userData.__v;
         delete userData.hashData;
 
-        const goals = await Goal.find({ $or: [{ username: user.username }, { collaborators: user.username }] });
-        const plans = await LearningPlan.find({ $or: [{ username: user.username }, { participants: user.username }] });
-        const feedPosts = await FeedPost.find({ username: user.username });
+        const goals = (await Goal.find({ $or: [{ username: user.username }, { collaborators: user.username }] })).map(g => { const o = g.toObject(); delete o.__v; return o; });
+        const plans = (await LearningPlan.find({ $or: [{ username: user.username }, { participants: user.username }] })).map(p => { const o = p.toObject(); delete o.__v; return o; });
+        const feedPosts = (await FeedPost.find({ username: user.username })).map(f => { const o = f.toObject(); delete o.__v; return o; });
 
         res.json({
             success: true,
@@ -304,7 +305,7 @@ exports.importProfile = async (req, res) => {
         const user = await User.findOne({ username: req.decoded.username });
         if (!user) return res.json({ success: false, message: 'User not found.' });
 
-        const stats = { skills: { imported: 0, skipped: 0 }, trees: { imported: 0, skipped: 0 }, goals: 0, plans: 0 };
+        const stats = { skills: { imported: 0, skipped: 0 }, trees: { imported: 0, skipped: 0 }, categories_skipped: 0, goals: 0, plans: 0 };
 
         const incomingUser = profile.user;
 
@@ -330,7 +331,7 @@ exports.importProfile = async (req, res) => {
                 for (const inc of incomingUser.categories) {
                     const existing = user.categories.find(c => c.name === inc.name);
                     if (!existing) user.categories.push(inc);
-                    else stats.categories_skipped = (stats.categories_skipped || 0) + 1;
+                    else stats.categories_skipped++;
                 }
             }
         }
@@ -370,14 +371,19 @@ exports.importProfile = async (req, res) => {
         }
 
         if (incomingUser.mainTree) user.mainTree = incomingUser.mainTree;
-        if (incomingUser.email) user.email = incomingUser.email;
+        if (incomingUser.email && incomingUser.email !== user.email) {
+            const emailOwner = await User.findOne({ email: incomingUser.email });
+            if (emailOwner && emailOwner.username !== user.username) {
+                return res.json({ success: false, message: 'Email already in use by another user.' });
+            }
+            user.email = incomingUser.email;
+        }
 
         await user.save();
 
         if (profile.goals && Array.isArray(profile.goals)) {
             for (const g of profile.goals) {
-                const existing = await Goal.findById(g._id).catch(() => null) ||
-                    await Goal.findOne({ username: user.username, title: g.title, skillName: g.skillName });
+                const existing = await Goal.findOne({ username: user.username, title: g.title, skillName: g.skillName });
                 if (!existing) {
                     await new Goal({
                         username: user.username,
@@ -393,7 +399,7 @@ exports.importProfile = async (req, res) => {
 
         if (profile.learningPlans && Array.isArray(profile.learningPlans)) {
             for (const p of profile.learningPlans) {
-                const existing = await LearningPlan.findById(p._id).catch(() => null);
+                const existing = await LearningPlan.findOne({ username: user.username, title: p.title });
                 if (!existing) {
                     await new LearningPlan({
                         username: user.username,
