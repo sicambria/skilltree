@@ -97,9 +97,7 @@ const seed = async () => {
                 admin: false,
                 categories: demoCategories.map(c => ({ name: c.name, achievedPoint: 0, maxPoint: 5 })),
                 skills: demoSkillsToPush,
-                mainTree: 'Scrum Master',
                 trees: userTrees,
-                focusArea: { name: 'Engineering', treeNames: ['Scrum Master', 'Cloud Engineer', 'DevOps Engineer'] },
                 willingToTeach: false
             }).save();
             console.log('   + Created demo user (demo/demo)');

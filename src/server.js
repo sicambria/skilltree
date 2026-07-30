@@ -4,7 +4,7 @@ const http = require('http');
 const app = require('./app');
 const connectDB = require('./config/db');
 
-const PORT = process.env.PORT || 3000;
+const PREFERRED_PORT = parseInt(process.env.PORT, 10) || 3000;
 
 const startServer = async () => {
     // Connect to Database
@@ -13,33 +13,31 @@ const startServer = async () => {
     // Create HTTP server
     const server = http.createServer(app);
 
-    server.on('error', (error) => {
-        if (error.syscall !== 'listen') throw error;
-        switch (error.code) {
-            case 'EADDRINUSE':
-                console.error('--------------------------------------------------');
-                console.error(`❌ Error: Port ${PORT} is already in use.`);
-                console.error(`💡 Suggestion: Kill the process on port ${PORT} or use a different port.`);
-                console.error('--------------------------------------------------');
-                process.exit(1);
-                break;
-            default:
-                throw error;
-        }
+    const tryListen = (port) => new Promise((resolve, reject) => {
+        server.once('error', (error) => {
+            if (error.code === 'EADDRINUSE' && port < PREFERRED_PORT + 10) {
+                tryListen(port + 1).then(resolve, reject);
+            } else {
+                reject(error);
+            }
+        });
+        server.listen(port, () => resolve(server.address().port));
     });
 
-    server.listen(PORT, () => {
-        const url = `http://localhost:${PORT}`;
-        console.log('--------------------------------------------------');
-        console.log(`🚀 Skill Tree Server is running!`);
-        console.log(`🔗 Local URL:   ${url}`);
-        console.log(`📁 Environment: ${process.env.NODE_ENV || 'development'}`);
-        console.log(`📦 Node.js:    ${process.version}`);
-        console.log(`🆔 Process ID:  ${process.pid}`);
-        console.log('--------------------------------------------------');
-        console.log('Press Ctrl+C to stop the server');
-        console.log('');
-    });
+    const PORT = await tryListen(PREFERRED_PORT);
+    const url = `http://localhost:${PORT}`;
+    console.log('--------------------------------------------------');
+    console.log(`🚀 Skill Tree Server is running!`);
+    console.log(`🔗 Local URL:   ${url}`);
+    console.log(`📁 Environment: ${process.env.NODE_ENV || 'development'}`);
+    console.log(`📦 Node.js:    ${process.version}`);
+    console.log(`🆔 Process ID:  ${process.pid}`);
+    if (PORT !== PREFERRED_PORT) {
+        console.log(`⚠️  Port ${PREFERRED_PORT} was in use, using port ${PORT} instead.`);
+    }
+    console.log('--------------------------------------------------');
+    console.log('Press Ctrl+C to stop the server');
+    console.log('');
 
     // Process error handling
     process.on('unhandledRejection', (reason, promise) => {
